@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 32px;
+  padding: 32px;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
