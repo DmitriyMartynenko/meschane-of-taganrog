@@ -11,3 +11,8 @@
   flex-direction: row;
   gap: 32px;
 }
+
+.hr {
+  width: 100%;
+  border: 1px solid #b1b1b12d;
+}

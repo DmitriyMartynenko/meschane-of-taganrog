@@ -18,6 +18,7 @@ const Header = () => {
             <HeaderLink to="#">Контакты</HeaderLink>
           </div>
         </nav>
+        <hr className={styles.hr} />
       </header>
     </>
   );
