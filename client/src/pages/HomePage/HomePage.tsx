@@ -2,7 +2,7 @@ import Header from '../../components/Header';
 import Button from '../../components/Button';
 import PhoneSignUp from '../../components/PhoneSignUp';
 
-import logo from '../../assets/logo1.png'
+import logo from '../../assets/logo.png'
 
 import styles from './HomePage.module.css';
 
@@ -17,9 +17,9 @@ const HomePage = () => {
               Иммерсивные экскурсии
             </h1>
             <PhoneSignUp
-              text="записаться на экскурсию"
+              text="Записаться на экскурсию"
               inputPlaceholder="+7 (___) ___ __ __"
-              buttonText="заказать экскурсию"
+              buttonText="Заказать экскурсию"
             />
           </div>
           <div className={styles.logoContainer}>
@@ -32,7 +32,7 @@ const HomePage = () => {
         </div>
       </section>
       <section>
-        123
+        
       </section>
     </>
   );

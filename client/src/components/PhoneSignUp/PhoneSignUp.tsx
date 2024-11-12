@@ -19,7 +19,7 @@ const PhoneSignUp = (props: PhoneSignUp) => {
   return (
     <div className={styles.phoneSignUp}>
       <p className={styles.phoneSignUpText}>{text}</p>
-      <div className={styles.phoneNumberContainer}>
+      <div className={styles.orderContainer}>
         <Input
           type="text"
           placeholder={inputPlaceholder}
