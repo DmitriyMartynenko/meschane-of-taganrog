@@ -1,4 +1,8 @@
 import Header from '../../components/Header';
+import Button from '../../components/Button';
+import PhoneSignUp from '../../components/PhoneSignUp';
+
+import logo from '../../assets/logo1.png'
 
 import styles from './HomePage.module.css';
 
@@ -9,23 +13,26 @@ const HomePage = () => {
         <Header />
         <div className={styles.promoContainer}>
           <div className={styles.immersiveExcursionsContainer}>
-            <h1 className={styles.immersiveExcursionsText}>
+            <h1 className={styles.immersiveExcursionsTitle}>
               Иммерсивные экскурсии
             </h1>
-            <div className={styles.excursionSignUpContainer}>
-              <p className={styles.excursionSignUpText}>
-                Записаться на экскурсию
-              </p>
-              <div className={styles.phoneNumberContainer}>
-                <input
-                  type="text"
-                  placeholder="+7 (___)___ __ __"
-                />
-                <button>Заказать экскурсию</button>
-              </div>
-            </div>
+            <PhoneSignUp
+              text="записаться на экскурсию"
+              inputPlaceholder="+7 (___) ___ __ __"
+              buttonText="заказать экскурсию"
+            />
+          </div>
+          <div className={styles.logoContainer}>
+            <img
+              className={styles.logo}
+              src={logo}
+              alt=""
+            />
           </div>
         </div>
+      </section>
+      <section>
+        123
       </section>
     </>
   );
