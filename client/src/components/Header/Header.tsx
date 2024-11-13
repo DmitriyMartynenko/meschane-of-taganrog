@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import NavBar from '../NavBar';
 import Button from '../Button';
+
+import logo from '../../assets/logo.png';
 
 import styles from './Header.module.css';
 
@@ -22,12 +23,14 @@ const Header = (props: HeaderProps) => {
   return (
     <header className={styles.header}>
       {isMobile && (
-        <Button
-          className="headerMenuButton"
-          onClick={toggleMenu}
-        >
-          Меню
-        </Button>
+        <div className={styles.logoWithButtonContainer}>
+          <div className={styles.logoContainer}>
+            <img className={styles.logo} src={logo} alt="" />
+          </div>
+          <Button className="headerMenuButton" onClick={toggleMenu}>
+            Меню
+          </Button>
+        </div>
       )}
 
       {(isMenuOpen || !isMobile) && <NavBar />}

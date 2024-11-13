@@ -4,11 +4,30 @@
   border: 1px solid #b1b1b12d;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+  }
+
+  .logoWithButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .logoContainer {
+    width: 64px;
+    height: 64px;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

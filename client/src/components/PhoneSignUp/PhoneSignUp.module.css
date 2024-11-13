@@ -20,11 +20,11 @@
   width: 85%
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .phoneSignUp {
     align-items: center;
-    margin: 0;
     width: 85%;
+    margin: 0;
   }
 
   .phoneSignUpText {
@@ -32,7 +32,7 @@
   }
 
   .orderContainer {
-    justify-content: center;
     width: 100%;
+    justify-content: center;
   }
 }

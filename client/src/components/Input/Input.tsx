@@ -1,12 +1,13 @@
 import styles from './Input.module.css';
 
 type InputProps = {
-  type: string;
+  variant?: string;
+  type?: string;
   placeholder?: string;
 };
 
 const Input = (props: InputProps) => {
-  const { type, placeholder } = props;
+  const { variant = 'primary', type = 'text', placeholder = '' } = props;
 
   return (
     <input className={styles.input} type={type} placeholder={placeholder} />
