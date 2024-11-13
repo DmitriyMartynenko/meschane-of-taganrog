@@ -1,16 +1,20 @@
+import { useMediaQuery } from 'react-responsive';
+
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import PhoneSignUp from '../../components/PhoneSignUp';
 
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png';
 
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
+
   return (
     <>
       <section className={styles.promoSection}>
-        <Header />
+        <Header isMobile={isMobile} />
         <div className={styles.promoContainer}>
           <div className={styles.immersiveExcursionsContainer}>
             <h1 className={styles.immersiveExcursionsTitle}>
@@ -31,9 +35,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section>
-        
-      </section>
+      <section></section>
     </>
   );
 };

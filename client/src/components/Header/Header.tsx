@@ -1,26 +1,39 @@
-import HeaderLink from '../HeaderLink';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
+import NavBar from '../NavBar';
+import Button from '../Button';
 
 import styles from './Header.module.css';
 
-const Header = () => {
+type HeaderProps = {
+  isMobile: boolean;
+};
+
+const Header = (props: HeaderProps) => {
+  const { isMobile } = props;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
-    <>
-      <header className={styles.header}>
-        <nav className={styles.menu}>
-          <div className={styles.linksContainer}>
-            <HeaderLink to="#">Главная</HeaderLink>
-            <HeaderLink to="#">О мещанах</HeaderLink>
-            <HeaderLink to="#">Анонсы</HeaderLink>
-          </div>
-          <div className={styles.linksContainer}>
-            <HeaderLink to="#">Фото и видео</HeaderLink>
-            <HeaderLink to="#">ТГЛИАМЗ</HeaderLink>
-            <HeaderLink to="#">Контакты</HeaderLink>
-          </div>
-        </nav>
-        <hr className={styles.hr} />
-      </header>
-    </>
+    <header className={styles.header}>
+      {isMobile && (
+        <Button
+          className="menuButton"
+          onClick={toggleMenu}
+        >
+          Меню
+        </Button>
+      )}
+
+      {(isMenuOpen || !isMobile) && <NavBar />}
+
+      <hr className={styles.hr} />
+    </header>
   );
 };
 

@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .menu {
+    padding: 0;
+  }
+
+  .linksContainer {
+    flex-direction: column;
+  }
+}

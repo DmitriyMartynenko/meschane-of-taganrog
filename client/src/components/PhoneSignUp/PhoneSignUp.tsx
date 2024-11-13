@@ -6,7 +6,6 @@ import styles from './PhoneSignUp.module.css';
 type PhoneSignUp = {
   text: string,
   inputPlaceholder: string,
-  buttonText: string
 }
 
 const PhoneSignUp = (props: PhoneSignUp) => {
