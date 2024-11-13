@@ -23,7 +23,7 @@ const Header = (props: HeaderProps) => {
     <header className={styles.header}>
       {isMobile && (
         <Button
-          className="menuButton"
+          className="headerMenuButton"
           onClick={toggleMenu}
         >
           Меню

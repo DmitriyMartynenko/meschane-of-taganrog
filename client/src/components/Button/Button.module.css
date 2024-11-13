@@ -9,13 +9,21 @@
   text-transform: uppercase;
 }
 
-.menuButton {
+.primary {
+
+}
+
+/* .headerMenuButton {
   align-self: flex-end;
   margin: 2rem 2rem 0 0;
-}
+} */
 
 @media (max-width: 640px) {
   .button {
     padding: 0.5rem;
+  }
+
+  .headerMenuButton {
+    align-self: flex-end;
   }
 }

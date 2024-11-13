@@ -4,16 +4,17 @@ import { ReactNode } from 'react';
 
 type ButtonProps = {
   children: ReactNode;
+  variant?: 'primary' | '';
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {
-  const { children, className, onClick } = props;
+  const { children, variant = 'primary', className = '', onClick } = props;
 
   return (
     <button
-      className={`${styles.button} ${styles[className!]}`}
+      className={`${styles.button} ${styles[variant]} ${styles[className]}`}
       onClick={onClick}
     >
       {children}
