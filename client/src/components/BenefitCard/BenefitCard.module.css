@@ -1,0 +1,17 @@
+.benefitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  /* flex: 1; */
+  width: 25%;
+  padding: 2rem;
+  border: 1px solid #D9D9D9;
+  background-color: white;
+}
+
+.benefitCardText {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 150%;
+}

@@ -1,0 +1,36 @@
+.heading {
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem; 
+}
+
+.subtitleContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  margin-right: 1rem;
+  background-color: #b1b1b180;
+}
+
+.subtitle {
+  margin: 0;
+  color: #B1B1B1;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.title {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #A4834E
+}

@@ -24,13 +24,13 @@
   opacity: 0.92;
 }
 
-.promoContainer {
+.promoContent {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.immersiveExcursionsContainer {
+.promoTitleContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +38,7 @@
   margin-left: 100px;
 }
 
-.immersiveExcursionsTitle {
+.promoTitle {
   margin: 0;
   padding: 0;
   color: white;
@@ -55,13 +55,13 @@
     -2px 0px 3px rgba(0, 0, 0, 0.7);
 }
 
-.logoContainer {
+.promoLogoContainer {
   width: 600px;
   height: 700px;
   margin-right: 200px;
 }
 
-.logo {
+.promoLogo {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -69,11 +69,13 @@
 
 .meschaneInfoSection {
   display: flex;
+  height: 85vh;
+  background-color: #F6F4F5;
 }
 
 .stoneStairImgContainer {
   width: 35%;
-  height: 100vh;
+  height: 100%;
 }
 
 .stoneStairImg {
@@ -88,25 +90,149 @@
 .meschaninImg {
 }
 
+.quotesImgContainer {
+  width: 64px;
+  height: 64px;
+}
+
+.quotesImg {
+  width: 100%;
+  height: 100%;
+}
+
+.meschaneInfoTextContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding-right: 4rem;
+}
+
+.meschaneInfoLine {
+  align-self: flex-start;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 1px solid #A4834E;
+}
+
+.meschaneInfoText {
+  margin: 2rem 0 3rem 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.meschaneInfoAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.meschaneInfoJobTitle {
+  color: #B1B1B1;
+  font-weight: 300;
+  text-transform: none;
+}
+
+.tryExcursionsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  height: 100vh;
+  padding: 8rem 7rem 0 7rem;
+  background-image: url('../../assets/background2.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.tryExcursionsHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tryExcursionsSubtitle {
+  margin: 0;
+  color: #B1B1B1;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.tryExcursionsTitle {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.highlightedLetter {
+  color: #A4834E;
+}
+
+.benefitCardsContainer {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.meschaneOfTaganrog {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem;
+  background-color: #F6F4F5;
+}
+
+.meschaneOfTaganrogTitle {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.meschaneOfTaganrogImagesContainer {
+  display: flex;
+  flex: 1;
+  gap: 4rem;
+}
+
+.meschaneOfTaganrogImgContainer {
+  flex: 1;
+}
+
+.meschaneOfTaganrogImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 768px) {
-  .promoContainer {
+  .promoContent {
     justify-content: center;
     align-items: center;
     flex: 0.75;
   }
 
-  .immersiveExcursionsTitle {
-    font-size: 3rem;
-  }
-
-  .immersiveExcursionsContainer {
+  .promoTitleContainer {
     justify-content: center;
     align-items: center;
     margin: 0;
     text-align: center;
   }
 
-  .logoContainer {
+  .promoTitle {
+    font-size: 3rem;
+  }
+
+  .promoLogoContainer {
     display: none;
   }
 }
