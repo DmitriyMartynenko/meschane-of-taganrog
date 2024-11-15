@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.subtitleContainerWithoutLine {
+  display: flex;
+  justify-content: center;
+}
+
 .line {
   width: 50px;
   height: 1px;

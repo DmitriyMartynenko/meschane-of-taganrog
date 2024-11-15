@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import PhoneSignUp from '../../components/PhoneSignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
+import Review from '../../components/Review';
 
 import logo from '../../assets/logo.png';
 import stoneStair from '../../assets/stoneStair.png';
@@ -21,6 +22,10 @@ import {
   meschane2,
   meschane3,
 } from '../../assets/meschaneOfTaganrog';
+import tgliamz from '../../assets/TGLIAMZ.png';
+import { reviewAuthor1 } from '../../assets/reviewAuthorsPhotos';
+import arrowLeft from '../../assets/arrowLeft.png';
+import arrowRight from '../../assets/arrowRight.png';
 
 import styles from './HomePage.module.css';
 
@@ -74,6 +79,7 @@ const HomePage = () => {
         <div className={styles.meschaneInfoTextContent}>
           <Heading
             subtitle="Слово мещанину:"
+            lineBeforeSubtitle={true}
             wordsToHighlight={['не', 'все', 'равно']}
           >
             Потому что нам не все равно
@@ -148,6 +154,51 @@ const HomePage = () => {
               alt=""
             />
           </div>
+        </div>
+      </section>
+      <section className={styles.ourPartnersSection}>
+        <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
+        <div className={styles.ourPartnersImgContainer}>
+          <img
+            className={styles.ourPartnersTGLIAMZimg}
+            src={tgliamz}
+            alt=""
+          />
+        </div>
+        <p className={styles.ourPartnersText}>
+          Таганрогский государственный литературный и историко-архитектурный
+          музей-заповедник
+        </p>
+      </section>
+      <section className={styles.reviewsSection}>
+        <Heading
+          subtitle="О нас говорят"
+          wordsToHighlight={['Отзывы']}
+        >
+          Отзывы наших клиентов
+        </Heading>
+        <div className={styles.reviewContainer}>
+          <button className={styles.arrowLeft}>
+            <img
+              src={arrowLeft}
+              alt=""
+            />
+          </button>
+          <Review
+            author="Юлия Воробьева"
+            authorJobTitle="Директор компании “Воробьева и ко”"
+            authorImgSrc={reviewAuthor1}
+          >
+            Я обеспечу представление Ваших интересов в судах общей юрисдикции,
+            арбитраже, третейском суде, приму участие в переговорах, окажу
+            помощь на стадии досудебного урегулирования споров.
+          </Review>
+          <button className={styles.arrowRight}>
+            <img
+              src={arrowRight}
+              alt=""
+            />
+          </button>
         </div>
       </section>
     </>

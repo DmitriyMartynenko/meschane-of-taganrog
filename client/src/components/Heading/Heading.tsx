@@ -5,17 +5,31 @@ import styles from './Heading.module.css';
 type HeadingProps = {
   children: ReactNode;
   subtitle?: string;
+  lineBeforeSubtitle?: boolean;
   wordsToHighlight?: string[];
 };
 
 const Heading = (props: HeadingProps) => {
-  const { subtitle, wordsToHighlight, children: title } = props;
+  const {
+    subtitle,
+    lineBeforeSubtitle = false,
+    wordsToHighlight,
+    children: title,
+  } = props;
 
   return (
     <div className={styles.heading}>
       {subtitle && (
-        <div className={styles.subtitleContainer}>
-          <span className={styles.line}></span>
+        <div
+          className={
+            styles[
+              lineBeforeSubtitle
+                ? 'subtitleContainer'
+                : 'subtitleContainerWithoutLine'
+            ]
+          }
+        >
+          {lineBeforeSubtitle && <span className={styles.line}></span>}
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
       )}
