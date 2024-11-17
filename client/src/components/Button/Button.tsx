@@ -6,6 +6,7 @@ type ButtonProps = {
   children: ReactNode;
   variant?: 'primary' | '';
   className?: string;
+  textColor: string;
   onClick?: () => void;
 };
 

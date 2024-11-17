@@ -6,6 +6,7 @@ import PhoneSignUp from '../../components/PhoneSignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
 import Review from '../../components/Review';
+import ReadMoreCard from '../../components/ReadMoreCard';
 
 import logo from '../../assets/logo.png';
 import stoneStair from '../../assets/stoneStair.png';
@@ -26,6 +27,12 @@ import tgliamz from '../../assets/TGLIAMZ.png';
 import { reviewAuthor1 } from '../../assets/reviewAuthorsPhotos';
 import arrowLeft from '../../assets/arrowLeft.png';
 import arrowRight from '../../assets/arrowRight.png';
+import {
+  readMoreImg1,
+  readMoreImg2,
+  readMoreImg3,
+  readMoreImg4,
+} from '../../assets/readMoreCardImages';
 
 import styles from './HomePage.module.css';
 
@@ -46,35 +53,19 @@ const HomePage = () => {
             />
           </div>
           <div className={styles.promoLogoContainer}>
-            <img
-              className={styles.promoLogo}
-              src={logo}
-              alt=""
-            />
+            <img className={styles.promoLogo} src={logo} alt="" />
           </div>
         </div>
       </section>
       <section className={styles.meschaneInfoSection}>
         <div className={styles.stoneStairImgContainer}>
-          <img
-            className={styles.stoneStairImg}
-            src={stoneStair}
-            alt=""
-          />
+          <img className={styles.stoneStairImg} src={stoneStair} alt="" />
         </div>
         <div className={styles.meschaninImgContainer}>
-          <img
-            className={styles.meschaninImg}
-            src={meschanin}
-            alt=""
-          />
+          <img className={styles.meschaninImg} src={meschanin} alt="" />
         </div>
         <div className={styles.quotesImgContainer}>
-          <img
-            className={styles.quotesImg}
-            src={quotes}
-            alt=""
-          />
+          <img className={styles.quotesImg} src={quotes} alt="" />
         </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
@@ -159,11 +150,7 @@ const HomePage = () => {
       <section className={styles.ourPartnersSection}>
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <img
-            className={styles.ourPartnersTGLIAMZimg}
-            src={tgliamz}
-            alt=""
-          />
+          <img className={styles.ourPartnersTGLIAMZimg} src={tgliamz} alt="" />
         </div>
         <p className={styles.ourPartnersText}>
           Таганрогский государственный литературный и историко-архитектурный
@@ -171,34 +158,78 @@ const HomePage = () => {
         </p>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading
-          subtitle="О нас говорят"
-          wordsToHighlight={['Отзывы']}
-        >
+        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
-          <button className={styles.arrowLeft}>
-            <img
-              src={arrowLeft}
-              alt=""
-            />
-          </button>
-          <Review
-            author="Юлия Воробьева"
-            authorJobTitle="Директор компании “Воробьева и ко”"
-            authorImgSrc={reviewAuthor1}
+          <div className={styles.buttonsContainer}>
+            <button className={styles.arrowLeft}>
+              <img src={arrowLeft} alt="" />
+            </button>
+            <Review
+              author="Юлия Воробьева"
+              authorJobTitle="Директор компании “Воробьева и ко”"
+              authorImgSrc={reviewAuthor1}
+            >
+              Я обеспечу представление Ваших интересов в судах общей юрисдикции,
+              арбитраже, третейском суде, приму участие в переговорах, окажу
+              помощь на стадии досудебного урегулирования споров.
+            </Review>
+            <button className={styles.arrowRight}>
+              <img src={arrowRight} alt="" />
+            </button>
+          </div>
+          <div className={styles.paginationContainer}>
+            <button className={styles.paginationButton}></button>
+            <button
+              className={`${styles.paginationButton} ${styles.paginationButtonActive}`}
+            ></button>
+            <button className={styles.paginationButton}></button>
+            <button className={styles.paginationButton}></button>
+          </div>
+        </div>
+      </section>
+      <section className={styles.goodToKnowSection}>
+        <div className={styles.goodToKnowContainer}>
+          <Heading
+            subtitle="Наш блог"
+            lineBeforeSubtitle={true}
+            wordsToHighlight={['Полезно']}
           >
-            Я обеспечу представление Ваших интересов в судах общей юрисдикции,
-            арбитраже, третейском суде, приму участие в переговорах, окажу
-            помощь на стадии досудебного урегулирования споров.
-          </Review>
-          <button className={styles.arrowRight}>
-            <img
-              src={arrowRight}
-              alt=""
-            />
-          </button>
+            Полезно знать
+          </Heading>
+          <Button>Читать больше</Button>
+        </div>
+        <div className={styles.readMoreContainer}>
+          <ReadMoreCard imgSrc={readMoreImg1} date="15 апреля">
+            Как использовать закон в свою пользу?
+          </ReadMoreCard>
+          <ReadMoreCard isCompact={true} imgSrc={readMoreImg2} date="09 апреля">
+            Библиотека юристов. Что почитать?
+          </ReadMoreCard>
+          <ReadMoreCard isCompact={true} imgSrc={readMoreImg3} date="06 марта">
+            На что обратить внимание в документах?
+          </ReadMoreCard>
+          <ReadMoreCard
+            isCompact={true}
+            imgSrc={readMoreImg4}
+            date="23 февраля"
+          >
+            Залог успешных дел наших юристов
+          </ReadMoreCard>
+        </div>
+      </section>
+      <section className={styles.subscribeSection}>
+        <Heading
+          subtitle="Будьте в курсе"
+          lineBeforeSubtitle={false}
+          wordsToHighlight={['Подпишитесь']}
+        >
+          Подпишитесь на наши новости
+        </Heading>
+        <p className={styles.subscribeText}>Чтобы всегда быть в курсе мещанских дел</p>
+        <div className={styles.emailContainer}>
+          <PhoneSignUp inputPlaceholder="Ваш e-mail" buttonText="Подписаться" />
         </div>
       </section>
     </>

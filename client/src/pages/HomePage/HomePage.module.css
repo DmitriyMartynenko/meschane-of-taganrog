@@ -253,15 +253,87 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  padding: 4rem;
+  padding: 6rem 4rem 8rem 4rem;
   background-color: #F6F4F5;
 }
 
 .reviewContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.buttonsContainer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.paginationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 25%;
+}
+
+.paginationButton {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.paginationButtonActive {
+  width: 24px;
+  height: 24px;
+  border: 5px solid #F6F4F5;
+  background-color: #A4834E;
+  outline: 2px solid #A4834E;
+}
+
+.goodToKnowSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 6rem;
+}
+
+.goodToKnowContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.readMoreContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.subscribeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem;
+  background-color: #F6F4F5;
+}
+
+.subscribeText {
+  color: #232228;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.emailContainer {
+  width: 50%;
 }
 
 .arrowLeft,
