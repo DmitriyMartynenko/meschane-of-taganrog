@@ -336,6 +336,73 @@
   width: 50%;
 }
 
+.footerSection {
+  display: flex;
+  height: 100%;
+}
+
+.footerMapContainer {
+  width: 50%;
+}
+
+.footerMap {
+  width: 100%;
+  height: 100%;
+}
+
+.museumMapImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mapPointerImg {
+  position: absolute;
+  top: 25%;
+  right: 50%;
+  width: 60px;
+  height: 70px;
+}
+
+.footerContactInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 50%;
+  padding: 4rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/contactInfoBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footerContactInfoTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+.footerContactInfoPhoneNumber,
+.footerContactInfoAddress,
+.footerContactInfoEmail {
+  margin: 0;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footerContactInfoHighlighted,
+.footerContactInfoEmailLink {
+  color: #E3C37A;
+  font-weight: 300;
+}
+
+.footerContactInfoEmailLink {
+  text-decoration: underline;
+}
+
 .arrowLeft,
 .arrowRight {
   display: flex;
