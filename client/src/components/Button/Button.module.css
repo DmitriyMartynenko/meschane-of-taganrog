@@ -9,11 +9,13 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .button {
     width: 50%;
   }
+}
 
+@media (max-width: 768px) {
   .headerMenuButton {
     width: 25%;
     min-width: 70px;

@@ -1,11 +1,11 @@
-.phoneSignUp {
+.signUp {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-left: 4rem;
 }
 
-.phoneSignUpText {
+.signUpText {
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
   margin-left: 0.5rem;
@@ -20,14 +20,24 @@
   width: 85%
 }
 
-@media (max-width: 768px) {
-  .phoneSignUp {
+@media (max-width: 1024px) {
+  .signUp {
     align-items: center;
-    width: 85%;
+    width: 75%;
     margin: 0;
   }
 
-  .phoneSignUpText {
+  .signUpText {
+    margin: 0;
+  }
+
+  .orderContainer {
+   width: 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .signUpText {
     margin: 0;
   }
 

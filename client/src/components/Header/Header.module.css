@@ -4,6 +4,10 @@
   border: 1px solid #b1b1b12d;
 }
 
+@media (max-width: 1024px) {
+  
+}
+
 @media (max-width: 768px) {
   .header {
     display: flex;

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 900px;
   overflow: hidden;
 }
 
@@ -35,7 +35,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 48px;
-  margin-left: 100px;
+  margin-left: 4rem;
 }
 
 .promoTitle {
@@ -56,6 +56,7 @@
 }
 
 .promoLogoContainer {
+  flex-shrink: 0;
   width: 600px;
   height: 700px;
   margin-right: 200px;
@@ -69,12 +70,12 @@
 
 .meschaneInfoSection {
   display: flex;
-  height: 85vh;
+  height: 768px;
   background-color: #F6F4F5;
 }
 
 .stoneStairImgContainer {
-  width: 35%;
+  width: 640px;
   height: 100%;
 }
 
@@ -85,19 +86,25 @@
 }
 
 .meschaninImgContainer {
+  position: relative;
+  width: 500px;
+  height: 100%;
 }
 
 .meschaninImg {
-}
-
-.quotesImgContainer {
-  width: 64px;
-  height: 64px;
+  position: absolute;
+  top: -10%;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.25);
 }
 
 .quotesImg {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  width: 64px;
+  height: 64px;
 }
 
 .meschaneInfoTextContent {
@@ -105,6 +112,7 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  min-width: 500px;
   padding-right: 4rem;
 }
 
@@ -158,6 +166,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  text-align: center;
 }
 
 .tryExcursionsSubtitle {
@@ -415,18 +424,58 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .promoSection {
+    gap: 4rem;
+    height: 1200px;
+  }
+
   .promoContent {
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex: 0.75;
+    gap: 4rem;
   }
 
   .promoTitleContainer {
-    justify-content: center;
     align-items: center;
     margin: 0;
+  }
+
+  .promoTitle {
     text-align: center;
+  }
+
+  .promoLogoContainer {
+    margin: 0;
+  }
+
+  .promoLogo {
+    object-fit: cover;
+  }
+
+  .stoneStairImgContainer {
+    width: 50%;
+  }
+
+  .meschaneInfoTextContent {
+    flex: 0 1 auto;
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .meschaneInfoText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .promoSection {
+    /* height: 768px; */
+  }
+
+  .promoContent {
+    justify-content: center;
+    flex: 0.75;
   }
 
   .promoTitle {
@@ -435,5 +484,25 @@
 
   .promoLogoContainer {
     display: none;
+  }
+
+  .tryExcursionsSection {
+    gap: 3rem;
+    height: auto;
+    padding: 4rem;
+  }
+
+  .tryExcursionsSubtitle {
+    font-size: 2rem;
+  }
+
+  .tryExcursionsTitle {
+    font-size: 3rem;
+  }
+
+  .benefitCardsContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

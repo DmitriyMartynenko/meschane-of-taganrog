@@ -9,9 +9,12 @@
   font-weight: inherit;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .input {
     width: 50%;
     padding: 0.5rem;
   }
+}
+
+@media (max-width: 768px) {
 }

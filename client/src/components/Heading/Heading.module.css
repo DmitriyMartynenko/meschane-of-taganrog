@@ -39,3 +39,13 @@
 .highlight {
   color: #A4834E
 }
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
