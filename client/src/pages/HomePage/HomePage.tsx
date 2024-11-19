@@ -125,7 +125,7 @@ const HomePage = () => {
           </BenefitCard>
         </div>
       </section>
-      <section className={styles.meschaneOfTaganrog}>
+      <section className={styles.meschaneOfTaganrogSection}>
         <p className={styles.meschaneOfTaganrogTitle}>Мещане г. Таганрога</p>
         <div className={styles.meschaneOfTaganrogImagesContainer}>
           <div className={styles.meschaneOfTaganrogImgContainer}>

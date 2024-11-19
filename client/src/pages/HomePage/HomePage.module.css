@@ -1,3 +1,5 @@
+/*  promoSection */
+
 .promoSection {
   position: relative;
   display: flex;
@@ -67,6 +69,8 @@
   height: 100%;
   object-fit: contain;
 }
+
+/* meschaneInfoSection */
 
 .meschaneInfoSection {
   display: flex;
@@ -148,13 +152,16 @@
   text-transform: none;
 }
 
+/* tryExcursionsSection */
+
 .tryExcursionsSection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 5rem;
-  height: 100vh;
-  padding: 8rem 7rem 0 7rem;
+  height: 768px;
+  padding: 8rem;
   background-image: url('../../assets/background2.png');
   background-repeat: no-repeat;
   background-position: right center;
@@ -193,23 +200,28 @@
   width: 100%;
 }
 
-.meschaneOfTaganrog {
+/* meschaneOfTaganrogSection */
+
+.meschaneOfTaganrogSection {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 5rem;
+  height: auto;
   padding: 4rem;
   background-color: #F6F4F5;
 }
 
 .meschaneOfTaganrogTitle {
-  margin: 0 0 8rem 0;
+  margin: 0;
+  /* margin: 0 0 8rem 0; */
   font-size: 3rem;
   font-weight: 500;
 }
 
 .meschaneOfTaganrogImagesContainer {
   display: flex;
-  flex: 1;
   gap: 4rem;
 }
 
@@ -222,6 +234,8 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* ourPartnersSection */
 
 .ourPartnersSection {
   display: flex;
@@ -254,7 +268,10 @@
   color: white;
   font-size: 1.75rem;
   font-weight: 900;
+  text-align: center;
 }
+
+/* reviewsSection */
 
 .reviewsSection {
   display: flex;
@@ -279,6 +296,18 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.arrowLeft,
+.arrowRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  background-color: #A4834E;
+  cursor: pointer;
 }
 
 .paginationContainer {
@@ -307,6 +336,8 @@
   outline: 2px solid #A4834E;
 }
 
+/* goodToKnowSection */
+
 .goodToKnowSection {
   display: flex;
   flex-direction: column;
@@ -324,6 +355,8 @@
   justify-content: space-between;
   gap: 2rem;
 }
+
+/* subscribeSection */
 
 .subscribeSection {
   display: flex;
@@ -344,6 +377,8 @@
 .emailContainer {
   width: 50%;
 }
+
+/* footerSection */
 
 .footerSection {
   display: flex;
@@ -412,18 +447,6 @@
   text-decoration: underline;
 }
 
-.arrowLeft,
-.arrowRight {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 4rem;
-  height: 4rem;
-  border: none;
-  background-color: #A4834E;
-  cursor: pointer;
-}
-
 @media (max-width: 1024px) {
   .promoSection {
     gap: 4rem;
@@ -466,6 +489,20 @@
   .meschaneInfoText {
     font-size: 1.2rem;
   }
+
+  .tryExcursionsSection {
+    height: auto;
+    padding: 4rem;
+  }
+
+  .goodToKnowSection {
+    height: auto;
+  }
+
+  .readMoreContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -504,5 +541,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .reviewsSection {
+    padding: 4rem;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: #A4834E;
+    cursor: pointer;
+  }
+
+  .paginationButton {
+    width: 10px;
+    height: 10px;
+  }
+
+  .paginationButtonActive {
+    width: 20px;
+    height: 20px; 
   }
 }
