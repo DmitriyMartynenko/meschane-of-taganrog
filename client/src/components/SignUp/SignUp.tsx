@@ -14,10 +14,19 @@ const SignUp = (props: SignUp) => {
 
   return (
     <div className={styles.signUp}>
-      {text && <p className={styles.signUpText}>{text}</p>}
+      {text && <p className={styles.signUpTitle}>{text}</p>}
       <div className={styles.orderContainer}>
-        <Input type="text" placeholder={inputPlaceholder} />
-        <Button>{buttonText}</Button>
+        <div className={styles.signUpInputContainer}>
+          <Input
+            type="text"
+            placeholder={inputPlaceholder}
+          />
+        </div>
+        <div className={styles.signUpButtonContainer}>
+          <Button
+            isTextBlack={inputPlaceholder === 'Ваш e-mail' ? true : false}
+          >{buttonText}</Button>
+        </div>
       </div>
     </div>
   );

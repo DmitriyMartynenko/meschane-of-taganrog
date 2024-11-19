@@ -16,6 +16,11 @@
     gap: 2rem;
   }
 
+  .headerButtonContainer {
+    width: 96px;
+    height: auto;
+  }
+
   .logoWithButtonContainer {
     display: flex;
     justify-content: space-between;

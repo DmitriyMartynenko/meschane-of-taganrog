@@ -33,8 +33,6 @@ import {
   readMoreImg3,
   readMoreImg4,
 } from '../../assets/readMoreCardImages';
-import museumMapImg from '../../assets/museumMap.png';
-import mapPointerImg from '../../assets/mapPointer.png';
 
 import styles from './HomePage.module.css';
 
@@ -49,26 +47,44 @@ const HomePage = () => {
         <div className={styles.promoContent}>
           <div className={styles.promoTitleContainer}>
             <h1 className={styles.promoTitle}>Иммерсивные экскурсии</h1>
-            <SignUp
-              inputPlaceholder="+7 (___) ___ __ __"
-              buttonText="Заказать экскурсию"
-            >
-              Записаться на экскурсию
-            </SignUp>
+            <div className={styles.promoSignUpContainer}>
+              <SignUp
+                inputPlaceholder="+7 (___) ___ __ __"
+                buttonText="Заказать экскурсию"
+              >
+                Записаться на экскурсию
+              </SignUp>
+            </div>
           </div>
           <div className={styles.promoLogoContainer}>
-            <img className={styles.promoLogo} src={logo} alt="" />
+            <img
+              className={styles.promoLogo}
+              src={logo}
+              alt=""
+            />
           </div>
         </div>
       </section>
       <section className={styles.meschaneInfoSection}>
         <div className={styles.stoneStairImgContainer}>
-          <img className={styles.stoneStairImg} src={stoneStair} alt="" />
+          <img
+            className={styles.stoneStairImg}
+            src={stoneStair}
+            alt=""
+          />
         </div>
         {!isSquare && !isMobile && (
           <div className={styles.meschaninImgContainer}>
-            <img className={styles.meschaninImg} src={meschanin} alt="" />
-            <img className={styles.quotesImg} src={quotes} alt="" />
+            <img
+              className={styles.meschaninImg}
+              src={meschanin}
+              alt=""
+            />
+            <img
+              className={styles.quotesImg}
+              src={quotes}
+              alt=""
+            />
           </div>
         )}
         <div className={styles.meschaneInfoTextContent}>
@@ -154,7 +170,11 @@ const HomePage = () => {
       <section className={styles.ourPartnersSection}>
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <img className={styles.ourPartnersTGLIAMZimg} src={tgliamz} alt="" />
+          <img
+            className={styles.ourPartnersTGLIAMZimg}
+            src={tgliamz}
+            alt=""
+          />
         </div>
         <p className={styles.ourPartnersText}>
           Таганрогский государственный литературный и историко-архитектурный
@@ -162,13 +182,19 @@ const HomePage = () => {
         </p>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
+        <Heading
+          subtitle="О нас говорят"
+          wordsToHighlight={['Отзывы']}
+        >
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
           <div className={styles.buttonsContainer}>
             <button className={styles.arrowLeft}>
-              <img src={arrowLeft} alt="" />
+              <img
+                src={arrowLeft}
+                alt=""
+              />
             </button>
             <Review
               author="Юлия Воробьева"
@@ -180,7 +206,10 @@ const HomePage = () => {
               помощь на стадии досудебного урегулирования споров.
             </Review>
             <button className={styles.arrowRight}>
-              <img src={arrowRight} alt="" />
+              <img
+                src={arrowRight}
+                alt=""
+              />
             </button>
           </div>
           <div className={styles.paginationContainer}>
@@ -194,7 +223,7 @@ const HomePage = () => {
         </div>
       </section>
       <section className={styles.goodToKnowSection}>
-        <div className={styles.goodToKnowContainer}>
+        <div className={styles.goodToKnowHeadingContainer}>
           <Heading
             subtitle="Наш блог"
             lineBeforeSubtitle={true}
@@ -202,16 +231,29 @@ const HomePage = () => {
           >
             Полезно знать
           </Heading>
-          <Button>Читать больше</Button>
+          <div className={styles.goodToKnowButtonContainer}>
+            <Button isTextBlack={true}>Читать больше</Button>
+          </div>
         </div>
         <div className={styles.readMoreContainer}>
-          <ReadMoreCard imgSrc={readMoreImg1} date="15 апреля">
+          <ReadMoreCard
+            imgSrc={readMoreImg1}
+            date="15 апреля"
+          >
             Как использовать закон в свою пользу?
           </ReadMoreCard>
-          <ReadMoreCard isCompact={true} imgSrc={readMoreImg2} date="09 апреля">
+          <ReadMoreCard
+            isCompact={true}
+            imgSrc={readMoreImg2}
+            date="09 апреля"
+          >
             Библиотека юристов. Что почитать?
           </ReadMoreCard>
-          <ReadMoreCard isCompact={true} imgSrc={readMoreImg3} date="06 марта">
+          <ReadMoreCard
+            isCompact={true}
+            imgSrc={readMoreImg3}
+            date="06 марта"
+          >
             На что обратить внимание в документах?
           </ReadMoreCard>
           <ReadMoreCard
@@ -235,21 +277,14 @@ const HomePage = () => {
           Чтобы всегда быть в курсе мещанских дел
         </p>
         <div className={styles.emailContainer}>
-          <SignUp inputPlaceholder="Ваш e-mail" buttonText="Подписаться" />
+          <SignUp
+            inputPlaceholder="Ваш e-mail"
+            buttonText="Подписаться"
+          />
         </div>
       </section>
       <section className={styles.footerSection}>
         <div className={styles.footerMapContainer}>
-          {/* <img
-            className={styles.museumMapImg}
-            src={museumMapImg}
-            alt=""
-          />
-          <img
-            className={styles.mapPointerImg}
-            src={mapPointerImg}
-            alt=""
-          /> */}
           <iframe
             className={styles.footerMap}
             src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"

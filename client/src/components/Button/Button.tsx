@@ -4,21 +4,21 @@ import { ReactNode } from 'react';
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: 'primary' | '';
-  className?: string;
-  textColor: string;
+  isTextBlack?: boolean;
   onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {
-  const { children, variant = 'primary', className = '', onClick } = props;
+  const { children: text, isTextBlack, onClick } = props;
 
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${styles[className]}`}
+      className={`${styles.button} ${
+        isTextBlack ? styles.buttonTextBlack : ''
+      }`}
       onClick={onClick}
     >
-      {children}
+      {text}
     </button>
   );
 };

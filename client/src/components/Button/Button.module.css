@@ -1,23 +1,17 @@
 .button {
-  width: 40%;
+  width: 100%;
+  height: 100%;
   padding: 1.25rem 0;
   border: 1px solid #E3C37A;
   background-color: transparent;
   color: white;
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
+  font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
 }
 
-@media (max-width: 1024px) {
-  .button {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .headerMenuButton {
-    width: 25%;
-    min-width: 70px;
-  }
+.buttonTextBlack {
+  color: black;
+  font-weight: 400;
 }

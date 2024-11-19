@@ -16,13 +16,29 @@ const ReadMoreCard = (props: ReadMoreCard) => {
 
   return (
     <div className={styles.readMore}>
-     <div className={styles[isCompact ? 'readMoreImgContainerCompact' : 'readMoreImgContainer']}>
-        <img className={styles.readMoreImg} src={imgSrc} alt="" />
+      <div
+        className={
+          styles[
+            isCompact ? 'readMoreImgContainerCompact' : 'readMoreImgContainer'
+          ]
+        }
+      >
+        <img
+          className={styles.readMoreImg}
+          src={imgSrc}
+          alt=""
+        />
       </div>
       <div className={styles.readMoreTextContainer}>
         <p className={styles.readMoreDate}>{date}</p>
-        <p className={styles[isCompact ? 'readMoreTextCompact' : 'readMoreText']}>{title}</p>
-        <Button>Читать</Button>
+        <p
+          className={styles[isCompact ? 'readMoreTextCompact' : 'readMoreText']}
+        >
+          {title}
+        </p>
+        <div className={styles.readMoreCardButtonContainer}>
+          <Button isTextBlack={isCompact}>Читать</Button>
+        </div>
       </div>
     </div>
   );

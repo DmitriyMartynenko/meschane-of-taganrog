@@ -25,11 +25,15 @@ const Header = (props: HeaderProps) => {
       {isMobile && (
         <div className={styles.logoWithButtonContainer}>
           <div className={styles.logoContainer}>
-            <img className={styles.logo} src={logo} alt="" />
+            <img
+              className={styles.logo}
+              src={logo}
+              alt='Логотип проекта "Мещане Таганрога"'
+            />
           </div>
-          <Button className="headerMenuButton" onClick={toggleMenu}>
-            Меню
-          </Button>
+          <div className={styles.headerButtonContainer}>
+            <Button onClick={toggleMenu}>Меню</Button>
+          </div>
         </div>
       )}
 
