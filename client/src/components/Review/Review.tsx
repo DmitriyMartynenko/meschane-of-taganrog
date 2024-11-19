@@ -38,7 +38,7 @@ const Review = (props: ReviewProps) => {
           alt=""
         />
       </div>
-      <div className={styles.textContainer}>
+      <div className={styles.reviewTextContainer}>
         <p className={styles.reviewText}>{text}</p>
         <div className={styles.authorInfoContainer}>
           <p className={styles.reviewAuthor}>{author}</p>

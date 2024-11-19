@@ -7,7 +7,7 @@
 .signUpTitle {
   margin: 0;
   padding-left: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   /* font-size: 1.25rem; */
   font-size: 1rem;
   font-weight: 300;
@@ -21,11 +21,11 @@
 }
 
 .signUpInputContainer {
-  width: 60%;
+  width: 55%;
 }
 
 .signUpButtonContainer {
-  width: 40%;
+  width: 45%;
 }
 
 @media (max-width: 1024px) {

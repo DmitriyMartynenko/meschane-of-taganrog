@@ -58,7 +58,7 @@
 }
 
 .promoSignUpContainer {
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .promoLogoContainer {
@@ -77,12 +77,12 @@
 
 .meschaneInfoSection {
   display: flex;
-  height: 768px;
+  height: 594px;
   background-color: #F6F4F5;
 }
 
 .stoneStairImgContainer {
-  width: 640px;
+  width: 517px;
   height: 100%;
 }
 
@@ -94,24 +94,24 @@
 
 .meschaninImgContainer {
   position: relative;
-  width: 500px;
+  min-width: 462px;
   height: 100%;
 }
 
 .meschaninImg {
   position: absolute;
-  top: -10%;
+  top: -20%;
   width: 100%;
-  height: 100%;
-  transform: scale(1.25);
+  height: 728px;
+  /* transform: scale(1.25); */
 }
 
 .quotesImg {
   position: absolute;
   top: 50%;
   left: 80%;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
 }
 
 .meschaneInfoTextContent {
@@ -133,9 +133,10 @@
 
 .meschaneInfoText {
   margin: 2rem 0 3rem 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 150%;
+  letter-spacing: 1px;
 }
 
 .meschaneInfoAuthor {
@@ -144,13 +145,14 @@
   gap: 0.75rem;
   margin: 0;
   color: black;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
 .meschaneInfoJobTitle {
   color: #B1B1B1;
+  font-size: 1rem;
   font-weight: 300;
   text-transform: none;
 }
@@ -160,11 +162,10 @@
 .tryExcursionsSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 5rem;
-  height: 768px;
-  padding: 8rem;
+  gap: 3.625rem;
+  height: 694px;
+  padding: 4rem;
   background-image: url('../../assets/background2.png');
   background-repeat: no-repeat;
   background-position: right center;
@@ -182,13 +183,13 @@
 .tryExcursionsSubtitle {
   margin: 0;
   color: #B1B1B1;
-  font-size: 3rem;
+  font-size: 2.375rem;
   font-weight: 300;
 }
 
 .tryExcursionsTitle {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -199,6 +200,7 @@
 
 .benefitCardsContainer {
   display: flex;
+  justify-content: center;
   gap: 2rem;
   width: 100%;
 }
@@ -207,28 +209,28 @@
 
 .meschaneOfTaganrogSection {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
-  height: auto;
-  padding: 4rem;
+  gap: 4rem;
+  height: 465px;
+  padding: 0 2rem;
   background-color: #F6F4F5;
 }
 
 .meschaneOfTaganrogTitle {
-  margin: 0;
-  /* margin: 0 0 8rem 0; */
-  font-size: 3rem;
+  margin: 0 0 4rem 0;
+  font-size: 2rem;
   font-weight: 500;
 }
 
 .meschaneOfTaganrogImagesContainer {
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .meschaneOfTaganrogImgContainer {
+  width: 280px;
+  height: 414px;
   flex: 1;
 }
 
@@ -243,33 +245,38 @@
 .ourPartnersSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 3rem;
-  padding: 2rem 2rem 4rem 2rem;
+  gap: 2rem;
+  height: 482px;
+  padding: 2rem;
+  background-image: url('../../assets/ourPartnersBackground.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #232228;
 }
 
 .ourPartnersTitle {
   margin: 0;
-  font-size: 4rem;
+  font-size: 3.25rem;
+  font-weight: 900;
   color: #A4834E;
 }
 
 .ourPartnersImgContainer {
-  width: 75%;
+  width: 1196px;
   height: auto;
 }
 
 .ourPartnersTGLIAMZimg {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .ourPartnersText {
   margin: 0;
   color: white;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
 }
@@ -282,7 +289,7 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  padding: 6rem 4rem 8rem 4rem;
+  padding: 6rem;
   background-color: #F6F4F5;
 }
 
@@ -296,18 +303,19 @@
 
 .buttonsContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 8rem;
   width: 100%;
 }
 
-.arrowLeft,
-.arrowRight {
+.arrowLeftButton,
+.arrowRightButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
+  width: 48px;
+  height: 48px;
   border: none;
   background-color: #A4834E;
   cursor: pointer;
@@ -323,8 +331,8 @@
 }
 
 .paginationButton {
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 12px;
   border: none;
   border-radius: 50%;
   background-color: white;
@@ -332,9 +340,9 @@
 }
 
 .paginationButtonActive {
-  width: 24px;
-  height: 24px;
-  border: 5px solid #F6F4F5;
+  width: 12px;
+  height: 18px;
+  border: 3px solid #F6F4F5;
   background-color: #A4834E;
   outline: 2px solid #A4834E;
 }
@@ -344,13 +352,15 @@
 .goodToKnowSection {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 3rem;
-  padding: 6rem;
+  padding: 4rem;
 }
 
 .goodToKnowHeadingContainer {
   display: flex;
   justify-content: space-between;
+  width: 85%;
 }
 
 .goodToKnowButtonContainer {
@@ -358,10 +368,11 @@
   height: 60px;
 }
 
-.readMoreContainer {
+.readMoreCardsContainer {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  width: 85%;
 }
 
 /* subscribeSection */
@@ -371,19 +382,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   padding: 4rem;
   background-color: #F6F4F5;
 }
 
+.subscribeSignUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 50%;
+}
+
 .subscribeText {
+  margin: 0;
   color: #232228;
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: 300;
 }
 
-.emailContainer {
-  width: 50%;
+.subscribeEmailContainer {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.subscribeInputContainer {
+  width: 75%;
+}
+
+.subscribeButtonContainer {
+  width: 25%;
 }
 
 /* footerSection */
