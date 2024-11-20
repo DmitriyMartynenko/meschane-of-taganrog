@@ -5,6 +5,11 @@
   border: none;
   font-size: 0.875rem;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 0.695rem;
+    padding: 0.875rem;
+  }
 }
 .input::placeholder {
   color: #B1B1B1;

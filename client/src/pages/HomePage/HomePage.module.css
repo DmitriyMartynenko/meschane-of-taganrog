@@ -30,13 +30,18 @@
   justify-content: space-evenly;
   width: 100%;
   padding: 0 2rem 3rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 2rem;
+  }
 }
 
 .promoTitleContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 48px;
+  gap: 3rem;
   margin-bottom: 4rem;
 
   @media (max-width: 1024px) {
@@ -60,6 +65,10 @@
     0px -2px 3px rgba(0, 0, 0, 0.7),
     2px 0px 3px rgba(0, 0, 0, 0.7),
     -2px 0px 3px rgba(0, 0, 0, 0.7);
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 
@@ -80,6 +89,10 @@
     width: 370px;
     height: 460px;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .promoLogo {
@@ -92,7 +105,6 @@
 
 .meschaneInfoSection {
   display: flex;
-  height: 594px;
   background-color: #F6F4F5;
 }
 
@@ -102,6 +114,10 @@
 
   @media (max-width: 1024px) {
     width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -148,6 +164,11 @@
     width: 50%;
     padding: 2rem;
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    min-width: 0;
+  }
 }
 
 .meschaneInfoLine {
@@ -164,6 +185,11 @@
   font-weight: 300;
   line-height: 150%;
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    text-align: center;
+  }
 }
 
 .meschaneInfoAuthor {
@@ -175,6 +201,11 @@
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    text-align: center;
+  }
 }
 
 .meschaneInfoJobTitle {
@@ -182,6 +213,10 @@
   font-size: 1rem;
   font-weight: 300;
   text-transform: none;
+
+  @media screen {
+    font-size: 0.875rem;
+  }
 }
 
 /* tryExcursionsSection */
@@ -195,6 +230,11 @@
   background-image: url('../../assets/background2.png');
   background-repeat: no-repeat;
   background-position: right center;
+
+  @media (max-width: 768px) {
+    gap: 2.75rem;
+    padding: 2rem;
+  }
 }
 
 .tryExcursionsHeadingContainer {
@@ -204,6 +244,10 @@
   align-items: center;
   gap: 1rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    gap: 0.875rem;
+  }
 }
 
 .tryExcursionsSubtitle {
@@ -211,6 +255,10 @@
   color: #B1B1B1;
   font-size: 2.375rem;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 1.895rem;
+  }
 }
 
 .tryExcursionsTitle {
@@ -218,6 +266,10 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .highlightedLetter {
@@ -229,6 +281,12 @@
   justify-content: center;
   gap: 2rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
 }
 
 /* meschaneOfTaganrogSection */
@@ -240,6 +298,12 @@
   gap: 4rem;
   padding: 2rem;
   background-color: #F6F4F5;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 1.6rem;
+  }
 }
 
 .meschaneOfTaganrogTitle {
@@ -247,11 +311,23 @@
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    font-size: 1.6rem;
+  }
 }
 
 .meschaneOfTaganrogImagesContainer {
   display: flex;
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
 }
 
 .meschaneOfTaganrogImgContainer {
@@ -262,6 +338,11 @@
   @media (max-width: 1024px) {
     width: 180px;
     height: 314px;
+  }
+
+  @media (max-width: 768px) {
+    width: 250px;
+    height: 364px;
   }
 }
 
@@ -287,9 +368,14 @@
 
 .ourPartnersTitle {
   margin: 0;
+  color: #A4834E;
   font-size: 3.25rem;
   font-weight: 900;
-  color: #A4834E;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .ourPartnersImgContainer {
@@ -310,6 +396,10 @@
   font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
 }
 
 /* reviewsSection */
@@ -326,6 +416,11 @@
   @media (max-width: 1024px) {
     padding: 4rem;
   }
+
+  @media (max-width: 768px) {
+    gap: 3.2rem;
+    padding: 2rem 1rem;
+  }
 }
 
 .reviewContainer {
@@ -334,6 +429,10 @@
   align-items: center;
   gap: 4rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 }
 
 .buttonsContainer {
@@ -342,6 +441,10 @@
   align-items: center;
   gap: 8rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 }
 
 .arrowLeftButton,
@@ -358,6 +461,11 @@
   @media (max-width: 1024px) {
     height: 40px;
   }
+
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .paginationContainer {
@@ -367,6 +475,10 @@
   align-items: center;
   gap: 1rem;
   width: 25%;
+
+  @media (max-width: 768px) {
+    width: 75%;
+  }
 }
 
 .paginationButton {
@@ -376,6 +488,10 @@
   border-radius: 50%;
   background-color: white;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    height: 10px;
+  }
 }
 
 .paginationButtonActive {
@@ -384,6 +500,12 @@
   border: 3px solid #F6F4F5;
   background-color: #A4834E;
   outline: 2px solid #A4834E;
+
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 12px;
+    border: 1px solid #F6F4F5;
+  }
 }
 
 /* goodToKnowSection */
@@ -548,127 +670,4 @@
 
 .footerContactInfoEmailLink {
   text-decoration: underline;
-}
-
-/* @media (max-width: 1024px) {
-  .promoSection {
-    gap: 4rem;
-    height: 1200px;
-  }
-
-  .promoContent {
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-  }
-
-  .promoTitleContainer {
-    align-items: center;
-    margin: 0;
-  }
-
-  .promoTitle {
-    text-align: center;
-  }
-
-  .promoLogoContainer {
-    margin: 0;
-  }
-
-  .promoLogo {
-    object-fit: cover;
-  }
-
-  .stoneStairImgContainer {
-    width: 50%;
-  }
-
-  .meschaneInfoTextContent {
-    flex: 0 1 auto;
-    width: 50%;
-    padding: 2rem;
-  }
-
-  .meschaneInfoText {
-    font-size: 1.2rem;
-  }
-
-  .tryExcursionsSection {
-    height: auto;
-    padding: 4rem;
-  }
-
-  .goodToKnowSection {
-    height: auto;
-  }
-
-  .readMoreContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-} */
-
-@media (max-width: 768px) {
-  .promoSection {
-    gap: 0;
-  }
-
-  .promoContent {
-    justify-content: center;
-    flex: 0.75;
-  }
-
-  .promoTitle {
-    font-size: 3rem;
-  }
-
-  .promoLogoContainer {
-    display: none;
-  }
-
-  .tryExcursionsSection {
-    gap: 3rem;
-    height: auto;
-    padding: 4rem;
-  }
-
-  .tryExcursionsSubtitle {
-    font-size: 2rem;
-  }
-
-  .tryExcursionsTitle {
-    font-size: 3rem;
-  }
-
-  .benefitCardsContainer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .reviewsSection {
-    padding: 4rem;
-  }
-
-  .arrowLeft,
-  .arrowRight {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    background-color: #A4834E;
-    cursor: pointer;
-  }
-
-  .paginationButton {
-    width: 10px;
-    height: 10px;
-  }
-
-  .paginationButtonActive {
-    width: 20px;
-    height: 20px;
-  }
 }

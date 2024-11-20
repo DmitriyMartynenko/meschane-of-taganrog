@@ -8,9 +8,15 @@
   font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+  }
 }
 
 .buttonTextBlack {
+  padding: 0.875rem;
   color: black;
   font-weight: 500;
 }
