@@ -83,7 +83,7 @@
   text-align: center;
 }
 
-.authorInfoContainer {
+.reviewAuthorInfoContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;

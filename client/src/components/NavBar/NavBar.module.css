@@ -1,22 +1,22 @@
-.menu {
+.navMenu {
   display: flex;
   justify-content: space-evenly;
   gap: 2rem;
   padding: 2rem;
 }
 
-.linksContainer {
+.navLinksContainer {
   display: flex;
   flex-direction: row;
   gap: 2rem;
 }
 
 @media (max-width: 768px) {
-  .menu {
+  .navMenu {
     padding: 0;
   }
 
-  .linksContainer {
+  .navLinksContainer {
     flex-direction: column;
   }
 }

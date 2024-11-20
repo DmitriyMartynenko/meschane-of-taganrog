@@ -58,18 +58,34 @@ const HomePage = () => {
             </div>
           </div>
           <div className={styles.promoLogoContainer}>
-            <img className={styles.promoLogo} src={logo} alt="" />
+            <img
+              className={styles.promoLogo}
+              src={logo}
+              alt='Логотип проекта "Мещане Таганрога"'
+            />
           </div>
         </div>
       </section>
       <section className={styles.meschaneInfoSection}>
         <div className={styles.stoneStairImgContainer}>
-          <img className={styles.stoneStairImg} src={stoneStair} alt="" />
+          <img
+            className={styles.stoneStairImg}
+            src={stoneStair}
+            alt="Таганрогская Каменная лестница"
+          />
         </div>
         {!isSquare && !isMobile && (
           <div className={styles.meschaninImgContainer}>
-            <img className={styles.meschaninImg} src={meschanin} alt="" />
-            <img className={styles.quotesImg} src={quotes} alt="" />
+            <img
+              className={styles.meschaninImg}
+              src={meschanin}
+              alt="Мещанин"
+            />
+            <img
+              className={styles.quotesImg}
+              src={quotes}
+              alt="Кавычки"
+            />
           </div>
         )}
         <div className={styles.meschaneInfoTextContent}>
@@ -133,21 +149,21 @@ const HomePage = () => {
             <img
               className={styles.meschaneOfTaganrogImg}
               src={meschane1}
-              alt=""
+              alt="Мещане"
             />
           </div>
           <div className={styles.meschaneOfTaganrogImgContainer}>
             <img
               className={styles.meschaneOfTaganrogImg}
               src={meschane2}
-              alt=""
+              alt="Мещане"
             />
           </div>
           <div className={styles.meschaneOfTaganrogImgContainer}>
             <img
               className={styles.meschaneOfTaganrogImg}
               src={meschane3}
-              alt=""
+              alt="Мещане"
             />
           </div>
         </div>
@@ -155,7 +171,11 @@ const HomePage = () => {
       <section className={styles.ourPartnersSection}>
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <img className={styles.ourPartnersTGLIAMZimg} src={tgliamz} alt="" />
+          <img
+            className={styles.ourPartnersTGLIAMZimg}
+            src={tgliamz}
+            alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
+          />
         </div>
         <p className={styles.ourPartnersText}>
           Таганрогский государственный литературный и историко-архитектурный
@@ -163,13 +183,20 @@ const HomePage = () => {
         </p>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
+        <Heading
+          subtitle="О нас говорят"
+          wordsToHighlight={['Отзывы']}
+        >
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
           <div className={styles.buttonsContainer}>
             <button className={styles.arrowLeftButton}>
-              <img className={styles.arrowLeftImg} src={arrowLeft} alt="" />
+              <img
+                className={styles.arrowLeftImg}
+                src={arrowLeft}
+                alt="Стрелка налево"
+              />
             </button>
             <Review
               author="Юлия Воробьева"
@@ -181,7 +208,11 @@ const HomePage = () => {
               помощь на стадии досудебного урегулирования споров.
             </Review>
             <button className={styles.arrowRightButton}>
-              <img className={styles.arrowRightImg} src={arrowRight} alt="" />
+              <img
+                className={styles.arrowRightImg}
+                src={arrowRight}
+                alt="Стрелка направо"
+              />
             </button>
           </div>
           <div className={styles.paginationContainer}>
@@ -208,19 +239,34 @@ const HomePage = () => {
           </div>
         </div>
         <div className={styles.readMoreCardsContainer}>
-          <ReadMoreCard imgSrc={readMoreImg1} date="15 апреля">
+          <ReadMoreCard
+            date="15 апреля"
+            imgSrc={readMoreImg1}
+            imgAlt="Правосудие"
+          >
             Как использовать закон в свою пользу?
           </ReadMoreCard>
-          <ReadMoreCard isCompact={true} imgSrc={readMoreImg2} date="09 апреля">
+          <ReadMoreCard
+            isCompact={true}
+            date="09 апреля"
+            imgSrc={readMoreImg2}
+            imgAlt="Скульптура"
+          >
             Библиотека юристов. Что почитать?
           </ReadMoreCard>
-          <ReadMoreCard isCompact={true} imgSrc={readMoreImg3} date="06 марта">
+          <ReadMoreCard
+            isCompact={true}
+            date="06 марта"
+            imgSrc={readMoreImg3}
+            imgAlt="Документы"
+          >
             На что обратить внимание в документах?
           </ReadMoreCard>
           <ReadMoreCard
             isCompact={true}
-            imgSrc={readMoreImg4}
             date="23 февраля"
+            imgSrc={readMoreImg4}
+            imgAlt="Юриспруденция"
           >
             Залог успешных дел наших юристов
           </ReadMoreCard>
@@ -255,39 +301,51 @@ const HomePage = () => {
             src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"
           ></iframe>
         </div>
-        <div className={styles.footerContactInfoContainer}>
-          <Heading
-            subtitle="На связи с вами"
-            lineBeforeSubtitle={true}
-            wordsToHighlight={['Контактная']}
-          >
-            Контактная информация
-          </Heading>
-          <div className={styles.footerContactInfoTextContainer}>
-            <p className={styles.footerContactInfoPhoneNumber}>
-              Телефон:{' '}
-              <span className={styles.footerContactInfoHighlighted}>
-                (8634) 61-14-66
-              </span>
-            </p>
-            <p className={styles.footerContactInfoAddress}>
-              Адрес:{' '}
-              <span className={styles.footerContactInfoHighlighted}>
-                г. Таганрог, ул. Октябрьская, 9
-              </span>
-            </p>
-            <p className={styles.footerContactInfoEmail}>
-              e-mail:{' '}
-              <a className={styles.footerContactInfoEmailLink}>
-                tgliamz.muzei@yandex.ru
-              </a>
-            </p>
+        <div className={styles.footerContactInfoWrapper}>
+          <div className={styles.footerContactInfoContainer}>
+            <Heading
+              subtitle="На связи с вами"
+              lineBeforeSubtitle={true}
+              wordsToHighlight={['Контактная']}
+              whiteTitleColor={true}
+            >
+              Контактная информация
+            </Heading>
+            <div className={styles.footerContactInfoTextContainer}>
+              <div className={styles.footerParagraphsContainer}>
+                <p className={styles.footerContactInfoPhoneNumber}>
+                  Телефон:{' '}
+                  <span className={styles.footerContactInfoHighlighted}>
+                    (8634) 61-14-66
+                  </span>
+                </p>
+                <p className={styles.footerContactInfoAddress}>
+                  Адрес:{' '}
+                  <span className={styles.footerContactInfoHighlighted}>
+                    г. Таганрог, ул. Октябрьская, 9
+                  </span>
+                </p>
+              </div>
+              <div className={styles.footerParagraphsContainer}>
+                <p className={styles.footerContactInfoEmail}>
+                  e-mail:{' '}
+                  <a
+                    className={`${styles.footerContactInfoEmail}, ${styles.footerContactInfoEmailLink}`}
+                  >
+                    tgliamz.muzei@yandex.ru
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className={styles.footerSignUpContainer}>
+              <SignUp
+                inputPlaceholder="+7 (___) ___ __ __"
+                buttonText="Заказать звонок"
+              >
+                Нужна консультация?
+              </SignUp>
+            </div>
           </div>
-          <SignUp
-            text="Нужна консультация?"
-            inputPlaceholder="+7 (___) ___ __ __"
-            buttonText="Заказать звонок"
-          />
         </div>
       </section>
     </>

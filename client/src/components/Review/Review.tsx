@@ -21,26 +21,26 @@ const Review = (props: ReviewProps) => {
         <img
           className={styles.reviewAuthorImg}
           src={authorImgSrc}
-          alt=""
+          alt="Автор отзыва"
         />
       </div>
       <div className={styles.quotesImg1Container}>
         <img
           className={styles.quotesImg1}
           src={qoutes}
-          alt=""
+          alt="Кавычки"
         />
       </div>
       <div className={styles.quotesImg2Container}>
         <img
           className={styles.quotesImg2}
           src={qoutes}
-          alt=""
+          alt="Кавычки"
         />
       </div>
       <div className={styles.reviewTextContainer}>
         <p className={styles.reviewText}>{text}</p>
-        <div className={styles.authorInfoContainer}>
+        <div className={styles.reviewAuthorInfoContainer}>
           <p className={styles.reviewAuthor}>{author}</p>
           <p className={styles.reviewAuthorJobTitle}>{authorJobTitle}</p>
         </div>

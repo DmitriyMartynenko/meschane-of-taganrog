@@ -15,14 +15,14 @@
   justify-content: center;
 }
 
-.line {
+.headingLine {
   width: 45px;
   height: 1px;
   margin-right: 1rem;
   background-color: #B1B1B1;
 }
 
-.subtitle {
+.headingSubtitle {
   margin: 0;
   color: #B1B1B1;
   /* font-size: 1.25rem; */
@@ -30,23 +30,31 @@
   font-weight: 300;
 }
 
-.title {
+.headingTitle {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 200;
   text-transform: uppercase;
 }
 
+.whiteHeadingTitle {
+  color: white
+}
+
 .highlight {
   color: #A4834E
 }
 
+.lightHighlight {
+  color: #E3C37A
+}
+
 @media (max-width: 1024px) {
-  .title {
+  .headingTitle {
     font-size: 3rem;
   }
 
-  .subtitle {
+  .headingSubtitle {
     font-size: 1rem;
   }
 }

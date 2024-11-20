@@ -9,14 +9,14 @@ type HeaderLinkProps = {
 };
 
 const HeaderLink = (props: HeaderLinkProps) => {
-  const { to, children } = props;
+  const { children: text, to } = props;
 
   return (
     <NavLink
-      className={styles.link}
+      className={styles.headerLink}
       to={to}
     >
-      {children}
+      {text}
     </NavLink>
   );
 };

@@ -15,7 +15,7 @@ const SignUp = (props: SignUp) => {
   return (
     <div className={styles.signUp}>
       {text && <p className={styles.signUpTitle}>{text}</p>}
-      <div className={styles.orderContainer}>
+      <div className={styles.signUpOrderContainer}>
         <div className={styles.signUpInputContainer}>
           <Input
             type="text"

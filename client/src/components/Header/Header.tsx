@@ -23,10 +23,10 @@ const Header = (props: HeaderProps) => {
   return (
     <header className={styles.header}>
       {isMobile && (
-        <div className={styles.logoWithButtonContainer}>
-          <div className={styles.logoContainer}>
+        <div className={styles.headerLogoWithButtonContainer}>
+          <div className={styles.headerLogoContainer}>
             <img
-              className={styles.logo}
+              className={styles.headerLogo}
               src={logo}
               alt='Логотип проекта "Мещане Таганрога"'
             />
@@ -39,7 +39,7 @@ const Header = (props: HeaderProps) => {
 
       {(isMenuOpen || !isMobile) && <NavBar />}
 
-      <hr className={styles.hr} />
+      <hr className={styles.headerHr} />
     </header>
   );
 };

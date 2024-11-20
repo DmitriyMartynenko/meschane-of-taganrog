@@ -7,14 +7,16 @@ type HeadingProps = {
   subtitle?: string;
   lineBeforeSubtitle?: boolean;
   wordsToHighlight?: string[];
+  whiteTitleColor?: boolean; 
 };
 
 const Heading = (props: HeadingProps) => {
   const {
-    subtitle,
-    lineBeforeSubtitle = false,
-    wordsToHighlight,
     children: title,
+    subtitle,
+    lineBeforeSubtitle,
+    wordsToHighlight,
+    whiteTitleColor,
   } = props;
 
   return (
@@ -29,14 +31,14 @@ const Heading = (props: HeadingProps) => {
             ]
           }
         >
-          {lineBeforeSubtitle && <span className={styles.line}></span>}
-          <p className={styles.subtitle}>{subtitle}</p>
+          {lineBeforeSubtitle && <span className={styles.headingLine}></span>}
+          <p className={styles.headingSubtitle}>{subtitle}</p>
         </div>
       )}
-      <h1 className={styles.title}>
+      <h1 className={`${styles.headingTitle} ${whiteTitleColor ? styles.whiteHeadingTitle : ''}`}>
         {title.split(' ').map((word) => {
           if (wordsToHighlight?.includes(word))
-            return <span className={styles.highlight}>{word} </span>;
+            return <span className={`${styles.highlight} ${whiteTitleColor ? styles.lightHighlight : ''}`}>{word} </span>;
           return <span>{word} </span>;
         })}
       </h1>

@@ -6,33 +6,34 @@ import styles from './ReadMoreCard.module.css';
 
 type ReadMoreCard = {
   children: ReactNode;
+  date: string;
   isCompact?: boolean;
   imgSrc: string;
-  date: string;
+  imgAlt: string;
 };
 
 const ReadMoreCard = (props: ReadMoreCard) => {
-  const { children: title, isCompact, imgSrc, date } = props;
+  const { children: title, date, isCompact, imgSrc, imgAlt } = props;
 
   return (
-    <div className={styles.readMore}>
+    <div className={styles.readMoreCard}>
       <div
         className={
           styles[
-            isCompact ? 'readMoreImgContainerCompact' : 'readMoreImgContainer'
+            isCompact ? 'readMoreCardImgContainerCompact' : 'readMoreCardImgContainer'
           ]
         }
       >
         <img
-          className={styles.readMoreImg}
+          className={styles.readMoreCardImg}
           src={imgSrc}
-          alt=""
+          alt={imgAlt}
         />
       </div>
-      <div className={styles.readMoreTextContainer}>
-        <p className={styles.readMoreDate}>{date}</p>
+      <div className={styles.readMoreCardTextContainer}>
+        <p className={styles.readMoreCardDate}>{date}</p>
         <p
-          className={styles[isCompact ? 'readMoreTextCompact' : 'readMoreText']}
+          className={styles[isCompact ? 'readMoreCardTextCompact' : 'readMoreCardText']}
         >
           {title}
         </p>
