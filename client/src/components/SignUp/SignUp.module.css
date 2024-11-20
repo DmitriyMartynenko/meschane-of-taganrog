@@ -27,30 +27,3 @@
 .signUpButtonContainer {
   width: 45%;
 }
-
-@media (max-width: 1024px) {
-  .signUp {
-    align-items: center;
-    width: 75%;
-    margin: 0;
-  }
-
-  .signUpTitle {
-    margin: 0;
-  }
-
-  .signUpOrderContainer {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .signUpTitle {
-    margin: 0;
-  }
-
-  .signUpOrderContainer {
-    width: 100%;
-    justify-content: center;
-  }
-}

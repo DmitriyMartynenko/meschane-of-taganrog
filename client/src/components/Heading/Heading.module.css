@@ -48,13 +48,3 @@
 .lightHighlight {
   color: #E3C37A
 }
-
-@media (max-width: 1024px) {
-  .headingTitle {
-    font-size: 3rem;
-  }
-
-  .headingSubtitle {
-    font-size: 1rem;
-  }
-}

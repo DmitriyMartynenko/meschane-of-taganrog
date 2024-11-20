@@ -74,20 +74,18 @@ const HomePage = () => {
             alt="Таганрогская Каменная лестница"
           />
         </div>
-        {!isSquare && !isMobile && (
-          <div className={styles.meschaninImgContainer}>
-            <img
-              className={styles.meschaninImg}
-              src={meschanin}
-              alt="Мещанин"
-            />
-            <img
-              className={styles.quotesImg}
-              src={quotes}
-              alt="Кавычки"
-            />
-          </div>
-        )}
+        <div className={styles.meschaninImgContainer}>
+          <img
+            className={styles.meschaninImg}
+            src={meschanin}
+            alt="Мещанин"
+          />
+          <img
+            className={styles.quotesImg}
+            src={quotes}
+            alt="Кавычки"
+          />
+        </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
             subtitle="Слово мещанину:"
@@ -226,50 +224,52 @@ const HomePage = () => {
         </div>
       </section>
       <section className={styles.goodToKnowSection}>
-        <div className={styles.goodToKnowHeadingContainer}>
-          <Heading
-            subtitle="Наш блог"
-            lineBeforeSubtitle={true}
-            wordsToHighlight={['Полезно']}
-          >
-            Полезно знать
-          </Heading>
-          <div className={styles.goodToKnowButtonContainer}>
-            <Button isTextBlack={true}>Читать больше</Button>
+        <div className={styles.goodToKnowWrapper}>
+          <div className={styles.goodToKnowHeadingContainer}>
+            <Heading
+              subtitle="Наш блог"
+              lineBeforeSubtitle={true}
+              wordsToHighlight={['Полезно']}
+            >
+              Полезно знать
+            </Heading>
+            <div className={styles.goodToKnowButtonContainer}>
+              <Button isTextBlack={true}>Читать больше</Button>
+            </div>
           </div>
-        </div>
-        <div className={styles.readMoreCardsContainer}>
-          <ReadMoreCard
-            date="15 апреля"
-            imgSrc={readMoreImg1}
-            imgAlt="Правосудие"
-          >
-            Как использовать закон в свою пользу?
-          </ReadMoreCard>
-          <ReadMoreCard
-            isCompact={true}
-            date="09 апреля"
-            imgSrc={readMoreImg2}
-            imgAlt="Скульптура"
-          >
-            Библиотека юристов. Что почитать?
-          </ReadMoreCard>
-          <ReadMoreCard
-            isCompact={true}
-            date="06 марта"
-            imgSrc={readMoreImg3}
-            imgAlt="Документы"
-          >
-            На что обратить внимание в документах?
-          </ReadMoreCard>
-          <ReadMoreCard
-            isCompact={true}
-            date="23 февраля"
-            imgSrc={readMoreImg4}
-            imgAlt="Юриспруденция"
-          >
-            Залог успешных дел наших юристов
-          </ReadMoreCard>
+          <div className={styles.readMoreCardsContainer}>
+            <ReadMoreCard
+              date="15 апреля"
+              imgSrc={readMoreImg1}
+              imgAlt="Правосудие"
+            >
+              Как использовать закон в свою пользу?
+            </ReadMoreCard>
+            <ReadMoreCard
+              isCompact={true}
+              date="09 апреля"
+              imgSrc={readMoreImg2}
+              imgAlt="Скульптура"
+            >
+              Библиотека юристов. Что почитать?
+            </ReadMoreCard>
+            <ReadMoreCard
+              isCompact={true}
+              date="06 марта"
+              imgSrc={readMoreImg3}
+              imgAlt="Документы"
+            >
+              На что обратить внимание в документах?
+            </ReadMoreCard>
+            <ReadMoreCard
+              isCompact={true}
+              date="23 февраля"
+              imgSrc={readMoreImg4}
+              imgAlt="Юриспруденция"
+            >
+              Залог успешных дел наших юристов
+            </ReadMoreCard>
+          </div>
         </div>
       </section>
       <section className={styles.subscribeSection}>

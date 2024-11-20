@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 4rem;
-  width: 308px;
+  max-width: 308px;
   height: 430px;
   z-index: 1;
 }
