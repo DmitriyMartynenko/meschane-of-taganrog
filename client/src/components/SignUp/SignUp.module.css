@@ -3,8 +3,13 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  @media (max-width: 1024px) {
+    gap: 1rem;
+  }
+
   @media (max-width: 768px) {
     align-items: center;
+    gap: 0.75rem;
   }
 }
 
@@ -18,7 +23,7 @@
 
   @media (max-width: 768px) {
     padding: 0;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -26,6 +31,10 @@
   display: flex;
   gap: 0.75rem;
   width: 100%;
+
+  @media (max-width: 1024px) {
+    gap: 0.5rem;
+  }
 }
 
 .signUpInputContainer {

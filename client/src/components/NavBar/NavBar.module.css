@@ -3,20 +3,27 @@
   justify-content: space-evenly;
   gap: 2rem;
   padding: 2rem;
+
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .navLinksContainer {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-}
 
-@media (max-width: 768px) {
-  .navMenu {
-    padding: 0;
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
   }
 
-  .navLinksContainer {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 }
