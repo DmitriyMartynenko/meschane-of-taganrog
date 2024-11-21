@@ -233,9 +233,11 @@ const HomePage = () => {
             >
               Полезно знать
             </Heading>
-            <div className={styles.goodToKnowButtonContainer}>
-              <Button isTextBlack={true}>Читать больше</Button>
-            </div>
+            {!isMobile && (
+              <div className={styles.goodToKnowButtonContainer}>
+                <Button isTextBlack={true}>Читать больше</Button>
+              </div>
+            )}
           </div>
           <div className={styles.readMoreCardsContainer}>
             <ReadMoreCard
@@ -270,6 +272,11 @@ const HomePage = () => {
               Залог успешных дел наших юристов
             </ReadMoreCard>
           </div>
+          {isMobile && (
+            <div className={styles.goodToKnowButtonContainer}>
+              <Button isTextBlack={true}>Читать больше</Button>
+            </div>
+          )}
         </div>
       </section>
       <section className={styles.subscribeSection}>
@@ -348,6 +355,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <div className={styles.allRightsReservedContainer}>
+        <p className={styles.allRightsReserved}>© Все права защищены 2024</p>
+      </div>
     </>
   );
 };

@@ -7,8 +7,8 @@
   font-weight: 300;
 
   @media (max-width: 768px) {
-    font-size: 0.695rem;
     padding: 0.875rem;
+    font-size: 0.5rem;
   }
 }
 .input::placeholder {

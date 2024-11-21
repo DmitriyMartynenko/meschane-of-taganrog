@@ -25,15 +25,11 @@
 .signUpOrderContainer {
   display: flex;
   gap: 0.75rem;
-  width: 90%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .signUpInputContainer {
-  width: 55%;
+  width: 60%;
 
   @media (max-width: 768px) {
     width: 50%;
@@ -41,7 +37,7 @@
 }
 
 .signUpButtonContainer {
-  width: 45%;
+  width: 40%;
 
   @media (max-width: 768px) {
     width: 50%;
