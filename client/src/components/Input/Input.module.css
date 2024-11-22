@@ -15,3 +15,7 @@
   color: #B1B1B1;
   font-weight: inherit;
 }
+
+.borderedInput {
+  border: 1px solid #D9D9D9;
+}

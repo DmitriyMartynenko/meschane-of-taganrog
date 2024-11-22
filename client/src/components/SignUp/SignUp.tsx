@@ -5,12 +5,20 @@ import styles from './SignUp.module.css';
 
 type SignUp = {
   children?: string;
+  inputType?: string;
   inputPlaceholder: string;
   buttonText: string;
+  buttonOnClick?: () => void;
 };
 
 const SignUp = (props: SignUp) => {
-  const { children: text, inputPlaceholder, buttonText } = props;
+  const {
+    children: text,
+    inputType,
+    inputPlaceholder,
+    buttonText,
+    buttonOnClick,
+  } = props;
 
   return (
     <div className={styles.signUp}>
@@ -18,17 +26,21 @@ const SignUp = (props: SignUp) => {
       <div className={styles.signUpOrderContainer}>
         <div className={styles.signUpInputContainer}>
           <Input
-            type="text"
+            type={inputType}
             placeholder={inputPlaceholder}
           />
         </div>
         <div className={styles.signUpButtonContainer}>
           <Button
-            isTextBlack={inputPlaceholder === 'Ваш e-mail' ? true : false}
-          >{buttonText}</Button>
+            blackText={inputPlaceholder === 'Ваш e-mail' ? true : false}
+            onClick={buttonOnClick}
+          >
+            {buttonText}
+          </Button>
         </div>
       </div>
     </div>
+    
   );
 };
 

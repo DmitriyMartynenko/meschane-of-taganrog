@@ -4,12 +4,12 @@ import { ReactNode } from 'react';
 
 type ButtonProps = {
   children: ReactNode;
-  isTextBlack?: boolean;
+  blackText?: boolean;
   onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {
-  const { children: text, isTextBlack, onClick } = props;
+  const { children: text, blackText: isTextBlack, onClick } = props;
 
   return (
     <button

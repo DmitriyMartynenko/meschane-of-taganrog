@@ -7,20 +7,22 @@ import styles from './ReadMoreCard.module.css';
 type ReadMoreCard = {
   children: ReactNode;
   date: string;
-  isCompact?: boolean;
+  compact?: boolean;
   imgSrc: string;
   imgAlt: string;
 };
 
 const ReadMoreCard = (props: ReadMoreCard) => {
-  const { children: title, date, isCompact, imgSrc, imgAlt } = props;
+  const { children: title, date, compact: isCompact, imgSrc, imgAlt } = props;
 
   return (
     <div className={styles.readMoreCard}>
       <div
         className={
           styles[
-            isCompact ? 'readMoreCardImgContainerCompact' : 'readMoreCardImgContainer'
+            isCompact
+              ? 'readMoreCardImgContainerCompact'
+              : 'readMoreCardImgContainer'
           ]
         }
       >
@@ -33,12 +35,14 @@ const ReadMoreCard = (props: ReadMoreCard) => {
       <div className={styles.readMoreCardTextContainer}>
         <p className={styles.readMoreCardDate}>{date}</p>
         <p
-          className={styles[isCompact ? 'readMoreCardTextCompact' : 'readMoreCardText']}
+          className={
+            styles[isCompact ? 'readMoreCardTextCompact' : 'readMoreCardText']
+          }
         >
           {title}
         </p>
         <div className={styles.readMoreCardButtonContainer}>
-          <Button isTextBlack={isCompact}>Читать</Button>
+          <Button blackText={isCompact}>Читать</Button>
         </div>
       </div>
     </div>

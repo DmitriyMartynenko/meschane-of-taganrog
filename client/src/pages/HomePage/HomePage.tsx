@@ -1,12 +1,16 @@
 import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import Input from '../../components/Input/Input';
 import SignUp from '../../components/SignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
 import Review from '../../components/Review';
 import ReadMoreCard from '../../components/ReadMoreCard';
+import Link from '../../components/Link';
+import SignUpModal from '../../components/SignUpModal';
 
 import logo from '../../assets/logo.png';
 import stoneStair from '../../assets/stoneStair.png';
@@ -35,11 +39,16 @@ import {
 } from '../../assets/readMoreCardImages';
 
 import styles from './HomePage.module.css';
-import Input from '../../components/Input/Input';
 
 const HomePage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-  const isSquare = useMediaQuery({ query: '(max-width: 1024px)' });
+  const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
+
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  const onExcursionOrder = () => {
+    setIsSignUpModalOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -50,8 +59,10 @@ const HomePage = () => {
             <h1 className={styles.promoTitle}>Иммерсивные экскурсии</h1>
             <div className={styles.promoSignUpContainer}>
               <SignUp
+                inputType="tel"
                 inputPlaceholder="+7 (___) ___ __ __"
                 buttonText="Заказать экскурсию"
+                buttonOnClick={onExcursionOrder}
               >
                 Записаться на экскурсию
               </SignUp>
@@ -66,7 +77,10 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className={styles.meschaneInfoSection}>
+      <section
+        className={styles.meschaneInfoSection}
+        id={isTablet ? 'meschaneInfo' : ''}
+      >
         <div className={styles.stoneStairImgContainer}>
           <img
             className={styles.stoneStairImg}
@@ -79,6 +93,7 @@ const HomePage = () => {
             className={styles.meschaninImg}
             src={meschanin}
             alt="Мещанин"
+            id="meschaneInfo"
           />
           <img
             className={styles.quotesImg}
@@ -89,7 +104,7 @@ const HomePage = () => {
         <div className={styles.meschaneInfoTextContent}>
           <Heading
             subtitle="Слово мещанину:"
-            lineBeforeSubtitle={true}
+            lineBeforeSubtitle
             wordsToHighlight={['не', 'все', 'равно']}
           >
             Потому что нам не все равно
@@ -112,7 +127,10 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section className={styles.tryExcursionsSection}>
+      <section
+        className={styles.tryExcursionsSection}
+        id="tryExcursions"
+      >
         <div className={styles.tryExcursionsHeadingContainer}>
           <p className={styles.tryExcursionsSubtitle}>
             Почему стоит попробовать
@@ -140,7 +158,10 @@ const HomePage = () => {
           </BenefitCard>
         </div>
       </section>
-      <section className={styles.meschaneOfTaganrogSection}>
+      <section
+        className={styles.meschaneOfTaganrogSection}
+        id="meschaneOfTaganrog"
+      >
         <p className={styles.meschaneOfTaganrogTitle}>Мещане г. Таганрога</p>
         <div className={styles.meschaneOfTaganrogImagesContainer}>
           <div className={styles.meschaneOfTaganrogImgContainer}>
@@ -166,19 +187,31 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className={styles.ourPartnersSection}>
+      <section
+        className={styles.ourPartnersSection}
+        id="ourPartners"
+      >
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <img
-            className={styles.ourPartnersTGLIAMZimg}
-            src={tgliamz}
-            alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
-          />
+          <Link
+            to="https://tgliamz.ru/"
+            openInNewTab
+          >
+            <img
+              className={styles.ourPartnersTGLIAMZimg}
+              src={tgliamz}
+              alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
+            />
+          </Link>
         </div>
-        <p className={styles.ourPartnersText}>
+        <Link
+          className={styles.ourPartnersText}
+          to="https://tgliamz.ru/"
+          openInNewTab
+        >
           Таганрогский государственный литературный и историко-архитектурный
           музей-заповедник
-        </p>
+        </Link>
       </section>
       <section className={styles.reviewsSection}>
         <Heading
@@ -228,14 +261,14 @@ const HomePage = () => {
           <div className={styles.goodToKnowHeadingContainer}>
             <Heading
               subtitle="Наш блог"
-              lineBeforeSubtitle={true}
+              lineBeforeSubtitle
               wordsToHighlight={['Полезно']}
             >
               Полезно знать
             </Heading>
             {!isMobile && (
               <div className={styles.goodToKnowButtonContainer}>
-                <Button isTextBlack={true}>Читать больше</Button>
+                <Button blackText>Читать больше</Button>
               </div>
             )}
           </div>
@@ -248,7 +281,7 @@ const HomePage = () => {
               Как использовать закон в свою пользу?
             </ReadMoreCard>
             <ReadMoreCard
-              isCompact={true}
+              compact
               date="09 апреля"
               imgSrc={readMoreImg2}
               imgAlt="Скульптура"
@@ -256,7 +289,7 @@ const HomePage = () => {
               Библиотека юристов. Что почитать?
             </ReadMoreCard>
             <ReadMoreCard
-              isCompact={true}
+              compact
               date="06 марта"
               imgSrc={readMoreImg3}
               imgAlt="Документы"
@@ -264,7 +297,7 @@ const HomePage = () => {
               На что обратить внимание в документах?
             </ReadMoreCard>
             <ReadMoreCard
-              isCompact={true}
+              compact
               date="23 февраля"
               imgSrc={readMoreImg4}
               imgAlt="Юриспруденция"
@@ -274,7 +307,7 @@ const HomePage = () => {
           </div>
           {isMobile && (
             <div className={styles.goodToKnowButtonContainer}>
-              <Button isTextBlack={true}>Читать больше</Button>
+              <Button blackText>Читать больше</Button>
             </div>
           )}
         </div>
@@ -296,7 +329,7 @@ const HomePage = () => {
               <Input placeholder="Ваш e-mail"></Input>
             </div>
             <div className={styles.subscribeButtonContainer}>
-              <Button isTextBlack={true}>Подписаться</Button>
+              <Button blackText>Подписаться</Button>
             </div>
           </div>
         </div>
@@ -309,12 +342,15 @@ const HomePage = () => {
           ></iframe>
         </div>
         <div className={styles.footerContactInfoWrapper}>
-          <div className={styles.footerContactInfoContainer}>
+          <div
+            className={styles.footerContactInfoContainer}
+            id="footerContactInfo"
+          >
             <Heading
               subtitle="На связи с вами"
-              lineBeforeSubtitle={true}
+              lineBeforeSubtitle
               wordsToHighlight={['Контактная']}
-              whiteTitleColor={true}
+              whiteTitleColor
             >
               Контактная информация
             </Heading>
@@ -346,6 +382,7 @@ const HomePage = () => {
             </div>
             <div className={styles.footerSignUpContainer}>
               <SignUp
+                inputType="tel"
                 inputPlaceholder="+7 (___) ___ __ __"
                 buttonText="Заказать звонок"
               >
@@ -358,6 +395,11 @@ const HomePage = () => {
       <div className={styles.allRightsReservedContainer}>
         <p className={styles.allRightsReserved}>© Все права защищены 2024</p>
       </div>
+
+      <SignUpModal
+        open={isSignUpModalOpen}
+        toggleModal={onExcursionOrder}
+      />
     </>
   );
 };

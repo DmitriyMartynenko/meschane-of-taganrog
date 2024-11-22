@@ -1,4 +1,4 @@
-import HeaderLink from '../HeaderLink';
+import Link from '../Link';
 
 import styles from './NavBar.module.css';
 
@@ -8,14 +8,44 @@ const NavBar = () => {
       <div
         className={`${styles.navLinksContainer} ${styles.navLinksContainerMobile}`}
       >
-        <HeaderLink to="#">Главная</HeaderLink>
-        <HeaderLink to="#">О мещанах</HeaderLink>
-        <HeaderLink to="#">Анонсы</HeaderLink>
+        <Link
+          className={styles.headerLink}
+          to="/"
+        >
+          Главная
+        </Link>
+        <Link
+          className={styles.headerLink}
+          to="#meschaneInfo"
+        >
+          О мещанах
+        </Link>
+        <Link
+          className={styles.headerLink}
+          to="#tryExcursions"
+        >
+          Анонсы
+        </Link>
       </div>
       <div className={styles.navLinksContainer}>
-        <HeaderLink to="#">Фото и видео</HeaderLink>
-        <HeaderLink to="#">ТГЛИАМЗ</HeaderLink>
-        <HeaderLink to="#">Контакты</HeaderLink>
+        <Link
+          className={styles.headerLink}
+          to="#meschaneOfTaganrog"
+        >
+          Фото и видео
+        </Link>
+        <Link
+          className={styles.headerLink}
+          to="#ourPartners"
+        >
+          ТГЛИАМЗ
+        </Link>
+        <Link
+          className={styles.headerLink}
+          to="#footerContactInfo"
+        >
+          Контакты
+        </Link>
       </div>
     </nav>
   );
