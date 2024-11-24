@@ -36,10 +36,10 @@ const Heading = (props: HeadingProps) => {
         </div>
       )}
       <h1 className={`${styles.headingTitle} ${whiteTitleColor ? styles.whiteHeadingTitle : ''}`}>
-        {title.split(' ').map((word) => {
+        {title.split(' ').map((word, index) => {
           if (wordsToHighlight?.includes(word))
-            return <span className={`${styles.highlight} ${whiteTitleColor ? styles.lightHighlight : ''}`}>{word} </span>;
-          return <span>{word} </span>;
+            return <span key={`${index}_${word}`} className={`${styles.highlight} ${whiteTitleColor ? styles.lightHighlight : ''}`}>{word} </span>;
+          return <span key={`${index}_${word}`}>{word} </span>;
         })}
       </h1>
     </div>

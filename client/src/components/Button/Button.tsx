@@ -1,11 +1,11 @@
 import styles from './Button.module.css';
 
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 type ButtonProps = {
   children: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   blackText?: boolean;
-  onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {

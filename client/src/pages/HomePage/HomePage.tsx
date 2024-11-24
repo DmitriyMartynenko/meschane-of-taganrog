@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
@@ -45,6 +45,7 @@ const HomePage = () => {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
 
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const orderExcursionInputRef = useRef<HTMLInputElement>(null);
 
   const onExcursionOrder = () => {
     setIsSignUpModalOpen((prev) => !prev);
@@ -59,6 +60,7 @@ const HomePage = () => {
             <h1 className={styles.promoTitle}>Иммерсивные экскурсии</h1>
             <div className={styles.promoSignUpContainer}>
               <SignUp
+                inputRef={orderExcursionInputRef}
                 inputType="tel"
                 inputPlaceholder="+7 (___) ___ __ __"
                 buttonText="Заказать экскурсию"
@@ -95,11 +97,7 @@ const HomePage = () => {
             alt="Мещанин"
             id="meschaneInfo"
           />
-          <img
-            className={styles.quotesImg}
-            src={quotes}
-            alt="Кавычки"
-          />
+          <img className={styles.quotesImg} src={quotes} alt="Кавычки" />
         </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
@@ -127,10 +125,7 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section
-        className={styles.tryExcursionsSection}
-        id="tryExcursions"
-      >
+      <section className={styles.tryExcursionsSection} id="tryExcursions">
         <div className={styles.tryExcursionsHeadingContainer}>
           <p className={styles.tryExcursionsSubtitle}>
             Почему стоит попробовать
@@ -187,16 +182,10 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section
-        className={styles.ourPartnersSection}
-        id="ourPartners"
-      >
+      <section className={styles.ourPartnersSection} id="ourPartners">
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <Link
-            to="https://tgliamz.ru/"
-            openInNewTab
-          >
+          <Link to="https://tgliamz.ru/" openInNewTab>
             <img
               className={styles.ourPartnersTGLIAMZimg}
               src={tgliamz}
@@ -214,10 +203,7 @@ const HomePage = () => {
         </Link>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading
-          subtitle="О нас говорят"
-          wordsToHighlight={['Отзывы']}
-        >
+        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
@@ -397,8 +383,9 @@ const HomePage = () => {
       </div>
 
       <SignUpModal
-        open={isSignUpModalOpen}
+        isOpen={isSignUpModalOpen}
         toggleModal={onExcursionOrder}
+        telInputValue={orderExcursionInputRef.current?.value || ''}
       />
     </>
   );

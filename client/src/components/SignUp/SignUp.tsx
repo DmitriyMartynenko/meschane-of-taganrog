@@ -7,6 +7,7 @@ type SignUp = {
   children?: string;
   inputType?: string;
   inputPlaceholder: string;
+  inputRef?: {};
   buttonText: string;
   buttonOnClick?: () => void;
 };
@@ -16,6 +17,7 @@ const SignUp = (props: SignUp) => {
     children: text,
     inputType,
     inputPlaceholder,
+    inputRef,
     buttonText,
     buttonOnClick,
   } = props;
@@ -26,6 +28,7 @@ const SignUp = (props: SignUp) => {
       <div className={styles.signUpOrderContainer}>
         <div className={styles.signUpInputContainer}>
           <Input
+            ref={inputRef}
             type={inputType}
             placeholder={inputPlaceholder}
           />
