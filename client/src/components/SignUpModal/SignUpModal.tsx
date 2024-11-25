@@ -33,24 +33,16 @@ const SignUpModal = (props: SignUpModalProps) => {
   return createPortal(
     <div className={styles.signUpModal}>
       <div className={styles.signUpModalWrapper}>
-        <form
-          className={styles.signUpModalForm}
-          onSubmit={handleSubmit}
-        >
+        <form className={styles.signUpModalForm} onSubmit={handleSubmit}>
           <button
             className={styles.signUpModalButtonClose}
             onClick={toggleModal}
           >
-            {isMobile ? (
-              'Закрыть'
-            ) : (
-              <img
-                className={styles.signUpModalButtonCloseImg}
-                src={closeButton}
-                alt="Крестик закрытия"
-              />
-            )}
-            
+            <img
+              className={styles.signUpModalButtonCloseImg}
+              src={closeButton}
+              alt="Крестик закрытия"
+            />
           </button>
           <div className={styles.signUpModalContainer}>
             <div className={styles.signUpModalHeadingContainer}>
@@ -83,7 +75,7 @@ const SignUpModal = (props: SignUpModalProps) => {
             </div>
             <div className={styles.signUpModalSubmitButtonContainer}>
               <Button blackText>Отправить</Button>
-              {isMobile && <Button blackText>Закрыть</Button>}
+              {isMobile && <Button blackText onClick={toggleModal}>Закрыть</Button>}
             </div>
           </div>
         </form>
