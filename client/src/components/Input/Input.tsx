@@ -6,6 +6,8 @@ type InputProps = {
   id?: string;
   name?: string;
   value?: string;
+  minLength?: number;
+  maxLength?: number;
   placeholder?: string;
   required?: boolean;
   border?: boolean;
@@ -18,6 +20,8 @@ const Input = forwardRef(
       id,
       name,
       value,
+      minLength,
+      maxLength,
       placeholder,
       required,
       border,
@@ -31,6 +35,8 @@ const Input = forwardRef(
         id={id}
         name={name}
         defaultValue={value}
+        minLength={minLength}
+        maxLength={maxLength}
         placeholder={placeholder}
         required={required}
       />

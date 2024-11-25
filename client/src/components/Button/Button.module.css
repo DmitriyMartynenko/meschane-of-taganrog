@@ -8,11 +8,19 @@
   font-size: 0.875rem;
   font-weight: 300;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     padding: 0.75rem 0.5rem;
     font-size: 0.75rem;
   }
+}
+.button:hover {
+  background-color: #D4B068;
+}
+.button:active {
+  background-color: #BFA259;
 }
 
 .buttonTextBlack {

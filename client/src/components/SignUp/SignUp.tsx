@@ -1,3 +1,5 @@
+import { ForwardedRef } from 'react';
+
 import Input from '../Input/Input';
 import Button from '../Button';
 
@@ -5,9 +7,11 @@ import styles from './SignUp.module.css';
 
 type SignUp = {
   children?: string;
+  inputRef?: ForwardedRef<HTMLInputElement>;
   inputType?: string;
-  inputPlaceholder: string;
-  inputRef?: {};
+  inputName?: string;
+  inputPlaceholder?: string;
+  inputMinMaxLength?: [number, number];
   buttonText: string;
   buttonOnClick?: () => void;
 };
@@ -15,12 +19,16 @@ type SignUp = {
 const SignUp = (props: SignUp) => {
   const {
     children: text,
-    inputType,
-    inputPlaceholder,
     inputRef,
+    inputType,
+    inputName,
+    inputPlaceholder,
+    inputMinMaxLength,
     buttonText,
     buttonOnClick,
   } = props;
+
+  const [inputMinLength, inputMaxLength] = inputMinMaxLength ?? [0, 0];
 
   return (
     <div className={styles.signUp}>
@@ -30,7 +38,10 @@ const SignUp = (props: SignUp) => {
           <Input
             ref={inputRef}
             type={inputType}
+            name={inputName}
             placeholder={inputPlaceholder}
+            minLength={inputMinLength}
+            maxLength={inputMaxLength}
           />
         </div>
         <div className={styles.signUpButtonContainer}>
@@ -43,7 +54,6 @@ const SignUp = (props: SignUp) => {
         </div>
       </div>
     </div>
-    
   );
 };
 

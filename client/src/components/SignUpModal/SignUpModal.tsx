@@ -15,16 +15,17 @@ type SignUpModalProps = {
   isOpen?: boolean;
   toggleModal: () => void;
   telInputValue?: string;
+  isMobile?: boolean;
 };
 
 const SignUpModal = (props: SignUpModalProps) => {
-  const { isOpen, toggleModal, telInputValue } = props;
+  const { isOpen, toggleModal, telInputValue, isMobile } = props;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formJSON = Object.fromEntries(formData)
-    console.log(formJSON)
+    const orderExcursionFormData = new FormData(event.currentTarget);
+    const orderExcursionFormJSON = Object.fromEntries(orderExcursionFormData);
+    console.log(orderExcursionFormJSON);
   };
 
   if (!isOpen) return null;
@@ -32,16 +33,24 @@ const SignUpModal = (props: SignUpModalProps) => {
   return createPortal(
     <div className={styles.signUpModal}>
       <div className={styles.signUpModalWrapper}>
-        <form className={styles.signUpModalForm} onSubmit={handleSubmit}>
+        <form
+          className={styles.signUpModalForm}
+          onSubmit={handleSubmit}
+        >
           <button
             className={styles.signUpModalButtonClose}
             onClick={toggleModal}
           >
-            <img
-              className={styles.signUpModalButtonCloseImg}
-              src={closeButton}
-              alt="Закрыть"
-            />
+            {isMobile ? (
+              'Закрыть'
+            ) : (
+              <img
+                className={styles.signUpModalButtonCloseImg}
+                src={closeButton}
+                alt="Крестик закрытия"
+              />
+            )}
+            
           </button>
           <div className={styles.signUpModalContainer}>
             <div className={styles.signUpModalHeadingContainer}>
@@ -49,32 +58,32 @@ const SignUpModal = (props: SignUpModalProps) => {
             </div>
             <div className={styles.signUpModalInputsCotnainer}>
               <Input
-                id="name"
-                name="name"
+                name="orderExcursionName"
                 placeholder="Ваше имя"
                 required
                 border
               />
               <Input
                 type="tel"
-                id="telephone"
-                name="telephone"
+                name="orderExcursionTelephone"
                 value={telInputValue}
                 placeholder="+7 (___) ___ __ __"
+                minLength={12}
+                maxLength={12}
                 required
                 border
               />
               <Input
                 type="email"
-                id="email"
-                name="email"
+                name="orderExcursionEmail"
                 placeholder="Ваш e-mail"
                 required
                 border
               />
             </div>
-            <div className={styles.signUpModalButtonContainer}>
+            <div className={styles.signUpModalSubmitButtonContainer}>
               <Button blackText>Отправить</Button>
+              {isMobile && <Button blackText>Закрыть</Button>}
             </div>
           </div>
         </form>

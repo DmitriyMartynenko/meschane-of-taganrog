@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import logo from '../../assets/logo.png';
-
 import NavBar from '../NavBar';
 import Button from '../Button';
+
+import logo from '../../assets/logo.png';
 
 import styles from './Header.module.css';
 
@@ -38,8 +38,6 @@ const Header = (props: HeaderProps) => {
       )}
 
       {(isMenuOpen || !isMobile) && <NavBar />}
-
-      <hr className={styles.headerHr} />
     </header>
   );
 };

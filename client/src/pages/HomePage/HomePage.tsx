@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
-import { useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
@@ -11,6 +11,8 @@ import Review from '../../components/Review';
 import ReadMoreCard from '../../components/ReadMoreCard';
 import Link from '../../components/Link';
 import SignUpModal from '../../components/SignUpModal';
+
+import { reviews } from '../../mockData/mockReviews';
 
 import logo from '../../assets/logo.png';
 import stoneStair from '../../assets/stoneStair.png';
@@ -28,7 +30,6 @@ import {
   meschane3,
 } from '../../assets/meschaneOfTaganrog';
 import tgliamz from '../../assets/TGLIAMZ.png';
-import { reviewAuthor1 } from '../../assets/reviewAuthorsPhotos';
 import arrowLeft from '../../assets/arrowLeft.png';
 import arrowRight from '../../assets/arrowRight.png';
 import {
@@ -45,10 +46,41 @@ const HomePage = () => {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
 
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const orderExcursionInputRef = useRef<HTMLInputElement>(null);
 
   const onExcursionOrder = () => {
     setIsSignUpModalOpen((prev) => !prev);
+  };
+
+  const handlePreviosReview = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextReview = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleChooseReview = (reviewIndex: number) => {
+    setCurrentIndex(reviewIndex);
+  };
+
+  const onSubscribeNews = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subscribeFormData = new FormData(event.currentTarget);
+    const subscribeFormJSON = Object.fromEntries(subscribeFormData);
+    console.log(subscribeFormJSON);
+  };
+
+  const onOrderCall = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const orderCallFormData = new FormData(event.currentTarget);
+    const orderCallFormJSON = Object.fromEntries(orderCallFormData);
+    console.log(orderCallFormJSON);
   };
 
   return (
@@ -97,7 +129,11 @@ const HomePage = () => {
             alt="Мещанин"
             id="meschaneInfo"
           />
-          <img className={styles.quotesImg} src={quotes} alt="Кавычки" />
+          <img
+            className={styles.quotesImg}
+            src={quotes}
+            alt="Кавычки"
+          />
         </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
@@ -125,7 +161,10 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section className={styles.tryExcursionsSection} id="tryExcursions">
+      <section
+        className={styles.tryExcursionsSection}
+        id="tryExcursions"
+      >
         <div className={styles.tryExcursionsHeadingContainer}>
           <p className={styles.tryExcursionsSubtitle}>
             Почему стоит попробовать
@@ -182,10 +221,16 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className={styles.ourPartnersSection} id="ourPartners">
+      <section
+        className={styles.ourPartnersSection}
+        id="ourPartners"
+      >
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <Link to="https://tgliamz.ru/" openInNewTab>
+          <Link
+            to="https://tgliamz.ru/"
+            openInNewTab
+          >
             <img
               className={styles.ourPartnersTGLIAMZimg}
               src={tgliamz}
@@ -203,12 +248,18 @@ const HomePage = () => {
         </Link>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
+        <Heading
+          subtitle="О нас говорят"
+          wordsToHighlight={['Отзывы']}
+        >
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
           <div className={styles.buttonsContainer}>
-            <button className={styles.arrowLeftButton}>
+            <button
+              className={styles.arrowLeftButton}
+              onClick={handlePreviosReview}
+            >
               <img
                 className={styles.arrowLeftImg}
                 src={arrowLeft}
@@ -216,15 +267,16 @@ const HomePage = () => {
               />
             </button>
             <Review
-              author="Юлия Воробьева"
-              authorJobTitle="Директор компании “Воробьева и ко”"
-              authorImgSrc={reviewAuthor1}
+              author={reviews[currentIndex].author}
+              authorJobTitle={reviews[currentIndex].authorJobTitle}
+              authorImgSrc={reviews[currentIndex].authorImgSrc}
             >
-              Я обеспечу представление Ваших интересов в судах общей юрисдикции,
-              арбитраже, третейском суде, приму участие в переговорах, окажу
-              помощь на стадии досудебного урегулирования споров.
+              {reviews[currentIndex].reviewText}
             </Review>
-            <button className={styles.arrowRightButton}>
+            <button
+              className={styles.arrowRightButton}
+              onClick={handleNextReview}
+            >
               <img
                 className={styles.arrowRightImg}
                 src={arrowRight}
@@ -233,12 +285,15 @@ const HomePage = () => {
             </button>
           </div>
           <div className={styles.paginationContainer}>
-            <button className={styles.paginationButton}></button>
-            <button
-              className={`${styles.paginationButton} ${styles.paginationButtonActive}`}
-            ></button>
-            <button className={styles.paginationButton}></button>
-            <button className={styles.paginationButton}></button>
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                className={`${styles.paginationButton} ${
+                  index === currentIndex ? styles.paginationButtonActive : ''
+                }`}
+                onClick={() => handleChooseReview(index)}
+              ></button>
+            ))}
           </div>
         </div>
       </section>
@@ -299,26 +354,35 @@ const HomePage = () => {
         </div>
       </section>
       <section className={styles.subscribeSection}>
-        <Heading
-          subtitle="Будьте в курсе"
-          lineBeforeSubtitle={false}
-          wordsToHighlight={['Подпишитесь']}
+        <form
+          className={styles.subscribeForm}
+          onSubmit={onSubscribeNews}
         >
-          Подпишитесь на наши новости
-        </Heading>
-        <div className={styles.subscribeSignUpContainer}>
-          <p className={styles.subscribeText}>
-            Чтобы всегда быть в курсе мещанских дел
-          </p>
-          <div className={styles.subscribeEmailContainer}>
-            <div className={styles.subscribeInputContainer}>
-              <Input placeholder="Ваш e-mail"></Input>
-            </div>
-            <div className={styles.subscribeButtonContainer}>
-              <Button blackText>Подписаться</Button>
+          <Heading
+            subtitle="Будьте в курсе"
+            lineBeforeSubtitle={false}
+            wordsToHighlight={['Подпишитесь']}
+          >
+            Подпишитесь на наши новости
+          </Heading>
+          <div className={styles.subscribeSignUpContainer}>
+            <p className={styles.subscribeText}>
+              Чтобы всегда быть в курсе мещанских дел
+            </p>
+            <div className={styles.subscribeEmailContainer}>
+              <div className={styles.subscribeInputContainer}>
+                <Input
+                  type="email"
+                  name="subscribeEmail"
+                  placeholder="Ваш e-mail"
+                ></Input>
+              </div>
+              <div className={styles.subscribeButtonContainer}>
+                <Button blackText>Подписаться</Button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </section>
       <section className={styles.footerSection}>
         <div className={styles.footerMapContainer}>
@@ -358,22 +422,31 @@ const HomePage = () => {
               <div className={styles.footerParagraphsContainer}>
                 <p className={styles.footerContactInfoEmail}>
                   e-mail:{' '}
-                  <a
+                  <Link
                     className={`${styles.footerContactInfoEmail}, ${styles.footerContactInfoEmailLink}`}
+                    to="mailto:tgliamz.muzei@yandex.ru"
+                    openInNewTab
                   >
                     tgliamz.muzei@yandex.ru
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
             <div className={styles.footerSignUpContainer}>
-              <SignUp
-                inputType="tel"
-                inputPlaceholder="+7 (___) ___ __ __"
-                buttonText="Заказать звонок"
+              <form
+                className={styles.orderCallForm}
+                onSubmit={onOrderCall}
               >
-                Нужна консультация?
-              </SignUp>
+                <SignUp
+                  inputType="tel"
+                  inputName="orderCallTelephone"
+                  inputPlaceholder="+7 (___) ___ __ __"
+                  inputMinMaxLength={[12, 12]}
+                  buttonText="Заказать звонок"
+                >
+                  Нужна консультация?
+                </SignUp>
+              </form>
             </div>
           </div>
         </div>
@@ -385,7 +458,8 @@ const HomePage = () => {
       <SignUpModal
         isOpen={isSignUpModalOpen}
         toggleModal={onExcursionOrder}
-        telInputValue={orderExcursionInputRef.current?.value || ''}
+        telInputValue={orderExcursionInputRef.current?.value ?? ''}
+        isMobile={isMobile}
       />
     </>
   );
