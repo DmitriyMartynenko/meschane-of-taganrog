@@ -1,10 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ExcursionOrderViewSet
-
-router = DefaultRouter()
-router.register(r'excursions', ExcursionOrderViewSet)
+from .views import ExcursionOrderView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', ExcursionOrderView.as_view(), name='excursion-order'),
 ]

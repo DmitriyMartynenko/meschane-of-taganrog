@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
@@ -45,6 +45,7 @@ const HomePage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
 
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const orderExcursionInputRef = useRef<HTMLInputElement>(null);
@@ -82,6 +83,8 @@ const HomePage = () => {
     const orderCallFormJSON = Object.fromEntries(orderCallFormData);
     console.log(orderCallFormJSON);
   };
+
+  useEffect(() => {}, [])
 
   return (
     <>
