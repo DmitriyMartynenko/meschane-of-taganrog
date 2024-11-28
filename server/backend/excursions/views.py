@@ -5,7 +5,7 @@ from .models import ExcursionOrder
 from .serializers import ExcursionOrderSerializer
 
 class ExcursionOrderView(APIView):
-    def get(self, request):
+    def get(self):
         excursions = ExcursionOrder.objects.all()
         serializer = ExcursionOrderSerializer(excursions, many=True)
         return Response(serializer.data)
