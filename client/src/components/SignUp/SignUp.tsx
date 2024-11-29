@@ -28,7 +28,7 @@ const SignUp = (props: SignUp) => {
     buttonOnClick,
   } = props;
 
-  const [inputMinLength, inputMaxLength] = inputMinMaxLength ?? [0, 0];
+  const [inputMinLength, inputMaxLength] = inputMinMaxLength ?? []
 
   return (
     <div className={styles.signUp}>

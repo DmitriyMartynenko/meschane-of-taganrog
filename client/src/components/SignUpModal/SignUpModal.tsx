@@ -25,7 +25,7 @@ const SignUpModal = (props: SignUpModalProps) => {
     event.preventDefault();
     const orderExcursionFormData = new FormData(event.currentTarget);
     const orderExcursionFormJSON = Object.fromEntries(orderExcursionFormData);
-    console.log(orderExcursionFormJSON);
+    debugger
   };
 
   if (!isOpen) return null;

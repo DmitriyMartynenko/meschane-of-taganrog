@@ -1,6 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 
+import { fetchUser } from '../../api/excursionsApis';
+
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input/Input';
@@ -83,9 +85,7 @@ const HomePage = () => {
     const orderCallFormJSON = Object.fromEntries(orderCallFormData);
     console.log(orderCallFormJSON);
   };
-
-  useEffect(() => {}, [])
-
+  
   return (
     <>
       <section className={styles.promoSection}>
@@ -98,6 +98,7 @@ const HomePage = () => {
                 inputRef={orderExcursionInputRef}
                 inputType="tel"
                 inputPlaceholder="+7 (___) ___ __ __"
+                inputMinMaxLength={[12, 12]}
                 buttonText="Заказать экскурсию"
                 buttonOnClick={onExcursionOrder}
               >

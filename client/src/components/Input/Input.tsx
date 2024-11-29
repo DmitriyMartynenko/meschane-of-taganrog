@@ -45,4 +45,3 @@ const Input = forwardRef(
 );
 
 export default Input;
-3

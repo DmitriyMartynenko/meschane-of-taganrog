@@ -36,7 +36,8 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       '@typescript-eslint/consistent-type-definitions': 'off',
-      '@typescript-eslint/no-unused-vars': 'off'
+      '@typescript-eslint/no-unused-vars': 'off',
+      'no-debugger': 'off',
     },
   }
 );
