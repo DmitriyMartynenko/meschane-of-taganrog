@@ -1,10 +1,13 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import axios from 'axios';
 
 import Input from '../Input/Input';
 import Heading from '../Heading';
 import Button from '../Button';
 
+import { getUsers, addUser } from '../../api/excursionsAPIs';
+import type { User } from '../../types';
 import closeButton from '../../assets/closeButton.png';
 
 import styles from './SignUpModal.module.css';
@@ -21,23 +24,88 @@ type SignUpModalProps = {
 const SignUpModal = (props: SignUpModalProps) => {
   const { isOpen, toggleModal, telInputValue, isMobile } = props;
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const orderExcursionFormData = new FormData(event.currentTarget);
-    const orderExcursionFormJSON = Object.fromEntries(orderExcursionFormData);
-    debugger
+  const [users, setUsers] = useState<User[]>([]);
+  const [orderStatus, setOrderStatus] = useState({
+    success: false,
+    message: '',
+  });
+
+  const onClose = () => {
+    setOrderStatus({ success: false, message: '' });
+    toggleModal();
   };
 
-  if (!isOpen) return null;
+  const checkUser = (orderUser: User) => {
+    const isTelephoneMatch = users.some(
+      (user) => user.phone === orderUser.phone
+    );
+    const isEmailMatch = users.some((user) => user.email === orderUser.email);
 
+    return { isTelephoneMatch, isEmailMatch };
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const formJSON = Object.fromEntries(formData);
+
+    const orderUser: User = {
+      name: formJSON.userName as string,
+      phone: formJSON.userPhone as string,
+      email: formJSON.userEmail as string,
+    };
+
+    const { isEmailMatch, isTelephoneMatch } = checkUser(orderUser);
+
+    if (isTelephoneMatch)
+      setOrderStatus({
+        success: false,
+        message: 'Пользователь с таким номером телефона уже оставил заявку!',
+      });
+    else if (isEmailMatch)
+      setOrderStatus({
+        success: false,
+        message: 'Пользователь с таким e-mail уже оставил заявку!',
+      });
+    else {
+      try {
+        await addUser(orderUser);
+        setOrderStatus({
+          success: true,
+          message: 'Вы успешно оставили заявку на экскурсию!',
+        });
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          setOrderStatus({
+            success: false,
+            message: error.message,
+          });
+        } else
+          setOrderStatus({
+            success: false,
+            message: 'Неизвестная ошибка',
+          });
+      }
+    }
+  };
+
+  useEffect(() => {
+    const loadUsers = async () => {
+      const { data: usersData } = await getUsers();
+      setUsers(usersData);
+    };
+
+    void loadUsers();
+  }, []);
+
+  if (!isOpen) return null;
+  debugger;
   return createPortal(
     <div className={styles.signUpModal}>
       <div className={styles.signUpModalWrapper}>
         <form className={styles.signUpModalForm} onSubmit={handleSubmit}>
-          <button
-            className={styles.signUpModalButtonClose}
-            onClick={toggleModal}
-          >
+          <button className={styles.signUpModalButtonClose} onClick={onClose}>
             <img
               className={styles.signUpModalButtonCloseImg}
               src={closeButton}
@@ -49,15 +117,10 @@ const SignUpModal = (props: SignUpModalProps) => {
               <Heading>Оставьте заявку мы с вами свяжемся</Heading>
             </div>
             <div className={styles.signUpModalInputsCotnainer}>
-              <Input
-                name="orderExcursionName"
-                placeholder="Ваше имя"
-                required
-                border
-              />
+              <Input name="userName" placeholder="Ваше имя" required border />
               <Input
                 type="tel"
-                name="orderExcursionTelephone"
+                name="userPhone"
                 value={telInputValue}
                 placeholder="+7 (___) ___ __ __"
                 minLength={12}
@@ -67,7 +130,7 @@ const SignUpModal = (props: SignUpModalProps) => {
               />
               <Input
                 type="email"
-                name="orderExcursionEmail"
+                name="userEmail"
                 placeholder="Ваш e-mail"
                 required
                 border
@@ -75,8 +138,21 @@ const SignUpModal = (props: SignUpModalProps) => {
             </div>
             <div className={styles.signUpModalSubmitButtonContainer}>
               <Button blackText>Отправить</Button>
-              {isMobile && <Button blackText onClick={toggleModal}>Закрыть</Button>}
+              {isMobile && (
+                <Button blackText onClick={onClose}>
+                  Закрыть
+                </Button>
+              )}
             </div>
+            {orderStatus.message && (
+              <p
+                className={`${styles.orderStatusMessage} ${
+                  orderStatus.success ? styles.orderStatusMessageSuccess : ''
+                }`}
+              >
+                {orderStatus.message}
+              </p>
+            )}
           </div>
         </form>
       </div>

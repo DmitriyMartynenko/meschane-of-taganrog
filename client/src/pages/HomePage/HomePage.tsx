@@ -1,8 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 
-import { fetchUser } from '../../api/excursionsApis';
-
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input/Input';
@@ -47,7 +45,6 @@ const HomePage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
 
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const orderExcursionInputRef = useRef<HTMLInputElement>(null);
@@ -85,7 +82,18 @@ const HomePage = () => {
     const orderCallFormJSON = Object.fromEntries(orderCallFormData);
     console.log(orderCallFormJSON);
   };
-  
+
+  useEffect(() => {
+    const targetElementId = window.location.hash.slice(1);
+    debugger;
+    if (targetElementId) {
+      const targetElement = document.getElementById(targetElementId);
+      if (targetElement) {
+        targetElement.scrollIntoView();
+      }
+    }
+  }, []);
+
   return (
     <>
       <section className={styles.promoSection}>
@@ -133,11 +141,7 @@ const HomePage = () => {
             alt="Мещанин"
             id="meschaneInfo"
           />
-          <img
-            className={styles.quotesImg}
-            src={quotes}
-            alt="Кавычки"
-          />
+          <img className={styles.quotesImg} src={quotes} alt="Кавычки" />
         </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
@@ -165,10 +169,7 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section
-        className={styles.tryExcursionsSection}
-        id="tryExcursions"
-      >
+      <section className={styles.tryExcursionsSection} id="tryExcursions">
         <div className={styles.tryExcursionsHeadingContainer}>
           <p className={styles.tryExcursionsSubtitle}>
             Почему стоит попробовать
@@ -225,16 +226,10 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section
-        className={styles.ourPartnersSection}
-        id="ourPartners"
-      >
+      <section className={styles.ourPartnersSection} id="ourPartners">
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <Link
-            to="https://tgliamz.ru/"
-            openInNewTab
-          >
+          <Link to="https://tgliamz.ru/" openInNewTab>
             <img
               className={styles.ourPartnersTGLIAMZimg}
               src={tgliamz}
@@ -252,10 +247,7 @@ const HomePage = () => {
         </Link>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading
-          subtitle="О нас говорят"
-          wordsToHighlight={['Отзывы']}
-        >
+        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewContainer}>
@@ -358,10 +350,7 @@ const HomePage = () => {
         </div>
       </section>
       <section className={styles.subscribeSection}>
-        <form
-          className={styles.subscribeForm}
-          onSubmit={onSubscribeNews}
-        >
+        <form className={styles.subscribeForm} onSubmit={onSubscribeNews}>
           <Heading
             subtitle="Будьте в курсе"
             lineBeforeSubtitle={false}
@@ -437,10 +426,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className={styles.footerSignUpContainer}>
-              <form
-                className={styles.orderCallForm}
-                onSubmit={onOrderCall}
-              >
+              <form className={styles.orderCallForm} onSubmit={onOrderCall}>
                 <SignUp
                   inputType="tel"
                   inputName="orderCallTelephone"

@@ -56,13 +56,7 @@
   }
 }
 
-.signUpModalHeadingContainer {
-  padding: 0 4rem;
-
-  @media (max-width: 1024px) {
-    padding: 0;
-  }
-}
+.signUpModalHeadingContainer {}
 
 .signUpModalInputsCotnainer {
   display: flex;
@@ -84,4 +78,17 @@
     gap: 1rem;
     margin: 0;
   }
+}
+
+.orderStatusMessage {
+  margin: 0;
+  color: red;
+  font-size: 0.875rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+}
+.orderStatusMessageSuccess {
+  color: green;
 }
