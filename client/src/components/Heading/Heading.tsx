@@ -36,7 +36,7 @@ const Heading = (props: HeadingProps) => {
         </div>
       )}
       <h1 className={`${styles.headingTitle} ${whiteTitleColor ? styles.whiteHeadingTitle : ''}`}>
-        {title.split(' ').map((word, index) => {
+        {String(title).split(' ').map((word: string, index: number) => {
           if (wordsToHighlight?.includes(word))
             return <span key={`${index}_${word}`} className={`${styles.highlight} ${whiteTitleColor ? styles.lightHighlight : ''}`}>{word} </span>;
           return <span key={`${index}_${word}`}>{word} </span>;

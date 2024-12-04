@@ -1,6 +1,6 @@
 import api from './axios.ts';
 
-import type { User, Excursion, ExcursionOrder } from '../types/index.ts';
+import type { User } from '../types/index.ts';
 
 export const getUsers = async () => {
   const response: { data: User[] } = await api.get('users/');
