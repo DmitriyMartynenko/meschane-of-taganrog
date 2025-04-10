@@ -11,7 +11,7 @@ const HomeLayout = ({ children }: Readonly<HomeLayoutProps>) => {
     <div className="flex flex-col min-h-screen bg-amber-50">
       <div className="flex-1 container h-full mx-auto">
         <Header />
-        <main className="bg-promo-background">{children}</main>
+        <main className="">{children}</main>
       </div>
     </div>
   );
