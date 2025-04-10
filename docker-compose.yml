@@ -1,37 +1,15 @@
-name: meschane-of-taganrog
-
 services:
-  frontend:
-    container_name: meschane-of-taganrog_frontend
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      - POSTGRES_USER=josephperson
+      - POSTGRES_PASSWORD=0908
+      - POSTGRES_DB=meschane_db
     ports:
-      - 3000:3000
-    networks:
-      - app-network
-
-  backend:
-    container_name: meschane-of-taganrog_backend
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    ports:
-      - 8000:8000
-    networks:
-      - app-network
-
-  nginx:
-    container_name: nginx
-    image: nginx:alpine
+      - 5432:5432
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 80:80
-    depends_on:
-      - frontend
-      - backend
+      - postgres-data:/var/lib/postgresql/data
 
-networks:
-  app-network:
-    driver: bridge
+volumes:
+  postgres-data:
