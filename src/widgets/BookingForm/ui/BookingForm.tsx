@@ -15,7 +15,7 @@ export const BookingForm = (props: BookingFormProps) => {
       <div>
         <div className="flex gap-2">
           <Input type="tel" placeholder="+7 (___) ___ __ __" className="grow-[1.5]" />
-          <Button className="grow-1">Заказать экскурсию</Button>
+          <Button>Заказать экскурсию</Button>
         </div>
       </div>
     </form>

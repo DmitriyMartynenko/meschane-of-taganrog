@@ -125,7 +125,7 @@ function NavigationMenuLink({
         /*
         "data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 cursor-pointer",
         */
-        "relative text-secondary-foreground text-sm text-center cursor-pointer transition-colors duration-300 ease-in hover:text-primary-foreground after:content-[''] after:absolute after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary-foreground after:transition-[width] after:duration-500 after:ease hover:after:w-full",
+        "relative text-foreground text-sm text-center cursor-pointer transition-colors duration-300 ease-in hover:text-primary-foreground after:content-[''] after:absolute after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary-foreground after:transition-[width] after:duration-500 after:ease hover:after:w-full",
         className
       )}
       {...props}

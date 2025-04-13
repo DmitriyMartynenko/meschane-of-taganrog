@@ -35,7 +35,7 @@ const buttonVariants = cva(
 */
 
 const buttonVariants = cva(
-  "px-2 py-4 border border-solid border-primary bg-transparent text-background text-sm font-light uppercase transition-[background-color] duration-300 ease cursor-pointer hover:bg-primary active:bg-[#BFA259]",
+  "px-2 py-4 border border-solid border-border bg-transparent text-background uppercase transition-[background-color] duration-300 ease cursor-pointer hover:bg-accent active:bg-active",
   {
     variants: {
       variant: {
