@@ -13,7 +13,7 @@ function Input({ className, type, ...props }: ComponentProps<'input'>) {
         'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
         'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
         */
-        "p-4 bg-input text-sm placeholder:text-foreground focus:outline-none focus:ring-1 focus:ring-ring",
+        "p-4 bg-background-primary text-foreground-primary text-sm placeholder:text-foreground-muted focus:outline-none focus:ring-1 focus:ring-accent-primary",
         className
       )}
       {...props}

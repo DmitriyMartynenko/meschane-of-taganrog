@@ -4,52 +4,23 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-   --radius: 0.5rem;
+  --radius: 0.5rem;
 
-   --background: oklch(1 0 0);
-   --background-secondary: oklch(0.89 0 0);
+  --primary: oklch(0.83 0.0989 86.61);
+  --secondary: oklch(0.63 0.0814 78.3);
 
-   --foreground: oklch(0.76 0 0);
-   --foreground-secondary: oklch(0.141 0.005 285.823);
+  --background-primary: oklch(1 0 0);
+  --background-secondary: oklch(0.97 0.0025 345.21);
+  
+  --foreground-primary: oklch(0.26 0.0112 293.24);
+  --foreground-secondary: oklch(1 0 0);
+  --foreground-thirdly: oklch(0 0 0);
+  --foreground-muted: oklch(0.76 0 0);
 
-   --primary: oklch(0.83 0.0989 86.61);
-   --primary-foreground: oklch(0.63 0.0814 78.3);
+  --border-primary: oklch(0.83 0.0989 86.61);
+  --border-secondary: oklch(0.89 0 0);
 
-   --secondary: oklch(0.89 0 0);
-   --secondary-foreground: oklch(0.76 0 0);
-
-   --accent: oklch(0.83 0.0989 86.61);
-   --accent-foreground: oklch(0.21 0.006 285.885);
-   
-   --muted: oklch(0.967 0.001 286.375);
-   --muted-foreground: oklch(0.552 0.016 285.938);
-
-   --card: oklch(1 0 0);
-   --card-foreground: oklch(0.141 0.005 285.823);
-
-   --popover: oklch(1 0 0);
-   --popover-foreground: oklch(0.141 0.005 285.823);
-
-   --destructive: oklch(0.577 0.245 27.325);
-   --input: oklch(1 0 0);
-   --border: oklch(0.83 0.0989 86.61);
-   --ring: oklch(0.83 0.0989 86.61);
-   --active: oklch(0.72 0.0986 88.21);
-
-   --chart-1: oklch(0.646 0.222 41.116);
-   --chart-2: oklch(0.6 0.118 184.704);
-   --chart-3: oklch(0.398 0.07 227.392);
-   --chart-4: oklch(0.828 0.189 84.429);
-   --chart-5: oklch(0.769 0.188 70.08);
-
-   --sidebar: oklch(0.985 0 0);
-   --sidebar-foreground: oklch(0.141 0.005 285.823);
-   --sidebar-primary: oklch(0.795 0.184 86.047);
-   --sidebar-primary-foreground: oklch(0.421 0.095 57.708);
-   --sidebar-accent: oklch(0.967 0.001 286.375);
-   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-   --sidebar-border: oklch(0.92 0.004 286.32);
-   --sidebar-ring: oklch(0.795 0.184 86.047);
+  --accent-primary: oklch(0.83 0.0989 86.61);
  }
 
 @theme inline {
@@ -60,46 +31,21 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-foreground-primary: var(--foreground-primary);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --colr-foreground-thirdly: var(--foreground-thirdly);
+  --color-foreground-muted: var(--foreground-muted);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-accent-primary: var(--accent-primary);
 }
 
 @layer base {
@@ -113,8 +59,8 @@
 
   body {
     height: 100vh;
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
     font-family: var(--font-montserrat);
     font-weight: 300;
     overscroll-behavior: none;

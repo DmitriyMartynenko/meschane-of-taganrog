@@ -8,11 +8,9 @@ type HomeLayoutProps = {
 
 const HomeLayout = ({ children }: Readonly<HomeLayoutProps>) => {
   return (
-    <div className="flex flex-col min-h-screen bg-amber-50">
-      <div className="flex-1 container h-full mx-auto">
-        <Header />
-        <main className="">{children}</main>
-      </div>
+    <div className="flex flex-col w-full min-h-screen">
+      <Header />
+      <main>{children}</main>
     </div>
   );
 };

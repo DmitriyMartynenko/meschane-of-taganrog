@@ -11,11 +11,11 @@ export const BookingForm = (props: BookingFormProps) => {
 
   return (
     <form className={cn('flex flex-col gap-6', className)}>
-      <h2 className="pl-2 text-background uppercase">Записаться на экскурсию</h2>
+      <h2 className="pl-2 text-foreground-secondary uppercase">Записаться на экскурсию</h2>
       <div>
         <div className="flex gap-2">
-          <Input type="tel" placeholder="+7 (___) ___ __ __" className="grow-[1.5]" />
-          <Button>Заказать экскурсию</Button>
+          <Input className="basis-[55%]" type="tel" placeholder="+7 (___) ___ __ __" />
+          <Button className="basis-[45%]">Заказать экскурсию</Button>
         </div>
       </div>
     </form>

@@ -10,7 +10,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primarytext-primary-foreground shadow-xs hover:bg-primary/90',
+        default: 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
         destructive:
           'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
@@ -35,23 +35,16 @@ const buttonVariants = cva(
 */
 
 const buttonVariants = cva(
-  "px-2 py-4 border border-solid border-border bg-transparent text-background uppercase transition-[background-color] duration-300 ease cursor-pointer hover:bg-accent active:bg-active",
+  'px-2 py-4 border border-solid border-border-primary bg-transparent text-foreground-secondary uppercase transition-[background-color] duration-300 ease cursor-pointer hover:bg-accent-primary active:border-transparent active:bg-accent-primary/80',
   {
     variants: {
       variant: {
         default: '',
-        outline: '',
-      },
-      size: {
-        default: '',
-        sm: '',
-        lg: '',
-        icon: '',
+        disabled: '',
       },
     },
     defaultVariants: {
       variant: 'default',
-      size: 'default',
     },
   }
 );
@@ -59,7 +52,6 @@ const buttonVariants = cva(
 function Button({
   className,
   variant,
-  size,
   asChild = false,
   ...props
 }: ComponentProps<'button'> &
@@ -71,7 +63,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, className }))}
       {...props}
     />
   );
