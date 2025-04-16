@@ -1,4 +1,4 @@
-import { PromoSection } from '@/widgets/PromoSection/ui/PromoSection';
+import { PromoSection } from '@/widgets/PromoSection/ui';
 import { QuoteSection } from '@/widgets/QuoteSection/ui/QuoteSection';
 
 const HomePage = () => {
@@ -6,6 +6,7 @@ const HomePage = () => {
     <>
       <PromoSection />
       <QuoteSection />
+      <div className="w-full h-screen bg-amber-950"></div>
     </>
   );
 };

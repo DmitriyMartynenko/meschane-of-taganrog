@@ -4,11 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     localPatterns: [
       {
-        pathname: 'src/shared/assets/images/**',
-        search: ''
-      }
-    ]
-  }
+        pathname: 'src/shared/assets/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

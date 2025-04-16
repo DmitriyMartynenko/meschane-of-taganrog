@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/lib/constants/seo-constants';
-import { chibola, montserrat } from '@/shared/lib/utils/fonts';
+import { montserrat, alegreya, chibola } from '@/shared/lib/utils/fonts';
 
 import './styles/globals.css';
 
@@ -18,10 +18,14 @@ type RootLayoutProps = {
   children: ReactNode;
 };
 
-const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
+const RootLayout = (props: Readonly<RootLayoutProps>) => {
+  const { children } = props;
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${chibola.variable} antialiased`}>
+      <body
+        className={`${montserrat.variable} ${alegreya.variable} ${chibola.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

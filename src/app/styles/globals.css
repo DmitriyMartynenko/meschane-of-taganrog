@@ -17,14 +17,14 @@
   --foreground-thirdly: oklch(0 0 0);
   --foreground-muted: oklch(0.76 0 0);
 
-  --border-primary: oklch(0.83 0.0989 86.61);
-  --border-secondary: oklch(0.89 0 0);
+  --border-primary: oklch(0.89 0 0);
 
   --accent-primary: oklch(0.83 0.0989 86.61);
  }
 
 @theme inline {
-  --font-chibola: var(--font-chibola);
+  --font-alegreya: var(--alegreya);
+  --font-chibola: var(--chibola);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -43,14 +43,13 @@
   --color-foreground-muted: var(--foreground-muted);
 
   --color-border-primary: var(--border-primary);
-  --color-border-secondary: var(--border-secondary);
 
   --color-accent-primary: var(--accent-primary);
 }
 
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: var(--border-primary);
   }
 
   html {
@@ -61,8 +60,9 @@
     height: 100vh;
     background-color: var(--background-primary);
     color: var(--foreground-primary);
-    font-family: var(--font-montserrat);
+    font-family: var(--montserrat);
     font-weight: 300;
+    line-height: 150%;
     overscroll-behavior: none;
   }
 }
@@ -70,6 +70,18 @@
 @layer utilities {
   .bg-promo-background-image {
     background-image: linear-gradient(rgba(5, 0, 5, 0.75), rgba(5, 0, 5, 0.75)),
-      url('../../shared/assets/images/promo-background.png');
+      url('@/shared/assets/images/promo-background.png');
+  }
+
+  .text-shadow-promo-title {
+    text-shadow:
+      2px 2px 3px rgba(0, 0, 0, 0.7),
+      -2px 2px 3px rgba(0, 0, 0, 0.7),
+      2px -2px 3px rgba(0, 0, 0, 0.7),
+      -2px -2px 3px rgba(0, 0, 0, 0.7),
+      0px 2px 3px rgba(0, 0, 0, 0.7),
+      0px -2px 3px rgba(0, 0, 0, 0.7),
+      2px 0px 3px rgba(0, 0, 0, 0.7),
+      -2px 0px 3px rgba(0, 0, 0, 0.7);
   }
 }

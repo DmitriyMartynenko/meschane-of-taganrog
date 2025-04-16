@@ -1,13 +1,12 @@
+import { ComponentProps } from 'react';
+
+import { Button } from '@/shared/ui/common/Button';
+import { Input } from '@/shared/ui/common/Input';
+
 import { cn } from '@/shared/lib/utils/cn';
-import { Button } from '@/shared/ui/button';
-import { Input } from '@/shared/ui/input';
 
-type BookingFormProps = {
-  className?: string;
-};
-
-export const BookingForm = (props: BookingFormProps) => {
-  const { className = '' } = props;
+export const BookingForm = (props: ComponentProps<'form'>) => {
+  const { className } = props;
 
   return (
     <form className={cn('flex flex-col gap-6', className)}>
