@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { BookingForm } from '@/widgets/BookingForm/ui/BookingForm';
+import { BookingForm } from '@/features/booking-form/ui/BookingForm';
 
 import logo from '@/shared/assets/icons/logo.svg';
 import { SectionHeadingHighlight } from '@/shared/ui/elements/SectionHeading';

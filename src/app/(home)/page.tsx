@@ -1,5 +1,5 @@
-import { PromoSection } from '@/widgets/PromoSection/ui';
-import { QuoteSection } from '@/widgets/QuoteSection/ui/QuoteSection';
+import { PromoSection } from '@/app/(home)/ui/PromoSection';
+import { QuoteSection } from '@/app/(home)/ui/QuoteSection';
 
 const HomePage = () => {
   return (

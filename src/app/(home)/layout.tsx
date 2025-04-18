@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Header } from '@/widgets/Header/ui/Header';
+import { Header } from '@/widgets/Header';
 
 type HomeLayoutProps = {
   children: ReactNode;
