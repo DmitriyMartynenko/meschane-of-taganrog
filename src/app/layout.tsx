@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/constants/seo-constants';
 import { montserrat, alegreya, chibola } from '@/shared/config/fonts';
 
@@ -26,14 +25,7 @@ const RootLayout = (props: Readonly<RootLayoutProps>) => {
       <body
         className={`${montserrat.variable} ${alegreya.variable} ${chibola.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

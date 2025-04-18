@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
         pathname: 'src/shared/assets/**',
       },
     ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 };
 
