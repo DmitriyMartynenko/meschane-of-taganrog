@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
+import { montserrat, alegreya, chibola } from '@/app/assets/fonts/fonts';
 import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/constants/seo-constants';
-import { montserrat, alegreya, chibola } from '@/shared/config/fonts';
 
-import './styles/globals.css';
+import './assets/styles/globals.css';
 
 export const metadata: Metadata = {
   title: APP_NAME,

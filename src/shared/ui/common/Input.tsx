@@ -10,7 +10,7 @@ const Input = (props: ComponentProps<'input'>) => {
       data-slot="input"
       type={type}
       className={cn(
-        'p-4 bg-background-primary text-foreground-primary text-sm placeholder:text-foreground-muted focus:outline-none focus:ring-1 focus:ring-accent-primary',
+        'p-4 bg-background-primary font-semibold text-foreground-primary placeholder:text-foreground-muted focus:outline-none focus:ring-1 focus:ring-accent-primary',
         className
       )}
       {...restProps}

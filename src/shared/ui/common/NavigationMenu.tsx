@@ -122,7 +122,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "relative text-foreground-muted text-sm text-center cursor-pointer transition-[color,font-weight] duration-300 ease-in-out hover:text-accent-primary",
+        "relative text-foreground-muted text-center cursor-pointer transition-[color,font-weight] duration-300 ease-in-out hover:text-accent-primary",
         className
       )}
       {...props}

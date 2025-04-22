@@ -5,11 +5,11 @@ import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/shared/lib/utils/cn';
 
 const buttonVariants = cva(
-  'px-2 py-4 border bg-transparent uppercase transition-[background-color] duration-300 ease cursor-pointer',
+  'px-2 py-4 border bg-transparent font-semibold uppercase transition-[background-color] duration-300 ease-in-out cursor-pointer',
   {
     variants: {
       variant: {
-        default:
+        primary:
           'border-primary text-foreground-secondary hover:bg-accent-primary active:border-transparent active:bg-accent-primary/80',
         disabled: 'border-foreground-muted/50 text-foreground-muted',
       },
@@ -23,7 +23,7 @@ type ButtonProps = {
   VariantProps<typeof buttonVariants>;
 
 const Button = (props: ButtonProps) => {
-  const { className, variant = 'default', asChild = false, ...restProps } = props;
+  const { className, variant = 'primary', asChild = false, ...restProps } = props;
 
   const Comp = asChild ? Slot : 'button';
 

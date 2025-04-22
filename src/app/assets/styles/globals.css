@@ -70,7 +70,7 @@
 @layer utilities {
   .bg-promo-background-image {
     background-image: linear-gradient(rgba(5, 0, 5, 0.75), rgba(5, 0, 5, 0.75)),
-      url('@/shared/assets/images/promo-background.png');
+      url('@/pages/home/assets/images/promo-background.png');
   }
 
   .text-shadow-promo-title {
@@ -83,5 +83,10 @@
       0px -2px 3px rgba(0, 0, 0, 0.7),
       2px 0px 3px rgba(0, 0, 0, 0.7),
       -2px 0px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  .bg-parthers-background-image {
+    background-image: linear-gradient(rgba(5, 0, 5, 0.8), rgba(5, 0, 5, 0.8)),
+      url('@/pages/home/assets/images/parthers-background.png');
   }
 }

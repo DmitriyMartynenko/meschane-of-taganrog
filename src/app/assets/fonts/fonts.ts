@@ -12,7 +12,7 @@ export const alegreya = Alegreya({
 })
 
 export const chibola = localFont({
-  src: '../assets/fonts/chilbola/Chibola.ttf',
+  src: './chilbola/Chibola.ttf',
   display: 'swap',
   variable: '--chibola',
 });
