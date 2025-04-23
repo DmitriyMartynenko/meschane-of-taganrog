@@ -9,11 +9,11 @@ import tgliamzImg from '../assets/images/tgliamz.png';
 export const PartnersSection = () => {
   return (
     <Section className="flex bg-[url(@/pages/home/assets/images/parthers-background.png)] bg-neutral-900 bg-center bg-no-repeat  bg-cover">
-      <Container className="flex-col py-16">
+      <Container className="flex-col gap-16 py-16">
         <Title>
           <HeadingHighlight>Наши партнеры</HeadingHighlight>
         </Title>
-        <div className="flex flex-col justify-center items-center grow gap-16">
+        <div className="flex flex-col justify-center items-center grow gap-8">
           <Image
             src={tgliamzImg}
             alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"

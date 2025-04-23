@@ -4,8 +4,8 @@ import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui/elements
 
 export const ReviewsSection = () => {
   return (
-    <Section className="flex bg-background-primary">
-      <Container className="flex-col py-16">
+    <Section className="flex justify-center items-center bg-background-primary">
+      <Container className="flex-col gap-16 py-16">
         <Heading>
           <Subtitle withoutLine>О нас говорят</Subtitle>
           <Title>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { Section } from '@/shared/ui/elements/Section';
 import { Container } from '@/shared/ui/elements/Container';
-import { BookingForm } from '@/features/booking-form/ui/BookingForm';
+import { BookingForm } from '@/features/booking-form';
 import { HeadingHighlight } from '@/shared/ui/elements/Heading';
 
 import logo from '@/shared/assets/icons/logo.svg';

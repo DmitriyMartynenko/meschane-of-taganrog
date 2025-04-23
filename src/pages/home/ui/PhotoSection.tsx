@@ -11,7 +11,7 @@ import meschaneImg3 from '../assets/images/meschane-3.png';
 export const PhotoSection = () => {
   return (
     <Section className="flex bg-background-secondary">
-      <Container className="flex gap-16">
+      <Container className="flex gap-16 py-16">
         <Title className="text-center">
           Мещане <span className="whitespace-nowrap">г. Таганрога</span>
         </Title>

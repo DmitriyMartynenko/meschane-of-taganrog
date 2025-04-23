@@ -16,7 +16,11 @@ export const NavigationMenuGroup = (props: NavGroupProps) => {
       {links.map((link, index) => (
         <NavigationMenuItem key={`${link}_${index}`}>
           <NavigationMenuLink
-            className={`${isScrolled ? 'font-semibold text-foreground-secondary' : "after:absolute after:content-[''] after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary after:transition-[width] after:duration-600 after:ease hover:after:w-full"}`}
+            className={cn(
+              isScrolled
+                ? 'font-semibold text-foreground-secondary'
+                : "after:absolute after:content-[''] after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary after:transition-[width] after:duration-600 after:ease hover:after:w-full"
+            )}
           >
             {link}
           </NavigationMenuLink>

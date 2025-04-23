@@ -6,7 +6,7 @@ export const Section = (props: ComponentProps<'section'>) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <section className={cn('w-full min-h-[700px] bg-background-primary', className)} {...restProps}>
+    <section className={cn('w-full bg-background-primary', className)} {...restProps}>
       {children}
     </section>
   );

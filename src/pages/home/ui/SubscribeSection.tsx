@@ -6,9 +6,9 @@ import { Button } from '@/shared/ui/common/Button';
 
 export const SubscribeSection = () => {
   return (
-    <Section className="flex min-h-[350px] bg-background-secondary">
+    <Section className="flex bg-background-secondary">
       <Container className="items-start py-16">
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col gap-16">
           <Heading>
             <Subtitle withoutLine>Будьте в курсе мещанских дел</Subtitle>
             <Title>
