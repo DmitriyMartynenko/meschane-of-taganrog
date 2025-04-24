@@ -25,10 +25,10 @@ type ButtonProps = {
 const Button = (props: ButtonProps) => {
   const { className, variant = 'primary', asChild = false, ...restProps } = props;
 
-  const Comp = asChild ? Slot : 'button';
+  const ButtonPrimitive = asChild ? Slot : 'button';
 
   return (
-    <Comp
+    <ButtonPrimitive
       data-slot="button"
       className={cn(buttonVariants({ variant, className }))}
       {...restProps}

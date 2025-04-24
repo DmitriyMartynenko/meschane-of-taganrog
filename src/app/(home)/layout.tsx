@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { Header } from '@/widgets/Header';
+import { Header } from '@/widgets/header';
+import { Footer } from '@/widgets/footer';
 
 type HomeLayoutProps = {
   children: ReactNode;
@@ -13,6 +14,7 @@ const HomeLayout = (props: Readonly<HomeLayoutProps>) => {
     <div className="flex flex-col w-full min-h-screen">
       <Header />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 };

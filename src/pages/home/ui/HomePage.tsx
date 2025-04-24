@@ -16,7 +16,6 @@ const HomePage = () => {
       <PartnersSection />
       <ReviewsSection />
       <SubscribeSection />
-      <div className="w-full h-screen bg-amber-950"></div>
     </>
   );
 };
