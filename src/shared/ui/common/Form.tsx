@@ -91,7 +91,7 @@ const FormLabel = (props: ComponentProps<typeof LabelPrimitive>) => {
     <Label
       data-slot="form-label"
       data-error={!!error}
-      className={cn('data-[error=true]:text-destructive', className)}
+      className={cn('data-[error=true]:text-destructive-primary', className)}
       htmlFor={formItemId}
       {...restProps}
     />
@@ -144,7 +144,7 @@ const FormMessage = (props: ComponentProps<'p'>) => {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-destructive text-sm', className)}
+      className={cn('text-destructive-primary', className)}
       {...restProps}
     >
       {body}

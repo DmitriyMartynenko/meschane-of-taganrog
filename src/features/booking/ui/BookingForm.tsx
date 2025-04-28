@@ -1,26 +1,21 @@
-import { ComponentProps } from 'react';
+'use client';
 
-import { Button } from '@/shared/ui/common/Button';
-import { Input } from '@/shared/ui/common/Input';
+import { z } from 'zod';
 
-import { cn } from '@/shared/lib/utils/cn';
-import { Form } from '@/shared/ui/common/Form';
+import { OrderForm } from '@/shared/ui/elements/OrderForm';
 
-export const BookingForm = (props: ComponentProps<'form'>) => {
-  const { className } = props;
+import { OrderSchema } from '@/shared/lib/schemas/order.schema';
+
+type BookingForm = z.infer<typeof OrderSchema>;
+
+export const BookingForm = () => {
+  const onSubmit = (data: BookingForm) => {
+    alert('BookingForm data submitted!');
+  };
 
   return (
-    // <Form>
-    //   <form className={cn('flex flex-col gap-6', className)}>
-    //     <h2 className="pl-2 text-foreground-secondary uppercase">Записаться на экскурсию</h2>
-    //     <div>
-    //       <div className="flex gap-2">
-    //         <Input className="basis-[55%]" type="tel" placeholder="+7 (___) ___ __ __" />
-    //         <Button className="basis-[45%]" type="submit">Заказать экскурсию</Button>
-    //       </div>
-    //     </div>
-    //   </form>
-    // </Form>
-    <div></div>
+    <OrderForm buttonText="Заказать экскурсию" onSubmit={onSubmit} id="booking">
+      Записаться на экскурсию
+    </OrderForm>
   );
 };

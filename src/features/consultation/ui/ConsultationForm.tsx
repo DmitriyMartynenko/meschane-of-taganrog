@@ -1,44 +1,20 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Form } from '@/shared/ui/common/Form';
 import { OrderForm } from '@/shared/ui/elements/OrderForm';
+import { OrderSchema } from '@/shared/lib/schemas/order.schema';
 
-const FormSchema = z.object({
-  phone: z.string().min(11, {
-    message: 'Phone number must be at least 11 characters.',
-  }),
-});
-type FormValues = {
-  phone: string
-}
+type ConsultationForm = z.infer<typeof OrderSchema>;
+
 export const ConsultationForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      phone: '',
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log('Data', data);
+  const onSubmit = (data: ConsultationForm) => {
+    alert('ConsultationForm data submitted!')
   };
 
   return (
-    <Form {...form}>
-      <OrderForm<FormValues>
-        onSubmit={form.handleSubmit(onSubmit)}
-        htmlFor="consultation-phone"
-        control={form.control}
-        name="phone"
-        inputPlaceholder="+7 (___) ___ __ __"
-        buttonText="Заказать звонок"
-      >
-        Нужна консультация?
-      </OrderForm>
-    </Form>
+    <OrderForm buttonText="Заказать звонок" onSubmit={onSubmit} id="consultation">
+      Нужна консультация?
+    </OrderForm>
   );
 };

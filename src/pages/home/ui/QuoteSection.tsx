@@ -5,7 +5,7 @@ import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui/elements
 
 import stoneStairImg from '../assets/images/stone-stair.png';
 import meschaninImg from '../assets/images/meschanin.png';
-import quotes from '../assets/icons/quotes.svg';
+import quotes from '@/shared/assets/icons/quotes.svg';
 
 export const QuoteSection = () => {
   return (
