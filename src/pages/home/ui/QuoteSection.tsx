@@ -9,7 +9,7 @@ import quotes from '@/shared/assets/icons/quotes.svg';
 
 export const QuoteSection = () => {
   return (
-    <Section className="flex bg-background-secondary">
+    <Section className="flex bg-background-secondary" id="quote-section">
       <div className="relative basis-[30%]">
         <Image src={stoneStairImg} alt="Каменная лестница Таганрога" className="w-full h-full" />
       </div>

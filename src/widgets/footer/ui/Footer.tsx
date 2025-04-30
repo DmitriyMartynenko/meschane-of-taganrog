@@ -3,7 +3,7 @@ import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui/elements
 
 export const Footer = () => {
   return (
-    <footer className="flex">
+    <footer className="flex" id="footer">
       <div className="basis-1/2">
         <iframe className="w-full h-full" src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"></iframe>
       </div>

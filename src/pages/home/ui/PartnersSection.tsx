@@ -8,7 +8,7 @@ import tgliamzImg from '../assets/images/tgliamz.png';
 
 export const PartnersSection = () => {
   return (
-    <Section className="flex bg-[url(@/pages/home/assets/images/parthers-background.png)] bg-neutral-900 bg-center bg-no-repeat  bg-cover">
+    <Section className="flex bg-[url(@/pages/home/assets/images/parthers-background.png)] bg-neutral-900 bg-center bg-no-repeat  bg-cover" id="partners-section">
       <Container className="flex-col gap-16 py-16">
         <Title>
           <HeadingHighlight>Наши партнеры</HeadingHighlight>
