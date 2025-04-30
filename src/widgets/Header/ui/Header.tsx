@@ -9,12 +9,16 @@ import { NavigationMenuGroup } from './NavigationMenuGroup';
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleScroll = () => {
+  const onScroll = () => {
     setIsScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    onScroll();
+
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
