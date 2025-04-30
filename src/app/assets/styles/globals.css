@@ -21,6 +21,8 @@
 
   --accent-primary: oklch(0.83 0.0989 86.61);
 
+  --ring-primary: oklch(0.83 0.0989 86.61);
+
   --destructive-primary: oklch(0.577 0.245 27.325);
  }
 
@@ -47,6 +49,8 @@
   --color-border-primary: var(--border-primary);
 
   --color-accent-primary: var(--accent-primary);
+
+  --color-ring-primary: var(--ring-primary);
 
   --color-destructive-primary: var(--destructive-primary)
 }

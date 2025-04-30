@@ -1,61 +1,54 @@
 'use client';
 
 import Image from 'next/image';
-import { CircleUserRound, Star } from 'lucide-react';
+import { CircleUserRound } from 'lucide-react';
 
-import { useImageFallback } from '@/shared/lib/hooks/useImageFallback';
-import type { User } from '@/shared/types/user';
+import { StarRating } from '@/shared/ui/elements/StarRating';
+import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/common/Avatar';
+
+import type { Review as ReviewType } from '../model/types';
 
 import { cn } from '@/shared/lib/utils/cn';
 
 import quotes from '@/shared/assets/icons/quotes.svg';
-import { StarRating } from '@/shared/ui/elements/StarRating';
 
 type ReviewProps = {
   className?: string;
-  author: User;
-  text?: string;
-  rating: number;
-};
+} & ReviewType;
 
 export const Review = (props: ReviewProps) => {
-  const { className = '', text = '', author, rating } = props;
+  const { className = '', text = 'Нет текста', author, rating = 5 } = props;
 
-  const { fullName, avatarUrl, role } = author;
-
-  const { showFallback, handleError } = useImageFallback(avatarUrl);
+  const { fullName = 'Анонимный пользователь', avatarUrl = '', jobTitle = '' } = author;
 
   return (
-    <div
-      className={cn(
-        'relative flex flex-col justify-center items-center gap-8 max-w-[850px] pt-24 px-16 pb-16 text-center bg-background-secondary',
-        className
-      )}
-    >
-      <div className="absolute top-0 left-[50%] transform -translate-[50%] w-32 h-32 border-10 border-background-primary rounded-full z-1">
-        {showFallback ? (
-          <CircleUserRound size={64} />
-        ) : (
-          <Image
-            className="rounded-full"
-            src={avatarUrl}
-            alt={fullName}
-            onError={handleError}
-            fill
-          />
+    <div className="py-16">
+      <div
+        className={cn(
+          'relative flex flex-col justify-center items-center gap-8 pt-24 px-16 pb-16 text-center bg-background-primary shadow',
+          className
         )}
-      </div>
-      <div className="absolute top-[90%] left-[5%] w-12 h-12">
-        <Image src={quotes} alt="Кавычки" fill />
-      </div>
-      <div className="absolute -top-[5%] left-[90%] w-12 h-12 transform rotate-180">
-        <Image src={quotes} alt="Кавычки" fill />
-      </div>
-      <p className="italic">{text || 'Нет текста'}</p>
-      <div className="flex flex-col justify-center items-center gap-2">
-        <span className="font-medium uppercase">{fullName}</span>
-        <span className="text-foreground-muted">{role}</span>
-        <StarRating rating={4.5} totalStars={5} className="flex gap-1 text-yellow-500" />
+      >
+        <div className="absolute top-0 left-1/2 -translate-1/2 w-32 h-32 border-10 border-background-secondary rounded-full bg-background-secondary z-1">
+          <Avatar className="size-full">
+            <AvatarImage src={avatarUrl} alt={fullName}></AvatarImage>
+            <AvatarFallback>
+              <CircleUserRound className="size-full" />
+            </AvatarFallback>
+          </Avatar>
+        </div>
+        <div className="absolute top-[90%] left-[5%] w-12 h-12">
+          <Image src={quotes} alt="Кавычки" fill />
+        </div>
+        <div className="absolute -top-[5%] left-[90%] w-12 h-12 transform rotate-180">
+          <Image src={quotes} alt="Кавычки" fill />
+        </div>
+        <p className="italic">{text}</p>
+        <div className="flex flex-col justify-center items-center gap-2">
+          <span className="font-medium uppercase">{fullName}</span>
+          {jobTitle && <span className="text-foreground-muted">{jobTitle}</span>}
+          <StarRating rating={rating} className="flex gap-1" />
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
+import { ReviewCarousel } from '@/entities/review/ui/ReviewCarousel';
+
 import { Section } from '@/shared/ui/elements/Section';
 import { Container } from '@/shared/ui/elements/Container';
 import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui/elements/Heading';
-import { Review } from '@/entities/review/ui/Review';
-import { User } from '@/shared/types/user';
+
+import type { User } from '@/shared/types/user';
 
 const mockAuthors: User[] = [
   {
@@ -10,39 +12,59 @@ const mockAuthors: User[] = [
     fullName: 'Алексей Иванов',
     email: 'alex.ivanov@example.com',
     role: 'admin',
+    jobTitle: 'Директор компании “Воробьева и ко”',
     avatarUrl: 'https://i.pravatar.cc/150?img=3',
   },
   {
     id: 'u2',
     fullName: 'Мария Петрова',
     email: 'maria.petrova@example.com',
-    role: 'editor',
+    role: 'guide',
+    jobTitle: 'Менеджер по продукту',
     avatarUrl: 'https://i.pravatar.cc/150?img=5',
   },
   {
     id: 'u3',
     fullName: 'Дмитрий Соколов',
     email: 'dmitry.sokolov@example.com',
-    role: 'viewer',
+    role: 'user',
+    jobTitle: 'Стажёр отдела маркетинга',
     avatarUrl: 'https://i.pravatar.cc/150?img=7',
+  },
+];
+
+const mockReviews = [
+  {
+    id: '1',
+    author: mockAuthors[0],
+    text: 'Я обеспечу представление Ваших интересов в судах общей юрисдикции, арбитраже, третейском суде, приму участие в переговорах, окажу помощь на стадии досудебного урегулирования споров.',
+    rating: 5,
+  },
+  {
+    id: '2',
+    author: mockAuthors[1],
+    text: 'Хороший сервис, но есть мелкие задержки с обратной связью.',
+    rating: 4.5,
+  },
+  {
+    id: '3',
+    author: mockAuthors[2],
+    text: 'В целом неплохо, но хотелось бы более быстрых ответов от поддержки.',
+    rating: 4,
   },
 ];
 
 export const ReviewsSection = () => {
   return (
-    <Section className="flex justify-center items-center bg-background-primary">
-      <Container className="flex-col gap-16 py-16">
+    <Section className="flex justify-center items-center bg-background-secondary">
+      <Container className="flex-col gap-12 py-16">
         <Heading>
           <Subtitle withoutLine>О нас говорят</Subtitle>
           <Title>
             <HeadingHighlight>Отзывы</HeadingHighlight> участников
           </Title>
         </Heading>
-        <Review
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nesciunt corporis illo magnam cum maxime, laborum repellendus numquam delectus ducimus quae esse laudantium expedita voluptates atque sit optio ipsa corrupti!"
-          author={mockAuthors[0]}
-          rating={5}
-        />
+        <ReviewCarousel className="max-w-5xl" reviews={mockReviews} />
       </Container>
     </Section>
   );

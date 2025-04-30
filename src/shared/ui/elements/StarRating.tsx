@@ -1,33 +1,24 @@
-import { Star, StarHalf } from 'lucide-react'; // react-icons/fa :contentReference[oaicite:4]{index=4}
+import { Star, StarHalf } from 'lucide-react';
+
+import { cn } from '@/shared/lib/utils/cn';
 
 type StarRatingProps = {
-  rating: number;           // дробный рейтинг, например 4.5
-  totalStars?: number;      // макс. количество звёзд (по умолчанию 5)
   className?: string;
+  rating: number;
 };
 
-export const StarRating: React.FC<StarRatingProps> = ({
-  rating,
-  totalStars = 5,
-  className,
-}) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating - fullStars >= 0.5;
-  const emptyStars = totalStars - fullStars - (hasHalfStar ? 1 : 0);
+export const StarRating = (props: StarRatingProps) => {
+  const { className, rating } = props;
 
-  const stars = [
-    ...Array(fullStars).fill('full'),
-    ...(hasHalfStar ? ['half'] : []),
-    ...Array(emptyStars).fill('empty'),
-  ] as ('full' | 'half' | 'empty')[];
+  const fullStarsCount = Math.floor(rating);
+  const hasHalfStar = rating !== fullStarsCount;
 
   return (
-    <div className={className}>
-      {stars.map((type, idx) => {
-        if (type === 'full') return <Star key={idx} />;         // полная звезда
-        if (type === 'half') return <StarHalf key={idx} />; // половинчатая :contentReference[oaicite:5]{index=5}
-        return <StarHalf key={idx} />;                          // пустая звезда
-      })}
+    <div className={cn('fill-primary text-primary', className)}>
+      {[...Array(fullStarsCount)].map((_, index) => (
+        <Star key={index} className="fill-inherit" />
+      ))}
+      {hasHalfStar && <StarHalf className="fill-inherit" />}
     </div>
   );
 };

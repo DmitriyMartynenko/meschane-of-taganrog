@@ -1,7 +1,10 @@
+type UserRole = 'admin' | 'guide' | 'user';
+
 export type User = {
-  fullName: string;
-  email: string;
-  role: string;
-  avatarUrl: string;
   id: string;
-}
+  fullName: string;
+  avatarUrl: string;
+  email: string;
+  role: UserRole;
+  jobTitle?: string;
+};
