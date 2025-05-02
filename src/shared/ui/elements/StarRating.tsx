@@ -1,6 +1,6 @@
 import { Star, StarHalf } from 'lucide-react';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '../../lib/utils/cn';
 
 type StarRatingProps = {
   className?: string;

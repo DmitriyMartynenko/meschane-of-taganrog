@@ -1,6 +1,6 @@
-import type { Review } from '../model/types';
+import { type Review } from '../model/types';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 type ReviewPaginationProps = {
   className?: string;

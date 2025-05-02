@@ -2,9 +2,8 @@
 
 import { z } from 'zod';
 
-import { OrderForm } from '@/shared/ui/elements/OrderForm';
-
-import { OrderSchema } from '@/shared/lib/schemas/order.schema';
+import { OrderSchema } from '@/shared/model';
+import { OrderForm } from '@/shared/ui';
 
 type BookingForm = z.infer<typeof OrderSchema>;
 

@@ -1,12 +1,12 @@
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '../../lib/utils/cn';
 
 type SectionSubtitleProps = {
   withoutLine?: boolean;
 } & ComponentProps<'span'>;
 
-const Subtitle = (props: SectionSubtitleProps) => {
+export const Subtitle = (props: SectionSubtitleProps) => {
   const { children, className, withoutLine = false } = props;
 
   return (
@@ -17,22 +17,20 @@ const Subtitle = (props: SectionSubtitleProps) => {
   );
 };
 
-const Title = (props: ComponentProps<'h2'>) => {
+export const Title = (props: ComponentProps<'h2'>) => {
   const { children: text, className } = props;
 
   return <h2 className={cn('text-5xl font-alegreya uppercase', className)}>{text}</h2>;
 };
 
-const HeadingHighlight = (props: ComponentProps<'span'>) => {
+export const HeadingHighlight = (props: ComponentProps<'span'>) => {
   const { children, className } = props;
 
   return <span className={cn('text-secondary', className)}>{children}</span>;
 };
 
-const Heading = (props: ComponentProps<'div'>) => {
+export const Heading = (props: ComponentProps<'div'>) => {
   const { children, className } = props;
 
   return <div className={cn('flex flex-col gap-4', className)}>{children}</div>;
 };
-
-export { Heading, Subtitle, Title, HeadingHighlight };

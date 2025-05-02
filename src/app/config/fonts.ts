@@ -1,5 +1,5 @@
-import localFont from 'next/font/local';
 import { Montserrat, Alegreya } from 'next/font/google';
+import localFont from 'next/font/local';
 
 export const montserrat = Montserrat({
   display: 'swap',
@@ -12,7 +12,7 @@ export const alegreya = Alegreya({
 })
 
 export const chibola = localFont({
-  src: './chilbola/Chibola.ttf',
+  src: '../assets/fonts/chilbola/Chibola.ttf',
   display: 'swap',
   variable: '--chibola',
 });

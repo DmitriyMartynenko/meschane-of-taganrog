@@ -1,8 +1,8 @@
-import { NavigationMenuItem, NavigationMenuLink } from '@/shared/ui/common/NavigationMenu';
+import { NavigationMenuItem, NavigationMenuLink } from '@/shared/ui';
 
-import { NavLink } from '../model/types';
+import { type NavLink } from '../model/types';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 type NavGroupProps = {
   className?: string;

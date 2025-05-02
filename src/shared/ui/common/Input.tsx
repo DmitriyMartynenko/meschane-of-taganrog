@@ -1,8 +1,8 @@
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '../../lib/utils/cn';
 
-const Input = (props: ComponentProps<'input'>) => {
+export const Input = (props: ComponentProps<'input'>) => {
   const { className, ...restProps } = props;
 
   return (
@@ -16,5 +16,3 @@ const Input = (props: ComponentProps<'input'>) => {
     />
   );
 };
-
-export { Input };

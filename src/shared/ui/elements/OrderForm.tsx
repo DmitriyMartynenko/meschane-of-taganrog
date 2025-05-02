@@ -1,15 +1,17 @@
-import { ReactNode } from 'react';
+'use client'
+
+import { type ReactNode } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { OrderSchema } from '@/shared/lib/schemas/order.schema';
+import { OrderSchema } from '../../model/schemas';
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../common/Form';
 import { Button } from '../common/Button';
 import { PhoneInput } from './PhoneInput';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '../../lib/utils/cn';
 
 type OrderForm = z.infer<typeof OrderSchema>;
 

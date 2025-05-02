@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Image from 'next/image';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '../../lib/utils/cn';
 
 type BenefitCardProps = {
   children: ReactNode;
@@ -10,7 +10,7 @@ type BenefitCardProps = {
   iconAlt: string;
 };
 
-const BenefitCard = (props: BenefitCardProps) => {
+export const BenefitCard = (props: BenefitCardProps) => {
   const { children, className, icon, iconAlt } = props;
 
   return (
@@ -27,5 +27,3 @@ const BenefitCard = (props: BenefitCardProps) => {
     </div>
   );
 };
-
-export { BenefitCard };

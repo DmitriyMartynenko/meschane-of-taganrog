@@ -3,14 +3,12 @@
 import Image from 'next/image';
 import { CircleUserRound } from 'lucide-react';
 
-import { StarRating } from '@/shared/ui/elements/StarRating';
-import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/common/Avatar';
+import { Quotes } from '@/shared/assets';
+import { StarRating, Avatar, AvatarFallback, AvatarImage } from '@/shared/ui';
 
-import type { Review as ReviewType } from '../model/types';
+import { type Review as ReviewType } from '../model/types';
 
-import { cn } from '@/shared/lib/utils/cn';
-
-import quotes from '@/shared/assets/icons/quotes.svg';
+import { cn } from '@/shared/lib';
 
 type ReviewProps = {
   className?: string;
@@ -38,10 +36,10 @@ export const Review = (props: ReviewProps) => {
           </Avatar>
         </div>
         <div className="absolute top-[90%] left-[5%] w-12 h-12">
-          <Image src={quotes} alt="Кавычки" fill />
+          <Image src={Quotes} alt="Кавычки" fill />
         </div>
         <div className="absolute -top-[5%] left-[90%] w-12 h-12 transform rotate-180">
-          <Image src={quotes} alt="Кавычки" fill />
+          <Image src={Quotes} alt="Кавычки" fill />
         </div>
         <p className="italic">{text}</p>
         <div className="flex flex-col justify-center items-center gap-2">

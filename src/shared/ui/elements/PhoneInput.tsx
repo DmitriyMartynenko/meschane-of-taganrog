@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 import { InputMask, Track } from '@react-input/mask';
 
 import { Input } from '../common/Input';

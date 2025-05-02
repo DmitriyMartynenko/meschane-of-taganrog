@@ -9,14 +9,14 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/shared/ui/common/Carousel';
+} from '@/shared/ui';
+
+import { type Review as ReviewType } from '../model/types';
 
 import { Review } from './Review';
 import { ReviewPagination } from './ReviewPagination';
 
-import type { Review as ReviewType } from '../model/types';
-
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 type ReviewCarouselProps = {
   className?: string;

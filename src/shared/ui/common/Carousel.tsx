@@ -12,16 +12,17 @@ import {
 import Image from 'next/image';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 
-import { Button } from '@/shared/ui/common/Button';
+import Arrow from '../../assets/icons/arrow.svg';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { Button } from './Button';
 
-import arrow from '@/shared/assets/icons/arrow.svg';
+import { cn } from '../../lib/utils/cn';
 
-type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
+
+export type CarouselApi = UseEmblaCarouselType[1];
 
 type CarouselProps = {
   opts?: CarouselOptions;
@@ -51,7 +52,7 @@ const useCarousel = () => {
   return context;
 };
 
-const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
+export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
   const {
     orientation = 'horizontal',
     opts,
@@ -142,7 +143,7 @@ const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
   );
 };
 
-const CarouselContent = (props: ComponentProps<'div'>) => {
+export const CarouselContent = (props: ComponentProps<'div'>) => {
   const { className, ...restProps } = props;
 
   const { carouselRef, orientation } = useCarousel();
@@ -157,7 +158,7 @@ const CarouselContent = (props: ComponentProps<'div'>) => {
   );
 };
 
-const CarouselItem = (props: ComponentProps<'div'>) => {
+export const CarouselItem = (props: ComponentProps<'div'>) => {
   const { className, ...restProps } = props;
 
   const { orientation } = useCarousel();
@@ -177,7 +178,7 @@ const CarouselItem = (props: ComponentProps<'div'>) => {
   );
 };
 
-const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
+export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
   const { className, ...restProps } = props;
 
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -197,12 +198,12 @@ const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
       onClick={scrollPrev}
       {...restProps}
     >
-      <Image src={arrow} alt="Стрелка влево" />
+      <Image src={Arrow} alt="Стрелка влево" />
     </Button>
   );
 };
 
-const CarouselNext = (props: ComponentProps<typeof Button>) => {
+export const CarouselNext = (props: ComponentProps<typeof Button>) => {
   const { className, ...restProps } = props;
 
   const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -222,16 +223,7 @@ const CarouselNext = (props: ComponentProps<typeof Button>) => {
       onClick={scrollNext}
       {...restProps}
     >
-      <Image className="transform rotate-180" src={arrow} alt="Стрелка вправо" />
+      <Image className="transform rotate-180" src={Arrow} alt="Стрелка вправо" />
     </Button>
   );
-};
-
-export {
-  type CarouselApi,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 };

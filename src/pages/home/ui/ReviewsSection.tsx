@@ -1,10 +1,6 @@
-import { ReviewCarousel } from '@/entities/review/ui/ReviewCarousel';
-
-import { Section } from '@/shared/ui/elements/Section';
-import { Container } from '@/shared/ui/elements/Container';
-import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui/elements/Heading';
-
-import type { User } from '@/shared/types/user';
+import { ReviewCarousel } from '@/entities/review';
+import { type User } from '@/entities/user';
+import { Section, Container, Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui';
 
 const mockAuthors: User[] = [
   {

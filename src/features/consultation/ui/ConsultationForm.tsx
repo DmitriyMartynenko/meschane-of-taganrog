@@ -2,14 +2,14 @@
 
 import { z } from 'zod';
 
-import { OrderForm } from '@/shared/ui/elements/OrderForm';
-import { OrderSchema } from '@/shared/lib/schemas/order.schema';
+import { OrderSchema } from '@/shared/model';
+import { OrderForm } from '@/shared/ui';
 
 type ConsultationForm = z.infer<typeof OrderSchema>;
 
 export const ConsultationForm = () => {
   const onSubmit = (data: ConsultationForm) => {
-    alert('ConsultationForm data submitted!')
+    alert('ConsultationForm data submitted!');
   };
 
   return (

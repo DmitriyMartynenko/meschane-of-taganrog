@@ -1,13 +1,13 @@
 'use client';
 
-import { NavigationMenu, NavigationMenuList } from '@/shared/ui/common/NavigationMenu';
+import { useHasScrolled } from '@/shared/lib';
+import { NavigationMenu, NavigationMenuList } from '@/shared/ui';
 
-import { useHasScrolled } from '../hooks/useHasScrolled';
 import { NAV_LINKS } from '../model/constants';
 
 import { NavigationMenuGroup } from './NavigationMenuGroup';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const Header = () => {
   const { isScrolled } = useHasScrolled(50);

@@ -1,4 +1,4 @@
-import { User } from '@/shared/types/user';
+import { type User } from "@/entities/user";
 
 export type Review = {
   id?: string;

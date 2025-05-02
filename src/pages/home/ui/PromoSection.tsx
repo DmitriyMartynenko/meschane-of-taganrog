@@ -1,16 +1,13 @@
 import Image from 'next/image';
 
-import { Section } from '@/shared/ui/elements/Section';
-import { Container } from '@/shared/ui/elements/Container';
 import { BookingForm } from '@/features/booking';
-import { HeadingHighlight } from '@/shared/ui/elements/Heading';
-
-import logo from '@/shared/assets/icons/logo.svg';
+import { Logo } from '@/shared/assets';
+import { Section, Container, HeadingHighlight } from '@/shared/ui';
 
 export const PromoSection = () => {
   return (
     <Section className="relative flex h-screen bg-none overflow-hidden" id="promo-section">
-      <div className="absolute inset-0 -m-2 bg-promo-background-image bg-cover bg-center bg-no-repeat blur-xs opacity-90"></div>
+      <div className="absolute inset-0 -m-2 bg-[linear-gradient(rgba(5,0,5,0.75),rgba(5,0,5,0.75)),url(@/pages/home/assets/images/promo-background.png)] bg-cover bg-center bg-no-repeat blur-xs opacity-90"></div>
       <Container className="relative gap-32">
         <div className="flex flex-col gap-12">
           <h1 className="font-chibola text-5xl/tight text-foreground-secondary text-shadow-promo-title">
@@ -21,7 +18,7 @@ export const PromoSection = () => {
           <BookingForm />
         </div>
         <div className="relative">
-          <Image src={logo} priority alt="Логотип проекта 'Мещане Таганрога'" />
+          <Image src={Logo} priority alt="Логотип проекта 'Мещане Таганрога'" />
         </div>
       </Container>
     </Section>
