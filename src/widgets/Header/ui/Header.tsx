@@ -23,14 +23,8 @@ export const Header = () => {
     >
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="flex flex-row justify-between gap-64">
-          <NavigationMenuGroup
-            className={cn(isScrolled && 'font-semibold text-foreground-secondary')}
-            links={NAV_LINKS.slice(0, 3)}
-          />
-          <NavigationMenuGroup
-            className={cn(isScrolled && 'font-semibold text-foreground-secondary')}
-            links={NAV_LINKS.slice(3, 6)}
-          />
+          <NavigationMenuGroup links={NAV_LINKS.slice(0, 3)} isScrolled={isScrolled} />
+          <NavigationMenuGroup links={NAV_LINKS.slice(3, 6)} isScrolled={isScrolled} />
         </NavigationMenuList>
       </NavigationMenu>
     </header>

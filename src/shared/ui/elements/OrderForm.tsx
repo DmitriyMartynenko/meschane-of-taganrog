@@ -1,61 +1,83 @@
-'use client'
+'use client';
 
-import { type ReactNode } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-
-import { OrderSchema } from '../../model/schemas';
+import { useId } from 'react';
+import {
+  type Path,
+  type FieldValues,
+  type SubmitHandler,
+  type UseFormReturn,
+} from 'react-hook-form';
+import { type VariantProps } from 'class-variance-authority';
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../common/Form';
-import { Button } from '../common/Button';
+import { Button, buttonVariants } from '../common/Button';
+import { Input, inputVariants } from '../common/Input';
+
 import { PhoneInput } from './PhoneInput';
 
 import { cn } from '../../lib/utils/cn';
 
-type OrderForm = z.infer<typeof OrderSchema>;
-
-type OrderFormProps = {
-  children: ReactNode;
+type OrderFormProps<T extends FieldValues> = {
   className?: string;
-  onSubmit: SubmitHandler<OrderForm>;
-  buttonText: string;
-  id: string;
+  form: UseFormReturn<T>;
+  name: Path<T>;
+  label?: string;
+  type?: 'phone' | 'email';
+  placeholder?: string;
+  buttonText?: string;
+  inputVariant?: VariantProps<typeof inputVariants>['variant'];
+  buttonVariant?: VariantProps<typeof buttonVariants>['variant'];
+  onSubmit: SubmitHandler<T>;
 };
 
-export const OrderForm = (props: OrderFormProps) => {
-  const { children: title, className, onSubmit, buttonText, id } = props;
+export const OrderForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
+  const {
+    className = '',
+    form,
+    name,
+    label = '',
+    type = 'phone',
+    placeholder = '+7 (___) ___ __ __',
+    buttonText = 'Отправить',
+    inputVariant = 'primary',
+    buttonVariant = 'primary',
+    onSubmit,
+  } = props;
 
-  const form = useForm<OrderForm>({
-    resolver: zodResolver(OrderSchema),
-    mode: 'onSubmit',
-    reValidateMode: 'onSubmit',
-    defaultValues: {
-      phone: '',
-    },
-  });
+  const id = useId();
+  const FormInput = type === 'phone' ? PhoneInput : Input;
 
   return (
     <Form {...form}>
-      <form className={cn('max-w-[505px]', className)} onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className={cn('flex flex-col gap-6 w-[505px]', className)}
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
         <FormField
           control={form.control}
-          name="phone"
+          name={name}
           render={({ field }) => (
-            <div className="flex flex-col gap-6">
-              <FormLabel htmlFor={id}>{title}</FormLabel>
+            <>
+              {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
+              {console.log('field:', field)}
               <div className="flex gap-2">
                 <FormItem className="basis-[55%]">
                   <FormControl>
-                    <PhoneInput id={id} placeholder="+7 (___) ___ __ __" {...field} />
+                    <FormInput
+                      type={type}
+                      variant={inputVariant}
+                      placeholder={placeholder}
+                      id={id}
+                      {...field}
+                    />
                   </FormControl>
                 </FormItem>
-                <Button className="basis-[45%]" type="submit">
+                <Button className="basis-[45%]" type="submit" variant={buttonVariant}>
                   {buttonText}
                 </Button>
               </div>
               <FormMessage />
-            </div>
+            </>
           )}
         />
       </form>

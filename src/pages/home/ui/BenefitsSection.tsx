@@ -16,7 +16,7 @@ import Book from '../assets/icons/book.svg';
 export const BenefitsSection = () => {
   return (
     <Section id="benefits-section">
-      <Container className="flex-col gap-16 py-16">
+      <Container className="flex-col gap-16 pt-16 pb-32">
         <Heading>
           <Subtitle withoutLine>Почему стоит попобовать</Subtitle>
           <Title>

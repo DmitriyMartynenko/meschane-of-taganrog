@@ -1,20 +1,36 @@
 'use client';
 
+import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { OrderSchema } from '@/shared/model';
 import { OrderForm } from '@/shared/ui';
 
-type ConsultationForm = z.infer<typeof OrderSchema>;
+import { ConsultationFormSchema } from '../model/schemas';
+
+type ConsultationForm = z.infer<typeof ConsultationFormSchema>;
 
 export const ConsultationForm = () => {
+  const form = useForm<ConsultationForm>({
+    resolver: zodResolver(ConsultationFormSchema),
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+    defaultValues: {
+      phone: '',
+    },
+  });
+
   const onSubmit = (data: ConsultationForm) => {
-    alert('ConsultationForm data submitted!');
+    alert(`ConsultationForm data submitted! ${data}`);
   };
 
   return (
-    <OrderForm buttonText="Заказать звонок" onSubmit={onSubmit} id="consultation">
-      Нужна консультация?
-    </OrderForm>
+    <OrderForm
+      form={form}
+      name="phone"
+      label="Нужна консультация?"
+      buttonText="Заказать звонок"
+      onSubmit={onSubmit}
+    />
   );
 };

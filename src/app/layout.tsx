@@ -1,9 +1,11 @@
-import type { ReactNode } from 'react';
-import type { Metadata } from 'next';
+import { ReactScan } from './providers/ReactScan';
+
+import { type ReactNode } from 'react';
+import { type Metadata } from 'next';
 
 import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/config';
 
-import { montserrat, alegreya, chibola } from './config/fonts'
+import { montserrat, alegreya, chibola } from './config/fonts';
 
 import './assets/styles/globals.css';
 
@@ -23,6 +25,7 @@ const RootLayout = (props: Readonly<RootLayoutProps>) => {
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <ReactScan />
       <body
         className={`${montserrat.variable} ${alegreya.variable} ${chibola.variable} antialiased`}
       >

@@ -7,23 +7,27 @@ import { cn } from '@/shared/lib';
 type NavGroupProps = {
   className?: string;
   links: NavLink[];
+  isScrolled?: boolean;
 };
 
 export const NavigationMenuGroup = (props: NavGroupProps) => {
-  const { className, links } = props;
+  const { className, links, isScrolled = false } = props;
+
+  console.log(links);
 
   return (
     <div className={cn('flex flex-row gap-8', className)}>
-      {links.map((link, index) => (
-        <NavigationMenuItem key={`${link}_${index}`}>
+      {links.map(({ label, href }, index) => (
+        <NavigationMenuItem key={`${label}_${index}`}>
           <NavigationMenuLink
             className={cn(
-              "after:absolute after:content-[''] after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary after:transition-[width] after:duration-600 after:ease hover:after:w-full",
-              className
+              isScrolled
+                ? 'font-semibold text-foreground-secondary'
+                : "after:absolute after:content-[''] after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary after:transition-[width] after:duration-600 after:ease hover:after:w-full"
             )}
-            href={link.href}
+            href={href}
           >
-            {link.label}
+            {label}
           </NavigationMenuLink>
         </NavigationMenuItem>
       ))}
