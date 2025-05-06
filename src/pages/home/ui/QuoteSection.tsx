@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Quotes } from '@/shared/assets';
-import { Section, Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui';
+import { Section, Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
 
 import StoneStair from '../assets/images/stone-stair.png';
 import Meschanin from '../assets/images/meschanin.png';
@@ -22,11 +22,11 @@ export const QuoteSection = () => {
       </div>
       <div className="flex flex-col justify-center  gap-4 max-w-[700px] px-16">
         <Heading className="border-b-2 border-b-secondary">
-          <Subtitle>Слово мещанину</Subtitle>
-          <Title>
+          <HeadingSubtitle>Слово мещанину</HeadingSubtitle>
+          <HeadingTitle>
             Потому что нам <br />
             <HeadingHighlight>не все равно</HeadingHighlight>
-          </Title>
+          </HeadingTitle>
         </Heading>
         <p className="tracking-[1px]">
           В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и

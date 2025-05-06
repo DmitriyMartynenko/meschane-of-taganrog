@@ -30,7 +30,7 @@ type OrderFormProps<T extends FieldValues> = {
   onSubmit: SubmitHandler<T>;
 };
 
-export const OrderForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
+export const InlineForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
   const {
     className = '',
     form,
@@ -59,7 +59,6 @@ export const OrderForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
           render={({ field }) => (
             <>
               {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
-              {console.log('field:', field)}
               <div className="flex gap-2">
                 <FormItem className="basis-[55%]">
                   <FormControl>

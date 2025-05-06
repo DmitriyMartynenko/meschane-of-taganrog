@@ -4,15 +4,15 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { OrderForm } from '@/shared/ui';
+import { InlineForm } from '@/shared/ui';
 
-import { SubscriptionFormSchema } from '../model/schemas';
+import { InlineSubscriptionFormSchema } from '../model/schemas';
 
-type SubscriptionForm = z.infer<typeof SubscriptionFormSchema>;
+type InlineSubscriptionForm = z.infer<typeof InlineSubscriptionFormSchema>;
 
-export const SubscriptionForm = () => {
-  const form = useForm<SubscriptionForm>({
-    resolver: zodResolver(SubscriptionFormSchema),
+export const InlineSubscriptionForm = () => {
+  const form = useForm<InlineSubscriptionForm>({
+    resolver: zodResolver(InlineSubscriptionFormSchema),
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
     defaultValues: {
@@ -25,7 +25,7 @@ export const SubscriptionForm = () => {
   };
 
   return (
-    <OrderForm
+    <InlineForm
       className="w-full"
       form={form}
       name="email"

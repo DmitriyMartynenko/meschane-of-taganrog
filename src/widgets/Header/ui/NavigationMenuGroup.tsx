@@ -13,8 +13,6 @@ type NavGroupProps = {
 export const NavigationMenuGroup = (props: NavGroupProps) => {
   const { className, links, isScrolled = false } = props;
 
-  console.log(links);
-
   return (
     <div className={cn('flex flex-row gap-8', className)}>
       {links.map(({ label, href }, index) => (

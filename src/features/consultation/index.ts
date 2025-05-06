@@ -1,1 +1,1 @@
-export { ConsultationForm } from './ui/ConsultationForm';
+export { InlineConsultationForm } from './ui/InlineConsultationForm';

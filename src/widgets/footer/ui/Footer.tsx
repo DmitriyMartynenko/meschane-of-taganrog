@@ -1,7 +1,5 @@
-import { ConsultationForm } from '@/features/consultation';
-import { Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui';
-
-import a from '../assets/footer-background.png';
+import { InlineConsultationForm } from '@/features/consultation';
+import { Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
 
 export const Footer = () => {
   return (
@@ -11,10 +9,10 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col basis-1/2 gap-16 p-16 bg-[linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(@/widgets/footer/assets/footer-background.png)] bg-cover bg-no-repeat bg-center">
         <Heading>
-          <Subtitle>На связи с нами</Subtitle>
-          <Title className="text-foreground-secondary">
+          <HeadingSubtitle>На связи с нами</HeadingSubtitle>
+          <HeadingTitle className="text-foreground-secondary">
             <HeadingHighlight className="text-primary">Контактная</HeadingHighlight> информация
-          </Title>
+          </HeadingTitle>
         </Heading>
         <div className="flex flex-wrap gap-x-16 gap-y-4 text-foreground-secondary uppercase">
           <p>
@@ -29,7 +27,7 @@ export const Footer = () => {
             <span className="text-primary"> tgliamz.muzei@yandex.ru</span>
           </p>
         </div>
-        <ConsultationForm />
+        <InlineConsultationForm />
       </div>
     </footer>
   );

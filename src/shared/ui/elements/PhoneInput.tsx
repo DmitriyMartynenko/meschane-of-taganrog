@@ -1,9 +1,16 @@
 import { type ComponentProps } from 'react';
 import { InputMask, Track } from '@react-input/mask';
 
-import { Input } from '../common/Input';
+import { Input, inputVariants } from '../common/Input';
+import { VariantProps } from 'class-variance-authority';
 
-export const PhoneInput = (props: ComponentProps<'input'>) => {
+type PhoneInputProps = {
+  variant: VariantProps<typeof inputVariants>['variant'];
+} & ComponentProps<'input'>;
+
+export const PhoneInput = (props: PhoneInputProps) => {
+  const { variant, placeholder = '+7 (___) ___ __ __', ...restProps } = props;
+
   const track: Track = ({ inputType, value, data, selectionStart, selectionEnd }) => {
     if (inputType === 'insert' && selectionStart <= 1) {
       const formattedData = data.replace(/[^\d]/g, '');
@@ -20,14 +27,16 @@ export const PhoneInput = (props: ComponentProps<'input'>) => {
 
     return data;
   };
-  
+
   return (
     <InputMask
       component={Input}
       mask="+# (###) ### ## ##"
       replacement={{ '#': /\d/ }}
       track={track}
-      {...props}
+      variant={variant}
+      placeholder={placeholder}
+      {...restProps}
     />
   );
 };

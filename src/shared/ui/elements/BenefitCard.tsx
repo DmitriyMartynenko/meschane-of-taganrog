@@ -16,7 +16,7 @@ export const BenefitCard = (props: BenefitCardProps) => {
   return (
     <div
       className={cn(
-        'flex flex-col gap-8 min-h-[250px] px-6 py-8 border border-border-primary shadow',
+        'flex flex-col gap-8 min-h-[250px] px-6 py-8 border border-border-primary shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg',
         className
       )}
     >

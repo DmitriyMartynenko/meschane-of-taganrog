@@ -6,3 +6,4 @@ export * from './Input';
 export * from './Label';
 export * from './NavigationMenu';
 export * from './Skeleton';
+export * from './Dialog';

@@ -6,7 +6,7 @@ type SectionSubtitleProps = {
   withoutLine?: boolean;
 } & ComponentProps<'span'>;
 
-export const Subtitle = (props: SectionSubtitleProps) => {
+export const HeadingSubtitle = (props: SectionSubtitleProps) => {
   const { children, className, withoutLine = false } = props;
 
   return (
@@ -17,7 +17,7 @@ export const Subtitle = (props: SectionSubtitleProps) => {
   );
 };
 
-export const Title = (props: ComponentProps<'h2'>) => {
+export const HeadingTitle = (props: ComponentProps<'h2'>) => {
   const { children: text, className } = props;
 
   return <h2 className={cn('text-5xl font-alegreya uppercase', className)}>{text}</h2>;

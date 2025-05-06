@@ -4,8 +4,8 @@ import {
   BenefitCard,
   Heading,
   HeadingHighlight,
-  Subtitle,
-  Title,
+  HeadingSubtitle,
+  HeadingTitle,
 } from '@/shared/ui';
 
 import Clock from '../assets/icons/clock.svg';
@@ -18,12 +18,12 @@ export const BenefitsSection = () => {
     <Section id="benefits-section">
       <Container className="flex-col gap-16 pt-16 pb-32">
         <Heading>
-          <Subtitle withoutLine>Почему стоит попобовать</Subtitle>
-          <Title>
+          <HeadingSubtitle withoutLine>Почему стоит попобовать</HeadingSubtitle>
+          <HeadingTitle>
             Иммер<HeadingHighlight>с</HeadingHighlight>ивные эк
             <HeadingHighlight>с</HeadingHighlight>кур
             <HeadingHighlight>с</HeadingHighlight>ии
-          </Title>
+          </HeadingTitle>
         </Heading>
         <div className="flex gap-6">
           <BenefitCard className="basis-1/4" icon={Clock} iconAlt="Часы">

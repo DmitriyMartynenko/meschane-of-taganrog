@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Section, Container, HeadingHighlight, Title } from '@/shared/ui';
+import { Section, Container, HeadingHighlight, HeadingTitle } from '@/shared/ui';
 
 import TGLIAMZ from '../assets/images/tgliamz.png';
 
@@ -12,9 +12,9 @@ export const PartnersSection = () => {
       id="partners-section"
     >
       <Container className="flex-col gap-16 py-16">
-        <Title>
+        <HeadingTitle>
           <HeadingHighlight>Наши партнеры</HeadingHighlight>
-        </Title>
+        </HeadingTitle>
         <div className="flex flex-col justify-center items-center grow gap-8">
           <Link href="https://tgliamz.ru/" target="_blank">
             <Image

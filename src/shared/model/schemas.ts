@@ -23,3 +23,12 @@ export const EmailField = z
   .refine((val) => /\.(ru|com|org|net|io)$/.test(val), {
     message: 'Доступны домены .ru, .com, .org, .net или .io',
   });
+
+export const NameField = z
+  .string()
+  .nonempty({
+    message: 'Имя обязательно',
+  })
+  .trim()
+  .max(50, { message: 'Имя слишком длинное' })
+  .toLowerCase();

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Section, Container, Title } from '@/shared/ui';
+import { Section, Container, HeadingTitle } from '@/shared/ui';
 
 import Meschane1 from '../assets/images/meschane-1.png';
 import Meschane2 from '../assets/images/meschane-2.png';
@@ -10,9 +10,9 @@ export const PhotoSection = () => {
   return (
     <Section className="flex bg-background-secondary" id="photo-section">
       <Container className="flex gap-16 py-16">
-        <Title className="text-center">
+        <HeadingTitle className="text-center">
           Мещане <span className="whitespace-nowrap">г. Таганрога</span>
-        </Title>
+        </HeadingTitle>
         <div className="flex gap-8">
           <Image
             src={Meschane1}

@@ -1,6 +1,6 @@
 import { ReviewCarousel } from '@/entities/review';
 import { type User } from '@/entities/user';
-import { Section, Container, Heading, HeadingHighlight, Subtitle, Title } from '@/shared/ui';
+import { Section, Container, Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
 
 const mockAuthors: User[] = [
   {
@@ -55,10 +55,10 @@ export const ReviewsSection = () => {
     <Section className="flex justify-center items-center bg-background-secondary">
       <Container className="flex-col gap-12 py-16">
         <Heading>
-          <Subtitle withoutLine>О нас говорят</Subtitle>
-          <Title>
+          <HeadingSubtitle withoutLine>О нас говорят</HeadingSubtitle>
+          <HeadingTitle>
             <HeadingHighlight>Отзывы</HeadingHighlight> участников
-          </Title>
+          </HeadingTitle>
         </Heading>
         <ReviewCarousel className="max-w-5xl" reviews={mockReviews} />
       </Container>
