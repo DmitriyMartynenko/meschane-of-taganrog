@@ -10,15 +10,25 @@ type StarRatingProps = {
 export const StarRating = (props: StarRatingProps) => {
   const { className, rating } = props;
 
-  const fullStarsCount = Math.floor(rating);
-  const hasHalfStar = rating !== fullStarsCount;
+  const MAX_RATING = 5;
+
+  const filledStarsCount = Math.floor(rating);
+  const hasHalfStar = rating !== filledStarsCount;
+  const emptyStartCount = MAX_RATING - filledStarsCount - Number(hasHalfStar);
 
   return (
     <div className={cn('fill-primary text-primary', className)}>
-      {[...Array(fullStarsCount)].map((_, index) => (
-        <Star key={index} className="fill-inherit" />
+      {Array.from({ length: filledStarsCount }).map((_, index) => (
+        <Star key={`filled-${index}`} className="fill-current" />
       ))}
-      {hasHalfStar && <StarHalf className="fill-inherit" />}
+      {hasHalfStar && (
+        <Star>
+          <StarHalf className="fill-current" />
+        </Star>
+      )}
+      {Array.from({ length: emptyStartCount }).map((_, index) => (
+        <Star key={`empty-${index}`} />
+      ))}
     </div>
   );
 };

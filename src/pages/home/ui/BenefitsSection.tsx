@@ -18,7 +18,7 @@ export const BenefitsSection = () => {
     <Section id="benefits-section">
       <Container className="flex-col gap-16 pt-16 pb-32">
         <Heading>
-          <HeadingSubtitle withoutLine>Почему стоит попобовать</HeadingSubtitle>
+          <HeadingSubtitle withoutLine>Почему стоит попробовать</HeadingSubtitle>
           <HeadingTitle>
             Иммер<HeadingHighlight>с</HeadingHighlight>ивные эк
             <HeadingHighlight>с</HeadingHighlight>кур

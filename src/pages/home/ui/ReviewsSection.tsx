@@ -16,12 +16,12 @@ const mockAuthors: User[] = [
     fullName: 'Мария Петрова',
     email: 'maria.petrova@example.com',
     role: 'guide',
-    jobTitle: 'Менеджер по продукту',
+    jobTitle: '',
     avatarUrl: 'https://i.pravatar.cc/150?img=5',
   },
   {
     id: 'u3',
-    fullName: 'Дмитрий Соколов',
+    fullName: '',
     email: 'dmitry.sokolov@example.com',
     role: 'user',
     jobTitle: 'Стажёр отдела маркетинга',
@@ -46,7 +46,7 @@ const mockReviews = [
     id: '3',
     author: mockAuthors[2],
     text: 'В целом неплохо, но хотелось бы более быстрых ответов от поддержки.',
-    rating: 4,
+    rating: 0.5,
   },
 ];
 

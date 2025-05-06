@@ -43,7 +43,7 @@ export const Review = (props: ReviewProps) => {
         </div>
         <p className="italic">{text}</p>
         <div className="flex flex-col justify-center items-center gap-2">
-          <span className="font-medium uppercase">{fullName}</span>
+          <span className="font-medium uppercase">{fullName || 'Анонимный пользователь'}</span>
           {jobTitle && <span className="text-foreground-muted">{jobTitle}</span>}
           <StarRating rating={rating} className="flex gap-1" />
         </div>
