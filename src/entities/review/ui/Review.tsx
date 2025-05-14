@@ -36,10 +36,10 @@ export const Review = (props: ReviewProps) => {
           </Avatar>
         </div>
         <div className="absolute top-[90%] left-[5%] w-12 h-12">
-          <Image src={Quotes} alt="Кавычки" fill />
+          <Image src={Quotes} alt="Кавычки" className="size-full" />
         </div>
         <div className="absolute -top-[5%] left-[90%] w-12 h-12 transform rotate-180">
-          <Image src={Quotes} alt="Кавычки" fill />
+          <Image src={Quotes} alt="Кавычки" className="size-full" />
         </div>
         <p className="italic">{text}</p>
         <div className="flex flex-col justify-center items-center gap-2">

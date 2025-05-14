@@ -7,3 +7,4 @@ export * from './Label';
 export * from './NavigationMenu';
 export * from './Skeleton';
 export * from './Dialog';
+export * from './Sonner';

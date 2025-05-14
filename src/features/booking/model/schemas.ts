@@ -8,6 +8,9 @@ export const InlineBookingFormSchema = z.object({
 
 export const BookingFormSchema = z.object({
   name: NameField,
-  phone: PhoneField,
+  phone: PhoneField.transform((v) => {
+    const digits = v.replace(/\D/g, '');
+    return '+' + digits;
+  }),
   email: EmailField,
 });

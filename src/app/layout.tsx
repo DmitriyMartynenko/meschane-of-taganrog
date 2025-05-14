@@ -4,6 +4,7 @@ import { type ReactNode } from 'react';
 import { type Metadata } from 'next';
 
 import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/config';
+import { Toaster } from '@/shared/ui';
 
 import { montserrat, alegreya, chibola } from './config/fonts';
 
@@ -24,12 +25,14 @@ const RootLayout = (props: Readonly<RootLayoutProps>) => {
   const { children } = props;
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <ReactScan />
+    <html lang="en">
+      {/* <ReactScan /> */}
       <body
+        suppressHydrationWarning
         className={`${montserrat.variable} ${alegreya.variable} ${chibola.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

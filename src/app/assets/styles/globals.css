@@ -27,6 +27,7 @@
  }
 
 @theme inline {
+  --font-montserrat: var(--montserrat);
   --font-alegreya: var(--alegreya);
   --font-chibola: var(--chibola);
 

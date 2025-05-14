@@ -21,7 +21,7 @@ export const InlineConsultationForm = () => {
   });
 
   const onSubmit = (data: InlineConsultationForm) => {
-    alert(`InlineConsultationForm data submitted! ${data}`);
+    console.log(data)
   };
 
   return (

@@ -1,8 +1,8 @@
 'use client';
 
 import { type ComponentProps } from 'react';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { XIcon } from 'lucide-react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 import { cn } from '../../lib/utils/cn';
 
@@ -59,7 +59,7 @@ export const DialogContent = (props: ComponentProps<typeof DialogPrimitive.Conte
         {...restProps}
       >
         <div className={cn('px-32 py-16 border border-secondary', className)}>{children}</div>
-        <DialogPrimitive.Close className="absolute top-2 right-2 rounded-xs opacity-70 transition-opacity ring-offset-background-primary focus:ring-ring-primary data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
+        <DialogPrimitive.Close className="absolute top-2 right-2 rounded-xs opacity-70 transition-opacity ring-offset-background-primary cursor-pointer focus-visible:ring-2 focus-visible:ring-ring-primary focus:outline-none focus:ring-offset-2 data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted hover:opacity-100 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
           <XIcon />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>

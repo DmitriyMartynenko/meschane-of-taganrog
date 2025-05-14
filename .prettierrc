@@ -7,5 +7,6 @@
   "printWidth": 100,
   "trailingComma": "es5",
   "bracketSpacing": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "plugins": ["prettier-plugin-prisma"]
 }

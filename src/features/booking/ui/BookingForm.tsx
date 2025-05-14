@@ -1,9 +1,5 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-
 import {
   Button,
   Form,
@@ -15,28 +11,10 @@ import {
   PhoneInput,
 } from '@/shared/ui';
 
-import { useBookingStore } from '../model/store';
-import { BookingFormSchema } from '../model/schemas';
-
-type BookingForm = z.infer<typeof BookingFormSchema>;
+import { useBookingForm } from '../lib/hooks/useBookingForm';
 
 export const BookingForm = () => {
-  const phone = useBookingStore((state) => state.phone);
-
-  const form = useForm<BookingForm>({
-    resolver: zodResolver(BookingFormSchema),
-    mode: 'onSubmit',
-    reValidateMode: 'onSubmit',
-    defaultValues: {
-      name: '',
-      phone: phone,
-      email: '',
-    },
-  });
-
-  const onSubmit = (data: BookingForm) => {
-    console.log(data);
-  };
+  const { form, onSubmit } = useBookingForm();
 
   return (
     <Form {...form}>
@@ -48,7 +26,7 @@ export const BookingForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input data- variant="secondary" placeholder="Ваше имя" {...field} />
+                  <Input variant="secondary" placeholder="Ваше имя" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

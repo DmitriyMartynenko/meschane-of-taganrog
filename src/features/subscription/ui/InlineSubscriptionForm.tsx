@@ -20,8 +20,8 @@ export const InlineSubscriptionForm = () => {
     },
   });
 
-  const onSubmit = () => {
-    alert('SubscriptionForm data submitted!');
+  const onSubmit = (data: InlineSubscriptionForm) => {
+    console.log(data);
   };
 
   return (
