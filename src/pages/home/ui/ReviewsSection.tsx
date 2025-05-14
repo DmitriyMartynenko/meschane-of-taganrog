@@ -5,19 +5,19 @@ import { Section, Container, Heading, HeadingHighlight, HeadingSubtitle, Heading
 const mockAuthors: User[] = [
   {
     id: 'u1',
-    fullName: 'Алексей Иванов',
+    fullName: 'Юлия Воробьева',
     email: 'alex.ivanov@example.com',
     role: 'admin',
     jobTitle: 'Директор компании “Воробьева и ко”',
-    avatarUrl: 'https://i.pravatar.cc/150?img=3',
+    avatarUrl: 'https://i.pravatar.cc/150?img=5',
   },
   {
     id: 'u2',
-    fullName: 'Мария Петрова',
+    fullName: 'Алексей Иванов',
     email: 'maria.petrova@example.com',
     role: 'guide',
     jobTitle: '',
-    avatarUrl: 'https://i.pravatar.cc/150?img=5',
+    avatarUrl: 'https://i.pravatar.cc/150?img=8',
   },
   {
     id: 'u3',
@@ -25,7 +25,7 @@ const mockAuthors: User[] = [
     email: 'dmitry.sokolov@example.com',
     role: 'user',
     jobTitle: 'Стажёр отдела маркетинга',
-    avatarUrl: 'https://i.pravatar.cc/150?img=7',
+    avatarUrl: 'https://i.pravatar.cc/150?img=12',
   },
 ];
 
@@ -46,7 +46,7 @@ const mockReviews = [
     id: '3',
     author: mockAuthors[2],
     text: 'В целом неплохо, но хотелось бы более быстрых ответов от поддержки.',
-    rating: 0.5,
+    rating: 4,
   },
 ];
 
