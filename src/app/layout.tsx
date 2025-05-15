@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ReactScan } from './providers/ReactScan';
 
 import { type ReactNode } from 'react';

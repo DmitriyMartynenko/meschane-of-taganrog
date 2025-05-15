@@ -1,13 +1,23 @@
 import { InlineConsultationForm } from '@/features/consultation';
 import { Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
 
+import footerBackground from '../assets/footer-background.png';
+
 export const Footer = () => {
   return (
     <footer className="flex" id="footer">
       <div className="basis-1/2">
         <iframe className="w-full h-full" src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"></iframe>
       </div>
-      <div className="flex flex-col basis-1/2 gap-16 p-16 bg-[linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(@/widgets/footer/assets/footer-background.png)] bg-cover bg-no-repeat bg-center">
+      <div
+        className="flex flex-col basis-1/2 gap-16 p-16 bg-cover bg-no-repeat bg-center"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+            url(${footerBackground.src})
+          `,
+        }}
+      >
         <Heading>
           <HeadingSubtitle>На связи с нами</HeadingSubtitle>
           <HeadingTitle className="text-foreground-secondary">

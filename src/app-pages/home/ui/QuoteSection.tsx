@@ -3,18 +3,18 @@ import Image from 'next/image';
 import { Quotes } from '@/shared/assets';
 import { Section, Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
 
-import StoneStair from '../assets/images/stone-stair.png';
-import Meschanin from '../assets/images/meschanin.png';
+import stoneStair from '../assets/images/stone-stair.png';
+import meschanin from '../assets/images/meschanin.png';
 
 export const QuoteSection = () => {
   return (
     <Section className="flex bg-background-secondary" id="quote-section">
       <div className="relative basis-[30%]">
-        <Image src={StoneStair} alt="Каменная лестница Таганрога" className="w-full h-full" />
+        <Image src={stoneStair} alt="Каменная лестница Таганрога" className="w-full h-full" />
       </div>
       <div className="relative basis-[25%]">
         <Image
-          src={Meschanin}
+          src={meschanin}
           alt="Мещанин"
           className="absolute bottom-[7%] w-auto h-full transform scale-125"
         />
