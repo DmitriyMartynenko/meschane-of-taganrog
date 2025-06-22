@@ -2,11 +2,11 @@ import { ReviewCarousel } from '@/entities/review';
 import { type User } from '@/entities/user';
 import {
   Container,
-  SectionHeading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
+  SectionHeading,
 } from '@/shared/ui';
 
 const mockAuthors: User[] = [
@@ -40,7 +40,7 @@ const mockReviews = [
   {
     id: '1',
     author: mockAuthors[0],
-    text: 'Я обеспечу представление Ваших интересов в судах общей юрисдикции, арбитраже, третейском суде, приму участие в переговорах, окажу помощь на стадии досудебного урегулирования споров.',
+    text: 'Отличный сервис, позволяющий записаться на понравившуюся экскурсию и погрузиться в атмосферу города! Очень удобно и просто в использовании!',
     rating: 5,
   },
   {
@@ -59,7 +59,7 @@ const mockReviews = [
 
 export const ReviewsSection = () => {
   return (
-    <Section className="flex justify-center items-center bg-background-secondary">
+    <Section className="flex items-center justify-center bg-background-secondary">
       <Container className="flex-col gap-12 py-16">
         <SectionHeading>
           <HeadingSubtitle>О нас говорят</HeadingSubtitle>
