@@ -22,7 +22,7 @@ export const InlineSubscriptionForm = () => {
     },
   });
 
-  const onSubmit = (data: InlineSubscriptionForm) => {
+  const onSubmit = () => {
     toast.error('В настоящий момент подписка на новости недоступна.');
   };
 
