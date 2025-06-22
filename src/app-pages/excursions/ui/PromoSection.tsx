@@ -15,7 +15,7 @@ export const PromoSection = () => {
           `,
         }}
       />
-      <Container className="relative flex-col gap-16">
+      <Container className="relative flex-col gap-16 py-32">
         <PageHeading highlight="Наши экскурсии —" caption="Погружение в мещанский мир Таганрога" />
         <ExcursionFilter />
       </Container>
