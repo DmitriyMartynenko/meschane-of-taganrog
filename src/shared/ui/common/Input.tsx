@@ -4,13 +4,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils/cn';
 
 export const inputVariants = cva(
-  'p-4 bg-background-primary font-semibold text-foreground-primary placeholder:text-foreground-muted focus-visible:outline-none focus-visible:ring focus-visible:ring-ring-primary disabled:cursor-not-allowed data-[error=true]:border-destructive-primary data-[error=true]:focus-visible:ring-destructive-primary',
+  'w-full bg-background-primary p-4 text-base font-semibold text-foreground-primary transition-[color,box-shadow] outline-none placeholder:text-foreground-muted focus-visible:border-ring-primary focus-visible:ring-1 focus-visible:ring-ring-primary disabled:cursor-not-allowed data-[error=true]:border-destructive-primary data-[error=true]:focus-visible:ring-destructive-primary',
   {
     variants: {
-      variant: {
-        primary: 'data-[error=true]:border',
-        secondary: 'border border-border-primary',
+      bordered: {
+        true: 'border border-border-primary',
+        false: 'data-[error=true]:border',
       },
+    },
+    defaultVariants: {
+      bordered: true,
     },
   }
 );
@@ -18,9 +21,13 @@ export const inputVariants = cva(
 type InputProps = {} & ComponentProps<'input'> & VariantProps<typeof inputVariants>;
 
 export const Input = (props: InputProps) => {
-  const { className, variant = 'primary', ...restProps } = props;
+  const { className, bordered, ...restProps } = props;
 
   return (
-    <input data-slot="input" className={cn(inputVariants({ variant, className }))} {...restProps} />
+    <input
+      data-slot="input"
+      className={cn(inputVariants({ bordered, className }))}
+      {...restProps}
+    />
   );
 };

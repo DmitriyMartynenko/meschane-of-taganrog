@@ -2,6 +2,7 @@
 
 import { type ComponentProps } from 'react';
 import { XIcon } from 'lucide-react';
+
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 import { cn } from '../../lib/utils/cn';
@@ -37,7 +38,7 @@ export const DialogOverlay = (props: ComponentProps<typeof DialogPrimitive.Overl
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50',
+        'fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0',
         className
       )}
       {...restProps}
@@ -45,8 +46,12 @@ export const DialogOverlay = (props: ComponentProps<typeof DialogPrimitive.Overl
   );
 };
 
-export const DialogContent = (props: ComponentProps<typeof DialogPrimitive.Content>) => {
-  const { className, children, ...restProps } = props;
+type DialogContentProps = {
+  innerStroke?: boolean;
+} & ComponentProps<typeof DialogPrimitive.Content>;
+
+export const DialogContent = (props: DialogContentProps) => {
+  const { className, children, innerStroke = false, ...restProps } = props;
 
   return (
     <DialogPortal data-slot="dialog-portal">
@@ -54,14 +59,22 @@ export const DialogContent = (props: ComponentProps<typeof DialogPrimitive.Conte
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          'fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] grid gap-4 w-full max-w-[calc(100%-2rem)] p-8 bg-background-primary duration-200 shadow-lg z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:max-w-[950px]'
+          'fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 bg-background-primary p-8 shadow-lg duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring-primary data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-[950px]'
         )}
         {...restProps}
       >
-        <div className={cn('px-32 py-16 border border-secondary', className)}>{children}</div>
-        <DialogPrimitive.Close className="absolute top-2 right-2 rounded-xs opacity-70 transition-opacity ring-offset-background-primary cursor-pointer focus-visible:ring-2 focus-visible:ring-ring-primary focus:outline-none focus:ring-offset-2 data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted hover:opacity-100 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
+        <div
+          className={cn(
+            'flex items-center justify-center px-32 py-16',
+            innerStroke && 'border border-secondary',
+            className
+          )}
+        >
+          {children}
+        </div>
+        <DialogPrimitive.Close className="absolute top-2 right-2 cursor-pointer rounded-xs opacity-70 ring-offset-background-primary transition-opacity outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-primary disabled:pointer-events-none data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
           <XIcon />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">Закрыть</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
     </DialogPortal>
@@ -110,7 +123,7 @@ export const DialogDescription = (props: ComponentProps<typeof DialogPrimitive.D
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      className={cn('text-sm text-muted-foreground', className)}
+      className={cn('text-muted-foreground text-sm', className)}
       {...restProps}
     />
   );

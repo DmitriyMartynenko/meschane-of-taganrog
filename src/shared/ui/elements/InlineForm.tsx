@@ -2,55 +2,60 @@
 
 import { useId } from 'react';
 import {
-  type Path,
   type FieldValues,
+  type Path,
   type SubmitHandler,
   type UseFormReturn,
 } from 'react-hook-form';
 import { type VariantProps } from 'class-variance-authority';
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../common/Form';
+import { cn } from '../../lib/utils/cn';
+
 import { Button, buttonVariants } from '../common/Button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../common/Form';
 import { Input, inputVariants } from '../common/Input';
 
 import { PhoneInput } from './PhoneInput';
 
-import { cn } from '../../lib/utils/cn';
-
-type OrderFormProps<T extends FieldValues> = {
+export type InlineFormControls = {
   className?: string;
+  label?: string;
+  inputType?: 'phone' | 'email';
+  inputPlaceholder?: string;
+  inputBorder?: VariantProps<typeof inputVariants>['bordered'];
+  buttonText?: string;
+  buttonVariant?: VariantProps<typeof buttonVariants>['variant'];
+  buttonTextWhite?: boolean;
+};
+
+type InlineFormProps<T extends FieldValues> = InlineFormControls & {
   form: UseFormReturn<T>;
   name: Path<T>;
-  label?: string;
-  type?: 'phone' | 'email';
-  placeholder?: string;
-  buttonText?: string;
-  inputVariant?: VariantProps<typeof inputVariants>['variant'];
-  buttonVariant?: VariantProps<typeof buttonVariants>['variant'];
   onSubmit: SubmitHandler<T>;
 };
 
-export const InlineForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
+export const InlineForm = <T extends FieldValues>(props: InlineFormProps<T>) => {
   const {
     className = '',
     form,
     name,
     label = '',
-    type = 'phone',
-    placeholder = '+7 (___) ___ __ __',
+    inputType = 'phone',
+    inputPlaceholder = '+7 (___) ___ __ __',
+    inputBorder = false,
     buttonText = 'Отправить',
-    inputVariant = 'primary',
-    buttonVariant = 'primary',
+    buttonVariant = 'outline',
+    buttonTextWhite = false,
     onSubmit,
   } = props;
 
   const id = useId();
-  const FormInput = type === 'phone' ? PhoneInput : Input;
+  const FormInput = inputType === 'phone' ? PhoneInput : Input;
 
   return (
     <Form {...form}>
       <form
-        className={cn('flex flex-col gap-6 w-[505px]', className)}
+        className={cn('flex w-[505px] flex-col gap-6', className)}
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
@@ -63,15 +68,15 @@ export const InlineForm = <T extends FieldValues>(props: OrderFormProps<T>) => {
                 <FormItem className="basis-[55%]">
                   <FormControl>
                     <FormInput
-                      type={type}
-                      variant={inputVariant}
-                      placeholder={placeholder}
+                      type={inputType}
+                      bordered={inputBorder}
+                      placeholder={inputPlaceholder}
                       id={id}
                       {...field}
                     />
                   </FormControl>
                 </FormItem>
-                <Button className="basis-[45%]" type="submit" variant={buttonVariant}>
+                <Button className="basis-[45%]" variant={buttonVariant} textWhite={buttonTextWhite}>
                   {buttonText}
                 </Button>
               </div>

@@ -1,4 +1,4 @@
-import { Montserrat, Alegreya } from 'next/font/google';
+import { Alegreya, Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
 
 export const montserrat = Montserrat({

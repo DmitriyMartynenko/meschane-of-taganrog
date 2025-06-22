@@ -3,22 +3,30 @@ import { create } from 'zustand';
 import { type BookingForm } from './types';
 
 type BookingState = {
-  form: BookingForm;
-  setForm: (value: BookingForm | ((prevState: BookingForm) => BookingForm)) => void;
-  open: boolean;
-  setOpen: (value: boolean) => void;
+  formValues: BookingForm;
+  setFormValues: (value: BookingForm | ((prevState: BookingForm) => BookingForm)) => void;
+  resetFormValues: () => void;
+  openDialog: boolean;
+  setOpenDialog: (value: boolean) => void;
+  openCancelDialog: boolean;
+  setOpenCancelDialog: (value: boolean) => void;
+};
+
+const initialState = {
+  name: '',
+  phone: '',
+  email: '',
 };
 
 export const useBookingStore = create<BookingState>((set) => ({
-  form: {
-    name: '',
-    phone: '',
-    email: '',
-  },
-  setForm: (value) =>
+  formValues: initialState,
+  setFormValues: (value) =>
     set((state) => ({
-      form: typeof value === 'function' ? value(state.form) : value,
+      formValues: typeof value === 'function' ? value(state.formValues) : value,
     })),
-  open: false,
-  setOpen: (value) => set({ open: value }),
+  resetFormValues: () => set({ formValues: initialState }),
+  openDialog: false,
+  setOpenDialog: (value) => set({ openDialog: value }),
+  openCancelDialog: false,
+  setOpenCancelDialog: (value) => set({ openCancelDialog: value }),
 }));

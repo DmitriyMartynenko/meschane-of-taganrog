@@ -1,33 +1,40 @@
 import Image from 'next/image';
 
 import { Quotes } from '@/shared/assets';
-import { Section, Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '@/shared/ui';
+import {
+  HeadingHighlight,
+  HeadingSubtitle,
+  HeadingTitle,
+  Section,
+  SectionHeading,
+} from '@/shared/ui';
 
-import stoneStair from '../assets/images/stone-stair.png';
 import meschanin from '../assets/images/meschanin.png';
+import stoneStair from '../assets/images/stone-stair.png';
 
 export const QuoteSection = () => {
   return (
-    <Section className="flex bg-background-secondary" id="quote-section">
+    <Section className="flex bg-background-secondary">
       <div className="relative basis-[30%]">
-        <Image src={stoneStair} alt="Каменная лестница Таганрога" className="w-full h-full" />
+        <Image className="h-full w-full" src={stoneStair} alt="Каменная лестница Таганрога" />
       </div>
       <div className="relative basis-[25%]">
         <Image
+          className="absolute bottom-[7%] h-full w-auto scale-125 transform"
           src={meschanin}
           alt="Мещанин"
-          className="absolute bottom-[7%] w-auto h-full transform scale-125"
+          id="quote-section"
         />
-        <Image src={Quotes} alt="Кавычки" className="absolute top-[50%] right-0" />
+        <Image className="absolute top-[50%] right-0" src={Quotes} alt="Кавычки" />
       </div>
-      <div className="flex flex-col justify-center  gap-4 max-w-[700px] px-16">
-        <Heading className="border-b-2 border-b-secondary">
-          <HeadingSubtitle>Слово мещанину</HeadingSubtitle>
+      <div className="flex max-w-[700px] flex-col justify-center gap-4 px-16">
+        <SectionHeading>
+          <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
           <HeadingTitle>
             Потому что нам <br />
-            <HeadingHighlight>не все равно</HeadingHighlight>
+            <HeadingHighlight withUnderline>не все равно</HeadingHighlight>
           </HeadingTitle>
-        </Heading>
+        </SectionHeading>
         <p className="tracking-[1px]">
           В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
           проведении Всероссийских съездов представителей мещанских обществ, а также съездов
@@ -36,7 +43,7 @@ export const QuoteSection = () => {
           активным политическим действиям
         </p>
         <div className="mt-4">
-          <h3 className="font-medium text-lg uppercase">Смирнов Иван Николаевич</h3>
+          <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
           <span className="text-foreground-muted">Кандидат исторических наук, доцент</span>
         </div>
       </div>

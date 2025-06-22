@@ -1,22 +1,21 @@
 'use client';
 
+import Image from 'next/image';
 import {
-  type ComponentProps,
-  type KeyboardEvent,
   createContext,
   useCallback,
   useContext,
   useEffect,
   useState,
+  type ComponentProps,
+  type KeyboardEvent,
 } from 'react';
-import Image from 'next/image';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 
 import Arrow from '../../assets/icons/arrow.svg';
+import { cn } from '../../lib/utils/cn';
 
 import { Button } from './Button';
-
-import { cn } from '../../lib/utils/cn';
 
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
@@ -149,7 +148,7 @@ export const CarouselContent = (props: ComponentProps<'div'>) => {
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="px-1 overflow-hidden" data-slot="carousel-content">
+    <div ref={carouselRef} className="overflow-hidden px-1" data-slot="carousel-content">
       <div
         className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
         {...restProps}
@@ -193,7 +192,8 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
         className
       )}
-      variant="icon"
+      variant="primary"
+      size="icon"
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...restProps}
@@ -218,12 +218,13 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
         className
       )}
-      variant="icon"
+      variant="primary"
+      size="icon"
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...restProps}
     >
-      <Image className="transform rotate-180" src={Arrow} alt="Стрелка вправо" />
+      <Image className="rotate-180 transform" src={Arrow} alt="Стрелка вправо" />
     </Button>
   );
 };

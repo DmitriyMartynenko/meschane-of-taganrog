@@ -1,4 +1,9 @@
 {
+  "plugins": [
+    "prettier-plugin-prisma",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "semi": true,
   "tabWidth": 2,
   "useTabs": false,
@@ -8,5 +13,32 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "arrowParens": "always",
-  "plugins": ["prettier-plugin-prisma"]
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "",
+    "^next",
+    "^react",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@[^/][^\\s]*$",
+    "",
+    "^@/app(/.*|$)",
+    "^@/app-pages(/.*|$)",
+    "^@/widgets(/.*|$)",
+    "^@/features(/.*|$)",
+    "^@/entities(/.*|$)",
+    "^@/shared(/.*|$)",
+    "",
+    "^\\.\\./\\.\\./",
+    "",
+    "^\\.\\./",
+    "",
+    "^\\./",
+    "",
+    ".*\\.(css)$",
+    "",
+    ".*\\.(png|jpe?g|svg|gif)$"
+  ],
+  "tailwindStylesheet": "./src/app/assets/styles/globals.css",
+  "tailwindFunctions": ["clsx", "cva"]
 }

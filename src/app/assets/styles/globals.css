@@ -11,7 +11,7 @@
 
   --background-primary: oklch(1 0 0);
   --background-secondary: oklch(0.97 0.0025 345.21);
-  
+
   --foreground-primary: oklch(0.26 0.0112 293.24);
   --foreground-secondary: oklch(1 0 0);
   --foreground-thirdly: oklch(0 0 0);
@@ -23,8 +23,8 @@
 
   --ring-primary: oklch(0.83 0.0989 86.61);
 
-  --destructive-primary: oklch(0.577 0.245 27.325);
- }
+  --destructive-primary: oklch(0.5315 0.1141 21.68);
+}
 
 @theme inline {
   --font-montserrat: var(--montserrat);
@@ -53,7 +53,7 @@
 
   --color-ring-primary: var(--ring-primary);
 
-  --color-destructive-primary: var(--destructive-primary)
+  --color-destructive-primary: var(--destructive-primary);
 }
 
 @layer base {

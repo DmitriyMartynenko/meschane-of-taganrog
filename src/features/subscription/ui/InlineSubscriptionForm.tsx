@@ -1,7 +1,9 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { InlineForm } from '@/shared/ui';
@@ -21,7 +23,7 @@ export const InlineSubscriptionForm = () => {
   });
 
   const onSubmit = (data: InlineSubscriptionForm) => {
-    console.log(data);
+    toast.error('В настоящий момент подписка на новости недоступна.');
   };
 
   return (
@@ -29,11 +31,10 @@ export const InlineSubscriptionForm = () => {
       className="w-full"
       form={form}
       name="email"
-      type="email"
-      inputVariant="secondary"
-      placeholder="Ваш e-mail"
+      inputType="email"
+      inputBorder={true}
+      inputPlaceholder="Ваш e-mail"
       buttonText="Подписаться"
-      buttonVariant="secondary"
       onSubmit={onSubmit}
     />
   );

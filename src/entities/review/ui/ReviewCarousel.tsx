@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { cn } from '@/shared/lib';
 import {
   Carousel,
   CarouselApi,
@@ -15,8 +16,6 @@ import { type Review as ReviewType } from '../model/types';
 
 import { Review } from './Review';
 import { ReviewPagination } from './ReviewPagination';
-
-import { cn } from '@/shared/lib';
 
 type ReviewCarouselProps = {
   className?: string;

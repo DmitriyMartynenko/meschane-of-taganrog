@@ -19,14 +19,14 @@ export const BookingForm = () => {
   return (
     <Form {...form}>
       <form className="flex flex-col items-center gap-8" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex w-full flex-col gap-4">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input variant="secondary" placeholder="Ваше имя" {...field} />
+                  <Input placeholder="Ваше имя" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -38,7 +38,7 @@ export const BookingForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <PhoneInput variant="secondary" {...field} />
+                  <PhoneInput {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -50,14 +50,16 @@ export const BookingForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input variant="secondary" placeholder="Ваш e-mail" {...field} />
+                  <Input placeholder="Ваш e-mail" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <Button variant="secondary">Отправить</Button>
+        <Button variant="outline">
+          Отправить
+        </Button>
       </form>
     </Form>
   );

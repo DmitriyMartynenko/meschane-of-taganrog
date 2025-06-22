@@ -1,6 +1,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   HeadingHighlight,
@@ -10,27 +11,35 @@ import {
 import { useBookingStore } from '../model/store';
 
 import { BookingForm } from './BookingForm';
+import { CancelBookingDialog } from './CancelBookingDialog';
 
 export const BookingDialog = () => {
-  const { open, setOpen } = useBookingStore();
+  const { formValues, openDialog, setOpenDialog, setOpenCancelDialog } = useBookingStore();
 
-  const onOpenChange = (open: boolean) => {
-    setOpen(open);
+  const isFormDirty = Boolean(formValues.name || formValues.phone || formValues.email);
+
+  const onOpenChange = () => {
+    if (isFormDirty) setOpenCancelDialog(true);
+    else setOpenDialog(false);
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex flex-col gap-8" aria-describedby="">
-        <DialogHeader>
-          <DialogTitle className="sr-only">Заявка на экскурсию</DialogTitle>
-          <HeadingTitle className="text-center">
-            <HeadingHighlight>Оставьте заявку</HeadingHighlight>
-            <br />
-            Мы с вами свяжемся
-          </HeadingTitle>
-        </DialogHeader>
-        <BookingForm />
-      </DialogContent>
-    </Dialog>
+    <>
+      <Dialog open={openDialog} onOpenChange={onOpenChange}>
+        <DialogContent className="flex-col items-stretch gap-8" innerStroke>
+          <DialogHeader>
+            <DialogTitle className="sr-only" />
+            <DialogDescription className="sr-only" />
+            <HeadingTitle className="text-center">
+              <HeadingHighlight>Оставьте заявку</HeadingHighlight>
+              <br />
+              Мы с вами свяжемся
+            </HeadingTitle>
+          </DialogHeader>
+          <BookingForm />
+        </DialogContent>
+      </Dialog>
+      <CancelBookingDialog />
+    </>
   );
 };

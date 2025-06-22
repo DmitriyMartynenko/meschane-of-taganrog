@@ -1,7 +1,9 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { InlineForm } from '@/shared/ui';
@@ -20,8 +22,8 @@ export const InlineConsultationForm = () => {
     },
   });
 
-  const onSubmit = (data: InlineConsultationForm) => {
-    console.log(data)
+  const onSubmit = () => {
+    toast.error('В настоящий момент консультация недоступна.');
   };
 
   return (
@@ -30,6 +32,7 @@ export const InlineConsultationForm = () => {
       name="phone"
       label="Нужна консультация?"
       buttonText="Заказать звонок"
+      buttonTextWhite
       onSubmit={onSubmit}
     />
   );

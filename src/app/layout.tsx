@@ -1,13 +1,15 @@
+// prettier-ignore
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ReactScan } from './providers/ReactScan';
 
-import { type ReactNode } from 'react';
 import { type Metadata } from 'next';
+import { type ReactNode } from 'react';
 
-import { APP_NAME, APP_DESCRIPTION, APP_KEYWORDS } from '@/shared/config';
+import { APP_DESCRIPTION, APP_KEYWORDS, APP_NAME } from '@/shared/config';
 import { Toaster } from '@/shared/ui';
 
-import { montserrat, alegreya, chibola } from './config/fonts';
+import { alegreya, chibola, montserrat } from './config/fonts';
 
 import './assets/styles/globals.css';
 

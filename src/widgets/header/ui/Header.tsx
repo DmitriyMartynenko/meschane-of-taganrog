@@ -1,13 +1,11 @@
 'use client';
 
-import { useHasScrolled } from '@/shared/lib';
+import { cn, useHasScrolled } from '@/shared/lib';
 import { NavigationMenu, NavigationMenuList } from '@/shared/ui';
 
 import { NAV_LINKS } from '../model/constants';
 
 import { NavigationMenuGroup } from './NavigationMenuGroup';
-
-import { cn } from '@/shared/lib';
 
 export const Header = () => {
   const { isScrolled } = useHasScrolled(50);
@@ -15,16 +13,21 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 right-0 left-0 w-full py-7 border-b-1 transition-all duration-300 ease-in-out z-1',
+        'fixed inset-x-0 top-0 w-full py-7 border-b-1 transition-all duration-300 ease-in-out z-1',
         isScrolled
-          ? 'border-b-transparent backdrop-blur-lg shadow-lg'
+          ? 'border-b-transparent bg-primary/50 backdrop-blur-lg shadow-lg'
           : 'border-b-foreground-muted/32 bg-transparent shadow-none'
       )}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="flex flex-row justify-between gap-64">
+        <NavigationMenuList className="flex flex-row justify-between gap-16">
           <NavigationMenuGroup links={NAV_LINKS.slice(0, 3)} isScrolled={isScrolled} />
-          <NavigationMenuGroup links={NAV_LINKS.slice(3, 6)} isScrolled={isScrolled} />
+          <NavigationMenuGroup
+            className="text-lg"
+            links={NAV_LINKS.slice(3, 4)}
+            isScrolled={isScrolled}
+          />
+          <NavigationMenuGroup links={NAV_LINKS.slice(4)} isScrolled={isScrolled} />
         </NavigationMenuList>
       </NavigationMenu>
     </header>

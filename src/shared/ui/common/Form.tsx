@@ -1,8 +1,6 @@
 'use client';
 
 import { createContext, useContext, useId, type ComponentProps } from 'react';
-import * as LabelPrimitive from '@radix-ui/react-label';
-import { Slot } from '@radix-ui/react-slot';
 import {
   Controller,
   FormProvider,
@@ -13,9 +11,12 @@ import {
   type FieldValues,
 } from 'react-hook-form';
 
-import { Label } from './Label';
+import * as LabelPrimitive from '@radix-ui/react-label';
+import { Slot } from '@radix-ui/react-slot';
 
 import { cn } from '../../lib/utils/cn';
+
+import { Label } from './Label';
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,

@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState, useCallback  } from 'react';
+import { useCallback, useState } from 'react';
 
 export const useImageFallback = (initialSrc?: string) => {
   const [error, setError] = useState(false);

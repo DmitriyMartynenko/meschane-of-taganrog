@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Section, Container, HeadingHighlight, HeadingTitle } from '@/shared/ui';
+import { Container, HeadingHighlight, HeadingTitle, Section } from '@/shared/ui';
 
 import partnersBackground from '../assets/images/partners-background.png';
 import tgliamz from '../assets/images/tgliamz.png';
@@ -22,7 +22,7 @@ export const PartnersSection = () => {
             <Image
               src={tgliamz}
               alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
-              className="transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer"
+              className="transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer"
             />
           </Link>
           <Link
