@@ -155,7 +155,7 @@ export const FormMessage = (props: ComponentProps<'p'>) => {
       id={formMessageId}
       className={cn(
         'font-semibold text-destructive-primary transition-opacity duration-300 ease-in-out',
-        body ? 'opacity-100' : 'opacity-0 pointer-events-none',
+        body ? 'opacity-100' : 'pointer-events-none opacity-0',
         className
       )}
       {...restProps}

@@ -1,9 +1,9 @@
+import { BookingDialog } from '@/features/booking/ui/BookingDialog';
 import { ExcursionCard, type Excursion } from '@/entities/excursion';
 
 import { sortExcursionsByDate } from '../lib/utils/sortExcursionsByDate';
 
 import { NoExcursionsPlaceholder } from './NoExcursionsPlaceholder';
-import { BookingDialog } from '@/features/booking/ui/BookingDialog';
 
 type ExcursionsListProps = {
   excursions: Excursion[];

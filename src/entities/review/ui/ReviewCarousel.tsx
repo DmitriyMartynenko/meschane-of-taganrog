@@ -42,7 +42,7 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
 
   return (
     <Carousel className={cn('w-full px-16', className)} setApi={setApi}>
-      <CarouselContent className="items-center -ml-8">
+      <CarouselContent className="-ml-8 items-center">
         {reviews.map(({ id, author, text, rating }) => (
           <CarouselItem className="pl-8" key={id}>
             <Review author={author} text={text} rating={rating} />

@@ -11,7 +11,7 @@ export const PageHeading = (props: PageHeadingProps) => {
 
   return (
     <h1
-      className={cn('font-chibola text-5xl/tight text-center text-shadow-promo-title', className)}
+      className={cn('text-shadow-promo-title text-center font-chibola text-5xl/tight', className)}
     >
       <span className="text-[4rem] text-secondary">{highlight}</span>
       <br />

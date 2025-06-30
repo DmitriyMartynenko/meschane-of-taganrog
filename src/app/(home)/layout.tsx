@@ -11,7 +11,7 @@ const HomeLayout = (props: Readonly<HomeLayoutProps>) => {
   const { children } = props;
 
   return (
-    <div className="flex flex-col w-full min-h-screen">
+    <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main>{children}</main>
       <Footer />

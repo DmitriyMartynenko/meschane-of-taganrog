@@ -1,11 +1,11 @@
 import {
   BenefitCard,
   Container,
-  SectionHeading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
+  SectionHeading,
 } from '@/shared/ui';
 
 import Book from '../assets/icons/book.svg';

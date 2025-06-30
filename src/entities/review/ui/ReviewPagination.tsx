@@ -12,7 +12,7 @@ export const ReviewPagination = (props: ReviewPaginationProps) => {
   const { className = '', reviews = [], current = 1 } = props;
 
   return (
-    <div className={cn('flex justify-center items-center flex-wrap gap-2', className)}>
+    <div className={cn('flex flex-wrap items-center justify-center gap-2', className)}>
       {reviews.map((review, index) => {
         const isActive = index + 1 === current;
         return (

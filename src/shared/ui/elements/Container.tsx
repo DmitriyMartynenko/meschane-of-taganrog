@@ -6,7 +6,7 @@ export const Container = (props: ComponentProps<'div'>) => {
   const { children, className } = props;
 
   return (
-    <div className={cn('flex justify-center items-center container mx-auto', className)}>
+    <div className={cn('container mx-auto flex items-center justify-center', className)}>
       {children}
     </div>
   );

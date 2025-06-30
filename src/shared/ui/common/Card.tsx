@@ -9,7 +9,7 @@ export const Card = (props: ComponentProps<'div'>) => {
     <div
       data-slot="card"
       className={cn(
-        'flex flex-col gap-6 p-6 border bg-background-primary shadow-sm text-foreground-primary',
+        'flex flex-col gap-6 border bg-background-primary p-6 text-foreground-primary shadow-sm',
         className
       )}
       {...restProps}
@@ -38,7 +38,7 @@ export const CardTitle = (props: ComponentProps<'div'>) => {
   return (
     <div
       data-slot="card-title"
-      className={cn('font-alegreya font-semibold text-xl leading-none uppercase', className)}
+      className={cn('font-alegreya text-xl leading-none font-semibold uppercase', className)}
       {...restProps}
     />
   );
@@ -50,7 +50,7 @@ export const CardDescription = (props: ComponentProps<'div'>) => {
   return (
     <div
       data-slot="card-description"
-      className={cn('text-foreground-muted text-sm', className)}
+      className={cn('text-sm text-foreground-muted', className)}
       {...restProps}
     />
   );

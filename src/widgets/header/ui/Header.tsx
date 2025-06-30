@@ -13,9 +13,9 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 w-full py-7 border-b-1 transition-all duration-300 ease-in-out z-1',
+        'fixed inset-x-0 top-0 z-1 w-full border-b-1 py-7 transition-all duration-300 ease-in-out',
         isScrolled
-          ? 'border-b-transparent bg-primary/50 backdrop-blur-lg shadow-lg'
+          ? 'border-b-transparent bg-primary/50 shadow-lg backdrop-blur-lg'
           : 'border-b-foreground-muted/32 bg-transparent shadow-none'
       )}
     >

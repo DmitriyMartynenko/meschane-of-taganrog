@@ -57,9 +57,7 @@ export const BookingForm = () => {
             )}
           />
         </div>
-        <Button variant="outline">
-          Отправить
-        </Button>
+        <Button variant="outline">Отправить</Button>
       </form>
     </Form>
   );

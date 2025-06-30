@@ -23,7 +23,7 @@ export const NavigationMenuGroup = (props: NavGroupProps) => {
               className={cn(
                 isScrolled
                   ? 'font-semibold text-foreground-secondary'
-                  : "after:absolute after:content-[''] after:left-0 after:-bottom-8 after:w-0 after:h-0.25 after:bg-primary after:transition-[width] after:duration-600 after:ease hover:after:w-full"
+                  : "after:ease after:absolute after:-bottom-8 after:left-0 after:h-0.25 after:w-0 after:bg-primary after:transition-[width] after:duration-600 after:content-[''] hover:after:w-full"
               )}
             >
               {label}

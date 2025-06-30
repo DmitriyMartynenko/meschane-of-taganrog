@@ -8,7 +8,7 @@ export const Skeleton = (props: ComponentProps<'div'>) => {
   return (
     <div
       data-slot="skeleton"
-      className={cn('bg-background-secondary animate-pulse rounded-md', className)}
+      className={cn('animate-pulse rounded-md bg-background-secondary', className)}
       {...restProps}
     />
   );
