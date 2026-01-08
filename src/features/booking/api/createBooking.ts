@@ -1,6 +1,6 @@
 'use server';
 
-import { prisma } from '@/shared/lib';
+import { prisma } from '@/prisma/prisma-client';
 
 import { mapPrismaError } from '../lib/utils/mapPrismaError';
 import { type BookingForm, type UniqueField } from '../model/types';

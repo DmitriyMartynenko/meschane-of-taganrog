@@ -12,7 +12,8 @@
     "db": "docker compose up",
     "db:migrate": "dotenv -e .env.development -- npx prisma migrate dev",
     "db:reset": "dotenv -e .env.development -- npx prisma migrate reset",
-    "generate": "npx prisma generate",
+    "generate": "dotenv -e .env.development -- npx prisma generate",
+    "studio": "dotenv -e .env.development -- npx prisma studio",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

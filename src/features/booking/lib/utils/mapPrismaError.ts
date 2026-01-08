@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@/prisma/generated/client';
 
 import { type ErrorResponse } from '../../api/createBooking';
 import { type UniqueField } from '../../model/types';
