@@ -4,6 +4,7 @@
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
+
   "semi": true,
   "tabWidth": 2,
   "useTabs": false,
@@ -13,14 +14,19 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "arrowParens": "always",
+
   "importOrder": [
     "<BUILTIN_MODULES>",
     "",
     "^next",
     "^react",
+    "^react-dom",
+    "^react-router-dom",
     "<THIRD_PARTY_MODULES>",
     "",
     "^@[^/][^\\s]*$",
+    "",
+    "^@/*(/.*|$)",
     "",
     "^@/app(/.*|$)",
     "^@/app-pages(/.*|$)",
@@ -39,6 +45,7 @@
     "",
     ".*\\.(png|jpe?g|svg|gif)$"
   ],
+
   "tailwindStylesheet": "./src/app/assets/styles/globals.css",
   "tailwindFunctions": ["clsx", "cva"]
 }
