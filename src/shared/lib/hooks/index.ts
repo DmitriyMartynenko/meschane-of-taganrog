@@ -1,3 +1,2 @@
-export * from './useImageFallback';
-export * from './useHasScrolled';
-export * from './useUpdateEffect';
+export { useImageFallback } from './use-image-fallback';
+export { useHasScrolled } from './use-has-scrolled';

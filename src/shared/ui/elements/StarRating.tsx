@@ -1,6 +1,6 @@
 import { Star, StarHalf } from 'lucide-react';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 const MAX_RATING = 5;
 const STAR_SIZES = {

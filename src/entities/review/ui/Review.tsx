@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { CircleUserRound } from 'lucide-react';
+import { CircleUserRound, Quote } from 'lucide-react';
 
 import { Quotes } from '@/shared/assets';
 import { cn } from '@/shared/lib';
@@ -34,10 +34,10 @@ export const Review = (props: ReviewProps) => {
             </AvatarFallback>
           </Avatar>
         </div>
-        <div className="absolute top-[90%] left-[5%] h-12 w-12">
+        <div className="absolute -bottom-2 left-8 h-8 w-8">
           <Image src={Quotes} alt="Кавычки" className="size-full" />
         </div>
-        <div className="absolute -top-[5%] left-[90%] h-12 w-12 rotate-180 transform">
+        <div className="absolute -top-2 right-8 h-8 w-8 rotate-180 transform">
           <Image src={Quotes} alt="Кавычки" className="size-full" />
         </div>
         <p className="italic">{text}</p>

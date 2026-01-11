@@ -3,7 +3,7 @@ import { VariantProps } from 'class-variance-authority';
 
 import { InputMask, Track } from '@react-input/mask';
 
-import { Input, inputVariants } from '../common/Input';
+import { Input, inputVariants } from '../common';
 
 type PhoneInputProps = {
   bordered?: VariantProps<typeof inputVariants>['bordered'];

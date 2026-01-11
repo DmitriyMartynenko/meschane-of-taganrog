@@ -5,7 +5,7 @@ import { XIcon } from 'lucide-react';
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const Dialog = (props: ComponentProps<typeof DialogPrimitive.Root>) => {
   const { ...restProps } = props;
@@ -123,7 +123,7 @@ export const DialogDescription = (props: ComponentProps<typeof DialogPrimitive.D
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      className={cn('text-foreground-muted text-sm', className)}
+      className={cn('text-sm text-foreground-muted', className)}
       {...restProps}
     />
   );

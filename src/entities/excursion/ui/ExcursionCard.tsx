@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { CalendarDays, Clock9, ReceiptRussianRuble } from 'lucide-react';
 
-import { useBookingStore } from '@/features/booking';
 import { cn, formatDate, formatTime } from '@/shared/lib';
 import {
   Button,
@@ -17,32 +16,24 @@ import {
 
 import { type Excursion } from '../model/types';
 
-import { ExcursionCardDialog } from './ExcursionCardDialog';
+import { ExcursionDetails } from './ExcursionDetails';
 
 type ExcursionCardProps = {
   className?: string;
   excursion: Excursion;
+  onStartBooking: () => void;
 };
 
 export const ExcursionCard = (props: ExcursionCardProps) => {
-  const { className, excursion } = props;
+  const { className, excursion, onStartBooking } = props;
   const { title, description, image, duration, date, price, rating } = excursion;
 
-  const [openDialog, setOpenDialog] = useState<boolean>(false);
-  const setOpenBookingDialog = useBookingStore((state) => state.setOpenDialog);
-
-  const onOpenBookingDialog = () => {
-    setOpenBookingDialog(true);
-  };
-
-  const onOpenExcursionDialog = () => {
-    setOpenDialog((prev) => !prev);
-  };
+  const [openDetails, setOpenDetails] = useState<boolean>(false);
 
   return (
     <Card
       className={cn(
-        'w-full gap-0 p-0 transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1',
+        'w-full gap-0 p-0 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg',
         className
       )}
     >
@@ -77,17 +68,18 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           </div>
         </CardContent>
         <CardFooter className="gap-2">
-          <Button className="flex-1" variant="outline" onClick={onOpenExcursionDialog}>
+          <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>
-          <Button className="flex-1" variant="primary" textWhite onClick={onOpenBookingDialog}>
+          <Button className="flex-1" variant="primary" textWhite onClick={onStartBooking}>
             Записаться
           </Button>
         </CardFooter>
-        <ExcursionCardDialog
-          open={openDialog}
-          onOpenChange={onOpenExcursionDialog}
+        <ExcursionDetails
+          isOpen={openDetails}
+          setIsOpen={setOpenDetails}
           excursion={excursion}
+          onStartBooking={onStartBooking}
         />
       </div>
     </Card>

@@ -9,11 +9,20 @@ import {
 } from 'react-hook-form';
 import { type VariantProps } from 'class-variance-authority';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
-import { Button, buttonVariants } from '../common/Button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../common/Form';
-import { Input, inputVariants } from '../common/Input';
+import {
+  Button,
+  buttonVariants,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
+  inputVariants,
+} from '../common';
 
 import { PhoneInput } from './PhoneInput';
 
@@ -76,7 +85,12 @@ export const InlineForm = <T extends FieldValues>(props: InlineFormProps<T>) => 
                     />
                   </FormControl>
                 </FormItem>
-                <Button className="basis-[45%]" variant={buttonVariant} textWhite={buttonTextWhite}>
+                <Button
+                  type="submit"
+                  className="basis-[45%]"
+                  variant={buttonVariant}
+                  textWhite={buttonTextWhite}
+                >
                   {buttonText}
                 </Button>
               </div>

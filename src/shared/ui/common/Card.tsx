@@ -1,6 +1,6 @@
 import { type ComponentProps } from 'react';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const Card = (props: ComponentProps<'div'>) => {
   const { className, ...restProps } = props;

@@ -1,1 +1,1 @@
-export * from './schemas';
+export { EmailField, NameField, PhoneField } from './schemas';

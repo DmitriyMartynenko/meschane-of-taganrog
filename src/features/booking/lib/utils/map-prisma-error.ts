@@ -1,7 +1,7 @@
 import { Prisma } from '@/prisma/generated/client';
 
-import { type ErrorResponse } from '../../api/createBooking';
-import { type UniqueField } from '../../model/types';
+import { type ErrorResponse } from '../../api/create-booking';
+import { type UniqueField } from '../../model/booking-form.types';
 
 const uniqueFieldMessages: Record<UniqueField, string> = {
   phone: 'Пользователь с таким телефоном уже оставил заявку',

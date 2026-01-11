@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import {
   createContext,
   useCallback,
@@ -11,9 +10,9 @@ import {
   type KeyboardEvent,
 } from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import Arrow from '../../assets/icons/arrow.svg';
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 import { Button } from './Button';
 
@@ -198,7 +197,8 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
       onClick={scrollPrev}
       {...restProps}
     >
-      <Image src={Arrow} alt="Стрелка влево" />
+      {/* <Image src={Arrow} alt="Стрелка влево" /> */}
+      <ArrowLeft color="white" strokeWidth={1.5} />
     </Button>
   );
 };
@@ -224,7 +224,8 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
       onClick={scrollNext}
       {...restProps}
     >
-      <Image className="rotate-180 transform" src={Arrow} alt="Стрелка вправо" />
+      {/* <Image className="rotate-180 transform" src={Arrow} alt="Стрелка вправо" /> */}
+      <ArrowRight color="white" strokeWidth={1.5} />
     </Button>
   );
 };

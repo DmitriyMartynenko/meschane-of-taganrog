@@ -9,23 +9,17 @@ import {
   AlertDialogTitle,
 } from '@/shared/ui';
 
-import { useBookingStore } from '../model/store';
+type CancelBookingAlertProps = {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+  onContinue: () => void;
+};
 
-export const CancelBookingDialog = () => {
-  const { setOpenDialog, openCancelDialog, setOpenCancelDialog, resetFormValues } =
-    useBookingStore();
-
-  const onOpenChange = (open: boolean) => {
-    setOpenCancelDialog(open);
-  };
-
-  const handleContinue = () => {
-    resetFormValues();
-    setOpenDialog(false);
-  };
+export const CancelBookingAlert = (props: CancelBookingAlertProps) => {
+  const { isOpen, setIsOpen, onContinue } = props;
 
   return (
-    <AlertDialog open={openCancelDialog} onOpenChange={onOpenChange}>
+    <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Вы точно уверены?</AlertDialogTitle>
@@ -35,7 +29,7 @@ export const CancelBookingDialog = () => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Отмена</AlertDialogCancel>
-          <AlertDialogAction onClick={handleContinue}>Продолжить</AlertDialogAction>
+          <AlertDialogAction onClick={onContinue}>Продолжить</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

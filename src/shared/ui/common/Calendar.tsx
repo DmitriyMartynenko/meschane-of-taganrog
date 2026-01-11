@@ -13,8 +13,9 @@ import { type VariantProps } from 'class-variance-authority';
 import { ru } from 'date-fns/locale';
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
-import { cn } from '@/shared/lib/utils/cn';
-import { Button, buttonVariants } from '@/shared/ui/common/Button';
+import { cn } from '@/shared/lib';
+
+import { Button, buttonVariants } from './Button';
 
 type CalendarProps = {
   buttonVariant?: VariantProps<typeof buttonVariants>['variant'];

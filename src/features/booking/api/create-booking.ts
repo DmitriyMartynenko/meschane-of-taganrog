@@ -2,8 +2,8 @@
 
 import { prisma } from '@/prisma/prisma-client';
 
-import { mapPrismaError } from '../lib/utils/mapPrismaError';
-import { type BookingForm, type UniqueField } from '../model/types';
+import { mapPrismaError } from '../lib/utils/map-prisma-error';
+import { type BookingForm, type UniqueField } from '../model/booking-form.types';
 
 type SuccessResponse = {
   ok: true;

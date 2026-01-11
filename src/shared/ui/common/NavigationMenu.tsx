@@ -4,7 +4,7 @@ import { ChevronDownIcon } from 'lucide-react';
 
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const NavigationMenu = (
   props: ComponentProps<typeof NavigationMenuPrimitive.Root> & {

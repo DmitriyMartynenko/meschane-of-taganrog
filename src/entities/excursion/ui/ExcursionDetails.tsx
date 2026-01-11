@@ -11,7 +11,6 @@ import {
   Users,
 } from 'lucide-react';
 
-import { useBookingStore } from '@/features/booking';
 import { formatDate, formatTime } from '@/shared/lib';
 import {
   Button,
@@ -32,14 +31,15 @@ import {
 
 import { Excursion } from '../model/types';
 
-type ExcursionCardModal = {
-  open: boolean;
-  onOpenChange: () => void;
+type ExcursionDetailsProps = {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
   excursion: Excursion;
+  onStartBooking: () => void;
 };
 
-export const ExcursionCardDialog = (props: ExcursionCardModal) => {
-  const { open, onOpenChange, excursion } = props;
+export const ExcursionDetails = (props: ExcursionDetailsProps) => {
+  const { isOpen, setIsOpen, excursion, onStartBooking } = props;
   const {
     title,
     image,
@@ -56,14 +56,8 @@ export const ExcursionCardDialog = (props: ExcursionCardModal) => {
     meetingPoint,
   } = excursion;
 
-  const setOpenBookingDialog = useBookingStore((state) => state.setOpenDialog);
-
-  const onOpenBookingDialog = () => {
-    setOpenBookingDialog(true);
-  };
-
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="max-h-[90vh] flex-col overflow-y-auto p-2">
         <Card className="w-full border-none p-0 shadow-none">
           <DialogHeader className="w-full gap-4">
@@ -167,7 +161,7 @@ export const ExcursionCardDialog = (props: ExcursionCardModal) => {
           </CardContent>
           <DialogFooter>
             <CardFooter className="flex-1">
-              <Button className="w-full" variant="primary" textWhite onClick={onOpenBookingDialog}>
+              <Button className="w-full" variant="primary" textWhite onClick={onStartBooking}>
                 Записаться
               </Button>
             </CardFooter>

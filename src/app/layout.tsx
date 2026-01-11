@@ -6,10 +6,10 @@ import { ReactScan } from './providers/ReactScan';
 import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
 
-import { APP_DESCRIPTION, APP_KEYWORDS, APP_NAME } from '@/shared/config';
 import { Toaster } from '@/shared/ui';
 
 import { alegreya, chibola, montserrat } from './config/fonts';
+import { APP_DESCRIPTION, APP_KEYWORDS, APP_NAME } from './config/seo';
 
 import './assets/styles/globals.css';
 
