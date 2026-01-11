@@ -3,7 +3,7 @@
 import { cn, useHasScrolled } from '@/shared/lib';
 import { NavigationMenu, NavigationMenuList } from '@/shared/ui';
 
-import { NAV_LINKS } from '../model/constants';
+import { NAV_LINKS } from '../model/header.constants';
 
 import { NavigationMenuGroup } from './NavigationMenuGroup';
 

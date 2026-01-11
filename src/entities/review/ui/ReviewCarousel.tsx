@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from '@/shared/ui';
 
-import { type Review as ReviewType } from '../model/types';
+import { type Review as ReviewType } from '../model/review.types';
 
 import { Review } from './Review';
 import { ReviewPagination } from './ReviewPagination';

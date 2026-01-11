@@ -1,2 +1,2 @@
 export { ExcursionCard } from './ui/ExcursionCard';
-export { type Excursion } from './model/types';
+export { type Excursion } from './model/excursion.types';

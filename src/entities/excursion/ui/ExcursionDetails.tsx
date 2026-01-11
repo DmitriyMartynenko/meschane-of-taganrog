@@ -29,7 +29,7 @@ import {
   StarRating,
 } from '@/shared/ui';
 
-import { Excursion } from '../model/types';
+import { Excursion } from '../model/excursion.types';
 
 type ExcursionDetailsProps = {
   isOpen: boolean;

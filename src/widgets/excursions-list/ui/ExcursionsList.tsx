@@ -2,7 +2,7 @@ import { BookingDialog, useBookingDialogStore } from '@/features/booking';
 
 import { ExcursionCard, type Excursion } from '@/entities/excursion';
 
-import { sortExcursionsByDate } from '../lib/utils/sortExcursionsByDate';
+import { sortExcursionsByDate } from '../lib/sort-excursions-by-date';
 
 import { NoExcursionsPlaceholder } from './NoExcursionsPlaceholder';
 

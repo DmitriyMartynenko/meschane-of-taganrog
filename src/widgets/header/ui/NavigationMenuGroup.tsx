@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/shared/lib';
 import { NavigationMenuItem, NavigationMenuLink } from '@/shared/ui';
 
-import { type NavLink } from '../model/types';
+import { type NavLink } from '../model/header.types';
 
 type NavGroupProps = {
   className?: string;

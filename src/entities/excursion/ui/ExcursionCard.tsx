@@ -14,7 +14,7 @@ import {
   StarRating,
 } from '@/shared/ui';
 
-import { type Excursion } from '../model/types';
+import { type Excursion } from '../model/excursion.types';
 
 import { ExcursionDetails } from './ExcursionDetails';
 
