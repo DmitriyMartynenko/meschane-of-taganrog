@@ -27,9 +27,7 @@ export const NavigationMenuGroup = (props: NavGroupProps) => {
             )}
             asChild
           >
-            <Link href={href} passHref>
-              {label}
-            </Link>
+            <Link href={href}>{label}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       ))}
