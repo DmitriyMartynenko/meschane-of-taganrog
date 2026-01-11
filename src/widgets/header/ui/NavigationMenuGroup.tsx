@@ -18,18 +18,19 @@ export const NavigationMenuGroup = (props: NavGroupProps) => {
     <div className={cn('flex flex-row gap-8', className)}>
       {links.map(({ label, href }, index) => (
         <NavigationMenuItem key={`${label}_${index}`}>
-          <Link href={href} legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                'flex h-16 items-center justify-center',
-                isScrolled
-                  ? 'font-semibold text-foreground-secondary'
-                  : "after:absolute after:bottom-[-1px] after:left-0 after:h-0.25 after:w-0 after:bg-primary after:transition-all after:duration-600 after:content-[''] hover:after:w-full"
-              )}
-            >
+          <NavigationMenuLink
+            className={cn(
+              'flex h-16 items-center justify-center',
+              isScrolled
+                ? 'font-semibold text-foreground-secondary'
+                : "after:absolute after:bottom-[-1px] after:left-0 after:h-0.25 after:w-0 after:bg-primary after:transition-all after:duration-600 after:content-[''] hover:after:w-full"
+            )}
+            asChild
+          >
+            <Link href={href} passHref>
               {label}
-            </NavigationMenuLink>
-          </Link>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       ))}
     </div>
