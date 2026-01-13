@@ -2,7 +2,7 @@
 
 import { InlineForm, type InlineFormControls } from '@/shared/ui';
 
-import { useInlineBookingForm } from '../lib/hooks/use-inline-booking-form';
+import { useInlineBookingForm } from '../model/use-inline-booking-form';
 
 import { BookingDialog } from './BookingDialog';
 

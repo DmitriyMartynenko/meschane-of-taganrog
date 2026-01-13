@@ -12,9 +12,9 @@ import {
   HeadingTitle,
 } from '@/shared/ui';
 
-import { useBookingForm } from '../lib/hooks/use-booking-form';
 import { useBookingDialogStore } from '../model/booking-dialog.store';
 import { useBookingFormStore } from '../model/booking-form.store';
+import { useBookingForm } from '../model/use-booking-form';
 
 import { BookingForm } from './BookingForm';
 import { CancelBookingAlert } from './CancelBookingAlert';

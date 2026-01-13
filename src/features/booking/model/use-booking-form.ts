@@ -4,11 +4,12 @@ import { toast } from 'sonner';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { createBooking } from '../../api/create-booking';
-import { useBookingDialogStore } from '../../model/booking-dialog.store';
-import { BookingFormSchema } from '../../model/booking-form.schemas';
-import { useBookingFormStore } from '../../model/booking-form.store';
-import { type BookingForm } from '../../model/booking-form.types';
+import { createBooking } from '../api/create-booking';
+
+import { useBookingDialogStore } from './booking-dialog.store';
+import { BookingFormSchema } from './booking-form.schemas';
+import { useBookingFormStore } from './booking-form.store';
+import { type BookingForm } from './booking-form.types';
 
 export const useBookingForm = () => {
   const phone = useBookingFormStore((state) => state.phone);

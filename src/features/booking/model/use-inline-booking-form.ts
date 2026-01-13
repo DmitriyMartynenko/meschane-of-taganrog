@@ -3,9 +3,9 @@ import { z } from 'zod';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useBookingDialogStore } from '../../model/booking-dialog.store';
-import { InlineBookingFormSchema } from '../../model/booking-form.schemas';
-import { useBookingFormStore } from '../../model/booking-form.store';
+import { useBookingDialogStore } from './booking-dialog.store';
+import { InlineBookingFormSchema } from './booking-form.schemas';
+import { useBookingFormStore } from './booking-form.store';
 
 type InlineBookingForm = z.infer<typeof InlineBookingFormSchema>;
 

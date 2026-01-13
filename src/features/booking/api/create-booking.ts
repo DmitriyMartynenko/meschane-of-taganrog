@@ -2,7 +2,7 @@
 
 import { prisma } from '@/prisma/prisma-client';
 
-import { mapPrismaError } from '../lib/utils/map-prisma-error';
+import { mapPrismaError } from '../lib/map-prisma-error';
 import { type BookingForm, type UniqueField } from '../model/booking-form.types';
 
 type SuccessResponse = {
