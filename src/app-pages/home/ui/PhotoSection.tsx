@@ -1,10 +1,7 @@
-'use client';
+import { PhotoGrid } from '@/widgets/photo-grid';
 
-import Image from 'next/image';
-import { useState } from 'react';
-
-import { PhotoViewer } from '@/features/photo-viewing';
 import { type Photo } from '@/entities/photo';
+
 import {
   Container,
   HeadingHighlight,
@@ -40,14 +37,6 @@ const MESCHANE_PHOTOS: Photo[] = [
 ];
 
 export const PhotoSection = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
-  const [openViewer, setOpenViewer] = useState<boolean>(false);
-
-  const handlePhotoClick = (photo: Photo) => {
-    setSelectedPhoto(photo);
-    setOpenViewer(true);
-  };
-
   return (
     <Section className="flex bg-background-secondary" id="photo-section">
       <Container className="flex gap-16 py-16">
@@ -60,30 +49,8 @@ export const PhotoSection = () => {
             </HeadingHighlight>
           </HeadingTitle>
         </SectionHeading>
-        <div className="flex gap-8">
-          {MESCHANE_PHOTOS.map((photo) => {
-            const { image } = photo;
-            return (
-              <div className="basis-1/3" key={image.src}>
-                <Image
-                  className="aspect-2/3 size-full cursor-pointer rounded-xl object-cover object-bottom transition-transform hover:scale-105"
-                  src={image}
-                  alt="Фотография мещан"
-                  onClick={() => handlePhotoClick(photo)}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <PhotoGrid photos={MESCHANE_PHOTOS} />
       </Container>
-      {selectedPhoto && (
-        <PhotoViewer
-          open={openViewer}
-          onOpenChange={setOpenViewer}
-          photo={selectedPhoto}
-          alt="Увеличенная фотография мещан"
-        />
-      )}
     </Section>
   );
 };
