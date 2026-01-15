@@ -28,7 +28,7 @@ export const PhotoGrid = ({ photos }: PhotoGridProps) => {
           return (
             <div className="basis-1/3" key={image.src}>
               <Image
-                className="aspect-2/3 size-full cursor-pointer rounded-xl object-cover object-bottom transition-transform hover:scale-105"
+                className="aspect-2/3 size-full cursor-pointer rounded-xl object-cover object-bottom transition-transform duration-300 hover:scale-105"
                 src={image}
                 alt="Фотография мещан"
                 onClick={() => handlePhotoClick(photo)}
