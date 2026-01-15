@@ -10,7 +10,7 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
   return (
     <>
       <Image className="scale-101 object-cover opacity-75 blur-xs" src={src} alt="" fill priority />
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,0,5,0.75)] to-[rgba(5,0,5,0.75)]" />
+      <div className="absolute inset-0 bg-linear-to-b from-[rgba(30,20,10,0.9)] to-[rgba(30,20,10,0.8)]" />
     </>
   );
 };
