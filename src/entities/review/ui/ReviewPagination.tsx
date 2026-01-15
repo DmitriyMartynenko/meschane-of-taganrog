@@ -1,10 +1,10 @@
 import { cn } from '@/shared/lib';
 
-import { type Review } from '../model/review.types';
+import { type ReviewItem } from '../model/review.types';
 
 type ReviewPaginationProps = {
   className?: string;
-  reviews: Review[];
+  reviews: ReviewItem[];
   current: number;
 };
 

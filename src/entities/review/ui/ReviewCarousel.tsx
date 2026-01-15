@@ -12,9 +12,9 @@ import {
   CarouselPrevious,
 } from '@/shared/ui';
 
-import { type Review as ReviewType } from '../model/review.types';
+import { type ReviewItem as ReviewType } from '../model/review.types';
 
-import { Review } from './Review';
+import { ReviewItem } from './ReviewItem';
 import { ReviewPagination } from './ReviewPagination';
 
 type ReviewCarouselProps = {
@@ -45,7 +45,7 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
       <CarouselContent className="-ml-8 items-center">
         {reviews.map(({ id, author, text, rating }) => (
           <CarouselItem className="pl-8" key={id}>
-            <Review author={author} text={text} rating={rating} />
+            <ReviewItem author={author} text={text} rating={rating} />
           </CarouselItem>
         ))}
       </CarouselContent>

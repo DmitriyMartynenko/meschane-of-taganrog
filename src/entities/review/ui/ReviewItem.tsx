@@ -7,13 +7,13 @@ import { Quotes } from '@/shared/assets';
 import { cn } from '@/shared/lib';
 import { Avatar, AvatarFallback, AvatarImage, StarRating } from '@/shared/ui';
 
-import { type Review as ReviewType } from '../model/review.types';
+import { type ReviewItem as ReviewType } from '../model/review.types';
 
 type ReviewProps = {
   className?: string;
 } & ReviewType;
 
-export const Review = (props: ReviewProps) => {
+export const ReviewItem = (props: ReviewProps) => {
   const { className = '', text = 'Нет текста', author, rating = 5 } = props;
 
   const { fullName = 'Анонимный пользователь', avatarUrl = '', jobTitle = '' } = author;
