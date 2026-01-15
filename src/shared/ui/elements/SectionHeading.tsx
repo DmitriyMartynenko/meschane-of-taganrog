@@ -18,9 +18,9 @@ export const HeadingSubtitle = (props: SectionSubtitleProps) => {
 };
 
 export const HeadingTitle = (props: ComponentProps<'h2'>) => {
-  const { children: text, className } = props;
+  const { children, className } = props;
 
-  return <h2 className={cn('font-alegreya text-5xl uppercase', className)}>{text}</h2>;
+  return <h2 className={cn('font-alegreya text-5xl uppercase', className)}>{children}</h2>;
 };
 
 type HeadingHighlight = {
