@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Quotes } from '@/shared/assets';
 import {
+  Container,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
@@ -9,44 +10,55 @@ import {
   SectionHeading,
 } from '@/shared/ui';
 
-import meschanin from '../assets/images/meschanin.png';
-import stoneStair from '../assets/images/stone-stair.png';
+import meschaninPortrait from '../assets/images/meschanin-portrait.png';
+import quoteBackground from '../assets/images/quote-background.png';
+import signature from '../assets/images/signature.png';
 
 export const QuoteSection = () => {
   return (
-    <Section className="flex bg-background-secondary">
-      <div className="relative basis-[30%]">
-        <Image className="h-full w-full" src={stoneStair} alt="Каменная лестница Таганрога" />
-      </div>
-      <div className="relative basis-[25%]">
-        <Image
-          className="absolute bottom-[7%] h-full w-auto scale-125 transform"
-          src={meschanin}
-          alt="Мещанин"
-          id="quote-section"
-        />
-        <Image className="absolute right-0 bottom-[40%]" src={Quotes} alt="Кавычки" />
-      </div>
-      <div className="flex max-w-[700px] flex-col justify-center gap-8 px-16">
-        <SectionHeading>
-          <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
-          <HeadingTitle>
-            Потому что нам <br />
-            <HeadingHighlight withUnderline>не все равно</HeadingHighlight>
-          </HeadingTitle>
-        </SectionHeading>
-        <p className="tracking-[1px]">
-          В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
-          проведении Всероссийских съездов представителей мещанских обществ, а также съездов
-          мещанских делегатов в 1917 г. Это было свидетельством жизнеспособности сословия,
-          готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
-          активным политическим действиям
-        </p>
-        <div>
-          <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
-          <span className="text-foreground-muted">Кандидат исторических наук, доцент</span>
+    <Section className="relative">
+      <Image className="object-cover object-center" src={quoteBackground} alt="" fill priority />
+      <div className="absolute inset-0 bg-linear-to-b from-[rgba(30,20,10,0.7)] to-[rgba(20,10,5,0.6)]" />
+      <Container className="relative">
+        <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
+          <Image
+            className="h-full w-auto scale-110 transition-all duration-450 hover:scale-115 hover:brightness-115"
+            src={meschaninPortrait}
+            alt="Портрет мещанина начала XX века в традиционной одежде"
+            priority
+          />
         </div>
-      </div>
+        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-secondary bg-black/30 p-8 pl-6 text-white backdrop-blur-sm">
+          <Image className="size-8 shrink-0" src={Quotes} alt="Кавычки" />
+          <div className="flex flex-col gap-8">
+            <SectionHeading>
+              <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
+              <HeadingTitle>
+                Потому что нам <br />
+                <HeadingHighlight withUnderline>не все равно</HeadingHighlight>
+              </HeadingTitle>
+            </SectionHeading>
+            <p className="leading-relaxed tracking-[1px]">
+              В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
+              проведении Всероссийских съездов представителей мещанских обществ, а также съездов
+              мещанских делегатов в 1917 г. Это было свидетельством жизнеспособности сословия,
+              готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
+              активным политическим действиям.
+            </p>
+            <div className="flex gap-8">
+              <div>
+                <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
+                <p className="max-w-62.5 text-white/80">Кандидат исторических наук, доцент</p>
+              </div>
+              <Image
+                className="h-auto w-32 shrink-0 opacity-60"
+                src={signature}
+                alt="Подпись И.Н. Смирнова"
+              />
+            </div>
+          </div>
+        </div>
+      </Container>
     </Section>
   );
 };
