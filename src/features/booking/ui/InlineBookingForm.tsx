@@ -6,16 +6,12 @@ import { useInlineBookingForm } from '../model/use-inline-booking-form';
 
 import { BookingDialog } from './BookingDialog';
 
-type InlineBookingFormProps = InlineFormControls;
-
-export const InlineBookingForm = (props: InlineBookingFormProps) => {
-  const { ...restProps } = props;
-
+export const InlineBookingForm = (props: InlineFormControls) => {
   const { form, onSubmit } = useInlineBookingForm();
 
   return (
     <>
-      <InlineForm form={form} name="phone" onSubmit={onSubmit} {...restProps} />
+      <InlineForm form={form} name="phone" onSubmit={onSubmit} {...props} />
       <BookingDialog />
     </>
   );
