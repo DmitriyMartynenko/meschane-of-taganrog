@@ -12,7 +12,7 @@ import {
 export const QuickOrderSection = () => {
   return (
     <Section id="quick-order-section">
-      <Container className="py-16">
+      <Container className="flex items-center justify-center py-16">
         <div className="flex flex-col items-center justify-center gap-16">
           <SectionHeading>
             <HeadingSubtitle>Не нашли подходящую экскурсию?</HeadingSubtitle>

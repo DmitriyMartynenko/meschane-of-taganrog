@@ -61,7 +61,7 @@ const mockReviews = [
 export const ReviewsSection = () => {
   return (
     <Section className="flex items-center justify-center bg-background-secondary">
-      <Container className="flex-col gap-12 py-16">
+      <Container className="flex flex-col items-center justify-center gap-12 py-16">
         <SectionHeading>
           <HeadingSubtitle>О нас говорят</HeadingSubtitle>
           <HeadingTitle>

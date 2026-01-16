@@ -43,7 +43,7 @@ const BENEFIT_CARDS = [
 export const BenefitsSection = () => {
   return (
     <Section id="benefits-section">
-      <Container className="flex-col gap-16 pt-16 pb-32">
+      <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
         <SectionHeading>
           <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
           <HeadingTitle>

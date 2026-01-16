@@ -20,7 +20,7 @@ export const PartnersSection = () => {
       style={{ backgroundImage: `url(${partnersBackground.src})` }}
       id="partners-section"
     >
-      <Container className="flex-col gap-16 py-16">
+      <Container className="flex flex-col items-center justify-center gap-16 py-16">
         <SectionHeading>
           <HeadingSubtitle>С нами сотрудничают</HeadingSubtitle>
           <HeadingTitle>

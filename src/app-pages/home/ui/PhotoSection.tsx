@@ -39,7 +39,7 @@ const MESCHANE_PHOTOS: Photo[] = [
 export const PhotoSection = () => {
   return (
     <Section className="flex bg-background-secondary" id="photo-section">
-      <Container className="flex gap-16 py-16">
+      <Container className="flex items-center justify-center gap-16 py-16">
         <SectionHeading>
           <HeadingSubtitle withDash>Фото на память</HeadingSubtitle>
           <HeadingTitle>

@@ -12,7 +12,7 @@ import {
 export const SubscriptionSection = () => {
   return (
     <Section className="flex bg-background-primary">
-      <Container className="items-start py-16">
+      <Container className="flex items-start justify-center py-16">
         <div className="flex flex-col gap-16">
           <SectionHeading>
             <HeadingSubtitle>Будьте в курсе мещанских дел</HeadingSubtitle>
