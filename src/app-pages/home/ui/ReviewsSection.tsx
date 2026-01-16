@@ -1,5 +1,6 @@
 import { ReviewCarousel } from '@/entities/review';
 import { type User } from '@/entities/user';
+
 import {
   Container,
   HeadingHighlight,

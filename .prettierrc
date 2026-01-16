@@ -14,6 +14,7 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "arrowParens": "always",
+  "endOfLine": "lf",
 
   "importOrder": [
     "<BUILTIN_MODULES>",

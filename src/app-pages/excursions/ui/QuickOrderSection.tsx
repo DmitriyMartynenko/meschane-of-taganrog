@@ -1,4 +1,5 @@
 import { InlineBookingForm } from '@/features/booking';
+
 import {
   Container,
   HeadingHighlight,

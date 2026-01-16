@@ -1,4 +1,5 @@
 import { Photo } from '@/entities/photo';
+
 import { DialogDescription, DialogHeader, DialogTitle, ImageViewer } from '@/shared/ui';
 
 type PhotoViewer = {

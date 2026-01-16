@@ -1,4 +1,5 @@
 import { InlineConsultationForm } from '@/features/consultation';
+
 import { HeadingHighlight, HeadingSubtitle, HeadingTitle, SectionHeading } from '@/shared/ui';
 
 import footerBackground from '../assets/footer-background.png';
