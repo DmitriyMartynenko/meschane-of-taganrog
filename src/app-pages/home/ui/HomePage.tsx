@@ -6,16 +6,18 @@ import { QuoteSection } from './QuoteSection';
 import { ReviewsSection } from './ReviewsSection';
 import { SubscriptionSection } from './SubscriptionSection';
 
-const HomePage = () => (
-  <>
-    <PromoSection />
-    <QuoteSection />
-    <BenefitsSection />
-    <PhotoSection />
-    <PartnersSection />
-    <ReviewsSection />
-    <SubscriptionSection />
-  </>
-);
+const HomePage = () => {
+  return (
+    <>
+      <PromoSection />
+      <QuoteSection />
+      <BenefitsSection />
+      <PhotoSection />
+      <PartnersSection />
+      <ReviewsSection />
+      <SubscriptionSection />
+    </>
+  );
+};
 
 export default HomePage;
