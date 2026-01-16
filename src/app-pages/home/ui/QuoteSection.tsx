@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Quotes } from '@/shared/assets';
 import {
+  BackgroundImage,
   Container,
   HeadingHighlight,
   HeadingSubtitle,
@@ -16,10 +17,13 @@ import signature from '../assets/images/signature.png';
 
 export const QuoteSection = () => {
   return (
-    <Section className="relative">
-      <Image className="object-cover object-center" src={quoteBackground} alt="" fill priority />
-      <div className="absolute inset-0 bg-linear-to-b from-[rgba(30,20,10,0.7)] to-[rgba(20,10,5,0.6)]" />
-      <Container className="relative">
+    <Section className="relative" id="quote-section">
+      <BackgroundImage
+        src={quoteBackground}
+        gradientFrom="rgba(30,20,10,0.7)"
+        gradientTo="rgba(20,10,5,0.6)"
+      />
+      <Container className="relative flex items-center justify-center">
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
           <Image
             className="h-full w-auto scale-110 transition-all duration-450 hover:scale-115 hover:brightness-115"
