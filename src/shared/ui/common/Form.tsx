@@ -95,7 +95,7 @@ export const FormLabel = (props: ComponentProps<typeof LabelPrimitive.Root>) => 
       data-slot="form-label"
       data-error={!!error}
       className={cn(
-        'transition-all duration-300 ease-in-out data-[error=true]:font-semibold data-[error=true]:text-destructive-primary',
+        'transition-all duration-300 data-[error=true]:font-semibold data-[error=true]:text-destructive-primary',
         className
       )}
       htmlFor={formItemId}
@@ -154,7 +154,7 @@ export const FormMessage = (props: ComponentProps<'p'>) => {
       data-slot="form-message"
       id={formMessageId}
       className={cn(
-        'font-semibold text-destructive-primary transition-opacity duration-300 ease-in-out',
+        'font-semibold text-destructive-primary transition-opacity duration-300',
         body ? 'opacity-100' : 'pointer-events-none opacity-0',
         className
       )}

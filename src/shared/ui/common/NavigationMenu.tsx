@@ -121,7 +121,7 @@ export const NavigationMenuLink = (props: ComponentProps<typeof NavigationMenuPr
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        'relative cursor-pointer text-center text-foreground-muted transition-[color,font-weight] duration-300 ease-in-out hover:text-accent-primary',
+        'relative cursor-pointer text-center text-foreground-muted transition-[color,font-weight] duration-300 hover:text-accent-primary',
         className
       )}
       {...restProps}

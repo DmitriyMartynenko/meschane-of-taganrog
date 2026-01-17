@@ -32,11 +32,11 @@ export const PartnersSection = () => {
             <Image
               src={tgliamz}
               alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
-              className="cursor-pointer transition-transform duration-450 ease-in-out hover:scale-105"
+              className="cursor-pointer transition-transform duration-450 hover:scale-105"
             />
           </Link>
           <Link
-            className="cursor-pointer text-center text-2xl font-bold text-foreground-secondary transition-colors duration-300 ease-in-out hover:text-accent-primary"
+            className="cursor-pointer text-center text-2xl font-bold text-foreground-secondary transition-colors duration-300 hover:text-accent-primary"
             href="https://tgliamz.ru/"
             target="_blank"
           >

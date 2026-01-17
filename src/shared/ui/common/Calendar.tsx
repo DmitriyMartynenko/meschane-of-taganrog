@@ -174,7 +174,7 @@ export const CalendarDayButton = (props: ComponentProps<typeof DayButton>) => {
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        'flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 leading-none font-semibold transition-colors duration-150 ease-in-out data-[range-end=true]:bg-accent-primary data-[range-end=true]:text-foreground-primary data-[range-middle=true]:bg-accent-primary data-[range-middle=true]:text-foreground-primary data-[range-start=true]:bg-accent-primary data-[range-start=true]:text-foreground-primary data-[selected-single=true]:bg-primary data-[selected-single=true]:text-foreground-secondary [&>span]:text-xs [&>span]:opacity-70',
+        'flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 leading-none font-semibold transition-colors duration-150 data-[range-end=true]:bg-accent-primary data-[range-end=true]:text-foreground-primary data-[range-middle=true]:bg-accent-primary data-[range-middle=true]:text-foreground-primary data-[range-start=true]:bg-accent-primary data-[range-start=true]:text-foreground-primary data-[selected-single=true]:bg-primary data-[selected-single=true]:text-foreground-secondary [&>span]:text-xs [&>span]:opacity-70',
         defaultClassNames.day,
         className
       )}
