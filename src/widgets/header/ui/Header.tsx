@@ -5,7 +5,11 @@ import { NavigationMenu, NavigationMenuList } from '@/shared/ui';
 
 import { NAV_LINKS } from '../model/header.constants';
 
-import { NavigationMenuGroup } from './NavigationMenuGroup';
+import { HeaderLink } from './HeaderLink';
+
+const leftGroup = NAV_LINKS.slice(0, 3);
+const middleGroup = NAV_LINKS.slice(3, 4);
+const rightGroup = NAV_LINKS.slice(4);
 
 export const Header = () => {
   const { isScrolled } = useHasScrolled(50);
@@ -13,21 +17,28 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-1 w-full border-b-1 transition-all duration-300 ease-in-out',
+        'fixed inset-x-0 top-0 z-1 w-full border-b transition-all duration-300',
         isScrolled
           ? 'border-b-transparent bg-primary/50 shadow-lg backdrop-blur-lg'
-          : 'border-b-foreground-muted/32 bg-transparent shadow-none'
+          : 'border-b-foreground-muted/32 bg-transparent'
       )}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="flex flex-row justify-between gap-16">
-          <NavigationMenuGroup links={NAV_LINKS.slice(0, 3)} isScrolled={isScrolled} />
-          <NavigationMenuGroup
-            className="text-lg"
-            links={NAV_LINKS.slice(3, 4)}
-            isScrolled={isScrolled}
-          />
-          <NavigationMenuGroup links={NAV_LINKS.slice(4)} isScrolled={isScrolled} />
+        <NavigationMenuList className="gap-8">
+          {leftGroup.map(({ href, label }) => (
+            <HeaderLink href={href} label={label} isScrolled={isScrolled} />
+          ))}
+          {middleGroup.map(({ href, label }) => (
+            <HeaderLink
+              className="mx-8 text-lg"
+              href={href}
+              label={label}
+              isScrolled={isScrolled}
+            />
+          ))}
+          {rightGroup.map(({ href, label }) => (
+            <HeaderLink href={href} label={label} isScrolled={isScrolled} />
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </header>
