@@ -6,7 +6,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/shared/lib';
 
 export const buttonVariants = cva(
-  'inline-flex cursor-pointer items-center justify-center font-semibold uppercase transition-[background-color] duration-300 focus-visible:ring focus-visible:ring-ring-primary focus-visible:outline-none enabled:hover:bg-accent-primary enabled:active:border-transparent enabled:active:bg-accent-primary/80 disabled:cursor-not-allowed disabled:opacity-50',
+  'inline-flex cursor-pointer items-center justify-center font-semibold uppercase transition-[background-color] duration-300 ease-in-out focus-visible:ring focus-visible:ring-ring-primary focus-visible:outline-none enabled:hover:bg-accent-primary enabled:active:border-transparent enabled:active:bg-accent-primary/80 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
