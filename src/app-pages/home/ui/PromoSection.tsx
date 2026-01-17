@@ -28,7 +28,12 @@ export const PromoSection = () => {
             buttonTextWhite
           />
         </div>
-        <Image className="size-128" src={Logo} priority alt="Логотип проекта «Мещане Таганрога»" />
+        <Image
+          className="h-auto w-lg transition-all duration-450 hover:scale-105 hover:brightness-115 hover:saturate-150"
+          src={Logo}
+          priority
+          alt="Логотип проекта «Мещане Таганрога»"
+        />
       </Container>
     </Section>
   );
