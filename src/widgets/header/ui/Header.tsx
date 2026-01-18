@@ -26,18 +26,19 @@ export const Header = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="gap-8">
           {leftGroup.map(({ href, label }) => (
-            <HeaderLink href={href} label={label} isScrolled={isScrolled} />
+            <HeaderLink key={href} href={href} label={label} isScrolled={isScrolled} />
           ))}
           {middleGroup.map(({ href, label }) => (
             <HeaderLink
               className="mx-8 text-lg"
+              key={href}
               href={href}
               label={label}
               isScrolled={isScrolled}
             />
           ))}
           {rightGroup.map(({ href, label }) => (
-            <HeaderLink href={href} label={label} isScrolled={isScrolled} />
+            <HeaderLink key={href} href={href} label={label} isScrolled={isScrolled} />
           ))}
         </NavigationMenuList>
       </NavigationMenu>
