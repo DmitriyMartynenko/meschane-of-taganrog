@@ -20,7 +20,7 @@ export const HeaderLink = (props: HeaderLinkProps) => {
           'flex h-16 items-center justify-center',
           isScrolled
             ? 'font-semibold text-foreground-secondary'
-            : 'after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-600 after:ease-in-out hover:after:w-full'
+            : 'after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-450 after:ease-in-out hover:after:w-full'
         )}
         asChild
       >
