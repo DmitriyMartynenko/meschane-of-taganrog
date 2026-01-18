@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/shared/lib';
 
 export const inputVariants = cva(
-  'w-full bg-background-primary p-4 text-base font-semibold text-foreground-primary transition-[color,box-shadow] outline-none placeholder:text-foreground-muted focus-visible:border-ring-primary focus-visible:ring-1 focus-visible:ring-ring-primary disabled:cursor-not-allowed data-[error=true]:border-destructive-primary data-[error=true]:focus-visible:ring-destructive-primary',
+  'w-full bg-background-primary p-4 text-base font-semibold text-foreground-primary transition-[color,box-shadow] ease-in-out outline-none placeholder:text-foreground-muted focus-visible:border-ring-primary focus-visible:ring-1 focus-visible:ring-ring-primary disabled:cursor-not-allowed data-[error=true]:border-destructive-primary data-[error=true]:focus-visible:ring-destructive-primary',
   {
     variants: {
       bordered: {

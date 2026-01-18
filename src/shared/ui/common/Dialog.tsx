@@ -72,7 +72,7 @@ export const DialogContent = (props: DialogContentProps) => {
         >
           {children}
         </div>
-        <DialogPrimitive.Close className="absolute top-2 right-2 cursor-pointer rounded-xs opacity-70 ring-offset-background-primary transition-opacity outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-primary disabled:pointer-events-none data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
+        <DialogPrimitive.Close className="absolute top-2 right-2 cursor-pointer rounded-xs opacity-70 ring-offset-background-primary transition-opacity ease-in-out outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-primary disabled:pointer-events-none data-[state=open]:bg-accent-primary data-[state=open]:text-foreground-muted [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
           <XIcon />
           <span className="sr-only">Закрыть</span>
         </DialogPrimitive.Close>

@@ -26,7 +26,7 @@ export const QuoteSection = () => {
       <Container className="relative flex items-center justify-center">
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
           <Image
-            className="h-full w-auto scale-110 transition-all duration-450 hover:scale-115 hover:brightness-115"
+            className="h-full w-auto scale-110 transition-all duration-450 ease-in-out hover:scale-115 hover:brightness-115"
             src={meschaninPortrait}
             alt="Портрет мещанина начала XX века в традиционной одежде"
             priority
