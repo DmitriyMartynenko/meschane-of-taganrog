@@ -7,7 +7,10 @@ export const PageHeading = (props: ComponentProps<'h1'>) => {
 
   return (
     <h1
-      className={cn('text-shadow-promo-title text-center font-chibola text-5xl/tight', className)}
+      className={cn(
+        'text-center font-chibola text-5xl/tight text-shadow-[2px_2px_3px_rgba(0,0,0,0.7),-2px_2px_3px_rgba(0,0,0,0.7),2px_-2px_3px_rgba(0,0,0,0.7),-2px_-2px_3px_rgba(0,0,0,0.7),0px_2px_3px_rgba(0,0,0,0.7),0px_-2px_3px_rgba(0,0,0,0.7),2px_0px_3px_rgba(0,0,0,0.7),-2px_0px_3px_rgba(0,0,0,0.7)]',
+        className
+      )}
       {...restProps}
     >
       {children}

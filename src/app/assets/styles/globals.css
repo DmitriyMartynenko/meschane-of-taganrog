@@ -69,15 +69,4 @@
 }
 
 @layer utilities {
-  .text-shadow-promo-title {
-    text-shadow:
-      2px 2px 3px rgba(0, 0, 0, 0.7),
-      -2px 2px 3px rgba(0, 0, 0, 0.7),
-      2px -2px 3px rgba(0, 0, 0, 0.7),
-      -2px -2px 3px rgba(0, 0, 0, 0.7),
-      0px 2px 3px rgba(0, 0, 0, 0.7),
-      0px -2px 3px rgba(0, 0, 0, 0.7),
-      2px 0px 3px rgba(0, 0, 0, 0.7),
-      -2px 0px 3px rgba(0, 0, 0, 0.7);
-  }
 }
