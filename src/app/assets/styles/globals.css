@@ -62,6 +62,7 @@
     overscroll-behavior: none;
   }
 
+  /* Fix layout jump when modal is opened */
   body[data-scroll-locked] {
     margin-right: 0 !important;
   }
