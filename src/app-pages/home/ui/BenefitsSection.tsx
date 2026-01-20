@@ -42,7 +42,7 @@ const BENEFIT_CARDS = [
 
 export const BenefitsSection = () => {
   return (
-    <Section id="benefits-section">
+    <Section className="bg-background-primary" id="benefits-section">
       <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
         <SectionHeading>
           <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>

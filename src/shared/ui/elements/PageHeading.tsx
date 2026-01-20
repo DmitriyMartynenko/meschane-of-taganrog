@@ -19,7 +19,7 @@ export const PageHeadingHighlight = (props: ComponentProps<'span'>) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <span className={cn('text-[4rem] text-secondary', className)} {...restProps}>
+    <span className={cn('text-[4rem] text-primary', className)} {...restProps}>
       {children}
     </span>
   );

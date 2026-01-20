@@ -17,10 +17,10 @@ export const HeaderLink = (props: HeaderLinkProps) => {
     <NavigationMenuItem className={cn(className)}>
       <NavigationMenuLink
         className={cn(
-          'flex h-16 items-center justify-center',
+          'flex h-16 items-center justify-center text-muted-primary',
           isScrolled
             ? 'font-semibold text-foreground-secondary'
-            : 'after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-450 after:ease-in-out hover:after:w-full'
+            : 'after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-accent-primary after:transition-all after:duration-450 after:ease-in-out hover:after:w-full'
         )}
         asChild
       >

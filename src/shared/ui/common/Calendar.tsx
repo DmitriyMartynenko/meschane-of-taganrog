@@ -85,19 +85,19 @@ export const Calendar = (props: CalendarProps) => {
           'select-none font-medium',
           captionLayout === 'label'
             ? 'text-sm'
-            : 'pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-foreground-muted [&>svg]:size-3.5',
+            : 'pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-primary [&>svg]:size-3.5',
           defaultClassNames.caption_label
         ),
         table: 'w-full border-collapse',
         weekdays: cn('flex', defaultClassNames.weekdays),
         weekday: cn(
-          'text-foreground-muted flex-1 font-normal text-[0.8rem] select-none capitalize',
+          'text-muted-primary flex-1 font-normal text-[0.8rem] select-none capitalize',
           defaultClassNames.weekday
         ),
         week: cn('flex w-full mt-2', defaultClassNames.week),
         week_number_header: cn('select-none w-(--cell-size)', defaultClassNames.week_number_header),
         week_number: cn(
-          'text-[0.8rem] select-none text-foreground-muted',
+          'text-[0.8rem] select-none text-muted-primary',
           defaultClassNames.week_number
         ),
         day: cn(
@@ -109,10 +109,10 @@ export const Calendar = (props: CalendarProps) => {
         range_end: cn('bg-background-secondary text-blue-500', defaultClassNames.range_end),
         today: cn('bg-accent text-black', defaultClassNames.today),
         outside: cn(
-          'text-foreground-muted aria-selected:text-foreground-muted',
+          'text-muted-primary aria-selected:text-muted-primary',
           defaultClassNames.outside
         ),
-        disabled: cn('text-foreground-muted opacity-50', defaultClassNames.disabled),
+        disabled: cn('text-muted-primary opacity-50', defaultClassNames.disabled),
         hidden: cn('invisible', defaultClassNames.hidden),
         ...classNames,
       }}

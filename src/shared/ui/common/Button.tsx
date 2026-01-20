@@ -10,8 +10,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-secondary',
-        outline: 'border border-primary bg-transparent',
+        primary: 'bg-primary',
+        outline: 'border border-secondary bg-transparent',
         ghost: '',
         destructive:
           'bg-destructive-primary focus-visible:ring-destructive-primary enabled:hover:bg-destructive-primary/80',

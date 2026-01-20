@@ -53,7 +53,7 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           </CardTitle>
           <CardDescription className="text-foreground-primary">{description}</CardDescription>
         </CardHeader>
-        <CardContent className="items-center gap-4 font-semibold text-secondary">
+        <CardContent className="items-center gap-4 font-semibold text-primary">
           <div className="flex items-center gap-1">
             <Clock9 className="text-current" size={16} />
             {formatTime(duration)}

@@ -26,7 +26,7 @@ export const ReviewItem = (props: ReviewProps) => {
           className
         )}
       >
-        <div className="absolute top-0 left-1/2 z-1 h-32 w-32 -translate-1/2 rounded-full border-10 border-background-secondary bg-background-secondary">
+        <div className="absolute top-0 left-1/2 z-1 h-32 w-32 -translate-1/2 rounded-full border-10 border-transparent bg-background-secondary">
           <Avatar className="size-full">
             <AvatarImage src={avatarUrl} alt={fullName}></AvatarImage>
             <AvatarFallback>
@@ -43,7 +43,7 @@ export const ReviewItem = (props: ReviewProps) => {
         <p className="italic">{text}</p>
         <div className="flex flex-col items-center justify-center gap-2">
           <span className="font-medium uppercase">{fullName || 'Анонимный пользователь'}</span>
-          {jobTitle && <span className="text-foreground-muted">{jobTitle}</span>}
+          {jobTitle && <span className="text-muted-primary">{jobTitle}</span>}
           <StarRating rating={rating} />
         </div>
       </div>

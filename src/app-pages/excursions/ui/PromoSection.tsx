@@ -12,7 +12,7 @@ import {
 
 export const PromoSection = () => {
   return (
-    <Section className="relative flex min-h-screen overflow-hidden bg-none">
+    <Section className="relative flex min-h-screen overflow-hidden">
       <BackgroundImage className="scale-101 opacity-100 blur-xs" src={promoBackground} />
       <Container className="relative flex flex-col items-center justify-center gap-16 py-32">
         <PageHeading>

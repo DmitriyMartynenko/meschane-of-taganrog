@@ -100,7 +100,7 @@ export const AlertDialogDescription = (
   return (
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
-      className={cn('text-sm text-foreground-primary', className)}
+      className={cn('text-sm text-muted-primary', className)}
       {...restProps}
     />
   );

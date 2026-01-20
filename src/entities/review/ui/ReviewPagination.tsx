@@ -21,7 +21,7 @@ export const ReviewPagination = (props: ReviewPaginationProps) => {
             className={cn(
               'size-3 rounded-full bg-background-primary',
               isActive &&
-                'size-4 border-3 border-background-secondary bg-secondary outline-2 outline-secondary'
+                'size-4 border-3 border-background-secondary bg-primary outline-2 outline-primary'
             )}
           />
         );

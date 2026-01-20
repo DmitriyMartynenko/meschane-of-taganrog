@@ -75,7 +75,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
           </DialogHeader>
           <CardContent className="flex-col gap-6">
             <div className="flex flex-col items-center justify-center gap-4">
-              <div className="flex justify-center gap-8 font-semibold text-secondary">
+              <div className="flex justify-center gap-8 font-semibold text-primary">
                 <div className="flex items-center gap-2">
                   <Clock9 className="text-current" size={20} />
                   {formatTime(duration)}
@@ -99,7 +99,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
             </div>
             {fullDescription && (
               <div>
-                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-secondary">
+                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-primary">
                   <BookOpen size={20} />
                   Об экскурсии
                 </h3>
@@ -108,7 +108,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
             )}
             {route && (
               <div>
-                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-secondary">
+                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-primary">
                   <Map size={20} />
                   Маршрут
                 </h3>
@@ -117,15 +117,15 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
             )}
             {includes.length > 0 && (
               <div>
-                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-secondary">
+                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-primary">
                   <Gift size={20} />
                   Что включено
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {includes.map((item, index) => (
                     <span
-                      key={index}
-                      className="bg-primary/10 px-3 py-1 text-sm font-semibold text-primary"
+                      key={`${item}_${index}`}
+                      className="bg-secondary/10 px-3 py-1 text-sm font-semibold text-secondary"
                     >
                       {item}
                     </span>
@@ -135,14 +135,14 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
             )}
             {highlights.length > 0 && (
               <div>
-                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-secondary">
+                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-primary">
                   <Camera size={20} />
                   Основные моменты
                 </h3>
                 <ul className="space-y-2">
                   {highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-secondary"></span>
                       {highlight}
                     </li>
                   ))}
@@ -151,7 +151,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
             )}
             {meetingPoint && (
               <div>
-                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-secondary">
+                <h3 className="mb-1.5 flex items-center gap-2 text-lg font-semibold text-primary">
                   <MapPinned size={20} />
                   Место встречи
                 </h3>

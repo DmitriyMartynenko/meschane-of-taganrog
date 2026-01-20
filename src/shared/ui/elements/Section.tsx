@@ -10,10 +10,7 @@ export const Section = (props: SectionProps) => {
   const { className, children, scrollMargin = true, ...restProps } = props;
 
   return (
-    <section
-      className={cn('w-full bg-background-primary', scrollMargin && 'scroll-mt-[10vh]', className)}
-      {...restProps}
-    >
+    <section className={cn('w-full', scrollMargin && 'scroll-mt-[10vh]', className)} {...restProps}>
       {children}
     </section>
   );

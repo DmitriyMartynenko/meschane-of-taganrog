@@ -4,8 +4,8 @@ import { FilterForm } from './FilterForm';
 
 export const ExcursionFilter = () => {
   return (
-    <div className="bg-background-primary p-2 shadow-2xl">
-      <Card className="border border-secondary">
+    <div className="bg-background-primary p-6 shadow-2xl">
+      <Card className="border border-primary">
         <CardHeader>
           <CardTitle className="text-center text-4xl font-light">
             Подберите экскурсию,

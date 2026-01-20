@@ -19,8 +19,8 @@ export const Header = () => {
       className={cn(
         'fixed inset-x-0 top-0 z-1 w-full border-b transition-all duration-300 ease-in-out',
         isScrolled
-          ? 'border-b-transparent bg-primary/50 shadow-lg backdrop-blur-lg'
-          : 'border-b-foreground-muted/32 bg-transparent'
+          ? 'border-b-transparent bg-primary/75 shadow-lg backdrop-blur-lg'
+          : 'border-b-muted-primary/35 bg-transparent'
       )}
     >
       <NavigationMenu className="mx-auto">

@@ -11,7 +11,7 @@ import {
 
 export const QuickOrderSection = () => {
   return (
-    <Section id="quick-order-section">
+    <Section className="bg-background-primary" id="quick-order-section">
       <Container className="flex items-center justify-center py-16">
         <div className="flex flex-col items-center justify-center gap-16">
           <SectionHeading>
