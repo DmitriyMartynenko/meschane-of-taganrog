@@ -4,11 +4,11 @@ import Link from 'next/link';
 import {
   BackgroundImage,
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 import partnersBackground from '../assets/images/partners-background.png';
@@ -19,12 +19,13 @@ export const PartnersSection = () => {
     <Section className="relative flex" id="partners-section">
       <BackgroundImage src={partnersBackground} />
       <Container className="relative flex flex-col items-center justify-center gap-16 py-16">
-        <SectionHeading>
+        <Heading variant="light">
           <HeadingSubtitle>С нами сотрудничают</HeadingSubtitle>
           <HeadingTitle>
-            <HeadingHighlight>Наши партнеры</HeadingHighlight>
+            Наши
+            <HeadingHighlight> партнеры</HeadingHighlight>
           </HeadingTitle>
-        </SectionHeading>
+        </Heading>
         <div className="flex grow flex-col items-center justify-center gap-8">
           <Link href="https://tgliamz.ru/" target="_blank">
             <Image

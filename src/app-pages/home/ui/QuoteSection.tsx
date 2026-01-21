@@ -4,11 +4,11 @@ import { Quotes } from '@/shared/assets';
 import {
   BackgroundImage,
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 import meschaninPortrait from '../assets/images/meschanin-portrait.png';
@@ -32,16 +32,16 @@ export const QuoteSection = () => {
             priority
           />
         </div>
-        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-primary bg-black/30 p-8 pl-4 text-foreground-secondary backdrop-blur-sm">
+        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-secondary bg-black/30 p-8 pl-4 text-foreground-secondary backdrop-blur-sm">
           <Image className="size-8 shrink-0" src={Quotes} alt="Кавычки" />
           <div className="flex flex-col gap-8">
-            <SectionHeading>
+            <Heading variant="light">
               <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
               <HeadingTitle>
                 Потому что нам <br />
                 <HeadingHighlight withUnderline>не все равно</HeadingHighlight>
               </HeadingTitle>
-            </SectionHeading>
+            </Heading>
             <p className="leading-relaxed tracking-[1px]">
               В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
               проведении Всероссийских съездов представителей мещанских обществ, а также съездов

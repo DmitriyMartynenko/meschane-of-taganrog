@@ -2,7 +2,7 @@ import { ExcursionsList } from '@/widgets/excursions-list';
 
 import { useExcursionFiltering } from '@/features/excursion-filtering';
 
-import { Container, HeadingHighlight, HeadingTitle, Section, SectionHeading } from '@/shared/ui';
+import { Container, Heading, HeadingHighlight, HeadingTitle, Section } from '@/shared/ui';
 
 import { excursions } from '../model/excursions.mock';
 
@@ -12,11 +12,11 @@ export const ExcursionsSection = () => {
   return (
     <Section className="bg-background-secondary" id="excursions-section">
       <Container className="flex flex-col items-center justify-center gap-16 py-16">
-        <SectionHeading>
+        <Heading>
           <HeadingTitle>
             <HeadingHighlight withUnderline>Подобранные</HeadingHighlight> экскурсии
           </HeadingTitle>
-        </SectionHeading>
+        </Heading>
         <ExcursionsList excursions={filteredExcursions} />
       </Container>
     </Section>

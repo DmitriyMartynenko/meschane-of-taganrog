@@ -2,10 +2,10 @@ import { InlineConsultationForm } from '@/features/consultation';
 
 import {
   BackgroundImage,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
-  SectionHeading,
 } from '@/shared/ui';
 
 import footerBackground from '../assets/footer-background.png';
@@ -19,12 +19,12 @@ export const Footer = () => {
       <div className="relative flex basis-1/2">
         <BackgroundImage src={footerBackground} />
         <div className="relative flex flex-col gap-12 p-16">
-          <SectionHeading>
+          <Heading variant="light">
             <HeadingSubtitle withDash>На связи с нами</HeadingSubtitle>
             <HeadingTitle className="text-foreground-secondary">
               <HeadingHighlight className="text-secondary">Контактная</HeadingHighlight> информация
             </HeadingTitle>
-          </SectionHeading>
+          </Heading>
           <div className="flex flex-wrap gap-x-8 gap-y-4 font-semibold text-foreground-secondary uppercase">
             <p>
               Телефон: <span className="font-normal text-secondary">(8634) 61-14-66</span>

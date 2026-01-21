@@ -1,11 +1,11 @@
 import {
   BenefitCard,
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 import Book from '../assets/icons/book.svg';
@@ -44,12 +44,12 @@ export const BenefitsSection = () => {
   return (
     <Section className="bg-background-primary" id="benefits-section">
       <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
-        <SectionHeading>
+        <Heading>
           <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
           <HeadingTitle>
             <HeadingHighlight>Иммерсивные</HeadingHighlight> экскурсии
           </HeadingTitle>
-        </SectionHeading>
+        </Heading>
         <div className="flex gap-6">
           {BENEFIT_CARDS.map((card) => (
             <BenefitCard

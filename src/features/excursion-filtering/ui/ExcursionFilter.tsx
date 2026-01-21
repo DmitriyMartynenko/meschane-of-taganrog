@@ -1,4 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle, HeadingHighlight } from '@/shared/ui';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  Heading,
+  HeadingHighlight,
+  HeadingTitle,
+} from '@/shared/ui';
 
 import { FilterForm } from './FilterForm';
 
@@ -7,11 +15,13 @@ export const ExcursionFilter = () => {
     <div className="bg-background-primary p-6 shadow-2xl">
       <Card className="border border-primary">
         <CardHeader>
-          <CardTitle className="text-center text-4xl font-light">
-            Подберите экскурсию,
-            <br />
-            подходящую именно <HeadingHighlight>Вам</HeadingHighlight>
-          </CardTitle>
+          <Heading>
+            <HeadingTitle className="text-center text-4xl font-light">
+              Подберите экскурсию,
+              <br />
+              подходящую именно <HeadingHighlight>Вам</HeadingHighlight>
+            </HeadingTitle>
+          </Heading>
         </CardHeader>
         <CardContent>
           <FilterForm />

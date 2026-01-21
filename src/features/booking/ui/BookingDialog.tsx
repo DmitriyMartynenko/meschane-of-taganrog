@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  Heading,
   HeadingHighlight,
   HeadingTitle,
 } from '@/shared/ui';
@@ -48,13 +51,18 @@ export const BookingDialog = () => {
       <Dialog open={isOpen} onOpenChange={handleOpenChange}>
         <DialogContent className="flex-col items-stretch gap-8" innerStroke>
           <DialogHeader>
-            <DialogTitle className="sr-only" />
-            <DialogDescription className="sr-only" />
-            <HeadingTitle className="text-center">
-              <HeadingHighlight>Оставьте заявку</HeadingHighlight>
-              <br />
-              Мы с вами свяжемся
-            </HeadingTitle>
+            <Heading>
+              <DialogTitle asChild>
+                <HeadingTitle className="text-center font-alegreya text-5xl font-normal">
+                  <HeadingHighlight>Оставьте заявку</HeadingHighlight>
+                  <br />
+                  Мы с вами свяжемся
+                </HeadingTitle>
+              </DialogTitle>
+              <VisuallyHidden asChild>
+                <DialogDescription />
+              </VisuallyHidden>
+            </Heading>
           </DialogHeader>
           <BookingForm form={form} onSubmit={onSubmit} />
         </DialogContent>

@@ -4,11 +4,11 @@ import { type Photo } from '@/entities/photo';
 
 import {
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 import meschane1 from '../assets/images/meschane-1.jpg';
@@ -40,7 +40,7 @@ export const PhotoSection = () => {
   return (
     <Section className="flex bg-background-secondary" id="photo-section">
       <Container className="flex items-center justify-center gap-16 py-16">
-        <SectionHeading>
+        <Heading>
           <HeadingSubtitle withDash>Фото на память</HeadingSubtitle>
           <HeadingTitle>
             Мещане <br />
@@ -48,7 +48,7 @@ export const PhotoSection = () => {
               <span className="whitespace-nowrap">г. Таганрога</span>
             </HeadingHighlight>
           </HeadingTitle>
-        </SectionHeading>
+        </Heading>
         <PhotoGrid photos={MESCHANE_PHOTOS} />
       </Container>
     </Section>

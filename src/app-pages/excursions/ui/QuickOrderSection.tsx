@@ -2,11 +2,11 @@ import { InlineBookingForm } from '@/features/booking';
 
 import {
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 export const QuickOrderSection = () => {
@@ -14,12 +14,12 @@ export const QuickOrderSection = () => {
     <Section className="bg-background-primary" id="quick-order-section">
       <Container className="flex items-center justify-center py-16">
         <div className="flex flex-col items-center justify-center gap-16">
-          <SectionHeading>
+          <Heading>
             <HeadingSubtitle>Не нашли подходящую экскурсию?</HeadingSubtitle>
             <HeadingTitle>
               <HeadingHighlight>Оставьте заявку</HeadingHighlight> – мы подберём
             </HeadingTitle>
-          </SectionHeading>
+          </Heading>
           <InlineBookingForm inputBorder buttonText="Оставить заявку" />
         </div>
       </Container>
