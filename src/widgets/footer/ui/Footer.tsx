@@ -1,6 +1,12 @@
 import { InlineConsultationForm } from '@/features/consultation';
 
-import { HeadingHighlight, HeadingSubtitle, HeadingTitle, SectionHeading } from '@/shared/ui';
+import {
+  BackgroundImage,
+  HeadingHighlight,
+  HeadingSubtitle,
+  HeadingTitle,
+  SectionHeading,
+} from '@/shared/ui';
 
 import footerBackground from '../assets/footer-background.png';
 
@@ -10,35 +16,30 @@ export const Footer = () => {
       <div className="basis-1/2">
         <iframe className="h-full w-full" src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"></iframe>
       </div>
-      <div
-        className="flex basis-1/2 flex-col gap-12 bg-cover bg-center bg-no-repeat p-16"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-            url(${footerBackground.src})
-          `,
-        }}
-      >
-        <SectionHeading>
-          <HeadingSubtitle withDash>На связи с нами</HeadingSubtitle>
-          <HeadingTitle className="text-foreground-secondary">
-            <HeadingHighlight className="text-primary">Контактная</HeadingHighlight> информация
-          </HeadingTitle>
-        </SectionHeading>
-        <div className="flex flex-wrap gap-x-8 gap-y-4 font-semibold text-foreground-secondary uppercase">
-          <p>
-            Телефон: <span className="font-normal text-primary">(8634) 61-14-66</span>
-          </p>
-          <p>
-            Адрес:
-            <span className="font-normal text-primary"> г. Таганрог, ул. Октябрьская, 9</span>
-          </p>
-          <p className="w-full">
-            почта:
-            <span className="font-normal text-primary"> tgliamz.muzei@yandex.ru</span>
-          </p>
+      <div className="relative flex basis-1/2">
+        <BackgroundImage src={footerBackground} />
+        <div className="relative flex flex-col gap-12 p-16">
+          <SectionHeading>
+            <HeadingSubtitle withDash>На связи с нами</HeadingSubtitle>
+            <HeadingTitle className="text-foreground-secondary">
+              <HeadingHighlight className="text-secondary">Контактная</HeadingHighlight> информация
+            </HeadingTitle>
+          </SectionHeading>
+          <div className="flex flex-wrap gap-x-8 gap-y-4 font-semibold text-foreground-secondary uppercase">
+            <p>
+              Телефон: <span className="font-normal text-secondary">(8634) 61-14-66</span>
+            </p>
+            <p>
+              Адрес:
+              <span className="font-normal text-secondary"> г. Таганрог, ул. Октябрьская, 9</span>
+            </p>
+            <p className="w-full">
+              почта:
+              <span className="font-normal text-secondary"> tgliamz.muzei@yandex.ru</span>
+            </p>
+          </div>
+          <InlineConsultationForm />
         </div>
-        <InlineConsultationForm />
       </div>
     </footer>
   );
