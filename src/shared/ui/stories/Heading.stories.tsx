@@ -1,45 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { HeadingHighlight, HeadingSubtitle, HeadingTitle, SectionHeading } from '../elements';
+import { Heading, HeadingHighlight, HeadingSubtitle, HeadingTitle } from '../elements';
 
-const meta: Meta<typeof SectionHeading> = {
-  title: 'shared/SectionHeading',
-  component: SectionHeading,
+const meta: Meta<typeof Heading> = {
+  title: 'shared/Heading',
+  component: Heading,
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof SectionHeading>;
+type Story = StoryObj<typeof Heading>;
 
 export const Default: Story = {
   render: () => (
-    <SectionHeading>
+    <Heading>
       <HeadingSubtitle>Подзаголовок секции</HeadingSubtitle>
       <HeadingTitle>
         Это <HeadingHighlight>Заголовок</HeadingHighlight>
       </HeadingTitle>
-    </SectionHeading>
+    </Heading>
   ),
 };
 
 export const WithDashSubtitle: Story = {
   render: () => (
-    <SectionHeading>
+    <Heading>
       <HeadingSubtitle withDash>Секция с тире</HeadingSubtitle>
       <HeadingTitle>
         Пример с <HeadingHighlight withUnderline>Подчёркиванием</HeadingHighlight>
       </HeadingTitle>
-    </SectionHeading>
+    </Heading>
   ),
 };
 
 export const CenteredTitle: Story = {
   render: () => (
-    <SectionHeading className="items-center text-center">
+    <Heading className="items-center text-center">
       <HeadingSubtitle>Центрированный</HeadingSubtitle>
       <HeadingTitle>
         <HeadingHighlight>Заголовок</HeadingHighlight> Центр
       </HeadingTitle>
-    </SectionHeading>
+    </Heading>
   ),
 };
