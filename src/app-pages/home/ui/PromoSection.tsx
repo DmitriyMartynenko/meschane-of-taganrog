@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { InlineBookingForm } from '@/features/booking';
 
-import { Logo, promoBackground } from '@/shared/assets';
+import { Logo } from '@/shared/assets';
 import {
   BackgroundImage,
   Container,
@@ -11,6 +11,8 @@ import {
   PageHeadingHighlight,
   Section,
 } from '@/shared/ui';
+
+import promoBackground from '../assets/images/promo-background.png';
 
 export const PromoSection = () => {
   return (
