@@ -40,7 +40,7 @@ export const Calendar = (props: CalendarProps) => {
       locale={ru}
       showOutsideDays={showOutsideDays}
       className={cn(
-        'group/calendar bg-background-primary p-3 [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
+        'group/calendar bg-background-primary p-3 [--cell-size:--spacing(8)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
@@ -77,7 +77,7 @@ export const Calendar = (props: CalendarProps) => {
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
-          'relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring/50 has-focus:ring-[3px]',
+          'relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring-primary/50 has-focus:ring-[3px]',
           defaultClassNames.dropdown_root
         ),
         dropdown: cn('absolute inset-0 opacity-0', defaultClassNames.dropdown),
@@ -107,12 +107,12 @@ export const Calendar = (props: CalendarProps) => {
         range_start: cn('bg-background-secondary text-blue-500', defaultClassNames.range_start),
         range_middle: cn('', defaultClassNames.range_middle),
         range_end: cn('bg-background-secondary text-blue-500', defaultClassNames.range_end),
-        today: cn('bg-accent text-black', defaultClassNames.today),
+        today: cn('bg-muted-primary/50 text-foreground-secondary', defaultClassNames.today),
         outside: cn(
           'text-muted-primary aria-selected:text-muted-primary',
           defaultClassNames.outside
         ),
-        disabled: cn('text-muted-primary opacity-50', defaultClassNames.disabled),
+        disabled: cn('text-muted-primary', defaultClassNames.disabled),
         hidden: cn('invisible', defaultClassNames.hidden),
         ...classNames,
       }}

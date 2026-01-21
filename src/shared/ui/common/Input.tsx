@@ -29,7 +29,7 @@ export const Input = (props: InputProps) => {
   return (
     <input
       data-slot="input"
-      className={cn('focus-visible:ring', inputVariants({ bordered, className }))}
+      className={cn(inputVariants({ bordered, className }))}
       {...restProps}
     />
   );

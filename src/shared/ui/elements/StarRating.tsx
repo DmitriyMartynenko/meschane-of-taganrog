@@ -55,7 +55,7 @@ const SingleStarRating = (props: SingleStarRatingProps) => {
   return (
     <div className={cn('flex items-center gap-1 text-secondary', className)}>
       <Star className={cn('fill-secondary text-inherit', starSize)} fill="currentColor" />
-      <span className="text-foreground font-semibold text-inherit">{rating.toFixed(1)}</span>
+      <span className="font-semibold text-inherit">{rating.toFixed(1)}</span>
     </div>
   );
 };

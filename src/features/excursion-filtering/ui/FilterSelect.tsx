@@ -18,7 +18,7 @@ export const FilterSelect = (props: FilterSelectProps) => {
   return (
     <Select onValueChange={formField.onChange} value={formField.value}>
       <FormControl>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger className="w-70">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
       </FormControl>

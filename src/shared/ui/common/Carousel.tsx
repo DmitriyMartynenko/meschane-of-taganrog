@@ -197,8 +197,7 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
       onClick={scrollPrev}
       {...restProps}
     >
-      {/* <Image src={Arrow} alt="Стрелка влево" /> */}
-      <ArrowLeft color="white" strokeWidth={1.5} />
+      <ArrowLeft className="text-foreground-secondary" strokeWidth={1.5} />
     </Button>
   );
 };
@@ -224,8 +223,7 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
       onClick={scrollNext}
       {...restProps}
     >
-      {/* <Image className="rotate-180 transform" src={Arrow} alt="Стрелка вправо" /> */}
-      <ArrowRight color="white" strokeWidth={1.5} />
+      <ArrowRight className="text-foreground-secondary" strokeWidth={1.5} />
     </Button>
   );
 };

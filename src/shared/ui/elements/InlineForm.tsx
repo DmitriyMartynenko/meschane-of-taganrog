@@ -64,7 +64,7 @@ export const InlineForm = <T extends FieldValues>(props: InlineFormProps<T>) => 
   return (
     <Form {...form}>
       <form
-        className={cn('flex w-[505px] flex-col gap-6', className)}
+        className={cn('flex w-126.25 flex-col gap-6', className)}
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField

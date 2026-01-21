@@ -142,7 +142,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
                 <ul className="space-y-2">
                   {highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-secondary"></span>
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-secondary"></span>
                       {highlight}
                     </li>
                   ))}

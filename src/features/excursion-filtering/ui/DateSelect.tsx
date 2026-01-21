@@ -24,7 +24,7 @@ export const DateSelect = (props: CustomFilterSelectProps<'date'>) => {
   return (
     <Select value={formField.value}>
       <FormControl>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger className="w-70">
           <SelectValue placeholder="Выберите дату">{formattedDate}</SelectValue>
         </SelectTrigger>
       </FormControl>
