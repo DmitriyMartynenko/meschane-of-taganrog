@@ -18,6 +18,15 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "lint-staged": {
+    "*.{js,mjs,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.{json,css,html,md,yml,yaml,prisma}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@prisma/adapter-pg": "^7.2.0",
@@ -86,10 +95,5 @@
     "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^4.0.16"
-  },
-  "lint-staged": {
-    "*.{js,mjs,jsx,ts,tsx,json,css,html,md,yml,yaml,prisma}": [
-      "prettier --write"
-    ]
   }
 }
