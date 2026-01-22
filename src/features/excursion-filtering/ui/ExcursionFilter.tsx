@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
   Heading,
   HeadingHighlight,
   HeadingTitle,

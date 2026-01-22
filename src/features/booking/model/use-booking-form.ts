@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useEffectEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
@@ -27,8 +27,12 @@ export const useBookingForm = () => {
     },
   });
 
-  useEffect(() => {
+  const initPhone = useEffectEvent(() => {
     form.setValue('phone', phone, { shouldDirty: true });
+  });
+
+  useEffect(() => {
+    initPhone();
   }, [phone]);
 
   const onSubmit = async (data: BookingForm) => {

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { CircleUserRound, Quote } from 'lucide-react';
+import { CircleUserRound } from 'lucide-react';
 
 import { Quotes } from '@/shared/assets';
 import { cn } from '@/shared/lib';

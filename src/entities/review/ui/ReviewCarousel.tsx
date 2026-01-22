@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useEffectEvent, useState } from 'react';
 
 import { cn } from '@/shared/lib';
 import {
@@ -19,25 +19,31 @@ import { ReviewPagination } from './ReviewPagination';
 
 type ReviewCarouselProps = {
   className?: string;
-  reviews: ReviewType[];
+  reviews?: ReviewType[];
 };
 
 export const ReviewCarousel = (props: ReviewCarouselProps) => {
-  const { className = '', reviews = [] } = props;
+  const { className, reviews = [] } = props;
 
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState<number>(0);
+
+  const onSelect = useEffectEvent(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap() + 1);
+  });
 
   useEffect(() => {
     if (!api) {
       return;
     }
 
-    setCurrent(api.selectedScrollSnap() + 1);
-
     api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+
+    onSelect();
   }, [api]);
 
   return (

@@ -67,7 +67,7 @@ type HeadingProps = {
 };
 
 export const Heading = (props: HeadingProps) => {
-  const { children, className, variant = 'dark', ...restProps } = props;
+  const { children, className, variant = 'dark' } = props;
 
   return (
     <div className={cn('group flex flex-col gap-4', className)} data-variant={variant}>

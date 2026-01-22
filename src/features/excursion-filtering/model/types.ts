@@ -27,6 +27,6 @@ export type FilterSelectProps = {
   formField: ControllerRenderProps<FilterForm>;
 };
 
-export type CustomFilterSelectProps<T extends FormFieldName = any> = {
+export type CustomFilterSelectProps<T extends FormFieldName = FormFieldName> = {
   formField: ControllerRenderProps<FilterForm, T>;
 };

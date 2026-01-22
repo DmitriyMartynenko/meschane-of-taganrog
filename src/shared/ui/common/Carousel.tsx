@@ -105,9 +105,13 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
 
   useEffect(() => {
     if (!api) return;
-    onSelect(api);
+
     api.on('reInit', onSelect);
     api.on('select', onSelect);
+
+    requestAnimationFrame(() => {
+      onSelect(api);
+    });
 
     return () => {
       api?.off('select', onSelect);
