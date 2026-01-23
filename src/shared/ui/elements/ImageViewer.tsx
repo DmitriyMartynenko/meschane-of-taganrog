@@ -1,34 +1,26 @@
 import Image, { type StaticImageData } from 'next/image';
 import { type ReactNode } from 'react';
 
-import { DialogTitle } from '@radix-ui/react-dialog';
-
-import { Dialog, DialogContent } from '@/shared/ui';
+import { cn } from '@/shared/lib';
+import { Dialog, DialogContent, DialogTitle } from '@/shared/ui';
 
 type ImageViewerProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   image: StaticImageData;
-  alt?: string;
-  caption?: string;
+  alt: string;
   children?: ReactNode;
+  title?: string;
 };
 
 export const ImageViewer = (props: ImageViewerProps) => {
-  const {
-    open,
-    onOpenChange,
-    image,
-    alt = 'Увеличенное изображение',
-    caption = '',
-    children,
-  } = props;
+  const { open, onOpenChange, image, alt, children, title } = props;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex-col gap-8" aria-describedby={''} innerStroke>
+      <DialogContent className={cn('flex-col gap-8', title && 'py-8')} innerStroke>
+        <DialogTitle className={cn(!title && 'sr-only')}>{title}</DialogTitle>
         <Image className="h-[50vh] w-auto rounded-xl" src={image} alt={alt} />
-        {caption && <DialogTitle className="text-center">{caption}</DialogTitle>}
         {children}
       </DialogContent>
     </Dialog>

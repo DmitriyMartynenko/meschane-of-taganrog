@@ -38,12 +38,7 @@ export const PhotoGrid = ({ photos }: PhotoGridProps) => {
         })}
       </div>
       {selectedPhoto && (
-        <PhotoViewer
-          open={openViewer}
-          onOpenChange={setOpenViewer}
-          photo={selectedPhoto}
-          alt="Увеличенная фотография мещан"
-        />
+        <PhotoViewer open={openViewer} onOpenChange={setOpenViewer} photo={selectedPhoto} />
       )}
     </>
   );
