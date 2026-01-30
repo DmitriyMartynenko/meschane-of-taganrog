@@ -18,11 +18,7 @@ import signature from '../assets/images/signature.png';
 export const QuoteSection = () => {
   return (
     <Section className="relative" id="quote-section">
-      <BackgroundImage
-        src={quoteBackground}
-        gradientFrom="rgba(30,20,10,0.7)"
-        gradientTo="rgba(20,10,5,0.6)"
-      />
+      <BackgroundImage src={quoteBackground} />
       <Container className="relative flex items-center justify-center">
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
           <Image

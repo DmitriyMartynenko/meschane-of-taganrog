@@ -13,8 +13,8 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
   const {
     className,
     src,
-    gradientFrom = 'rgba(30,20,10,0.9)',
-    gradientTo = 'rgba(30,20,10,0.8)',
+    gradientFrom = 'rgba(30,20,10,0.75)',
+    gradientTo = 'rgba(30,20,10,0.75)',
   } = props;
 
   return (
