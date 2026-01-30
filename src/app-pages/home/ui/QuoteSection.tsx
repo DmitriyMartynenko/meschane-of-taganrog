@@ -28,7 +28,7 @@ export const QuoteSection = () => {
             priority
           />
         </div>
-        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-secondary bg-black/30 p-8 pl-4 text-foreground-secondary backdrop-blur-sm">
+        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-secondary bg-black/25 p-8 pl-6 text-foreground-secondary backdrop-blur-sm">
           <Image className="size-8 shrink-0" src={Quotes} alt="Кавычки" />
           <div className="flex flex-col gap-8">
             <Heading variant="light">
@@ -50,11 +50,7 @@ export const QuoteSection = () => {
                 <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
                 <p className="max-w-62.5 text-muted-primary">Кандидат исторических наук, доцент</p>
               </div>
-              <Image
-                className="h-auto w-32 shrink-0 opacity-60"
-                src={signature}
-                alt="Подпись И.Н. Смирнова"
-              />
+              <Image className="h-auto w-32 shrink-0" src={signature} alt="Подпись И.Н. Смирнова" />
             </div>
           </div>
         </div>
