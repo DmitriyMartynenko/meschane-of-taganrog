@@ -18,9 +18,9 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
   } = props;
 
   return (
-    <>
+    <div className={cn('absolute inset-0 overflow-hidden', className)}>
       <Image
-        className={cn('object-cover object-center', className)}
+        className={cn('scale-101 object-cover object-center blur-xs', className)}
         src={src}
         alt=""
         fill
@@ -33,6 +33,6 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
         }}
         aria-hidden
       />
-    </>
+    </div>
   );
 };

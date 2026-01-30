@@ -17,7 +17,7 @@ import promoBackground from '../assets/images/promo-background.png';
 export const PromoSection = () => {
   return (
     <Section className="relative flex min-h-screen overflow-hidden" id="promo-section">
-      <BackgroundImage className="scale-101 opacity-100 blur-xs" src={promoBackground} />
+      <BackgroundImage src={promoBackground} />
       <Container className="relative flex items-center justify-center gap-32">
         <div className="flex flex-col gap-12">
           <PageHeading className="text-start">

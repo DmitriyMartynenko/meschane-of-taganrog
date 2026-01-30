@@ -21,8 +21,8 @@ export const Footer = () => {
         <div className="relative flex flex-col gap-12 p-16">
           <Heading variant="light">
             <HeadingSubtitle withDash>На связи с нами</HeadingSubtitle>
-            <HeadingTitle className="text-foreground-secondary">
-              <HeadingHighlight className="text-secondary">Контактная</HeadingHighlight> информация
+            <HeadingTitle>
+              <HeadingHighlight>Контактная</HeadingHighlight> информация
             </HeadingTitle>
           </Heading>
           <div className="flex flex-wrap gap-x-8 gap-y-4 font-semibold text-foreground-secondary uppercase">
