@@ -1,4 +1,4 @@
-import { Excursion } from '@/entities/excursion';
+import { EXCURSION_THEME, type Excursion } from '@/entities/excursion';
 
 import excursionImage1 from '../assets/images/excursion-image-1.png';
 import excursionImage2 from '../assets/images/excursion-image-2.png';
@@ -16,7 +16,7 @@ export const excursions: Excursion[] = [
     image: excursionImage1,
     description:
       'Ощутите атмосферу Таганрога конца XIX века и узнайте, как выглядели его главные улицы.',
-    theme: 'архитектура',
+    theme: EXCURSION_THEME.Architecture,
     duration: 150,
     price: 800,
     date: new Date(2025, 6, 15, 18, 15),
@@ -40,7 +40,7 @@ export const excursions: Excursion[] = [
     title: 'Архитектура Старого Таганрога',
     image: excursionImage2,
     description: 'Прогуляйтесь по историческим зданиям.',
-    theme: 'архитектура',
+    theme: EXCURSION_THEME.Architecture,
     duration: 90,
     price: 700,
     date: new Date(2025, 6, 12, 10),
@@ -63,7 +63,7 @@ export const excursions: Excursion[] = [
     title: 'Погружение в быт мещан',
     image: excursionImage3,
     description: 'Узнайте, как жили горожане начала XX века.',
-    theme: 'быт',
+    theme: EXCURSION_THEME.Lifestyle,
     duration: 120,
     price: 900,
     date: new Date(2025, 6, 10, 14, 30),
@@ -87,7 +87,7 @@ export const excursions: Excursion[] = [
     image: excursionImage4,
     description:
       'Прогулка по местам, связанным с детством и юностью А.П. Чехова: гимназия, лавка отца, дом на улице Чехова.',
-    theme: 'литература',
+    theme: EXCURSION_THEME.Literature,
     duration: 120,
     price: 850,
     date: new Date(2025, 6, 17, 11),
@@ -112,7 +112,7 @@ export const excursions: Excursion[] = [
     image: excursionImage5,
     description:
       'Истории писателей и поэтов, живших или бывавших в Таганроге. Проза, поэзия и городская мифология.',
-    theme: 'литература',
+    theme: EXCURSION_THEME.Literature,
     duration: 100,
     price: 750,
     date: new Date(2025, 6, 20, 17, 30),
@@ -136,7 +136,7 @@ export const excursions: Excursion[] = [
     image: excursionImage6,
     description:
       'Что ели, как одевались и как отдыхали таганрогские купцы. Заглянем в купеческий особняк и лавку.',
-    theme: 'быт',
+    theme: EXCURSION_THEME.Lifestyle,
     duration: 90,
     price: 800,
     date: new Date(2025, 6, 18, 12),
@@ -164,7 +164,7 @@ export const excursions: Excursion[] = [
     image: excursionImage7,
     description:
       'Чем жила семья Чеховых: распорядок дня, занятия детей, быт провинциальной интеллигенции конца XIX века.',
-    theme: 'быт',
+    theme: EXCURSION_THEME.Lifestyle,
     duration: 110,
     price: 850,
     date: new Date(2025, 6, 19, 15),
@@ -188,7 +188,7 @@ export const excursions: Excursion[] = [
     image: excursionImage8,
     description:
       'Обзорные зарисовки об архитектуре городских усадеб, включая влияние классицизма и модерна.',
-    theme: 'архитектура',
+    theme: EXCURSION_THEME.Architecture,
     duration: 130,
     price: 950,
     date: new Date(2025, 6, 22, 16),

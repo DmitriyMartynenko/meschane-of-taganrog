@@ -1,33 +1,40 @@
+'use client';
+
 import { Button, Form, FormField, FormItem, FormLabel, FormMessage } from '@/shared/ui';
 
-import { useFilterForm } from '../lib/hooks/useFilterForm';
-import { FILTER_CONTROLS } from '../model/constants';
+import { FILTER_CONTROLS } from '../model/filter-controls.constants';
+import { type FilterForm as FilterFormData } from '../model/filter.types';
+import { useFilterForm } from '../model/use-filter-form';
 
 import { FilterSelect } from './FilterSelect';
 
 export const FilterForm = () => {
-  const { form, onSubmit, onReset } = useFilterForm();
-  const { date, theme, duration } = form.getValues();
+  const { form, onSubmit } = useFilterForm();
+  const { control, handleSubmit } = form;
 
-  const hasActiveFilters = Boolean(date || theme || duration);
+  const handleFormSubmit = handleSubmit((data: FilterFormData) => {
+    onSubmit(data);
+
+    document.getElementById('excursions-section')?.scrollIntoView();
+  });
 
   return (
     <Form {...form}>
       <form
-        className="flex flex-col items-center justify-center gap-8 border border-border-primary p-4"
-        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col items-center justify-center gap-8 border border-border-primary p-6"
+        onSubmit={handleFormSubmit}
       >
         <div className="flex gap-4">
           {FILTER_CONTROLS.map(({ name, label, CustomSelect, ...config }) => (
             <FormField
-              control={form.control}
+              control={control}
               key={name}
               name={name}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-foreground-primary normal-case">{label}</FormLabel>
                   {CustomSelect ? (
-                    <CustomSelect formField={field} />
+                    <CustomSelect config={config} formField={field} />
                   ) : (
                     <FilterSelect config={config} formField={field} />
                   )}
@@ -37,21 +44,9 @@ export const FilterForm = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <Button type="submit" variant="outline">
-            Найти экскурсии
-          </Button>
-          <Button
-            type="button"
-            textWhite
-            variant="destructive"
-            size="sm"
-            disabled={!hasActiveFilters}
-            onClick={onReset}
-          >
-            Сбросить
-          </Button>
-        </div>
+        <Button type="submit" variant="outline">
+          Найти экскурсии
+        </Button>
       </form>
     </Form>
   );

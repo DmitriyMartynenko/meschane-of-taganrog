@@ -5,15 +5,21 @@ import {
   SelectGroup,
   SelectItem,
   SelectLabel,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from '@/shared/ui';
 
-import { type FilterSelectProps } from '../model/types';
+import { isFilterActive, type FilterSelectProps } from '../model/filter.types';
 
 export const FilterSelect = (props: FilterSelectProps) => {
-  const { config, formField } = props;
-  const { placeholder, groupLabel, options = [] } = config;
+  const {
+    config: { placeholder, groupLabel, options = [] },
+    formField,
+  } = props;
+
+  const anyOption = options.find((option) => !isFilterActive(option.value));
+  const regularOptions = options.filter((option) => isFilterActive(option.value));
 
   return (
     <Select onValueChange={formField.onChange} value={formField.value}>
@@ -23,9 +29,15 @@ export const FilterSelect = (props: FilterSelectProps) => {
         </SelectTrigger>
       </FormControl>
       <SelectContent>
+        {anyOption && (
+          <>
+            <SelectItem value={anyOption.value}>{anyOption.label}</SelectItem>
+            <SelectSeparator />
+          </>
+        )}
         <SelectGroup>
           {groupLabel && <SelectLabel>{groupLabel}</SelectLabel>}
-          {options.map((option) => (
+          {regularOptions.map((option) => (
             <SelectItem key={option.value} value={option.value}>
               {option.label}
             </SelectItem>

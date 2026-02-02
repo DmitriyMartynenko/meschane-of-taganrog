@@ -1,3 +1,5 @@
+import { FilterForm } from '@/features/excursion-filtering';
+
 import {
   Card,
   CardContent,
@@ -7,18 +9,16 @@ import {
   HeadingTitle,
 } from '@/shared/ui';
 
-import { FilterForm } from './FilterForm';
-
 export const ExcursionFilter = () => {
   return (
     <div className="bg-background-primary p-6 shadow-2xl">
       <Card className="border border-primary">
         <CardHeader>
           <Heading>
-            <HeadingTitle className="text-center text-4xl font-light">
+            <HeadingTitle className="text-center text-4xl">
               Подберите экскурсию,
               <br />
-              подходящую именно <HeadingHighlight>Вам</HeadingHighlight>
+              <HeadingHighlight>подходящую именно Вам</HeadingHighlight>
             </HeadingTitle>
           </Heading>
         </CardHeader>

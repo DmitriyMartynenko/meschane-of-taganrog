@@ -1,6 +1,8 @@
-import { StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 
-type ExcursionTheme = 'быт' | 'архитектура' | 'литература';
+import { EXCURSION_THEME } from './excursion.constants';
+
+export type ExcursionTheme = (typeof EXCURSION_THEME)[keyof typeof EXCURSION_THEME];
 
 export type Excursion = {
   id: string;

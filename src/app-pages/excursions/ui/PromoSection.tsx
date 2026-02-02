@@ -1,4 +1,4 @@
-import { ExcursionFilter } from '@/features/excursion-filtering';
+import { ExcursionFilter } from '@/widgets/excursion-filter';
 
 import {
   BackgroundImage,
