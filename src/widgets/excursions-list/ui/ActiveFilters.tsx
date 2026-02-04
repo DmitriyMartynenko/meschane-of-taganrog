@@ -11,6 +11,8 @@ export const ActiveFilters = (props: ActiveFiltersProps) => {
 
   const activeFilters = getActiveFilters(filters);
 
+  if (activeFilters.length === 0) return null;
+
   return (
     <div className="flex flex-wrap items-center justify-center gap-2">
       {activeFilters.map((filter) => (
