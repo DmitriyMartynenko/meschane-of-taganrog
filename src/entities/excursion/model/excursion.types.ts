@@ -1,4 +1,5 @@
 import { type StaticImageData } from 'next/image';
+import { LucideIcon } from 'lucide-react';
 
 import { EXCURSION_THEME } from './excursion.constants';
 
@@ -20,4 +21,9 @@ export type Excursion = {
   includes: string[];
   meetingPoint: string;
   highlights: string[];
+};
+
+export type ExcursionStatsConfig = {
+  label: string | number;
+  icon: LucideIcon;
 };

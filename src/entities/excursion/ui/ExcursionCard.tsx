@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { CalendarDays, Clock9, ReceiptRussianRuble } from 'lucide-react';
+import { CalendarDays, Clock9, LucideIcon, ReceiptRussianRuble } from 'lucide-react';
 
 import { cn, formatDate, formatTime } from '@/shared/lib';
 import {
@@ -16,9 +16,10 @@ import {
   StarRating,
 } from '@/shared/ui';
 
-import { type Excursion } from '../model/excursion.types';
+import { type Excursion, type ExcursionStatsConfig } from '../model/excursion.types';
 
 import { ExcursionDetails } from './ExcursionDetails';
+import { ExcursionStatsItem } from './ExcursionStatsItem';
 
 type ExcursionCardProps = {
   className?: string;
@@ -32,17 +33,41 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
 
   const [openDetails, setOpenDetails] = useState<boolean>(false);
 
+  const excursionCardStats: ExcursionStatsConfig[] = [
+    {
+      label: formatTime(duration),
+      icon: Clock9,
+    },
+    {
+      label: `${price} ₽`,
+      icon: ReceiptRussianRuble,
+    },
+    {
+      label: formatDate(date),
+      icon: CalendarDays,
+    },
+  ];
+
   return (
     <Card
       className={cn(
-        'w-full gap-0 p-0 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg',
+        'group relative flex w-full flex-col gap-0 overflow-hidden border-border-primary p-0 transition-all duration-450 ease-in-out',
+        'hover:-translate-y-2 hover:shadow-xl',
         className
       )}
     >
-      <Image className="h-auto w-full" src={image} alt={title} />
+      <div className="relative overflow-hidden">
+        <Image
+          className="h-auto w-full transition-transform duration-450 ease-in-out group-hover:scale-105"
+          src={image}
+          alt={title}
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent opacity-0 transition-opacity duration-450 ease-in-out group-hover:opacity-100" />
+      </div>
       <div className="flex flex-1 flex-col justify-between gap-4 p-4">
         <CardHeader className="flex-1">
-          <CardTitle className="flex items-baseline justify-between">
+          <CardTitle className="flex items-baseline justify-between gap-2 transition-colors duration-450 ease-in-out group-hover:text-accent-primary">
             {title}
             {rating && (
               <StarRating
@@ -55,21 +80,17 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           </CardTitle>
           <CardDescription className="text-foreground-primary">{description}</CardDescription>
         </CardHeader>
-        <CardContent className="items-center gap-4 font-semibold text-primary">
-          <div className="flex items-center gap-1.5">
-            <Clock9 className="text-current" size={16} />
-            {formatTime(duration)}
-          </div>
-          <div className="flex items-center gap-1.5">
-            <ReceiptRussianRuble className="text-current" size={16} />
-            {price} ₽
-          </div>
-          <div className="flex items-center gap-1.5">
-            <CalendarDays className="text-current" size={16} />
-            {formatDate(date)}
-          </div>
+        <CardContent className="flex flex-wrap items-center gap-x-4 gap-y-2 font-semibold">
+          {excursionCardStats.map((stats) => (
+            <ExcursionStatsItem
+              className="text-primary"
+              key={stats.label}
+              icon={stats.icon}
+              label={stats.label}
+            />
+          ))}
         </CardContent>
-        <CardFooter className="gap-1.5">
+        <CardFooter className="flex gap-1.5">
           <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>
@@ -77,13 +98,13 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
             Записаться
           </Button>
         </CardFooter>
-        <ExcursionDetails
-          isOpen={openDetails}
-          setIsOpen={setOpenDetails}
-          excursion={excursion}
-          onStartBooking={onStartBooking}
-        />
       </div>
+      <ExcursionDetails
+        isOpen={openDetails}
+        setIsOpen={setOpenDetails}
+        excursion={excursion}
+        onStartBooking={onStartBooking}
+      />
     </Card>
   );
 };
