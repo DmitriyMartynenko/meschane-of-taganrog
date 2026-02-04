@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { CalendarDays, Clock9, LucideIcon, ReceiptRussianRuble } from 'lucide-react';
+import { CalendarDays, Clock9, ReceiptRussianRuble } from 'lucide-react';
 
 import { cn, formatDate, formatTime } from '@/shared/lib';
 import {
