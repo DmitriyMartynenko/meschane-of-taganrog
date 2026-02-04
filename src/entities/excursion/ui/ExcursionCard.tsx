@@ -56,20 +56,20 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           <CardDescription className="text-foreground-primary">{description}</CardDescription>
         </CardHeader>
         <CardContent className="items-center gap-4 font-semibold text-primary">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <Clock9 className="text-current" size={16} />
             {formatTime(duration)}
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <ReceiptRussianRuble className="text-current" size={16} />
             {price} ₽
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <CalendarDays className="text-current" size={16} />
             {formatDate(date)}
           </div>
         </CardContent>
-        <CardFooter className="gap-2">
+        <CardFooter className="gap-1.5">
           <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>

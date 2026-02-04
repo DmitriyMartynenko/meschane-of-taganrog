@@ -16,10 +16,12 @@ export const ActiveFilters = (props: ActiveFiltersProps) => {
       {activeFilters.map((filter) => (
         <div
           key={filter.id}
-          className="flex items-center gap-1 border border-border-primary bg-background-primary px-3 py-2 font-semibold text-primary"
+          className="flex items-center gap-1.5 border border-border-primary bg-background-primary p-3 text-primary"
         >
           <filter.Icon size={16} />
-          {filter.label}:<span className="text-foreground-primary">{filter.value}</span>
+          <p className="leading-none font-semibold">
+            {filter.label}: <span className="text-foreground-primary">{filter.value}</span>
+          </p>
         </div>
       ))}
     </div>
