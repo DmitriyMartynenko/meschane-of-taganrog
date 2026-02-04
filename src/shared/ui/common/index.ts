@@ -13,3 +13,4 @@ export * from './Card';
 export * from './AlertDialog';
 export * from './Calendar';
 export * from './Popover';
+export * from './Spinner';
