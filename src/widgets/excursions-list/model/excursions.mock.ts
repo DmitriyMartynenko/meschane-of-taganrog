@@ -1,13 +1,13 @@
 import { EXCURSION_THEME, type Excursion } from '@/entities/excursion';
 
-import excursionImage1 from '../assets/images/excursion-image-1.png';
-import excursionImage2 from '../assets/images/excursion-image-2.png';
-import excursionImage3 from '../assets/images/excursion-image-3.png';
-import excursionImage4 from '../assets/images/excursion-image-4.png';
-import excursionImage5 from '../assets/images/excursion-image-5.png';
-import excursionImage6 from '../assets/images/excursion-image-6.png';
-import excursionImage7 from '../assets/images/excursion-image-7.png';
-import excursionImage8 from '../assets/images/excursion-image-8.png';
+import excursionImage1 from '../assets/excursion-image-1.png';
+import excursionImage2 from '../assets/excursion-image-2.png';
+import excursionImage3 from '../assets/excursion-image-3.png';
+import excursionImage4 from '../assets/excursion-image-4.png';
+import excursionImage5 from '../assets/excursion-image-5.png';
+import excursionImage6 from '../assets/excursion-image-6.png';
+import excursionImage7 from '../assets/excursion-image-7.png';
+import excursionImage8 from '../assets/excursion-image-8.png';
 
 export const excursions: Excursion[] = [
   {

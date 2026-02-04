@@ -15,7 +15,7 @@ export const matchesFilters = (excursion: Excursion, filters: FilterForm): boole
   }
 
   if (isFilterActive(filters.duration)) {
-    if (excursion.duration > Number(filters.duration)) {
+    if (excursion.duration >= Number(filters.duration)) {
       return false;
     }
   }
