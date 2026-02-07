@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { cn } from '@/shared/lib';
 import { NavigationMenuItem, NavigationMenuLink } from '@/shared/ui';
 
+import { useAnchorScroll } from '../lib/use-anchor-scroll';
+
 type HeaderLinkProps = {
   href: string;
   label: string;
@@ -12,6 +14,8 @@ type HeaderLinkProps = {
 
 export const HeaderLink = (props: HeaderLinkProps) => {
   const { href, label, className, isScrolled } = props;
+
+  const handleNavigate = useAnchorScroll();
 
   return (
     <NavigationMenuItem className={cn(className)}>
@@ -24,7 +28,9 @@ export const HeaderLink = (props: HeaderLinkProps) => {
         )}
         asChild
       >
-        <Link href={href}>{label}</Link>
+        <Link onNavigate={(event) => handleNavigate(event, href)} href={href}>
+          {label}
+        </Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
   );
