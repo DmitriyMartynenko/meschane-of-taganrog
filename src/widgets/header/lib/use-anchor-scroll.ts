@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ComponentProps } from 'react';
 
+import { NavHref } from '../model/header.types';
+
 type OnNavigateEventHandler = Parameters<
   NonNullable<ComponentProps<typeof Link>['onNavigate']>
 >['0'];
@@ -9,7 +11,7 @@ type OnNavigateEventHandler = Parameters<
 export const useAnchorScroll = () => {
   const pathname = usePathname();
 
-  const onAnchorClick = (event: OnNavigateEventHandler, href: string) => {
+  const onAnchorClick = (event: OnNavigateEventHandler, href: NavHref) => {
     const [targetPath, hash] = href.split('#');
 
     const isSamePage = pathname === targetPath;

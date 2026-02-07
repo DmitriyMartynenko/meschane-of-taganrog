@@ -1,5 +1,6 @@
 import { InlineBookingForm } from '@/features/booking';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
   Heading,
@@ -11,7 +12,7 @@ import {
 
 export const QuickOrderSection = () => {
   return (
-    <Section className="bg-background-primary" id="quick-order-section">
+    <Section className="bg-background-primary" id={SECTION_IDS.EXCURSIONS_QUICK_ORDER}>
       <Container className="flex items-center justify-center py-16">
         <div className="flex flex-col items-center justify-center gap-16">
           <Heading>

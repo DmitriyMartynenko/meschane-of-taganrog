@@ -1,5 +1,6 @@
 'use client';
 
+import { SECTION_IDS } from '@/shared/model';
 import { Button, Form, FormField, FormItem, FormLabel, FormMessage } from '@/shared/ui';
 
 import { FILTER_CONTROLS } from '../model/filter-controls.constants';
@@ -15,7 +16,9 @@ export const FilterForm = () => {
   const handleFormSubmit = handleSubmit((data: FilterFormData) => {
     onSubmit(data);
 
-    document.getElementById('excursions-section')?.scrollIntoView();
+    document
+      .getElementById(SECTION_IDS.EXCURSIONS_EXCURSIONS_LIST)
+      ?.scrollIntoView({ behavior: 'smooth' });
   });
 
   return (

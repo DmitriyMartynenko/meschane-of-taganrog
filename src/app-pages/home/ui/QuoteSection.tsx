@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { Quotes } from '@/shared/assets';
+import { SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Container,
@@ -17,7 +18,7 @@ import signature from '../assets/images/signature.png';
 
 export const QuoteSection = () => {
   return (
-    <Section className="relative" id="quote-section">
+    <Section className="relative" id={SECTION_IDS.HOME_ABOUT_MESCHANES}>
       <BackgroundImage src={quoteBackground} />
       <Container className="relative flex items-center justify-center">
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">

@@ -1,32 +1,34 @@
+import { SECTION_IDS } from '@/shared/model';
+
 import { NavLink } from './header.types';
 
 export const NAV_LINKS: NavLink[] = [
   {
     label: 'Главная',
-    href: '/#promo-section',
+    href: '/',
   },
   {
     label: 'О мещанах',
-    href: '/#quote-section',
+    href: `/#${SECTION_IDS.HOME_ABOUT_MESCHANES}`,
   },
   {
-    label: 'Анонсы',
-    href: '/#benefits-section',
+    label: 'Особенности',
+    href: `/#${SECTION_IDS.HOME_BENEFITS}`,
   },
   {
     label: 'Экскурсии',
-    href: '/excursions',
+    href: `/excursions`,
   },
   {
     label: 'Фотографии',
-    href: '/#photo-section',
+    href: `/#${SECTION_IDS.HOME_PHOTO}`,
   },
   {
     label: 'ТГЛИАМЗ',
-    href: '/#partners-section',
+    href: `/#${SECTION_IDS.HOME_PARTNERS}`,
   },
   {
     label: 'Контакты',
-    href: '/#footer',
+    href: `/#${SECTION_IDS.SHARED_CONTACTS}`,
   },
 ];

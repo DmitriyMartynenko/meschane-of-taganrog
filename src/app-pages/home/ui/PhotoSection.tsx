@@ -2,6 +2,7 @@ import { PhotoGrid } from '@/widgets/photo-grid';
 
 import { type Photo } from '@/entities/photo';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
   Heading,
@@ -38,7 +39,7 @@ const MESCHANE_PHOTOS: Photo[] = [
 
 export const PhotoSection = () => {
   return (
-    <Section className="flex bg-background-secondary" id="photo-section">
+    <Section className="flex bg-background-secondary" id={SECTION_IDS.HOME_PHOTO}>
       <Container className="flex items-center justify-center gap-16 py-16">
         <Heading>
           <HeadingSubtitle withDash>Фото на память</HeadingSubtitle>

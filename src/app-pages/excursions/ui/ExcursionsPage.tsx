@@ -1,4 +1,4 @@
-import { ExcursionsSection } from './ExcursionsSection';
+import { ExcursionsListSection } from './ExcursionsListSection';
 import { FilterSection } from './FilterSection';
 import { QuickOrderSection } from './QuickOrderSection';
 
@@ -6,7 +6,7 @@ const ExcursionsPage = () => {
   return (
     <>
       <FilterSection />
-      <ExcursionsSection />
+      <ExcursionsListSection />
       <QuickOrderSection />
     </>
   );

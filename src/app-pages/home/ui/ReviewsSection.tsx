@@ -1,6 +1,7 @@
 import { ReviewCarousel } from '@/entities/review';
 import { type User } from '@/entities/user';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
   Heading,
@@ -60,7 +61,10 @@ const mockReviews = [
 
 export const ReviewsSection = () => {
   return (
-    <Section className="flex items-center justify-center bg-background-secondary">
+    <Section
+      className="flex items-center justify-center bg-background-secondary"
+      id={SECTION_IDS.HOME_REVIEWS}
+    >
       <Container className="flex flex-col items-center justify-center gap-12 py-16">
         <Heading>
           <HeadingSubtitle>О нас говорят</HeadingSubtitle>

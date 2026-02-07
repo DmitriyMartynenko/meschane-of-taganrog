@@ -1,5 +1,6 @@
 import { InlineConsultationForm } from '@/features/consultation';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Heading,
@@ -12,7 +13,7 @@ import footerBackground from '../assets/footer-background.png';
 
 export const Footer = () => {
   return (
-    <footer className="flex" id="footer">
+    <footer className="flex" id={SECTION_IDS.SHARED_CONTACTS}>
       <div className="basis-1/2">
         <iframe className="h-full w-full" src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"></iframe>
       </div>

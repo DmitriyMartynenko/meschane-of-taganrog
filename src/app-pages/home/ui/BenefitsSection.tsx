@@ -1,3 +1,4 @@
+import { SECTION_IDS } from '@/shared/model';
 import {
   BenefitCard,
   Container,
@@ -36,13 +37,13 @@ const BENEFIT_CARDS = [
     id: '4',
     icon: Book,
     iconAlt: 'Книга',
-    text: 'Блестните своими знаниями в кругу друзей или в школе',
+    text: 'Блесните своими знаниями в кругу друзей или в школе',
   },
 ];
 
 export const BenefitsSection = () => {
   return (
-    <Section className="bg-background-primary" id="benefits-section">
+    <Section className="bg-background-primary" id={SECTION_IDS.HOME_BENEFITS}>
       <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
         <Heading>
           <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>

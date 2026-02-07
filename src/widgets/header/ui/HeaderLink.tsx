@@ -4,9 +4,10 @@ import { cn } from '@/shared/lib';
 import { NavigationMenuItem, NavigationMenuLink } from '@/shared/ui';
 
 import { useAnchorScroll } from '../lib/use-anchor-scroll';
+import { NavHref } from '../model/header.types';
 
 type HeaderLinkProps = {
-  href: string;
+  href: NavHref;
   label: string;
   isScrolled?: boolean;
   className?: string;

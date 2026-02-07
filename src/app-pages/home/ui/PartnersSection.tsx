@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Container,
@@ -16,7 +17,7 @@ import tgliamz from '../assets/images/tgliamz.png';
 
 export const PartnersSection = () => {
   return (
-    <Section className="relative flex" id="partners-section">
+    <Section className="relative flex" id={SECTION_IDS.HOME_PARTNERS}>
       <BackgroundImage src={partnersBackground} />
       <Container className="relative flex flex-col items-center justify-center gap-16 py-16">
         <Heading variant="light">

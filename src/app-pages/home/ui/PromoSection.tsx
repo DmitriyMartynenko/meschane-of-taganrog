@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { InlineBookingForm } from '@/features/booking';
 
 import { Logo } from '@/shared/assets';
+import { SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Container,
@@ -16,7 +17,7 @@ import promoBackground from '../assets/images/promo-background.png';
 
 export const PromoSection = () => {
   return (
-    <Section className="relative flex min-h-screen overflow-hidden" id="promo-section">
+    <Section className="relative flex min-h-screen overflow-hidden" id={SECTION_IDS.HOME_PROMO}>
       <BackgroundImage src={promoBackground} />
       <Container className="relative flex items-center justify-center gap-32">
         <div className="flex flex-col gap-12">

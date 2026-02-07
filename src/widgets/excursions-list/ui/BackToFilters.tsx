@@ -3,17 +3,16 @@
 import { ArrowUp } from 'lucide-react';
 
 import { cn } from '@/shared/lib';
+import { SECTION_IDS } from '@/shared/model';
 import { Button } from '@/shared/ui';
 
 import { useBackToFiltersVisibility } from '../lib/use-back-to-filters-visibility';
 
-const promoSectionId = 'filter-section';
-
 export const BackToFilters = () => {
-  const isVisible = useBackToFiltersVisibility(promoSectionId);
+  const isVisible = useBackToFiltersVisibility(SECTION_IDS.EXCURSIONS_FILTER);
 
   const handleScrollToFilters = () => {
-    document.getElementById(promoSectionId)?.scrollIntoView();
+    document.getElementById(SECTION_IDS.EXCURSIONS_FILTER)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
