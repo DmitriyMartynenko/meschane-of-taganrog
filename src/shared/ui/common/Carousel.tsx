@@ -201,7 +201,7 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
       onClick={scrollPrev}
       {...restProps}
     >
-      <ArrowLeft className="text-foreground-secondary" strokeWidth={1.5} />
+      <ArrowLeft className="text-foreground-secondary" strokeWidth={2.0} />
     </Button>
   );
 };
@@ -227,7 +227,7 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
       onClick={scrollNext}
       {...restProps}
     >
-      <ArrowRight className="text-foreground-secondary" strokeWidth={1.5} />
+      <ArrowRight className="text-foreground-secondary" strokeWidth={2.0} />
     </Button>
   );
 };
