@@ -1,7 +1,7 @@
 import { SECTION_IDS } from '@/shared/model';
 import {
-  BenefitCard,
   Container,
+  FeatureCard,
   Heading,
   HeadingHighlight,
   HeadingSubtitle,
@@ -14,7 +14,7 @@ import Briefcase from '../assets/icons/briefcase.svg';
 import Chessknight from '../assets/icons/chessknight.svg';
 import Clock from '../assets/icons/clock.svg';
 
-const BENEFIT_CARDS = [
+const FEATURE_CARDS = [
   {
     id: '1',
     icon: Clock,
@@ -41,9 +41,9 @@ const BENEFIT_CARDS = [
   },
 ];
 
-export const BenefitsSection = () => {
+export const FeaturesSection = () => {
   return (
-    <Section className="bg-background-primary" id={SECTION_IDS.HOME_BENEFITS}>
+    <Section className="bg-background-primary" id={SECTION_IDS.HOME_FEATURES}>
       <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
         <Heading>
           <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
@@ -52,8 +52,8 @@ export const BenefitsSection = () => {
           </HeadingTitle>
         </Heading>
         <div className="flex gap-6">
-          {BENEFIT_CARDS.map((card) => (
-            <BenefitCard
+          {FEATURE_CARDS.map((card) => (
+            <FeatureCard
               className="basis-1/4"
               key={card.id}
               icon={card.icon}

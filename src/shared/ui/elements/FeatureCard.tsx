@@ -9,7 +9,7 @@ type BenefitCardProps = {
   text: string;
 };
 
-export const BenefitCard = (props: BenefitCardProps) => {
+export const FeatureCard = (props: BenefitCardProps) => {
   const { className, icon, iconAlt, text } = props;
 
   return (

@@ -1,4 +1,4 @@
-export * from './BenefitCard';
+export * from './FeatureCard';
 export * from './Container';
 export * from './Heading';
 export * from './InlineForm';

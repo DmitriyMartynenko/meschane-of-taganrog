@@ -1,4 +1,4 @@
-import { BenefitsSection } from './BenefitsSection';
+import { FeaturesSection } from './FeaturesSection';
 import { PartnersSection } from './PartnersSection';
 import { PhotoSection } from './PhotoSection';
 import { PromoSection } from './PromoSection';
@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <PromoSection />
       <QuoteSection />
-      <BenefitsSection />
+      <FeaturesSection />
       <PhotoSection />
       <PartnersSection />
       <ReviewsSection />

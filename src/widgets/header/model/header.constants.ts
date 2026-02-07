@@ -13,7 +13,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     label: 'Особенности',
-    href: `/#${SECTION_IDS.HOME_BENEFITS}`,
+    href: `/#${SECTION_IDS.HOME_FEATURES}`,
   },
   {
     label: 'Экскурсии',

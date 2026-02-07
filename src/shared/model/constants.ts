@@ -6,7 +6,7 @@ export const PAGES = {
 export const SECTION_IDS = {
   HOME_PROMO: 'promo',
   HOME_ABOUT_MESCHANES: 'about-meschanes',
-  HOME_BENEFITS: 'benefits',
+  HOME_FEATURES: 'features',
   HOME_PHOTO: 'photo',
   HOME_PARTNERS: 'partners',
   HOME_REVIEWS: 'reviews',
