@@ -9,11 +9,11 @@ import {
   Section,
 } from '@/shared/ui';
 
-import promoBackground from '../assets/images/promo-background.png';
+import promoBackground from '../assets/promo-background.png';
 
-export const PromoSection = () => {
+export const FilterSection = () => {
   return (
-    <Section className="relative flex min-h-screen overflow-hidden">
+    <Section className="relative flex min-h-screen overflow-hidden" id="filter-section">
       <BackgroundImage src={promoBackground} />
       <Container className="relative flex flex-col items-center justify-center gap-16 py-32">
         <PageHeading>
