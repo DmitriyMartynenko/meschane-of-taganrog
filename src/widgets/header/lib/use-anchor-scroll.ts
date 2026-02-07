@@ -23,6 +23,11 @@ export const useAnchorScroll = () => {
 
         window.history.pushState(null, '', href);
       }
+    } else if (isSamePage && !hash) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      window.history.pushState(null, '', targetPath);
     }
   };
 
