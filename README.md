@@ -6,7 +6,7 @@ An educational and tourism-focused project dedicated to organizing immersive exc
 
 We want to preserve and promote the cultural heritage of Taganrog through innovative, immersive tour experiences. By combining modern web technologies with rich historical content, we aim to make the city's unique stories and landmarks accessible to both locals and visitors, fostering a deeper connection with Taganrog's past and present.
 
-## Tech Stack
+## Technology Stack
 
 ### Core
 
