@@ -26,7 +26,7 @@ export const HeaderLink = (props: HeaderLinkProps) => {
         )}
         asChild
       >
-        <Link onClick={(event) => handleNavigate(event, href)} href={href}>
+        <Link onNavigate={(event) => handleNavigate(event, href)} href={href}>
           {label}
           <span
             className={cn(
