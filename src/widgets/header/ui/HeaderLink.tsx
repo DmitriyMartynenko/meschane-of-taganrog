@@ -15,22 +15,25 @@ type HeaderLinkProps = {
 
 export const HeaderLink = (props: HeaderLinkProps) => {
   const { href, label, className, isScrolled } = props;
-
   const handleNavigate = useAnchorScroll();
 
   return (
     <NavigationMenuItem className={cn(className)}>
       <NavigationMenuLink
         className={cn(
-          'flex h-16 items-center justify-center text-muted-primary',
-          isScrolled
-            ? 'font-semibold text-foreground-secondary'
-            : 'after:absolute after:-bottom-px after:left-0 after:h-px after:w-0 after:bg-accent-primary after:transition-all after:duration-450 after:ease-in-out hover:after:w-full'
+          'group relative flex h-16 items-center justify-center transition-all duration-300 outline-none hover:text-accent-primary',
+          isScrolled ? 'font-semibold text-foreground-secondary' : 'text-muted-primary'
         )}
         asChild
       >
-        <Link onNavigate={(event) => handleNavigate(event, href)} href={href}>
+        <Link onClick={(event) => handleNavigate(event, href)} href={href}>
           {label}
+          <span
+            className={cn(
+              'absolute -bottom-px left-0 h-px w-full origin-left scale-x-0 bg-accent-primary transition-all duration-450 ease-in-out group-hover:scale-x-100',
+              isScrolled ? 'h-0.5' : 'h-px'
+            )}
+          />
         </Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
