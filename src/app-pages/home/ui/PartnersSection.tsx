@@ -27,22 +27,21 @@ export const PartnersSection = () => {
             <HeadingHighlight> партнеры</HeadingHighlight>
           </HeadingTitle>
         </Heading>
-        <div className="flex grow flex-col items-center justify-center gap-8">
-          <Link href="https://tgliamz.ru/" target="_blank">
-            <Image
-              src={tgliamz}
-              alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
-              className="cursor-pointer transition-transform duration-450 ease-in-out hover:scale-105"
-            />
-          </Link>
-          <Link
-            className="cursor-pointer text-center text-2xl font-bold text-foreground-secondary transition-colors duration-300 ease-in-out hover:text-accent-primary"
-            href="https://tgliamz.ru/"
-            target="_blank"
-          >
+        <Link
+          href="https://tgliamz.ru/"
+          target="_blank"
+          className="group flex flex-col items-center gap-8 outline-hidden"
+        >
+          <Image
+            className="transition-transform duration-450 ease-in-out group-hover:-translate-y-2"
+            src={tgliamz}
+            alt="ТГЛИАМЗ"
+          />
+          <span className="relative pb-1 text-center text-2xl font-bold text-foreground-secondary transition-colors duration-450 ease-in-out group-hover:text-accent-primary">
             Таганрогский государственный литературный и историко-архитектурный музей-заповедник
-          </Link>
-        </div>
+            <span className="absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-accent-primary transition-transform duration-450 ease-in-out group-hover:scale-x-100" />
+          </span>
+        </Link>
       </Container>
     </Section>
   );
