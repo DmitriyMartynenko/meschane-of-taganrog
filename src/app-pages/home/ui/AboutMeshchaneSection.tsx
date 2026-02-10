@@ -12,7 +12,7 @@ import {
   Section,
 } from '@/shared/ui';
 
-import meschaninPortrait from '../assets/images/meschanin-portrait.png';
+import meshchaninPortrait from '../assets/images/meshchanin-portrait.png';
 import quoteBackground from '../assets/images/quote-background.png';
 import signature from '../assets/images/signature.png';
 
@@ -24,7 +24,7 @@ export const AboutMeshchaneSection = () => {
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
           <Image
             className="h-full w-auto scale-110 transition-all duration-450 ease-in-out hover:scale-115 hover:brightness-115"
-            src={meschaninPortrait}
+            src={meshchaninPortrait}
             alt="Портрет мещанина начала XX века в традиционной одежде"
             priority
           />

@@ -12,25 +12,25 @@ import {
   Section,
 } from '@/shared/ui';
 
-import meschane1 from '../assets/images/meschane-1.jpg';
-import meschane2 from '../assets/images/meschane-2.jpg';
-import meschane3 from '../assets/images/meschane-3.jpg';
+import meshchane1 from '../assets/images/meshchane-1.jpg';
+import meshchane2 from '../assets/images/meshchane-2.jpg';
+import meshchane3 from '../assets/images/meshchane-3.jpg';
 
-const MESCHANE_PHOTOS: Photo[] = [
+const MESHCHANE_PHOTOS: Photo[] = [
   {
-    image: meschane1,
+    image: meshchane1,
     title: 'Семья мещан города Таганрога',
     years: [1898, 1902],
     author: 'И.К. Майков',
   },
   {
-    image: meschane2,
+    image: meshchane2,
     title: 'Мещане Таганрога',
     years: [1891, 1898],
     author: 'С.С. Исакович',
   },
   {
-    image: meschane3,
+    image: meshchane3,
     title: 'Портрет мещанина',
     years: [1902, 1909],
     author: 'В. Петрыковский',
@@ -50,7 +50,7 @@ export const PhotoSection = () => {
             </HeadingHighlight>
           </HeadingTitle>
         </Heading>
-        <PhotoGrid photos={MESCHANE_PHOTOS} />
+        <PhotoGrid photos={MESHCHANE_PHOTOS} />
       </Container>
     </Section>
   );

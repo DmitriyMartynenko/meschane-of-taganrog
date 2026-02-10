@@ -1,4 +1,4 @@
-# Meschane of Taganrog (Мещане Таганрога): Immersive excursions organization
+# Meshchane of Taganrog (Мещане Таганрога): Immersive excursions organization
 
 An educational and tourism-focused project dedicated to organizing immersive excursions exploring the history of Taganrog’s petty bourgeois way of life.
 
