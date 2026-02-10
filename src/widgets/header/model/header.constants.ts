@@ -9,7 +9,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     label: 'О мещанах',
-    href: `/#${SECTION_IDS.HOME_ABOUT_MESCHANES}`,
+    href: `/#${SECTION_IDS.HOME_ABOUT_MESHCHANE}`,
   },
   {
     label: 'Особенности',

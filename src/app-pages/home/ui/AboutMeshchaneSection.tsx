@@ -16,9 +16,9 @@ import meschaninPortrait from '../assets/images/meschanin-portrait.png';
 import quoteBackground from '../assets/images/quote-background.png';
 import signature from '../assets/images/signature.png';
 
-export const QuoteSection = () => {
+export const AboutMeshchaneSection = () => {
   return (
-    <Section className="relative" id={SECTION_IDS.HOME_ABOUT_MESCHANES}>
+    <Section className="relative" id={SECTION_IDS.HOME_ABOUT_MESHCHANE}>
       <BackgroundImage src={quoteBackground} />
       <Container className="relative flex items-center justify-center">
         <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
