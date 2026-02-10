@@ -1,11 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 
 import { PhotoViewer } from '@/features/photo-viewing';
 
-import { Photo } from '@/entities/photo';
+import { PhotoItem, type Photo } from '@/entities/photo';
 
 interface PhotoGridProps {
   photos: Photo[];
@@ -23,19 +22,9 @@ export const PhotoGrid = ({ photos }: PhotoGridProps) => {
   return (
     <>
       <div className="flex gap-8">
-        {photos.map((photo) => {
-          const { image } = photo;
-          return (
-            <div className="basis-1/3" key={image.src}>
-              <Image
-                className="aspect-2/3 size-full cursor-pointer rounded-xl object-cover object-bottom transition-transform duration-300 ease-in-out hover:scale-105"
-                src={image}
-                alt="Фотография мещан"
-                onClick={() => handlePhotoClick(photo)}
-              />
-            </div>
-          );
-        })}
+        {photos.map((photo) => (
+          <PhotoItem key={photo.image.src} photo={photo} onPhotoClick={handlePhotoClick} />
+        ))}
       </div>
       {selectedPhoto && (
         <PhotoViewer open={openViewer} onOpenChange={setOpenViewer} photo={selectedPhoto} />
