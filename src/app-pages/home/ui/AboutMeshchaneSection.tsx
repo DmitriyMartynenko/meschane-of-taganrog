@@ -12,8 +12,8 @@ import {
   Section,
 } from '@/shared/ui';
 
+import quoteBackground from '../assets/images/about-meshchane-background.png';
 import meshchaninPortrait from '../assets/images/meshchanin-portrait.png';
-import quoteBackground from '../assets/images/quote-background.png';
 import signature from '../assets/images/signature.png';
 
 export const AboutMeshchaneSection = () => {
