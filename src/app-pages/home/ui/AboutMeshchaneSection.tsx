@@ -39,7 +39,7 @@ export const AboutMeshchaneSection = () => {
         />
         <div className="relative my-16 mr-8 flex max-w-2xl items-center gap-6 text-foreground-primary">
           <Quotes
-            className="absolute top-16 right-24 block text-[200px] leading-none opacity-[0.03]"
+            className="absolute top-12 right-24 block text-[200px] leading-none opacity-[0.03]"
             side="right"
           />
           <div className="flex flex-col gap-8">
