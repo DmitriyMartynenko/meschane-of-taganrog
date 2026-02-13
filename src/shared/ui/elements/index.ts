@@ -8,3 +8,4 @@ export * from './StarRating';
 export * from './PageHeading';
 export * from './ImageViewer';
 export * from './BackgroundImage';
+export * from './Quotes';
