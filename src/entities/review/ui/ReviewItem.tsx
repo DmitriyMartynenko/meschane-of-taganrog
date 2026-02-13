@@ -40,10 +40,10 @@ export const ReviewItem = (props: ReviewProps) => {
         <div className="absolute -top-2 right-8 h-8 w-8 rotate-180 transform">
           <Image src={Quotes} alt="Кавычки" className="size-full" />
         </div>
-        <p className="italic">{text}</p>
+        <p>{text}</p>
         <div className="flex flex-col items-center justify-center gap-2">
           <span className="font-medium uppercase">{fullName || 'Анонимный пользователь'}</span>
-          {jobTitle && <span className="text-muted-primary">{jobTitle}</span>}
+          {jobTitle && <span className="text-muted-primary italic">{jobTitle}</span>}
           <StarRating rating={rating} />
         </div>
       </div>
