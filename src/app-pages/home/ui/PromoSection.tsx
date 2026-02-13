@@ -32,7 +32,7 @@ export const PromoSection = () => {
           />
         </div>
         <Image
-          className="h-auto w-lg transition-all duration-450 ease-in-out hover:scale-105 hover:brightness-115 hover:saturate-150"
+          className="h-auto w-lg transition-all duration-450 ease-in-out select-none hover:scale-105 hover:brightness-115 hover:saturate-150"
           src={Logo}
           priority
           alt="Логотип проекта «Мещане Таганрога»"

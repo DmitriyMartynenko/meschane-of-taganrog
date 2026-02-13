@@ -33,7 +33,7 @@ export const PartnersSection = () => {
           className="group flex flex-col items-center gap-8 outline-hidden"
         >
           <Image
-            className="transition-transform duration-450 ease-in-out group-hover:-translate-y-2"
+            className="transition-transform duration-450 ease-in-out select-none group-hover:-translate-y-2"
             src={tgliamz}
             alt="ТГЛИАМЗ"
           />

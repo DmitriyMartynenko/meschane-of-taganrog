@@ -25,7 +25,7 @@ export const ReviewItem = (props: ReviewProps) => {
         )}
       >
         <div className="absolute top-0 left-1/2 z-1 h-32 w-32 -translate-1/2 rounded-full border-10 border-transparent bg-background-secondary">
-          <Avatar className="size-full">
+          <Avatar className="size-full select-none">
             <AvatarImage src={avatarUrl} alt={fullName}></AvatarImage>
             <AvatarFallback>
               <CircleUserRound className="size-full" />

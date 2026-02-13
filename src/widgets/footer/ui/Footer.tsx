@@ -15,7 +15,10 @@ export const Footer = () => {
   return (
     <footer className="flex" id={SECTION_IDS.SHARED_CONTACTS}>
       <div className="basis-1/2">
-        <iframe className="h-full w-full" src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"></iframe>
+        <iframe
+          className="h-full w-full select-none"
+          src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"
+        ></iframe>
       </div>
       <div className="relative flex basis-1/2">
         <BackgroundImage src={footerBackground} />

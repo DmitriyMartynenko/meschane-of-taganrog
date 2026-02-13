@@ -20,7 +20,7 @@ export const ImageViewer = (props: ImageViewerProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className={cn('flex-col gap-8', title && 'py-8')} innerStroke>
         <DialogTitle className={cn(!title && 'sr-only')}>{title}</DialogTitle>
-        <Image className="h-[50vh] w-auto rounded-xl" src={image} alt={alt} />
+        <Image className="h-[50vh] w-auto rounded-xl select-none" src={image} alt={alt} />
         {children}
       </DialogContent>
     </Dialog>

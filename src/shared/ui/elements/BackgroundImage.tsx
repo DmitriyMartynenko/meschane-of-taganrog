@@ -18,7 +18,9 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
   } = props;
 
   return (
-    <div className={cn('absolute inset-0 overflow-hidden', className)}>
+    <div
+      className={cn('pointer-events-none absolute inset-0 overflow-hidden select-none', className)}
+    >
       <Image
         className={cn('scale-101 object-cover object-center blur-xs', className)}
         src={src}

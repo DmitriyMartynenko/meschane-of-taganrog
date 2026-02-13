@@ -20,7 +20,7 @@ export const AboutMeshchaneSection = () => {
       className="relative flex max-h-175 gap-16 bg-background-secondary"
       id={SECTION_IDS.HOME_ABOUT_MESHCHANE}
     >
-      <div className="pointer-events-none relative shrink basis-[40%]">
+      <div className="pointer-events-none relative shrink basis-[40%] select-none">
         <Image
           className="size-full object-cover object-center"
           src={aboutMeshchaneBackground}
@@ -34,7 +34,7 @@ export const AboutMeshchaneSection = () => {
         <Image
           src={meshchaninPortrait}
           alt="Портрет мещанина начала XX века в традиционной одежде"
-          className="h-full w-auto origin-bottom scale-110 object-contain object-bottom transition-all duration-450 ease-in-out hover:scale-115 hover:brightness-115"
+          className="h-full w-auto origin-bottom scale-110 object-contain object-bottom transition-all duration-450 ease-in-out select-none hover:scale-115 hover:brightness-115"
           priority
         />
         <div className="relative my-16 mr-8 flex max-w-2xl items-center gap-6 text-foreground-primary">
@@ -65,7 +65,7 @@ export const AboutMeshchaneSection = () => {
               </div>
               <div className="flex">
                 <Image
-                  className="h-auto w-32 opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100"
+                  className="h-auto w-32 opacity-30 transition-opacity duration-300 ease-in-out select-none hover:opacity-100"
                   src={signature}
                   alt="Подпись И.Н. Смирнова"
                 />

@@ -58,7 +58,7 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
     >
       <div className="relative overflow-hidden">
         <Image
-          className="h-auto w-full transition-transform duration-450 ease-in-out group-hover:scale-105"
+          className="h-auto w-full transition-transform duration-450 ease-in-out select-none group-hover:scale-105"
           src={image}
           alt={title}
           priority

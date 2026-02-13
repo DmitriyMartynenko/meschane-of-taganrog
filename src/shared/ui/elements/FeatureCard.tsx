@@ -19,7 +19,7 @@ export const FeatureCard = (props: BenefitCardProps) => {
         className
       )}
     >
-      <Image src={icon} alt={iconAlt} />
+      <Image className="select-none" src={icon} alt={iconAlt} />
       <div className="flex grow items-center">
         <p>{text}</p>
       </div>
