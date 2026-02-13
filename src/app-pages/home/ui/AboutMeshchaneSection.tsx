@@ -1,65 +1,82 @@
 import Image from 'next/image';
 
-import { Quotes } from '@/shared/assets';
 import { SECTION_IDS } from '@/shared/model';
 import {
-  BackgroundImage,
-  Container,
   Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
+  Quotes,
   Section,
 } from '@/shared/ui';
 
-import quoteBackground from '../assets/images/about-meshchane-background.png';
+import aboutMeshchaneBackground from '../assets/images/about-meshchane-background.png';
 import meshchaninPortrait from '../assets/images/meshchanin-portrait.png';
 import signature from '../assets/images/signature.png';
 
 export const AboutMeshchaneSection = () => {
   return (
-    <Section className="relative" id={SECTION_IDS.HOME_ABOUT_MESHCHANE}>
-      <BackgroundImage src={quoteBackground} />
-      <Container className="relative flex items-center justify-center">
-        <div className="absolute bottom-0 left-1/2 h-full -translate-x-full -translate-y-[5%]">
-          <Image
-            className="h-full w-auto scale-110 transition-all duration-450 ease-in-out hover:scale-115 hover:brightness-115"
-            src={meshchaninPortrait}
-            alt="Портрет мещанина начала XX века в традиционной одежде"
-            priority
+    <Section
+      className="relative flex max-h-175 gap-16 bg-background-secondary"
+      id={SECTION_IDS.HOME_ABOUT_MESHCHANE}
+    >
+      <div className="pointer-events-none relative shrink basis-[40%]">
+        <Image
+          className="size-full object-cover object-center"
+          src={aboutMeshchaneBackground}
+          alt=""
+          priority
+        />
+        <div className="fill absolute inset-0 z-1 bg-linear-to-b from-[rgba(30,20,10,0.2)] to-[rgba(30,20,10,0.2)]" />
+        <div className="absolute inset-y-0 right-0 z-2 w-32 bg-linear-to-l from-background-secondary to-transparent" />
+      </div>
+      <div className="flex shrink-0 grow gap-8">
+        <Image
+          src={meshchaninPortrait}
+          alt="Портрет мещанина начала XX века в традиционной одежде"
+          className="h-full w-auto origin-bottom scale-110 object-contain object-bottom transition-all duration-450 ease-in-out hover:scale-115 hover:brightness-115"
+          priority
+        />
+        <div className="relative my-16 mr-8 flex max-w-2xl items-center gap-6 text-foreground-primary">
+          <Quotes
+            className="absolute top-16 right-24 block text-[200px] leading-none opacity-[0.03]"
+            side="right"
           />
-        </div>
-        <div className="relative my-16 ml-[50%] flex max-w-2xl items-center gap-6 border-l-4 border-secondary bg-black/25 p-8 pl-6 text-foreground-secondary backdrop-blur-sm">
-          <Image className="size-8 shrink-0 opacity-50" src={Quotes} alt="Кавычки" />
           <div className="flex flex-col gap-8">
-            <Heading variant="light">
+            <Heading variant="dark">
               <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
               <HeadingTitle>
                 Потому что нам <br />
                 <HeadingHighlight withUnderline>не все равно</HeadingHighlight>
               </HeadingTitle>
             </Heading>
-            <p className="leading-relaxed tracking-[1px]">
+            <p className="leading-relaxed tracking-widest">
               В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
               проведении Всероссийских съездов представителей мещанских обществ, а также съездов
               мещанских делегатов в 1917 г. Это было свидетельством жизнеспособности сословия,
               готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
               активным политическим действиям.
             </p>
-            <div className="flex gap-8">
-              <div>
+            <span className="h-px w-full bg-muted-primary/50" />
+            <div className="flex gap-12">
+              <div className="flex flex-col gap-1">
                 <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
                 <p className="max-w-62.5 text-muted-primary">Кандидат исторических наук, доцент</p>
               </div>
-              <Image
-                className="h-auto w-32 shrink-0 opacity-60"
-                src={signature}
-                alt="Подпись И.Н. Смирнова"
-              />
+              <div className="flex">
+                <Image
+                  className="h-auto w-32 opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100"
+                  src={signature}
+                  alt="Подпись И.Н. Смирнова"
+                />
+                <span className="self-end text-[10px] tracking-[4px] text-muted-primary uppercase italic">
+                  Архив, 1917
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </Section>
   );
 };
