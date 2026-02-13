@@ -14,6 +14,7 @@ export const Quotes = (props: QuotesProps) => {
         'pointer-events-none font-serif text-foreground-primary select-none',
         className
       )}
+      aria-hidden
     >
       {side === 'right' ? <>&rdquo;</> : <>&ldquo;</>}
     </span>
