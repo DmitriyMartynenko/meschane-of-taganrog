@@ -1,11 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { CircleUserRound } from 'lucide-react';
 
-import { Quotes } from '@/shared/assets';
 import { cn } from '@/shared/lib';
-import { Avatar, AvatarFallback, AvatarImage, StarRating } from '@/shared/ui';
+import { Avatar, AvatarFallback, AvatarImage, Quotes, StarRating } from '@/shared/ui';
 
 import { type ReviewItem as ReviewType } from '../model/review.types';
 
@@ -34,12 +32,8 @@ export const ReviewItem = (props: ReviewProps) => {
             </AvatarFallback>
           </Avatar>
         </div>
-        <div className="absolute -bottom-2 left-8 h-8 w-8">
-          <Image src={Quotes} alt="Кавычки" className="size-full" />
-        </div>
-        <div className="absolute -top-2 right-8 h-8 w-8 rotate-180 transform">
-          <Image src={Quotes} alt="Кавычки" className="size-full" />
-        </div>
+        <Quotes className="absolute -bottom-10.5 left-8 text-[100px]" />
+        <Quotes className="absolute top-3 right-8 text-[100px]" side="left" />
         <p>{text}</p>
         <div className="flex flex-col items-center justify-center gap-2">
           <span className="font-medium uppercase">{fullName || 'Анонимный пользователь'}</span>
