@@ -29,7 +29,7 @@ export const NameField = z
   .nonempty({ message: 'Имя обязательно' })
   .trim()
   .toLowerCase()
-  .min(2, { message: 'Слишком коротко' }) // защитимся от "А А"
+  .min(2, { message: 'Слишком коротко' })
   .max(50, { message: 'Слишком длинное имя' })
   .refine((value) => /^\p{L}+ \p{L}+$/u.test(value), {
     message: 'Введите имя и фамилию через пробел, без цифр и знаков',

@@ -10,7 +10,7 @@ import {
   Section,
 } from '@/shared/ui';
 
-import promoBackground from '../assets/promo-background.png';
+import promoBackground from '../assets/filter-section-background.png';
 
 export const FilterSection = () => {
   return (

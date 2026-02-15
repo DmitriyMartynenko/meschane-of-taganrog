@@ -28,7 +28,7 @@ export const AboutMeshchaneSection = () => {
           priority
         />
         <div className="fill absolute inset-0 z-1 bg-linear-to-b from-[rgba(30,20,10,0.2)] to-[rgba(30,20,10,0.2)]" />
-        <div className="absolute inset-y-0 right-0 z-2 w-32 bg-linear-to-l from-background-secondary to-transparent" />
+        <div className="absolute inset-y-0 right-0 z-2 w-8 bg-linear-to-l from-background-secondary to-transparent" />
       </div>
       <div className="flex shrink-0 grow gap-8">
         <Image

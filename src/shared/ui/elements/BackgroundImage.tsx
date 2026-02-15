@@ -27,6 +27,7 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
         alt=""
         fill
         priority
+        aria-hidden
       />
       <div
         className="absolute inset-0"
