@@ -1,10 +1,10 @@
 import { cn } from '@/shared/lib';
 
-import { type Review } from '../model/types';
+import { type ReviewItem } from '../model/review.types';
 
 type ReviewPaginationProps = {
   className?: string;
-  reviews: Review[];
+  reviews: ReviewItem[];
   current: number;
 };
 
@@ -21,7 +21,7 @@ export const ReviewPagination = (props: ReviewPaginationProps) => {
             className={cn(
               'size-3 rounded-full bg-background-primary',
               isActive &&
-                'size-4 border-3 border-background-secondary bg-secondary outline-2 outline-secondary'
+                'size-4 border-3 border-background-secondary bg-primary outline-2 outline-primary'
             )}
           />
         );

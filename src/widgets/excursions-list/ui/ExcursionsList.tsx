@@ -1,29 +1,50 @@
-import { BookingDialog } from '@/features/booking/ui/BookingDialog';
-import { ExcursionCard, type Excursion } from '@/entities/excursion';
+'use client';
 
-import { sortExcursionsByDate } from '../lib/utils/sortExcursionsByDate';
+import { BookingDialog, useBookingDialogStore } from '@/features/booking';
+import { useExcursionFiltering, useFilterStore } from '@/features/excursion-filtering';
 
+import { ExcursionCard } from '@/entities/excursion';
+
+import { cn } from '@/shared/lib';
+
+import { sortExcursionsByDate } from '../lib/sort-excursions-by-date';
+import { excursions } from '../model/excursions.mock';
+
+import { ActiveFilters } from './ActiveFilters';
+import { BackToFilters } from './BackToFilters';
+import { ExcursionsLoading } from './ExcursionsLoading';
 import { NoExcursionsPlaceholder } from './NoExcursionsPlaceholder';
 
-type ExcursionsListProps = {
-  excursions: Excursion[];
-};
+export const ExcursionsList = () => {
+  const { filteredExcursions, isPending } = useExcursionFiltering(excursions);
+  const filters = useFilterStore((state) => state.filters);
+  const hasActiveFilters = useFilterStore((state) => state.hasActiveFilters);
+  const openBookingDialog = useBookingDialogStore((state) => state.open);
 
-export const ExcursionsList = (props: ExcursionsListProps) => {
-  const { excursions } = props;
-
-  if (excursions.length === 0) {
-    return <NoExcursionsPlaceholder />;
-  }
-
-  const sortedExcursions = sortExcursionsByDate(excursions, 'asc');
+  const sortedExcursions = sortExcursionsByDate(filteredExcursions, 'asc');
 
   return (
-    <div className="flex w-full flex-wrap items-stretch justify-center gap-8">
-      {sortedExcursions.map((excursion) => (
-        <ExcursionCard className="basis-2/5" key={excursion.id} excursion={excursion} />
-      ))}
-      <BookingDialog />
+    <div
+      className={cn('relative mt-12 flex flex-col items-center gap-8', hasActiveFilters && 'mt-8')}
+    >
+      <ActiveFilters filters={filters} />
+      <ExcursionsLoading isPending={isPending} />
+      {sortedExcursions.length > 0 ? (
+        <div className="relative flex w-full flex-wrap items-stretch justify-center gap-8">
+          {sortedExcursions.map((excursion) => (
+            <ExcursionCard
+              className="basis-1/3"
+              key={excursion.id}
+              excursion={excursion}
+              onStartBooking={openBookingDialog}
+            />
+          ))}
+          <BookingDialog />
+          <BackToFilters />
+        </div>
+      ) : (
+        <NoExcursionsPlaceholder />
+      )}
     </div>
   );
 };

@@ -1,24 +1,26 @@
 import { InlineBookingForm } from '@/features/booking';
+
+import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 export const QuickOrderSection = () => {
   return (
-    <Section id="quick-order-section">
-      <Container className="py-16">
+    <Section className="bg-background-primary" id={SECTION_IDS.EXCURSIONS_QUICK_ORDER}>
+      <Container className="flex items-center justify-center py-16">
         <div className="flex flex-col items-center justify-center gap-16">
-          <SectionHeading>
+          <Heading>
             <HeadingSubtitle>Не нашли подходящую экскурсию?</HeadingSubtitle>
             <HeadingTitle>
               <HeadingHighlight>Оставьте заявку</HeadingHighlight> – мы подберём
             </HeadingTitle>
-          </SectionHeading>
+          </Heading>
           <InlineBookingForm inputBorder buttonText="Оставить заявку" />
         </div>
       </Container>

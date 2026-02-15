@@ -1,13 +1,17 @@
 import { type ComponentProps } from 'react';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
-export const Section = (props: ComponentProps<'section'>) => {
-  const { className, children, ...restProps } = props;
+type SectionProps = {
+  noScrollMargin?: boolean;
+} & ComponentProps<'section'>;
+
+export const Section = (props: SectionProps) => {
+  const { className, children, noScrollMargin = false, ...restProps } = props;
 
   return (
     <section
-      className={cn('w-full scroll-mt-[10vh] bg-background-primary', className)}
+      className={cn('w-full scroll-mt-[10vh]', noScrollMargin && 'scroll-mt-0', className)}
       {...restProps}
     >
       {children}

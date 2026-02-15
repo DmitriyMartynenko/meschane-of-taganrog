@@ -3,13 +3,13 @@ services:
     image: postgres:latest
     container_name: postgres-container
     environment:
-      - POSTGRES_USER=josephperson
-      - POSTGRES_PASSWORD=0908
-      - POSTGRES_DB=meschane_db
+      - POSTGRES_USER=meshchane_user
+      - POSTGRES_PASSWORD=meshchane_password
+      - POSTGRES_DB=meshchane_db
     ports:
       - 5432:5432
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql
 
 volumes:
   db-data:

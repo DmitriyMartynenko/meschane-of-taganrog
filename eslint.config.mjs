@@ -1,26 +1,16 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 import storybook from 'eslint-plugin-storybook';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-import { FlatCompat } from '@eslint/eslintrc';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  {
-    rules: {
-      'react-hooks/exhaustive-deps': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-    },
-  },
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   ...storybook.configs['flat/recommended'],
-];
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  {
+    rules: {},
+  },
+]);
 
 export default eslintConfig;

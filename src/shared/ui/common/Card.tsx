@@ -1,6 +1,6 @@
 import { type ComponentProps } from 'react';
 
-import { cn } from '@/shared/lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const Card = (props: ComponentProps<'div'>) => {
   const { className, ...restProps } = props;
@@ -9,7 +9,7 @@ export const Card = (props: ComponentProps<'div'>) => {
     <div
       data-slot="card"
       className={cn(
-        'flex flex-col gap-6 border bg-background-primary p-6 text-foreground-primary shadow-sm',
+        'flex flex-col gap-6 border border-border-primary bg-background-primary p-6 text-foreground-primary shadow-sm',
         className
       )}
       {...restProps}
@@ -50,7 +50,7 @@ export const CardDescription = (props: ComponentProps<'div'>) => {
   return (
     <div
       data-slot="card-description"
-      className={cn('text-sm text-foreground-muted', className)}
+      className={cn('text-sm text-muted-primary', className)}
       {...restProps}
     />
   );

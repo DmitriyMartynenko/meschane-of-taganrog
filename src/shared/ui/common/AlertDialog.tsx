@@ -4,8 +4,9 @@ import { ComponentProps } from 'react';
 
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 
-import { cn } from '@/shared/lib/utils/cn';
-import { buttonVariants } from '@/shared/ui/common/Button';
+import { cn } from '@/shared/lib';
+
+import { buttonVariants } from './Button';
 
 export const AlertDialog = ({ ...props }: ComponentProps<typeof AlertDialogPrimitive.Root>) => {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
@@ -46,7 +47,7 @@ export const AlertDialogContent = (props: ComponentProps<typeof AlertDialogPrimi
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
         className={cn(
-          'fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 bg-background-primary p-6 shadow-lg duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring-primary data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-lg',
+          'fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 bg-background-primary p-6 shadow-lg duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring-primary data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-lg',
           className
         )}
         {...restProps}
@@ -99,7 +100,7 @@ export const AlertDialogDescription = (
   return (
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
-      className={cn('text-sm text-foreground-primary', className)}
+      className={cn('text-sm text-muted-primary', className)}
       {...restProps}
     />
   );

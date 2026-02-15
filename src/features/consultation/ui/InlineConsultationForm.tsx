@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { InlineForm } from '@/shared/ui';
 
-import { InlineConsultationFormSchema } from '../model/schemas';
+import { InlineConsultationFormSchema } from '../model/consultation.schemas';
 
 type InlineConsultationForm = z.infer<typeof InlineConsultationFormSchema>;
 

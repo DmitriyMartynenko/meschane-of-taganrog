@@ -1,2 +1,3 @@
 export { ExcursionCard } from './ui/ExcursionCard';
-export { type Excursion } from './model/types';
+export { type Excursion } from './model/excursion.types';
+export { EXCURSION_THEME, THEME_LABELS } from './model/excursion.constants';

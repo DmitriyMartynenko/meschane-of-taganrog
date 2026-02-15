@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import {
   createContext,
   useCallback,
@@ -11,9 +10,9 @@ import {
   type KeyboardEvent,
 } from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import Arrow from '../../assets/icons/arrow.svg';
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 import { Button } from './Button';
 
@@ -106,9 +105,13 @@ export const Carousel = (props: ComponentProps<'div'> & CarouselProps) => {
 
   useEffect(() => {
     if (!api) return;
-    onSelect(api);
+
     api.on('reInit', onSelect);
     api.on('select', onSelect);
+
+    requestAnimationFrame(() => {
+      onSelect(api);
+    });
 
     return () => {
       api?.off('select', onSelect);
@@ -198,7 +201,7 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
       onClick={scrollPrev}
       {...restProps}
     >
-      <Image src={Arrow} alt="Стрелка влево" />
+      <ArrowLeft className="text-foreground-secondary" strokeWidth={2.0} />
     </Button>
   );
 };
@@ -224,7 +227,7 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
       onClick={scrollNext}
       {...restProps}
     >
-      <Image className="rotate-180 transform" src={Arrow} alt="Стрелка вправо" />
+      <ArrowRight className="text-foreground-secondary" strokeWidth={2.0} />
     </Button>
   );
 };

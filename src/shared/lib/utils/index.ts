@@ -1,4 +1,3 @@
-export * from './cn';
-export * from './prisma';
-export * from './formatTime';
-export * from './formatDate';
+export { cn } from './cn';
+export { formatTime } from './format-time';
+export { formatDate } from './format-date';

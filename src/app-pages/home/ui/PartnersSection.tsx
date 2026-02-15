@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SECTION_IDS } from '@/shared/model';
 import {
+  BackgroundImage,
   Container,
+  Heading,
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
   Section,
-  SectionHeading,
 } from '@/shared/ui';
 
 import partnersBackground from '../assets/images/partners-background.png';
@@ -15,34 +17,31 @@ import tgliamz from '../assets/images/tgliamz.png';
 
 export const PartnersSection = () => {
   return (
-    <Section
-      className="flex bg-neutral-900 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${partnersBackground.src})` }}
-      id="partners-section"
-    >
-      <Container className="flex-col gap-16 py-16">
-        <SectionHeading>
+    <Section className="relative flex" id={SECTION_IDS.HOME_PARTNERS}>
+      <BackgroundImage src={partnersBackground} />
+      <Container className="relative flex flex-col items-center justify-center gap-16 py-16">
+        <Heading variant="light">
           <HeadingSubtitle>С нами сотрудничают</HeadingSubtitle>
           <HeadingTitle>
-            <HeadingHighlight>Наши партнеры</HeadingHighlight>
+            Наши
+            <HeadingHighlight> партнеры</HeadingHighlight>
           </HeadingTitle>
-        </SectionHeading>
-        <div className="flex grow flex-col items-center justify-center gap-8">
-          <Link href="https://tgliamz.ru/" target="_blank">
-            <Image
-              src={tgliamz}
-              alt="Таганрогский государственный литературный и историко-архитектурный музей-заповедник"
-              className="cursor-pointer transition-transform duration-500 ease-in-out hover:scale-105"
-            />
-          </Link>
-          <Link
-            className="cursor-pointer text-center text-2xl font-bold text-foreground-secondary transition-colors duration-300 ease-in-out hover:text-accent-primary"
-            href="https://tgliamz.ru/"
-            target="_blank"
-          >
+        </Heading>
+        <Link
+          href="https://tgliamz.ru/"
+          target="_blank"
+          className="group flex flex-col items-center gap-8 outline-hidden"
+        >
+          <Image
+            className="transition-transform duration-450 ease-in-out select-none group-hover:-translate-y-2"
+            src={tgliamz}
+            alt="ТГЛИАМЗ"
+          />
+          <span className="relative pb-1 text-center text-2xl font-bold text-foreground-secondary transition-colors duration-450 ease-in-out group-hover:text-accent-primary">
             Таганрогский государственный литературный и историко-архитектурный музей-заповедник
-          </Link>
-        </div>
+            <span className="absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-accent-primary transition-transform duration-450 ease-in-out group-hover:scale-x-100" />
+          </span>
+        </Link>
       </Container>
     </Section>
   );

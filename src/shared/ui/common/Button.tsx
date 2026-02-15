@@ -3,15 +3,15 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 export const buttonVariants = cva(
   'inline-flex cursor-pointer items-center justify-center font-semibold uppercase transition-[background-color] duration-300 ease-in-out focus-visible:ring focus-visible:ring-ring-primary focus-visible:outline-none enabled:hover:bg-accent-primary enabled:active:border-transparent enabled:active:bg-accent-primary/80 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
-        primary: 'bg-secondary',
-        outline: 'border border-primary bg-transparent',
+        primary: 'bg-primary',
+        outline: 'border border-secondary bg-transparent',
         ghost: '',
         destructive:
           'bg-destructive-primary focus-visible:ring-destructive-primary enabled:hover:bg-destructive-primary/80',

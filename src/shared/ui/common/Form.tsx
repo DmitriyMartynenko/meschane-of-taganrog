@@ -14,7 +14,7 @@ import {
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 import { Label } from './Label';
 
@@ -130,7 +130,7 @@ export const FormDescription = (props: ComponentProps<'p'>) => {
     <p
       data-slot="form-description"
       id={formDescriptionId}
-      className={cn('text-muted-foreground text-sm', className)}
+      className={cn('text-sm text-muted-primary', className)}
       {...restProps}
     />
   );

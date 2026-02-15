@@ -1,1 +1,2 @@
-export { type Photo } from './model/types';
+export { type Photo } from './model/photo.types';
+export { PhotoItem } from './ui/PhotoItem';

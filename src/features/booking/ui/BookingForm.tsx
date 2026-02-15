@@ -1,5 +1,7 @@
 'use client';
 
+import { UseFormReturn } from 'react-hook-form';
+
 import {
   Button,
   Form,
@@ -11,17 +13,28 @@ import {
   PhoneInput,
 } from '@/shared/ui';
 
-import { useBookingForm } from '../lib/hooks/useBookingForm';
+import { type BookingForm as BookingFormFields } from '../model/booking-form.types';
 
-export const BookingForm = () => {
-  const { form, onSubmit, isLoading } = useBookingForm();
+interface BookingFormProps {
+  form: UseFormReturn<BookingFormFields>;
+  onSubmit: (data: BookingFormFields) => Promise<void>;
+}
+
+export const BookingForm = (props: BookingFormProps) => {
+  const { form, onSubmit } = props;
+
+  const {
+    handleSubmit,
+    control,
+    formState: { isSubmitting },
+  } = form;
 
   return (
     <Form {...form}>
-      <form className="flex flex-col items-center gap-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="flex flex-col items-center gap-8" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex w-full flex-col gap-4">
           <FormField
-            control={form.control}
+            control={control}
             name="name"
             render={({ field }) => (
               <FormItem>
@@ -33,7 +46,7 @@ export const BookingForm = () => {
             )}
           />
           <FormField
-            control={form.control}
+            control={control}
             name="phone"
             render={({ field }) => (
               <FormItem>
@@ -45,7 +58,7 @@ export const BookingForm = () => {
             )}
           />
           <FormField
-            control={form.control}
+            control={control}
             name="email"
             render={({ field }) => (
               <FormItem>
@@ -57,8 +70,8 @@ export const BookingForm = () => {
             )}
           />
         </div>
-        <Button variant="outline" disabled={isLoading}>
-          {isLoading ? 'Отправка...' : 'Отправить'}
+        <Button variant="outline" disabled={isSubmitting}>
+          {isSubmitting ? 'Отправка...' : 'Отправить'}
         </Button>
       </form>
     </Form>

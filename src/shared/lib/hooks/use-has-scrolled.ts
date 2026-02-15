@@ -1,0 +1,23 @@
+'use client';
+
+import { useEffect, useEffectEvent, useState } from 'react';
+
+export const useHasScrolled = (threshold: number = 50) => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const onScroll = useEffectEvent(() => {
+    setIsScrolled(window.scrollY > threshold);
+  });
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    onScroll();
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return {
+    isScrolled,
+  };
+};

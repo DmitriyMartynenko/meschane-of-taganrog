@@ -1,6 +1,6 @@
 import { Star, StarHalf } from 'lucide-react';
 
-import { cn } from '../../lib/utils/cn';
+import { cn } from '@/shared/lib';
 
 const MAX_RATING = 5;
 const STAR_SIZES = {
@@ -29,7 +29,7 @@ export const StarRating = (props: StarRatingProps) => {
   const emptyStarsCount = MAX_RATING - filledStarsCount - Number(hasHalfStar);
 
   return (
-    <div className={cn('flex gap-1 fill-primary text-primary', className)}>
+    <div className={cn('flex gap-1 fill-secondary text-secondary', className)}>
       {Array.from({ length: filledStarsCount }).map((_, index) => (
         <Star key={`filled_${index}`} className={cn('fill-current', starSize)} />
       ))}
@@ -53,9 +53,9 @@ const SingleStarRating = (props: SingleStarRatingProps) => {
   const starSize = STAR_SIZES[size];
 
   return (
-    <div className={cn('flex items-center gap-1 text-primary', className)}>
-      <Star className={cn('fill-primary text-inherit', starSize)} fill="currentColor" />
-      <span className="text-foreground font-semibold text-inherit">{rating.toFixed(1)}</span>
+    <div className={cn('flex items-center gap-1 text-secondary', className)}>
+      <Star className={cn('fill-secondary text-inherit', starSize)} fill="currentColor" />
+      <span className="font-semibold text-inherit">{rating.toFixed(1)}</span>
     </div>
   );
 };

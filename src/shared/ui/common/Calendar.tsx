@@ -13,8 +13,9 @@ import { type VariantProps } from 'class-variance-authority';
 import { ru } from 'date-fns/locale';
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
-import { cn } from '@/shared/lib/utils/cn';
-import { Button, buttonVariants } from '@/shared/ui/common/Button';
+import { cn } from '@/shared/lib';
+
+import { Button, buttonVariants } from './Button';
 
 type CalendarProps = {
   buttonVariant?: VariantProps<typeof buttonVariants>['variant'];
@@ -39,7 +40,7 @@ export const Calendar = (props: CalendarProps) => {
       locale={ru}
       showOutsideDays={showOutsideDays}
       className={cn(
-        'group/calendar bg-background-primary p-3 [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
+        'group/calendar bg-background-primary p-3 [--cell-size:--spacing(8)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
@@ -76,7 +77,7 @@ export const Calendar = (props: CalendarProps) => {
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
-          'relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring/50 has-focus:ring-[3px]',
+          'relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring-primary/50 has-focus:ring-[3px]',
           defaultClassNames.dropdown_root
         ),
         dropdown: cn('absolute inset-0 opacity-0', defaultClassNames.dropdown),
@@ -84,19 +85,19 @@ export const Calendar = (props: CalendarProps) => {
           'select-none font-medium',
           captionLayout === 'label'
             ? 'text-sm'
-            : 'pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-foreground-muted [&>svg]:size-3.5',
+            : 'pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-primary [&>svg]:size-3.5',
           defaultClassNames.caption_label
         ),
         table: 'w-full border-collapse',
         weekdays: cn('flex', defaultClassNames.weekdays),
         weekday: cn(
-          'text-foreground-muted flex-1 font-normal text-[0.8rem] select-none capitalize',
+          'text-muted-primary flex-1 font-normal text-[0.8rem] select-none capitalize',
           defaultClassNames.weekday
         ),
         week: cn('flex w-full mt-2', defaultClassNames.week),
         week_number_header: cn('select-none w-(--cell-size)', defaultClassNames.week_number_header),
         week_number: cn(
-          'text-[0.8rem] select-none text-foreground-muted',
+          'text-[0.8rem] select-none text-muted-primary',
           defaultClassNames.week_number
         ),
         day: cn(
@@ -106,12 +107,12 @@ export const Calendar = (props: CalendarProps) => {
         range_start: cn('bg-background-secondary text-blue-500', defaultClassNames.range_start),
         range_middle: cn('', defaultClassNames.range_middle),
         range_end: cn('bg-background-secondary text-blue-500', defaultClassNames.range_end),
-        today: cn('bg-accent text-black', defaultClassNames.today),
+        today: cn('bg-muted-primary/50 text-foreground-secondary', defaultClassNames.today),
         outside: cn(
-          'text-foreground-muted aria-selected:text-foreground-muted',
+          'text-muted-primary aria-selected:text-muted-primary',
           defaultClassNames.outside
         ),
-        disabled: cn('text-foreground-muted opacity-50', defaultClassNames.disabled),
+        disabled: cn('text-muted-primary', defaultClassNames.disabled),
         hidden: cn('invisible', defaultClassNames.hidden),
         ...classNames,
       }}

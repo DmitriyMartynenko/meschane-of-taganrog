@@ -1,6 +1,6 @@
-export * from './BenefitCard';
+export * from './FeatureCard';
 export * from './Container';
-export * from './SectionHeading';
+export * from './Heading';
 export * from './InlineForm';
 export * from './PhoneInput';
 export * from './Section';
@@ -8,3 +8,4 @@ export * from './StarRating';
 export * from './PageHeading';
 export * from './ImageViewer';
 export * from './BackgroundImage';
+export * from './Quotes';
