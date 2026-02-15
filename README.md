@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="app/icon.png" alt="Meshchane of Taganrog Logo" height="128" />
+  <img src="src/app/icon.png" alt="Meshchane of Taganrog Logo" height="256" />
   <h1>Meshchane of Taganrog | Мещане Таганрога</h1>
   <p>
     An educational and tourism-focused project dedicated to organizing immersive excursions exploring the history, lifestyle, and traditions of Taganrog’s urban estate (meshchane).
