@@ -84,16 +84,16 @@ npm install
 npm run db
 ```
 
-3. Run database migrations
-
-```bash
-npm run db:migrate
-```
-
-4. Generate Prisma client
+3. Generate Prisma client
 
 ```bash
 npm run generate
+```
+
+4. Run database migrations
+
+```bash
+npm run db:migrate
 ```
 
 5. Start the development server
@@ -138,7 +138,8 @@ npm run dev
 
 ### Database
 
-- `npm run db` – Start PostgreSQL with Docker Compose
+- `npm run db` – Start PostgreSQL container with Docker Compose
+- `npm run db:stop` – Stop PostgreSQL container
 - `npm run db:migrate` – Create and apply migrations
 - `npm run db:reset` – Reset database and apply all migrations
 - `npm run generate` – Generate Prisma client
