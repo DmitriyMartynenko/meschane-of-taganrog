@@ -24,7 +24,11 @@
       "eslint",
       "prettier --write"
     ],
-    "*.{json,css,html,md,yml,yaml,prisma}": [
+    "*.{json,css,html,md,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.prisma": [
+      "prisma validate",
       "prettier --write"
     ]
   },
