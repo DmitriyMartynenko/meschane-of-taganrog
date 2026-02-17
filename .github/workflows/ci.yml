@@ -43,3 +43,10 @@ jobs:
 
       - name: Architecture Scan
         run: npx steiger ./src --fail-on-warnings
+
+      - name: Notify Vercel
+        uses: 'vercel/repository-dispatch/actions/status@v1'
+        if: always()
+        with:
+          name: 'Vercel - meshchane-of-taganrog: main'
+          token: ${{ secrets.VERCEL_TOKEN }}
