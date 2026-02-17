@@ -30,7 +30,7 @@ jobs:
         run: npx prisma generate
 
       - name: Generate TypeScript definitions
-        run: next typegen
+        run: npx next typegen
 
       - name: TypeScript Check
         run: npx tsc --noEmit
