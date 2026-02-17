@@ -27,30 +27,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate Prisma Schema
-        run: npx prisma validate
+      - name: Prisma Setup
+        run: |
+          npx prisma validate
+          npx prisma generate
 
-      - name: Generate Prisma Client
-        run: npx prisma generate
+      - name: Type Generation & Check
+        run: |
+          npx next typegen
+          npx tsc --noEmit
 
-      - name: Generate TypeScript definitions
-        run: npx next typegen
-
-      - name: TypeScript Check
-        run: npx tsc --noEmit
-
-      - name: ESLint Check
-        run: npx eslint .
-
-      - name: Prettier Check
-        run: npx prettier --check .
-
-      - name: Architecture Scan
-        run: npx steiger ./src --fail-on-warnings
+      - name: Static Code Analysis
+        run: |
+          npx eslint .
+          npx prettier --check .
+          npx steiger ./src --fail-on-warnings
 
       - name: Notify Vercel
         uses: 'vercel/repository-dispatch/actions/status@v1'
         if: always()
         with:
-          name: 'Vercel - meshchane-of-taganrog: main'
           github_token: ${{ secrets.GITHUB_TOKEN }}
