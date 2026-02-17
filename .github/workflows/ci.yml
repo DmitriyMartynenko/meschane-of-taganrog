@@ -13,6 +13,10 @@ jobs:
   main:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      statuses: write
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,4 +53,4 @@ jobs:
         if: always()
         with:
           name: 'Vercel - meshchane-of-taganrog: main'
-          token: ${{ secrets.VERCEL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
