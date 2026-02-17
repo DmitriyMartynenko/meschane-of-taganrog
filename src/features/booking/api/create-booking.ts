@@ -19,7 +19,7 @@ export type CreateBookingResponse = SuccessResponse | ErrorResponse;
 
 export const createBooking = async (data: BookingForm): Promise<CreateBookingResponse> => {
   const { name, phone, email } = data;
-
+  console.log('test');
   try {
     await prisma.booking.create({
       data: {
