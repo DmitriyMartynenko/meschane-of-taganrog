@@ -6,12 +6,11 @@ on:
       - main
 
 jobs:
-  Integration:
+  ci:
     uses: './.github/workflows/integration.yml'
 
-  Deploy-Preview:
-    needs: Integration
-
+  main:
+    needs: ci
     runs-on: ubuntu-latest
 
     env:

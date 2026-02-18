@@ -1,10 +1,10 @@
-name: Integration Pipeline
+name: Continuous Integration
 
 on:
   workflow_call:
 
 jobs:
-  Integration:
+  main:
     runs-on: ubuntu-latest
 
     steps:
