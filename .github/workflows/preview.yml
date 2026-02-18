@@ -1,15 +1,15 @@
 name: Vercel Preview Deployment
 
 on:
-  push:
-    branches-ignore:
+  pull_request:
+    branches:
       - main
 
 jobs:
   ci:
     uses: './.github/workflows/ci.yml'
 
-  main:
+  deployment-preview:
     needs: ci
     runs-on: ubuntu-latest
 
