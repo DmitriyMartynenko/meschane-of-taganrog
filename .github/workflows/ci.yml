@@ -31,6 +31,7 @@ jobs:
         run: |
           npx prisma validate
           npx prisma generate
+          npx prisma migrate deploy
 
       - name: Type Generation & Check
         run: |
