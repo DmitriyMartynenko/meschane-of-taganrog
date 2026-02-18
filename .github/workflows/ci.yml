@@ -1,21 +1,11 @@
-name: CI Pipeline
+name: Continuous Integration
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-env:
-  DATABASE_URL: ${{ vars.DATABASE_URL }}
+  workflow_call:
 
 jobs:
-  main:
+  code-validation:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      statuses: write
 
     steps:
       - uses: actions/checkout@v4
@@ -42,10 +32,3 @@ jobs:
           npx eslint .
           npx prettier --check .
           npx steiger ./src --fail-on-warnings
-
-      - name: Notify Vercel
-        uses: 'vercel/repository-dispatch/actions/status@v1'
-        if: always()
-        with:
-          name: 'Vercel - CI Pipeline / main'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
