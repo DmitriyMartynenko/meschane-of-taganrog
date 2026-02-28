@@ -94,7 +94,7 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>
-          <Button className="flex-1" variant="primary" textWhite onClick={onStartBooking}>
+          <Button className="flex-1" variant="primary" lightText onClick={onStartBooking}>
             Записаться
           </Button>
         </CardFooter>

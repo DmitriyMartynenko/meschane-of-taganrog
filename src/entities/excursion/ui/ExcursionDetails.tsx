@@ -161,7 +161,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
           </CardContent>
           <DialogFooter>
             <CardFooter className="flex-1">
-              <Button className="w-full" variant="primary" textWhite onClick={onStartBooking}>
+              <Button className="w-full" variant="primary" lightText onClick={onStartBooking}>
                 Записаться
               </Button>
             </CardFooter>

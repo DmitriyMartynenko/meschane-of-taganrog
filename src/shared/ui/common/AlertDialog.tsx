@@ -111,7 +111,7 @@ export const AlertDialogAction = (props: ComponentProps<typeof AlertDialogPrimit
 
   return (
     <AlertDialogPrimitive.Action
-      className={cn(buttonVariants({ size: 'sm', textWhite: true }), className)}
+      className={cn(buttonVariants({ size: 'sm', lightText: true }), className)}
       {...restProps}
     />
   );
