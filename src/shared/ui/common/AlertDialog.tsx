@@ -8,20 +8,22 @@ import { cn } from '@/shared/lib';
 
 import { buttonVariants } from './Button';
 
-export const AlertDialog = ({ ...props }: ComponentProps<typeof AlertDialogPrimitive.Root>) => {
-  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
+export const AlertDialog = (props: ComponentProps<typeof AlertDialogPrimitive.Root>) => {
+  const { ...restProps } = props;
+
+  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...restProps} />;
 };
 
-export const AlertDialogTrigger = ({
-  ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Trigger>) => {
-  return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />;
+export const AlertDialogTrigger = (props: ComponentProps<typeof AlertDialogPrimitive.Trigger>) => {
+  const { ...restProps } = props;
+
+  return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...restProps} />;
 };
 
-export const AlertDialogPortal = ({
-  ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Portal>) => {
-  return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />;
+export const AlertDialogPortal = (props: ComponentProps<typeof AlertDialogPrimitive.Portal>) => {
+  const { ...restProps } = props;
+
+  return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...restProps} />;
 };
 
 export const AlertDialogOverlay = (props: ComponentProps<typeof AlertDialogPrimitive.Overlay>) => {
