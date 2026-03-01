@@ -34,7 +34,7 @@ export type InlineFormControls = {
   inputBorder?: VariantProps<typeof inputVariants>['bordered'];
   buttonText?: string;
   buttonVariant?: VariantProps<typeof buttonVariants>['variant'];
-  buttonTextWhite?: boolean;
+  buttonLightText?: boolean;
 };
 
 type InlineFormProps<T extends FieldValues> = InlineFormControls & {
@@ -45,35 +45,32 @@ type InlineFormProps<T extends FieldValues> = InlineFormControls & {
 
 export const InlineForm = <T extends FieldValues>(props: InlineFormProps<T>) => {
   const {
-    className = '',
+    className,
     form,
     name,
     label = '',
-    inputType = 'phone',
+    inputType = 'tel',
     inputPlaceholder = '+7 (___) ___ __ __',
     inputBorder = false,
     buttonText = 'Отправить',
     buttonVariant = 'outline',
-    buttonTextWhite = false,
+    buttonLightText = false,
     onSubmit,
   } = props;
 
   const id = useId();
-  const FormInput = inputType === 'phone' ? PhoneInput : Input;
+  const FormInput = inputType === 'tel' ? PhoneInput : Input;
 
   return (
     <Form {...form}>
-      <form
-        className={cn('flex w-126.25 flex-col gap-6', className)}
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
+      <form className={cn('flex flex-col gap-6', className)} onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name={name}
           render={({ field }) => (
             <>
               {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
-              <div className="flex gap-2">
+              <div className="flex flex-col gap-2 xl:flex-row">
                 <FormItem className="basis-[55%]">
                   <FormControl>
                     <FormInput
@@ -89,7 +86,7 @@ export const InlineForm = <T extends FieldValues>(props: InlineFormProps<T>) => 
                   type="submit"
                   className="basis-[45%]"
                   variant={buttonVariant}
-                  textWhite={buttonTextWhite}
+                  lightText={buttonLightText}
                 >
                   {buttonText}
                 </Button>
