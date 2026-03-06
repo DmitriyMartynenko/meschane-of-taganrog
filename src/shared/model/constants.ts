@@ -18,3 +18,12 @@ export const SECTION_IDS = {
 
   SHARED_CONTACTS: 'contacts',
 } as const satisfies Record<`${keyof typeof PAGES | 'SHARED'}_${string}`, string>;
+
+export const BREAKPOINTS = {
+  XS: '(width >= 24rem)',
+  SM: '(width >= 48rem)',
+  MD: '(width >= 64rem)',
+  LG: '(width >= 80rem)',
+  XL: '(width >= 1280px)',
+  '2XL': '(width >= 96rem)',
+} as const;
