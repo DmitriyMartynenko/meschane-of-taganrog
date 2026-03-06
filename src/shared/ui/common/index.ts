@@ -15,3 +15,4 @@ export * from './Calendar';
 export * from './Popover';
 export * from './Spinner';
 export * from './Drawer';
+export * from './Sheet';
