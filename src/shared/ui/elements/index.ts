@@ -9,3 +9,4 @@ export * from './PageHeading';
 export * from './ImageViewer';
 export * from './BackgroundImage';
 export * from './Quotes';
+export * from './Motion';
