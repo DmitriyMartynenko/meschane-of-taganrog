@@ -13,12 +13,12 @@ import {
   PhoneInput,
 } from '@/shared/ui';
 
-import { type BookingForm as BookingFormFields } from '../model/booking-form.types';
+import { type BookingFormFields } from '../model/booking-form.types';
 
-interface BookingFormProps {
+export type BookingFormProps = {
   form: UseFormReturn<BookingFormFields>;
   onSubmit: (data: BookingFormFields) => Promise<void>;
-}
+};
 
 export const BookingForm = (props: BookingFormProps) => {
   const { form, onSubmit } = props;
@@ -51,7 +51,7 @@ export const BookingForm = (props: BookingFormProps) => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <PhoneInput {...field} />
+                  <PhoneInput type="tel" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
