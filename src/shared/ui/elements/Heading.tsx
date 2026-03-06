@@ -25,7 +25,7 @@ export const HeadingTitle = (props: ComponentProps<'h2'>) => {
   return (
     <h2
       className={cn(
-        'font-alegreya text-5xl uppercase group-data-[variant=dark]:text-foreground-primary group-data-[variant=light]:text-foreground-secondary',
+        'font-alegreya text-[2.5rem] leading-none uppercase group-data-[variant=dark]:text-foreground-primary group-data-[variant=light]:text-foreground-secondary xl:text-[3rem]',
         className
       )}
       {...restProps}
