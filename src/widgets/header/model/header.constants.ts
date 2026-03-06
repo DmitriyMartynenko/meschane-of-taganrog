@@ -32,3 +32,7 @@ export const NAV_LINKS: NavLink[] = [
     href: `/#${SECTION_IDS.SHARED_CONTACTS}`,
   },
 ];
+
+export const leftGroup = NAV_LINKS.slice(0, 3);
+export const middleGroup = NAV_LINKS.slice(3, 4);
+export const rightGroup = NAV_LINKS.slice(4);
