@@ -7,7 +7,7 @@ import { cn } from '@/shared/lib';
 
 export const buttonVariants = cva(
   cn(
-    'inline-flex cursor-pointer touch-manipulation items-center justify-center border border-transparent font-semibold uppercase outline-none',
+    'inline-flex cursor-pointer touch-manipulation items-center justify-center border border-transparent text-base font-semibold uppercase outline-none',
     'focus-visible:ring-2 focus-visible:ring-ring-primary',
     'disabled:cursor-not-allowed disabled:opacity-50'
   ),
