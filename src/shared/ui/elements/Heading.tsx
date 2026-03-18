@@ -10,8 +10,8 @@ export const HeadingSubtitle = (props: HeadingSubtitleProps) => {
   const { children, className, withDash = false, ...restProps } = props;
 
   return (
-    <div className={cn('flex items-center gap-2', !withDash && 'justify-center', className)}>
-      {withDash && <div className="h-px max-w-11.25 flex-1 bg-muted-primary/50"></div>}
+    <div className={cn('flex items-center gap-2', className)}>
+      {withDash && <div className="hidden h-px w-11.25 flex-1 bg-muted-primary/50 lg:block" />}
       <span className="text-muted-primary" {...restProps}>
         {children}
       </span>
@@ -25,7 +25,7 @@ export const HeadingTitle = (props: ComponentProps<'h2'>) => {
   return (
     <h2
       className={cn(
-        'font-alegreya text-[2.5rem] leading-none uppercase group-data-[variant=dark]:text-foreground-primary group-data-[variant=light]:text-foreground-secondary xl:text-[3rem]',
+        'text-center font-alegreya text-[2.5rem] leading-none uppercase group-data-[variant=dark]:text-foreground-primary group-data-[variant=light]:text-foreground-secondary xl:text-[3rem]',
         className
       )}
       {...restProps}
@@ -70,7 +70,7 @@ export const Heading = (props: HeadingProps) => {
   const { children, className, variant = 'dark' } = props;
 
   return (
-    <div className={cn('group flex flex-col gap-4', className)} data-variant={variant}>
+    <div className={cn('group flex flex-col items-center gap-4', className)} data-variant={variant}>
       {children}
     </div>
   );
