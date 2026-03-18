@@ -31,7 +31,7 @@ export const DesktopNavLink = (props: DesktopNavLinkProps) => {
           {label}
           <span
             className={cn(
-              'absolute -bottom-px left-0 h-0.5 w-full origin-left scale-x-0 bg-accent-primary transition-all duration-450 ease-in-out group-hover:scale-x-100',
+              'absolute -bottom-px left-0 h-0.5 w-full origin-center scale-x-0 bg-accent-primary transition-all duration-450 ease-in-out group-hover:scale-x-100',
               isScrolled ? 'h-0.5' : 'h-px'
             )}
           />
