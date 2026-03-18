@@ -34,3 +34,10 @@ export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.93 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.85, ease } },
 };
+
+export const staggerContainer = (stagger = 0.1, delayStart = 0): Variants => ({
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: stagger, delayChildren: delayStart },
+  },
+});
