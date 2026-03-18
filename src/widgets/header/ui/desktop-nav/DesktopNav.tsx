@@ -22,8 +22,13 @@ export const DesktopNav = (props: DesktopNavProps) => {
           </NavigationMenuItem>
         ))}
         {middleGroup.map(({ href, label }) => (
-          <NavigationMenuItem className="mx-8 text-lg" key={href}>
-            <DesktopNavLink href={href} label={label} isScrolled={isScrolled} />
+          <NavigationMenuItem key={href}>
+            <DesktopNavLink
+              className="mx-8 text-lg"
+              href={href}
+              label={label}
+              isScrolled={isScrolled}
+            />
           </NavigationMenuItem>
         ))}
         {rightGroup.map(({ href, label }) => (
