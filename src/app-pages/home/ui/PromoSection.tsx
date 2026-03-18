@@ -32,7 +32,7 @@ export const PromoSection = () => {
   return (
     <Section className="relative flex min-h-screen overflow-hidden" id={SECTION_IDS.HOME_PROMO}>
       <BackgroundImage src={promoBackground} />
-      <Container className="relative flex items-center justify-center gap-8 px-8 pb-8 xl:gap-16 2xl:gap-24">
+      <Container className="relative flex items-center justify-center gap-8 px-6 pb-6 lg:px-12 lg:pb-12 xl:gap-16 2xl:gap-24">
         <div className="flex flex-col items-center gap-6 xl:items-start xl:gap-12">
           <MotionDiv
             className="hidden items-center gap-4 self-center pl-0 text-center xs:flex xl:flex xl:self-start"
