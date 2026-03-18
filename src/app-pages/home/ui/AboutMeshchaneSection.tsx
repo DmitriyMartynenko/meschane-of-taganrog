@@ -40,7 +40,7 @@ export const AboutMeshchaneSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="z-100 hidden shrink-0 lg:block"
+          className="hidden shrink-0 lg:block"
         >
           <Image
             src={meshchaninPortrait}
@@ -54,9 +54,9 @@ export const AboutMeshchaneSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="flex w-full max-w-lg items-center px-6 py-12 text-foreground-primary lg:max-w-xl lg:px-0 lg:py-32 lg:pr-8 xl:max-w-2xl"
+          className="flex w-full max-w-lg items-center px-6 py-12 text-foreground-primary lg:max-w-xl lg:py-24 lg:pr-12 lg:pl-0 xl:max-w-2xl"
         >
-          <div className="flex w-full flex-col gap-6 text-center lg:gap-8 lg:text-start">
+          <div className="flex w-full flex-col gap-8 text-center lg:text-start">
             <MotionDiv variants={fadeUp}>
               <Heading className="lg:items-start" variant="dark">
                 <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
@@ -70,35 +70,37 @@ export const AboutMeshchaneSection = () => {
                 </HeadingTitle>
               </Heading>
             </MotionDiv>
-            <MotionP variants={fadeUp} className="leading-relaxed tracking-widest">
-              В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
-              проведении Всероссийских съездов представителей мещанских обществ, а также съездов
-              мещанских делегатов в 1917 г. Это было свидетельством жизнеспособности сословия,
-              готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
-              активным политическим действиям.
-            </MotionP>
-            <MotionSpan variants={fadeIn} className="h-px w-full bg-muted-primary/50" />
-            <MotionDiv
-              variants={fadeUp}
-              className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8"
-            >
-              <div className="flex shrink-0 flex-col gap-1 lg:self-start">
-                <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
-                <p className="text-muted-primary lg:max-w-62.5">
-                  Кандидат исторических наук, доцент
-                </p>
-              </div>
-              <div className="relative flex w-55 flex-col items-center gap-4 lg:flex-row">
-                <Image
-                  className="h-auto w-32 opacity-30 transition-opacity duration-300 ease-in-out select-none hover:opacity-100"
-                  src={signature}
-                  alt="Подпись И.Н. Смирнова"
-                />
-                <span className="absolute bottom-0 left-[50%] text-[10px] tracking-[4px] text-muted-primary uppercase italic">
-                  Архив, 1917
-                </span>
-              </div>
-            </MotionDiv>
+            <div className="flex flex-col gap-6 lg:gap-8">
+              <MotionP variants={fadeUp} className="leading-relaxed tracking-widest">
+                В 1910-е гг. возросла политическая активность мещан. Она проявилась в организации и
+                проведении Всероссийских съездов представителей мещанских обществ, а также съездов
+                мещанских делегатов в 1917 г. Это было свидетельством жизнеспособности сословия,
+                готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
+                активным политическим действиям.
+              </MotionP>
+              <MotionSpan variants={fadeIn} className="h-px w-full bg-muted-primary/50" />
+              <MotionDiv
+                variants={fadeUp}
+                className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8"
+              >
+                <div className="flex shrink-0 flex-col gap-1 lg:self-start">
+                  <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
+                  <p className="text-muted-primary lg:max-w-62.5">
+                    Кандидат исторических наук, доцент
+                  </p>
+                </div>
+                <div className="relative flex w-55 flex-col items-center gap-4 lg:flex-row">
+                  <Image
+                    className="h-auto w-32 opacity-30 transition-opacity duration-300 ease-in-out select-none hover:opacity-100"
+                    src={signature}
+                    alt="Подпись И.Н. Смирнова"
+                  />
+                  <span className="absolute bottom-0 left-[50%] text-[10px] tracking-[4px] text-muted-primary uppercase italic">
+                    Архив, 1917
+                  </span>
+                </div>
+              </MotionDiv>
+            </div>
           </div>
         </MotionDiv>
       </div>
