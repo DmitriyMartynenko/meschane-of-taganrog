@@ -27,7 +27,7 @@ export const BookingDialogMobile = (props: BookingDialogProps) => {
         showCloseButton={false}
         className="rounded-none border-t border-primary/30 bg-background-primary px-4 pt-6"
       >
-        <div className="flex flex-col gap-6 border border-primary border-b-transparent px-6 py-8">
+        <div className="flex flex-col gap-8 border border-primary border-b-transparent px-6 py-8">
           <SheetHeader className="gap-1 p-0 text-center">
             <Heading>
               <SheetTitle asChild>
@@ -42,7 +42,7 @@ export const BookingDialogMobile = (props: BookingDialogProps) => {
               </VisuallyHidden>
             </Heading>
           </SheetHeader>
-          <div className="h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />
+          {/* <div className="h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" /> */}
           <BookingForm form={form} onSubmit={onSubmit} />
           <SheetClose onClick={() => handleOpenChange(isOpen)} asChild>
             <Button className="p-0 text-muted-primary" variant="ghost">
