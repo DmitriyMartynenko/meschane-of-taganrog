@@ -1,3 +1,4 @@
+import { fadeUp, staggerContainer, viewport } from '@/shared/lib';
 import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
@@ -6,6 +7,7 @@ import {
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
+  MotionDiv,
   Section,
 } from '@/shared/ui';
 
@@ -31,7 +33,7 @@ const FEATURE_CARDS = [
     id: '3',
     icon: Chessknight,
     iconAlt: 'Фигуря коня',
-    text: 'Проведите необычно свой досуг',
+    text: 'Проведите досуг необычно – в компании людей, чьи истории живут в архивах музея',
   },
   {
     id: '4',
@@ -44,24 +46,34 @@ const FEATURE_CARDS = [
 export const FeaturesSection = () => {
   return (
     <Section className="bg-background-primary" id={SECTION_IDS.HOME_FEATURES}>
-      <Container className="flex flex-col items-center justify-center gap-16 pt-16 pb-32">
-        <Heading>
-          <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
-          <HeadingTitle>
-            <HeadingHighlight>Иммерсивные</HeadingHighlight> экскурсии
-          </HeadingTitle>
-        </Heading>
-        <div className="flex gap-6">
+      <Container className="flex flex-col items-center justify-center gap-8 px-6 pt-12 pb-24 lg:gap-16 lg:px-12 lg:pt-16 lg:pb-32">
+        <MotionDiv variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
+          <Heading>
+            <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
+            <HeadingTitle>
+              <HeadingHighlight>Иммерсивные</HeadingHighlight> экскурсии
+            </HeadingTitle>
+          </Heading>
+        </MotionDiv>
+        <MotionDiv
+          variants={staggerContainer(0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="flex flex-col gap-4 lg:flex-row lg:gap-6"
+        >
           {FEATURE_CARDS.map((card) => (
-            <FeatureCard
-              className="basis-1/4"
-              key={card.id}
-              icon={card.icon}
-              iconAlt={card.iconAlt}
-              text={card.text}
-            />
+            <MotionDiv className="basis-1/4" key={card.id} variants={fadeUp}>
+              <FeatureCard
+                className="h-full max-w-100 lg:max-w-none"
+                key={card.id}
+                icon={card.icon}
+                iconAlt={card.iconAlt}
+                text={card.text}
+              />
+            </MotionDiv>
           ))}
-        </div>
+        </MotionDiv>
       </Container>
     </Section>
   );
