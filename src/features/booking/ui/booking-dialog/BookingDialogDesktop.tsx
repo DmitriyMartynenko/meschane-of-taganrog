@@ -35,7 +35,6 @@ export const BookingDialogDesktop = (props: BookingDialogProps) => {
             </VisuallyHidden>
           </Heading>
         </DialogHeader>
-        <div className="h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />
         <BookingForm form={form} onSubmit={onSubmit} />
       </DialogContent>
     </Dialog>
