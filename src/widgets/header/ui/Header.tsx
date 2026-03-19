@@ -14,7 +14,7 @@ export const Header = () => {
         'fixed inset-x-0 top-0 z-50 w-full border-b transition-all duration-300 ease-in-out',
         isScrolled
           ? 'border-b-transparent bg-primary/75 shadow-lg backdrop-blur-lg'
-          : 'border-b-muted-primary/40 bg-transparent'
+          : 'border-b-border-primary/30 bg-transparent'
       )}
     >
       <DesktopNav className="mx-auto hidden lg:block" isScrolled={isScrolled} />
