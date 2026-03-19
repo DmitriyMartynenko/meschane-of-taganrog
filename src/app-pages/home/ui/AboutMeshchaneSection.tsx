@@ -21,7 +21,7 @@ import signature from '../assets/images/signature.png';
 export const AboutMeshchaneSection = () => {
   return (
     <Section
-      className="relative flex gap-0 bg-background-secondary lg:max-h-175 xl:gap-16"
+      className="relative flex scroll-mt-[15vh] gap-0 bg-background-secondary lg:max-h-175 xl:gap-16"
       id={SECTION_IDS.HOME_ABOUT_MESHCHANE}
     >
       <div className="pointer-events-none relative hidden min-w-0 shrink basis-[40%] overflow-hidden select-none xl:block">
@@ -40,12 +40,12 @@ export const AboutMeshchaneSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="hidden shrink-0 lg:block"
+          className="z-10 hidden shrink-0 lg:block"
         >
           <Image
             src={meshchaninPortrait}
             alt="Портрет мещанина начала XX века в традиционной одежде"
-            className="h-full w-auto origin-bottom object-contain object-bottom transition-all duration-450 ease-in-out select-none hover:scale-101 hover:brightness-115"
+            className="h-full w-auto origin-bottom scale-110 object-contain object-bottom transition-all duration-450 ease-in-out select-none hover:scale-111 hover:brightness-115"
             priority
           />
         </MotionDiv>
@@ -78,7 +78,7 @@ export const AboutMeshchaneSection = () => {
                 готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
                 активным политическим действиям.
               </MotionP>
-              <MotionSpan variants={fadeIn} className="h-px w-full bg-muted-primary/50" />
+              <MotionSpan variants={fadeIn} className="h-px w-full bg-border-primary" />
               <MotionDiv
                 variants={fadeUp}
                 className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8"
