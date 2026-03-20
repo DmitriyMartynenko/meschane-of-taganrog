@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MoveRight } from 'lucide-react';
 
+import { NavLink } from '@/widgets/header';
+
 import { BookingTrigger, InlineBookingForm } from '@/features/booking';
 
 import { Logo } from '@/shared/assets';
@@ -21,8 +23,6 @@ import {
 } from '@/shared/ui';
 
 import promoBackground from '../../assets/images/promo-background.png';
-
-import { ScrollIndicator } from './ScrollIndicator';
 
 const STATS = [
   { value: '8', label: 'уникальных маршрутов' },
@@ -126,9 +126,17 @@ export const PromoSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2, ease }}
         >
-          <ScrollIndicator scrollTo={`/#${SECTION_IDS.HOME_ABOUT_MESHCHANE}`}>
-            Узнать больше
-          </ScrollIndicator>
+          <NavLink
+            className="group flex flex-col items-center gap-2"
+            href={`/#${SECTION_IDS.HOME_ABOUT_MESHCHANE}`}
+          >
+            <span className="text-[10px] tracking-[0.25em] text-secondary/60 uppercase transition-colors duration-300 ease-in-out group-hover:text-secondary">
+              Узнать больше
+            </span>
+            <div className="flex h-8 w-5 items-start justify-center rounded-full border border-secondary/40 pt-1.5 transition-colors duration-300 ease-in-out group-hover:border-secondary">
+              <div className="scroll-indicator-dot h-1.5 w-1.5 rounded-full bg-secondary" />
+            </div>
+          </NavLink>
         </MotionButton>
       </Container>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-linear-to-t from-[rgba(30,20,10,0.85)] to-transparent xs:h-40 xl:h-64" />
