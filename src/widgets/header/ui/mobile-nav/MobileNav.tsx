@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Menu, User, X } from 'lucide-react';
 
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
@@ -17,7 +19,9 @@ import {
   DrawerTrigger,
 } from '@/shared/ui';
 
+import { useNavigate } from '../../lib/use-navigate';
 import { leftGroup, middleGroup, rightGroup } from '../../model/header.constants';
+import { NavHref } from '../../model/header.types';
 
 import { MobileNavLink } from './MobileNavLink';
 
@@ -30,10 +34,29 @@ export const MobileNav = (props: MobileNavProps) => {
   const { className, isScrolled } = props;
 
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const pendingHref = useRef<NavHref | null>(null);
+  const handleNavigate = useNavigate();
+
+  const handleAnimationEnd = (open: boolean) => {
+    if (open || !pendingHref.current) return;
+
+    handleNavigate(pendingHref.current);
+    pendingHref.current = null;
+  };
+
+  const handleLinkClick = (href: NavHref) => {
+    pendingHref.current = href;
+    setMobileOpen(false);
+  };
 
   return (
     <div className={cn('px-4 py-3', className)}>
-      <Drawer open={mobileOpen} onOpenChange={setMobileOpen} direction="top">
+      <Drawer
+        open={mobileOpen}
+        onOpenChange={setMobileOpen}
+        onAnimationEnd={handleAnimationEnd}
+        direction="top"
+      >
         <div className="flex items-center justify-between">
           <DrawerTrigger asChild>
             <Button
@@ -71,29 +94,18 @@ export const MobileNav = (props: MobileNavProps) => {
           </DrawerHeader>
           <nav className="flex flex-1 flex-col items-center gap-4 overflow-y-auto p-8">
             {leftGroup.map(({ href, label }) => (
-              <MobileNavLink
-                key={href}
-                href={href}
-                label={label}
-                onClose={() => setMobileOpen(false)}
-              />
+              <MobileNavLink key={href} label={label} onLinkClick={() => handleLinkClick(href)} />
             ))}
             {middleGroup.map(({ href, label }) => (
               <MobileNavLink
                 className="py-3 text-lg"
                 key={href}
-                href={href}
                 label={label}
-                onClose={() => setMobileOpen(false)}
+                onLinkClick={() => handleLinkClick(href)}
               />
             ))}
             {rightGroup.map(({ href, label }) => (
-              <MobileNavLink
-                key={href}
-                href={href}
-                label={label}
-                onClose={() => setMobileOpen(false)}
-              />
+              <MobileNavLink key={href} label={label} onLinkClick={() => handleLinkClick(href)} />
             ))}
           </nav>
           <div className="flex justify-center py-4">

@@ -1,26 +1,21 @@
+'use client';
+
 import { cn } from '@/shared/lib';
 import { Button, DrawerClose } from '@/shared/ui';
 
-import { NavHref } from '../../model/header.types';
-
-import { NavLink } from '../NavLink';
-
 type MobileNavLinkProps = {
-  href: NavHref;
   label: string;
-  onClose: () => void;
+  onLinkClick: () => void;
   className?: string;
 };
 
 export const MobileNavLink = (props: MobileNavLinkProps) => {
-  const { href, label, onClose, className } = props;
+  const { label, onLinkClick, className } = props;
 
   return (
     <DrawerClose className={cn('p-2 capitalize', className)} asChild>
-      <Button lightText variant="ghost">
-        <NavLink href={href} onClick={onClose}>
-          {label}
-        </NavLink>
+      <Button lightText variant="ghost" onClick={onLinkClick}>
+        {label}
       </Button>
     </DrawerClose>
   );
