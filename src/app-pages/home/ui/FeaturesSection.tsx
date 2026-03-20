@@ -46,7 +46,7 @@ const FEATURE_CARDS = [
 export const FeaturesSection = () => {
   return (
     <Section className="bg-background-primary" id={SECTION_IDS.HOME_FEATURES}>
-      <Container className="flex flex-col items-center justify-center gap-8 px-6 pt-12 pb-24 lg:gap-16 lg:px-12 lg:pt-16 lg:pb-32">
+      <Container className="flex flex-col items-center justify-center gap-6 px-6 pt-12 pb-24 lg:gap-16 lg:px-12 lg:pt-16 lg:pb-32">
         <MotionDiv variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
           <Heading>
             <HeadingSubtitle>Почему стоит попробовать</HeadingSubtitle>
