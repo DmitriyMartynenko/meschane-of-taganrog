@@ -2,14 +2,14 @@ import Image from 'next/image';
 
 import { cn } from '@/shared/lib';
 
-type BenefitCardProps = {
+type FeatureCardProps = {
   className?: string;
   icon: string;
   iconAlt: string;
   text: string;
 };
 
-export const FeatureCard = (props: BenefitCardProps) => {
+export const FeatureCard = (props: FeatureCardProps) => {
   const { className, icon, iconAlt, text } = props;
 
   return (
@@ -25,7 +25,7 @@ export const FeatureCard = (props: BenefitCardProps) => {
         alt={iconAlt}
       />
       <div className="flex grow items-center">
-        <p>{text}</p>
+        <p className="leading-relaxed tracking-wide text-foreground-primary">{text}</p>
       </div>
     </div>
   );
