@@ -196,12 +196,11 @@ export const CarouselPrevious = (props: ComponentProps<typeof Button>) => {
         className
       )}
       variant="primary"
-      size="icon"
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...restProps}
     >
-      <ArrowLeft className="text-foreground-secondary" strokeWidth={2.0} />
+      <ArrowLeft className="text-inherit" strokeWidth={2.0} />
     </Button>
   );
 };
@@ -222,12 +221,11 @@ export const CarouselNext = (props: ComponentProps<typeof Button>) => {
         className
       )}
       variant="primary"
-      size="icon"
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...restProps}
     >
-      <ArrowRight className="text-foreground-secondary" strokeWidth={2.0} />
+      <ArrowRight className="text-inherit" strokeWidth={2.0} />
     </Button>
   );
 };
