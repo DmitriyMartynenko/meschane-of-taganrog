@@ -11,7 +11,7 @@ export const HeadingSubtitle = (props: HeadingSubtitleProps) => {
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
-      {withDash && <div className="hidden h-px w-11.25 flex-1 bg-muted-primary/50 lg:block" />}
+      {withDash && <div className="hidden h-px w-8 flex-1 bg-muted-primary/50 lg:block" />}
       <span className="text-muted-primary" {...restProps}>
         {children}
       </span>
