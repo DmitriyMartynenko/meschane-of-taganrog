@@ -4,5 +4,5 @@ export type Photo = {
   image: StaticImageData;
   title?: string;
   author?: string;
-  years?: readonly number[];
+  years?: number[];
 };
