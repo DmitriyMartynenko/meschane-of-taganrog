@@ -84,7 +84,7 @@ export const AboutMeshchaneSection = () => {
                 className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8"
               >
                 <div className="flex shrink-0 flex-col gap-1 lg:self-start">
-                  <h3 className="text-lg font-medium uppercase">Смирнов Иван Николаевич</h3>
+                  <h3 className="text-lg">Смирнов Иван Николаевич</h3>
                   <p className="text-muted-primary lg:max-w-62.5">
                     Кандидат исторических наук, доцент
                   </p>
