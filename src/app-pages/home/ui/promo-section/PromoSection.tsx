@@ -35,31 +35,33 @@ export const PromoSection = () => {
     <Section className="relative flex min-h-screen overflow-hidden" id={SECTION_IDS.HOME_PROMO}>
       <BackgroundImage src={promoBackground} />
       <Container className="relative flex items-center justify-center gap-8 px-6 pb-8 lg:pb-16 xl:gap-16 2xl:gap-24">
-        <div className="flex flex-col items-center gap-6 xl:items-start xl:gap-12">
-          <MotionDiv
-            className="hidden items-center gap-4 self-center pl-0 text-center xs:flex xl:flex xl:self-start"
-            variants={fadeIn}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 1, delay: 0.2, ease }}
-          >
-            <span className="h-px w-12 bg-primary/60" />
-            <span className="text-[12px] tracking-[0.3em] whitespace-nowrap text-secondary/80 uppercase xl:text-xs">
-              Таганрог · XIX–XX век
-            </span>
-            <span className="h-px w-12 bg-primary/60" />
-          </MotionDiv>
-          <MotionDiv
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.9, delay: 0.35, ease }}
-          >
-            <PageHeading className="text-center text-wrap xl:text-start">
-              <PageHeadingHighlight>Мещанский Таганрог:</PageHeadingHighlight>
-              <PageHeadingCaption>Иммерсивные экскурсии</PageHeadingCaption>
-            </PageHeading>
-          </MotionDiv>
+        <div className="flex flex-col items-center gap-6 lg:gap-8 xl:items-start">
+          <div className="flex flex-col gap-2 lg:gap-4">
+            <MotionDiv
+              className="hidden items-center gap-4 self-center pl-0 text-center xs:flex xl:flex xl:self-start"
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1, delay: 0.2, ease }}
+            >
+              <span className="h-px w-12 bg-primary/60" />
+              <span className="text-[12px] tracking-[0.3em] whitespace-nowrap text-secondary/80 uppercase xl:text-xs">
+                Таганрог · XIX–XX век
+              </span>
+              <span className="h-px w-12 bg-primary/60" />
+            </MotionDiv>
+            <MotionDiv
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.9, delay: 0.35, ease }}
+            >
+              <PageHeading className="text-center text-wrap xl:text-start">
+                <PageHeadingHighlight>Мещанский Таганрог:</PageHeadingHighlight>
+                <PageHeadingCaption>Иммерсивные экскурсии</PageHeadingCaption>
+              </PageHeading>
+            </MotionDiv>
+          </div>
           <MotionP
             className="w-full text-center text-base font-normal tracking-widest text-foreground-secondary xl:text-start xl:text-base"
             variants={fadeUp}
@@ -87,7 +89,7 @@ export const PromoSection = () => {
             </BookingTrigger>
           </MotionDiv>
           <MotionDiv
-            className="flex justify-start xl:-mt-6 xl:max-w-xl"
+            className="flex justify-start xl:-mt-2 xl:max-w-xl"
             variants={fadeLeft}
             initial="hidden"
             animate="visible"
