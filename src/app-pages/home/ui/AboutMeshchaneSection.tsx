@@ -56,7 +56,7 @@ export const AboutMeshchaneSection = () => {
           viewport={viewport}
           className="flex w-full max-w-lg items-center px-6 py-12 text-foreground-primary lg:max-w-xl lg:py-24 lg:pr-12 lg:pl-0 xl:max-w-2xl"
         >
-          <div className="flex w-full flex-col gap-8 text-center lg:text-start">
+          <div className="flex w-full flex-col gap-8 text-center lg:gap-10 lg:text-start">
             <MotionDiv variants={fadeUp}>
               <Heading className="lg:items-start" variant="dark">
                 <HeadingSubtitle withDash>Слово мещанину</HeadingSubtitle>
