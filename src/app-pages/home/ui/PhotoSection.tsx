@@ -51,7 +51,7 @@ export const PhotoSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="flex shrink-0 flex-col gap-6 text-center lg:text-start"
+          className="flex shrink-0 flex-col gap-6 text-center lg:gap-8 lg:text-start"
         >
           <Heading className="lg:items-start">
             <HeadingSubtitle withDash>Фото на память</HeadingSubtitle>
