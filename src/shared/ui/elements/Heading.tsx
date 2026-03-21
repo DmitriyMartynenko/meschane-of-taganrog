@@ -70,7 +70,10 @@ export const Heading = (props: HeadingProps) => {
   const { children, className, variant = 'dark' } = props;
 
   return (
-    <div className={cn('group flex flex-col items-center gap-4', className)} data-variant={variant}>
+    <div
+      className={cn('group flex flex-col items-center gap-2 lg:gap-4', className)}
+      data-variant={variant}
+    >
       {children}
     </div>
   );
