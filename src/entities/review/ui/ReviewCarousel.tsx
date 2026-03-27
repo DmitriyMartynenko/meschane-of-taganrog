@@ -47,7 +47,13 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
   }, [api]);
 
   return (
-    <Carousel className={cn('relative lg:px-8 xl:px-16', className)} setApi={setApi}>
+    <Carousel
+      className={cn('relative lg:px-8 xl:px-16', className)}
+      setApi={setApi}
+      opts={{
+        watchDrag: (_, event) => event.type !== 'mousedown',
+      }}
+    >
       <div className="absolute top-1/2 left-1/2 h-[50%] w-[calc(100%-80px)] -translate-1/2 border border-primary" />
       <CarouselContent className="-ml-8 items-center">
         {reviews.map(({ id, author, text, rating }) => (
