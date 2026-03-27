@@ -129,8 +129,8 @@ export const ImageViewer = (props: ImageViewerProps) => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-8 p-0" variant="ghost" lightText />
-              <CarouselNext className="-right-8 p-0" variant="ghost" lightText />
+              <CarouselPrevious className="-left-8 border-none p-0" variant="ghost" />
+              <CarouselNext className="-right-8 border-none p-0" variant="ghost" />
             </Carousel>
             {slides[currentSlide].caption}
             {slides.length > 1 && (
