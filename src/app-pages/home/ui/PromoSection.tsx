@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { MoveRight } from 'lucide-react';
 
 import { NavLink } from '@/widgets/header';
@@ -8,7 +7,7 @@ import { BookingTrigger, InlineBookingForm } from '@/features/booking';
 
 import { Logo } from '@/shared/assets';
 import { cn, ease, fadeIn, fadeLeft, fadeUp } from '@/shared/lib';
-import { SECTION_IDS } from '@/shared/model';
+import { PAGES, SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Button,
@@ -22,7 +21,7 @@ import {
   Section,
 } from '@/shared/ui';
 
-import promoBackground from '../../assets/images/promo-background.png';
+import promoBackground from '../assets/images/promo-background.png';
 
 const STATS = [
   { value: '8', label: 'уникальных маршрутов' },
@@ -34,7 +33,7 @@ export const PromoSection = () => {
   return (
     <Section className="relative flex min-h-screen overflow-hidden" id={SECTION_IDS.HOME_PROMO}>
       <BackgroundImage src={promoBackground} />
-      <Container className="relative flex items-center justify-center gap-8 px-6 pb-8 lg:pb-16 xl:gap-16 2xl:gap-24">
+      <Container className="relative flex items-center justify-center gap-8 px-6 pb-12 lg:px-8 lg:pb-16 xl:gap-16 2xl:gap-24">
         <div className="flex flex-col items-center gap-6 lg:gap-8 xl:items-start">
           <div className="flex flex-col gap-2 lg:gap-4">
             <MotionDiv
@@ -95,15 +94,18 @@ export const PromoSection = () => {
             animate="visible"
             transition={{ duration: 0.9, delay: 0.7, ease }}
           >
-            <Button className="p-0 text-base font-semibold xl:text-base" variant="ghost" lightText>
-              <Link href="/excursions" className="group relative flex items-center gap-2.5">
+            <Button className="border-none p-0 text-base xl:text-base" variant="ghost" lightText>
+              <NavLink
+                href={`${PAGES.EXCURSIONS}`}
+                className="group relative flex items-center gap-2.5"
+              >
                 Все экскурсии
                 <MoveRight
                   size={16}
                   strokeWidth={2}
                   className="absolute top-1/2 left-full ml-2 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
                 />
-              </Link>
+              </NavLink>
             </Button>
           </MotionDiv>
         </div>
