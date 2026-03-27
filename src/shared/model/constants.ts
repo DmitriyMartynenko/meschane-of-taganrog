@@ -10,7 +10,6 @@ export const SECTION_IDS = {
   HOME_PHOTO: 'photo',
   HOME_PARTNERS: 'partners',
   HOME_REVIEWS: 'reviews',
-  HOME_SUBSCRIPTION: 'subscription',
 
   EXCURSIONS_FILTER: 'filter',
   EXCURSIONS_EXCURSIONS_LIST: 'excursions-list',
@@ -21,9 +20,9 @@ export const SECTION_IDS = {
 
 export const BREAKPOINTS = {
   XS: '(width >= 24rem)',
-  SM: '(width >= 48rem)',
-  MD: '(width >= 64rem)',
-  LG: '(width >= 80rem)',
-  XL: '(width >= 1280px)',
+  SM: '(width >= 40rem)',
+  MD: '(width >= 48rem)',
+  LG: '(width >= 64rem)',
+  XL: '(width >= 80rem)',
   '2XL': '(width >= 96rem)',
 } as const;
