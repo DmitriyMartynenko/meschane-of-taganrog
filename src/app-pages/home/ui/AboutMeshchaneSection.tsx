@@ -54,7 +54,7 @@ export const AboutMeshchaneSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="flex w-full max-w-lg items-center px-6 py-12 text-foreground-primary lg:max-w-xl lg:py-24 lg:pr-12 lg:pl-0 xl:max-w-2xl"
+          className="flex w-full max-w-lg items-center px-6 py-12 text-foreground-primary lg:max-w-xl lg:py-24 lg:pr-8 lg:pl-0 xl:max-w-2xl"
         >
           <div className="flex w-full flex-col gap-8 text-center lg:gap-10 lg:text-start">
             <MotionDiv variants={fadeUp}>
