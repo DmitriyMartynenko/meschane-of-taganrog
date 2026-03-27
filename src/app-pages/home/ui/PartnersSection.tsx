@@ -24,7 +24,7 @@ export const PartnersSection = () => {
   return (
     <Section className="relative flex" id={SECTION_IDS.HOME_PARTNERS}>
       <BackgroundImage src={partnersBackground} />
-      <Container className="relative flex flex-col items-center justify-center gap-16 px-5 py-12 lg:px-12 lg:py-16 xl:px-0">
+      <Container className="relative flex flex-col items-center justify-center gap-16 px-6 py-12 lg:px-8 lg:py-16">
         <MotionDiv
           variants={staggerContainer(0.15)}
           initial="hidden"
