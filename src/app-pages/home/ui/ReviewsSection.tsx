@@ -1,6 +1,7 @@
 import { ReviewCarousel } from '@/entities/review';
 import { type User } from '@/entities/user';
 
+import { fadeUp, staggerContainer, viewport } from '@/shared/lib';
 import { SECTION_IDS } from '@/shared/model';
 import {
   Container,
@@ -8,6 +9,7 @@ import {
   HeadingHighlight,
   HeadingSubtitle,
   HeadingTitle,
+  MotionDiv,
   Section,
 } from '@/shared/ui';
 
@@ -65,14 +67,29 @@ export const ReviewsSection = () => {
       className="flex items-center justify-center bg-background-secondary"
       id={SECTION_IDS.HOME_REVIEWS}
     >
-      <Container className="flex flex-col items-center justify-center gap-12 py-16">
-        <Heading>
-          <HeadingSubtitle>О нас говорят</HeadingSubtitle>
-          <HeadingTitle>
-            <HeadingHighlight>Отзывы</HeadingHighlight> участников
-          </HeadingTitle>
-        </Heading>
-        <ReviewCarousel className="max-w-5xl" reviews={mockReviews} />
+      <Container className="px-6 py-12 lg:px-8 lg:py-16">
+        <MotionDiv
+          variants={staggerContainer(0.15)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="flex w-full flex-col items-center gap-6 lg:gap-8"
+        >
+          <MotionDiv variants={fadeUp}>
+            <Heading>
+              <HeadingSubtitle>О нас говорят</HeadingSubtitle>
+              <HeadingTitle>
+                <HeadingHighlight>Отзывы</HeadingHighlight> участников
+              </HeadingTitle>
+            </Heading>
+          </MotionDiv>
+          <MotionDiv variants={fadeUp}>
+            <ReviewCarousel
+              className="max-w-70 lg:max-w-212.5 xl:max-w-5xl"
+              reviews={mockReviews}
+            />
+          </MotionDiv>
+        </MotionDiv>
       </Container>
     </Section>
   );
