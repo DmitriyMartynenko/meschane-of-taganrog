@@ -13,7 +13,7 @@ export const MobileNavLink = (props: MobileNavLinkProps) => {
   const { label, onLinkClick, className } = props;
 
   return (
-    <DrawerClose className={cn('p-2 capitalize', className)} onClick={onLinkClick} asChild>
+    <DrawerClose className={cn('p-2 normal-case', className)} onClick={onLinkClick} asChild>
       <Button variant="ghost" lightText>
         {label}
       </Button>
