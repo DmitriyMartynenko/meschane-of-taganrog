@@ -78,7 +78,10 @@ export const AboutMeshchaneSection = () => {
                 готовности мещан к переменам и защите своих прав, причем они не боялись прибегать к
                 активным политическим действиям.
               </MotionP>
-              <MotionSpan variants={fadeIn} className="h-px w-full bg-border-primary" />
+              <MotionSpan
+                variants={fadeIn}
+                className="h-px w-full bg-linear-to-r from-transparent via-border-primary to-transparent lg:from-border-primary lg:via-border-primary/50"
+              />
               <MotionDiv
                 variants={fadeUp}
                 className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8"
