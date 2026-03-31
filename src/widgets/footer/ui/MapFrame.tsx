@@ -4,7 +4,13 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/shared/lib';
 import { Button, Spinner } from '@/shared/ui';
 
-export const MapFrame = () => {
+type MapFrameProps = {
+  className?: string;
+};
+
+export const MapFrame = (props: MapFrameProps) => {
+  const { className } = props;
+
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
@@ -20,12 +26,12 @@ export const MapFrame = () => {
   }, [isLoading]);
 
   return (
-    <>
+    <div className={cn('relative size-full', className)}>
       {isLoading && (
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <div className="flex flex-col items-center gap-4">
             <Spinner />
-            <span className="text-sm tracking-[0.2em] text-secondary/40">Загрузка карты...</span>
+            <span className="tracking-widest text-secondary/40">Загрузка карты...</span>
           </div>
         </div>
       )}
@@ -53,6 +59,6 @@ export const MapFrame = () => {
         onLoad={() => setIsLoading(false)}
         loading="lazy"
       />
-    </>
+    </div>
   );
 };

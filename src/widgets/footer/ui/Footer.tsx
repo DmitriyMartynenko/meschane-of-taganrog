@@ -46,18 +46,18 @@ const WORKING_HOURS = [
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row" id={SECTION_IDS.SHARED_CONTACTS}>
+    <footer className="flex" id={SECTION_IDS.SHARED_CONTACTS}>
       <MotionDiv
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="relative basis-1/2 overflow-hidden"
+        className="relative hidden basis-1/2 overflow-hidden lg:block"
       >
         <MapFrame />
         <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_40px_rgba(30,20,10,0.3)]" />
       </MotionDiv>
-      <div className="relative flex basis-1/2 flex-col">
+      <div className="relative flex w-full flex-col lg:basis-1/2">
         <BackgroundImage src={footerBackground} />
         <MotionDiv
           variants={staggerContainer(0.1, 0.2)}
@@ -113,6 +113,7 @@ export const Footer = () => {
                 ))}
               </div>
             </div>
+            <MapFrame className="h-75 bg-[rgb(30,20,10)] lg:hidden" />
             <div className="hidden h-full w-px bg-border-primary/10 lg:block" />
             <MotionP
               variants={fadeIn}
