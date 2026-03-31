@@ -6,7 +6,7 @@ type ExcursionStatsProps = {
   className?: string;
 } & ExcursionStatsConfig;
 
-export const ExcursionStatsItem = (props: ExcursionStatsProps) => {
+export const ExcursionStats = (props: ExcursionStatsProps) => {
   const { className, icon: Icon, label } = props;
 
   return (
