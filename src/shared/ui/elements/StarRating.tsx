@@ -24,15 +24,15 @@ export const StarRating = (props: StarRatingProps) => {
   return (
     <div className={cn('flex gap-1 fill-secondary text-secondary [&_svg]:size-6', className)}>
       {Array.from({ length: filledStarsCount }).map((_, index) => (
-        <Star key={`filled_${index}`} className={cn('fill-current')} />
+        <Star key={`filled_${index}`} className={cn('fill-current')} strokeWidth={2} />
       ))}
       {hasHalfStar && (
         <Star>
-          <StarHalf className={cn('fill-current')} />
+          <StarHalf className={cn('fill-current')} strokeWidth={2} />
         </Star>
       )}
       {Array.from({ length: emptyStarsCount }).map((_, index) => (
-        <Star key={`empty_${index}`} />
+        <Star key={`empty_${index}`} strokeWidth={2} />
       ))}
     </div>
   );
@@ -45,8 +45,8 @@ const SingleStarRating = (props: SingleStarRatingProps) => {
 
   return (
     <div className={cn('flex items-center gap-1 text-secondary', className)}>
-      <Star className={cn('fill-secondary text-inherit')} fill="currentColor" />
-      <span className="font-semibold text-inherit">{rating.toFixed(1)}</span>
+      <Star className={cn('fill-secondary text-inherit')} fill="currentColor" strokeWidth={2} />
+      <span className="mt-0.5 font-semibold text-inherit">{rating.toFixed(1)}</span>
     </div>
   );
 };
