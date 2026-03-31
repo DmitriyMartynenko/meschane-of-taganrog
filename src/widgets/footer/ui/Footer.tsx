@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { NavLink } from '@/widgets/header';
+import { NavLink } from '@/widgets/header/@x/footer';
 
 import { cn, fadeIn, fadeLeft, fadeUp, staggerContainer, viewport } from '@/shared/lib';
 import { PAGES, SECTION_IDS } from '@/shared/model';
