@@ -48,10 +48,11 @@ export const DialogOverlay = (props: ComponentProps<typeof DialogPrimitive.Overl
 
 type DialogContentProps = {
   innerStroke?: boolean;
+  showCloseButton?: boolean;
 } & ComponentProps<typeof DialogPrimitive.Content>;
 
 export const DialogContent = (props: DialogContentProps) => {
-  const { className, children, innerStroke = false, ...restProps } = props;
+  const { className, children, showCloseButton = true, ...restProps } = props;
 
   return (
     <DialogPortal data-slot="dialog-portal">
@@ -59,23 +60,18 @@ export const DialogContent = (props: DialogContentProps) => {
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          'fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 bg-background-primary p-8 shadow-lg duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring-primary data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-237.5'
+          'fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 bg-background-primary p-8 shadow-lg duration-150 outline-none focus-visible:ring-2 focus-visible:ring-ring-primary data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-237.5',
+          className
         )}
         {...restProps}
       >
-        <div
-          className={cn(
-            'flex items-center justify-center px-32 py-16',
-            innerStroke && 'border border-primary',
-            className
-          )}
-        >
-          {children}
-        </div>
-        <DialogPrimitive.Close className="absolute top-2 right-2 cursor-pointer rounded-xs opacity-70 ring-offset-background-primary transition-opacity ease-in-out outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-primary disabled:pointer-events-none data-[state=open]:bg-accent-primary data-[state=open]:text-muted-primary [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
-          <XIcon />
-          <span className="sr-only">Закрыть</span>
-        </DialogPrimitive.Close>
+        {children}
+        {showCloseButton && (
+          <DialogPrimitive.Close className="absolute top-2 right-2 cursor-pointer rounded-xs opacity-70 ring-offset-background-primary transition-opacity ease-in-out outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring-primary disabled:pointer-events-none data-[state=open]:bg-accent-primary data-[state=open]:text-muted-primary [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
+            <XIcon strokeWidth={2} />
+            <span className="sr-only">Закрыть</span>
+          </DialogPrimitive.Close>
+        )}
       </DialogPrimitive.Content>
     </DialogPortal>
   );

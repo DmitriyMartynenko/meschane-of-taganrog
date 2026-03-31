@@ -20,22 +20,24 @@ export const BookingDialogDesktop = (props: BookingDialogProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogContent className="hidden flex-col items-stretch gap-8 lg:grid" innerStroke>
-        <DialogHeader>
-          <Heading>
-            <DialogTitle asChild>
-              <HeadingTitle className="text-center font-alegreya text-5xl font-normal">
-                <HeadingHighlight>Оставьте заявку</HeadingHighlight>
-                <br />
-                Мы с вами свяжемся
-              </HeadingTitle>
-            </DialogTitle>
-            <VisuallyHidden asChild>
-              <DialogDescription />
-            </VisuallyHidden>
-          </Heading>
-        </DialogHeader>
-        <BookingForm form={form} onSubmit={onSubmit} />
+      <DialogContent>
+        <div className="flex flex-col items-stretch justify-center gap-8 border border-primary px-32 py-16">
+          <DialogHeader>
+            <Heading>
+              <DialogTitle asChild>
+                <HeadingTitle className="text-center font-alegreya text-5xl font-normal">
+                  <HeadingHighlight>Оставьте заявку</HeadingHighlight>
+                  <br />
+                  Мы с вами свяжемся
+                </HeadingTitle>
+              </DialogTitle>
+              <VisuallyHidden asChild>
+                <DialogDescription />
+              </VisuallyHidden>
+            </Heading>
+          </DialogHeader>
+          <BookingForm form={form} onSubmit={onSubmit} />
+        </div>
       </DialogContent>
     </Dialog>
   );
