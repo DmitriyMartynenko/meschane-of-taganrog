@@ -1,31 +1,24 @@
 import { FilterForm } from '@/features/excursion-filtering';
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Heading,
-  HeadingHighlight,
-  HeadingTitle,
-} from '@/shared/ui';
+import { cn } from '@/shared/lib';
 
-export const ExcursionFilter = () => {
+type ExcursionFilter = {
+  className?: string;
+};
+
+export const ExcursionFilter = (props: ExcursionFilter) => {
+  const { className } = props;
+
   return (
-    <div className="bg-background-primary p-6 shadow-2xl">
-      <Card className="border border-primary">
-        <CardHeader>
-          <Heading>
-            <HeadingTitle className="text-center text-4xl">
-              Подберите экскурсию,
-              <br />
-              <HeadingHighlight>подходящую именно Вам</HeadingHighlight>
-            </HeadingTitle>
-          </Heading>
-        </CardHeader>
-        <CardContent>
-          <FilterForm />
-        </CardContent>
-      </Card>
+    <div
+      className={cn(
+        'border border-primary/25 bg-[rgba(30,20,10,0.6)] px-12 py-10 backdrop-blur-md',
+        className
+      )}
+    >
+      <div className="mb-12 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent" />
+      <FilterForm />
+      <div className="mt-12 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent" />
     </div>
   );
 };

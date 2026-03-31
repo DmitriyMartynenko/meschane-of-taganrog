@@ -1,5 +1,7 @@
 'use client';
 
+import { MoveRight } from 'lucide-react';
+
 import { SECTION_IDS } from '@/shared/model';
 import { Button, Form, FormField, FormItem, FormLabel, FormMessage } from '@/shared/ui';
 
@@ -23,19 +25,18 @@ export const FilterForm = () => {
 
   return (
     <Form {...form}>
-      <form
-        className="flex flex-col items-center justify-center gap-8 border border-border-primary p-6"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="flex gap-4">
+      <form className="flex flex-col items-center justify-center gap-8" onSubmit={handleFormSubmit}>
+        <div className="flex w-full flex-col justify-center gap-4 lg:flex-row">
           {FILTER_CONTROLS.map(({ name, label, CustomSelect, ...config }) => (
             <FormField
               control={control}
               key={name}
               name={name}
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-foreground-primary normal-case">{label}</FormLabel>
+                <FormItem className="flex w-68.75 flex-1 flex-col gap-2">
+                  <FormLabel className="tracking-widest text-secondary normal-case">
+                    {label}
+                  </FormLabel>
                   {CustomSelect ? (
                     <CustomSelect config={config} formField={field} />
                   ) : (
@@ -47,8 +48,12 @@ export const FilterForm = () => {
             />
           ))}
         </div>
-        <Button type="submit" variant="outline">
-          Найти экскурсии
+        <Button className="group w-full gap-2.5" type="submit" variant="primary" lightText>
+          Найти экскурсии{' '}
+          <MoveRight
+            className="size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
+            strokeWidth={2}
+          />
         </Button>
       </form>
     </Form>

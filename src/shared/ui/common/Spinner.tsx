@@ -1,17 +1,18 @@
 import { ComponentProps } from 'react';
-import { Loader } from 'lucide-react';
 
 import { cn } from '@/shared/lib';
 
-export const Spinner = (props: ComponentProps<'svg'>) => {
-  const { className, strokeWidth = 2, ...restProps } = props;
+export const Spinner = (props: ComponentProps<'div'>) => {
+  const { className, ...restProps } = props;
 
   return (
-    <Loader
-      role="status"
-      strokeWidth={strokeWidth}
+    <div
+      className={cn(
+        'size-8 animate-spin rounded-full border-2 border-secondary/20 border-t-secondary',
+        className
+      )}
       aria-label="Loading"
-      className={cn('size-4 animate-spin', className)}
+      role="status"
       {...restProps}
     />
   );

@@ -4,7 +4,6 @@ import { PartnersSection } from './PartnersSection';
 import { PhotoSection } from './PhotoSection';
 import { PromoSection } from './PromoSection';
 import { ReviewsSection } from './ReviewsSection';
-import { SubscriptionSection } from './SubscriptionSection';
 
 const HomePage = () => {
   return (
@@ -15,7 +14,6 @@ const HomePage = () => {
       <PhotoSection />
       <PartnersSection />
       <ReviewsSection />
-      <SubscriptionSection />
     </>
   );
 };

@@ -12,9 +12,9 @@ export const ExcursionsLoading = (props: ExcursionsLoadingProps) => {
   if (!isPending) return null;
 
   return (
-    <p className={cn('flex animate-pulse items-center gap-2 text-xl text-primary', className)}>
-      <Spinner className="size-6" strokeWidth={3} />
+    <div className={cn('flex animate-pulse items-center gap-2 text-xl text-primary', className)}>
+      <Spinner />
       <span className="font-semibold">Поиск подходящих экскурсий...</span>
-    </p>
+    </div>
   );
 };

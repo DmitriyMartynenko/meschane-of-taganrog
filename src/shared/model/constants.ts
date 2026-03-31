@@ -10,7 +10,6 @@ export const SECTION_IDS = {
   HOME_PHOTO: 'photo',
   HOME_PARTNERS: 'partners',
   HOME_REVIEWS: 'reviews',
-  HOME_SUBSCRIPTION: 'subscription',
 
   EXCURSIONS_FILTER: 'filter',
   EXCURSIONS_EXCURSIONS_LIST: 'excursions-list',
@@ -18,3 +17,12 @@ export const SECTION_IDS = {
 
   SHARED_CONTACTS: 'contacts',
 } as const satisfies Record<`${keyof typeof PAGES | 'SHARED'}_${string}`, string>;
+
+export const BREAKPOINTS = {
+  XS: '(width >= 24rem)',
+  SM: '(width >= 40rem)',
+  MD: '(width >= 48rem)',
+  LG: '(width >= 64rem)',
+  XL: '(width >= 80rem)',
+  '2XL': '(width >= 96rem)',
+} as const;

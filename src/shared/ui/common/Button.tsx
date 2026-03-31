@@ -6,30 +6,60 @@ import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/shared/lib';
 
 export const buttonVariants = cva(
-  'inline-flex cursor-pointer items-center justify-center font-semibold uppercase transition-[background-color] duration-300 ease-in-out focus-visible:ring focus-visible:ring-ring-primary focus-visible:outline-none enabled:hover:bg-accent-primary enabled:active:border-transparent enabled:active:bg-accent-primary/80 disabled:cursor-not-allowed disabled:opacity-50',
+  cn(
+    'inline-flex cursor-pointer touch-manipulation items-center justify-center border border-transparent text-base font-semibold uppercase outline-none',
+    'focus-visible:ring-2 focus-visible:ring-ring-primary',
+    'disabled:cursor-not-allowed disabled:opacity-50'
+  ),
   {
     variants: {
       variant: {
-        primary: 'bg-primary',
-        outline: 'border border-secondary bg-transparent',
-        ghost: '',
-        destructive:
-          'bg-destructive-primary focus-visible:ring-destructive-primary enabled:hover:bg-destructive-primary/80',
+        primary: cn(
+          'bg-primary',
+          '[transition:background-color_300ms_ease-in-out]',
+          'enabled:hover:bg-accent-primary',
+          'enabled:active:[transition:background-color_150ms_ease-out]',
+          'enabled:active:bg-accent-primary/80'
+        ),
+        outline: cn(
+          'border-secondary bg-transparent',
+          '[transition:background-color_300ms_ease-in-out]',
+          'enabled:hover:bg-accent-primary',
+          'enabled:active:[transition:background-color_150ms_ease-out]',
+          'enabled:active:bg-accent-primary/80',
+          'enabled:active:border-transparent'
+        ),
+        ghost: cn(
+          'bg-transparent',
+          '[transition:color_300ms_ease-in-out]',
+          'enabled:hover:text-accent-primary',
+          'enabled:active:[transition:color_150ms_ease-out]',
+          'enabled:active:text-accent-primary/80',
+          '[@media(hover:none)]:enabled:active:[transition:scale_150ms_ease-out]',
+          '[@media(hover:none)]:enabled:active:scale-95'
+        ),
+        destructive: cn(
+          'bg-destructive-primary',
+          '[transition:background-color_300ms_ease-in-out]',
+          'enabled:hover:bg-destructive-primary/80',
+          'enabled:active:[transition:background-color_150ms_ease-out]',
+          'enabled:active:bg-destructive-primary/60',
+          'focus-visible:ring-destructive-primary'
+        ),
       },
       size: {
-        default: 'px-2 py-4',
-        sm: 'px-1.5 py-3 text-xs',
-        icon: 'size-12 p-0',
+        default: 'px-6 py-4',
+        sm: 'px-5 py-3 text-sm',
       },
-      textWhite: {
+      lightText: {
         true: 'text-foreground-secondary',
-        false: '',
+        false: 'text-foreground-primary',
       },
     },
     defaultVariants: {
       variant: 'primary',
       size: 'default',
-      textWhite: false,
+      lightText: false,
     },
   }
 );
@@ -40,14 +70,14 @@ type ButtonProps = {
   VariantProps<typeof buttonVariants>;
 
 export const Button = (props: ButtonProps) => {
-  const { className, variant, size, textWhite, asChild = false, ...restProps } = props;
+  const { className, variant, size, lightText, asChild = false, ...restProps } = props;
 
   const ButtonPrimitive = asChild ? Slot : 'button';
 
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, textWhite, className }))}
+      className={cn(buttonVariants({ variant, size, lightText, className }))}
       {...restProps}
     />
   );

@@ -15,6 +15,8 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 24rem;
+
   --font-montserrat: var(--montserrat);
   --font-alegreya: var(--alegreya);
   --font-chibola: var(--chibola);
@@ -50,13 +52,13 @@
 
   html {
     scrollbar-gutter: stable;
+    font-size: 16px;
   }
 
   body {
     height: 100vh;
-    background-color: var(--color-primary);
+    background-color: rgb(30, 20, 10);
     color: var(--color-foreground-primary);
-    font-size: 16px;
     font-family: var(--montserrat);
     font-weight: 400;
     line-height: 150%;
@@ -70,4 +72,27 @@
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.35;
+  }
+}
+
+.scroll-indicator-dot {
+  animation: scroll-bounce 2s ease-in-out infinite;
 }

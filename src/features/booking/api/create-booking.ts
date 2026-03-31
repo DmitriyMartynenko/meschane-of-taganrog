@@ -3,7 +3,7 @@
 import { prisma } from '@/prisma/prisma-client';
 
 import { mapPrismaError } from '../lib/map-prisma-error';
-import { type BookingForm, type UniqueField } from '../model/booking-form.types';
+import { type BookingFormFields, type UniqueField } from '../model/booking-form.types';
 
 type SuccessResponse = {
   ok: true;
@@ -17,7 +17,7 @@ export type ErrorResponse = {
 
 export type CreateBookingResponse = SuccessResponse | ErrorResponse;
 
-export const createBooking = async (data: BookingForm): Promise<CreateBookingResponse> => {
+export const createBooking = async (data: BookingFormFields): Promise<CreateBookingResponse> => {
   const { name, phone, email } = data;
 
   try {

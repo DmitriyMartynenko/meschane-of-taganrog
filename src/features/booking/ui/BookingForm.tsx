@@ -2,6 +2,7 @@
 
 import { UseFormReturn } from 'react-hook-form';
 
+import { cn } from '@/shared/lib';
 import {
   Button,
   Form,
@@ -13,15 +14,16 @@ import {
   PhoneInput,
 } from '@/shared/ui';
 
-import { type BookingForm as BookingFormFields } from '../model/booking-form.types';
+import { type BookingFormFields } from '../model/booking-form.types';
 
-interface BookingFormProps {
+export type BookingFormProps = {
   form: UseFormReturn<BookingFormFields>;
   onSubmit: (data: BookingFormFields) => Promise<void>;
-}
+  className?: string;
+};
 
 export const BookingForm = (props: BookingFormProps) => {
-  const { form, onSubmit } = props;
+  const { form, onSubmit, className } = props;
 
   const {
     handleSubmit,
@@ -31,8 +33,11 @@ export const BookingForm = (props: BookingFormProps) => {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col items-center gap-8" onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex w-full flex-col gap-4">
+      <form
+        className={cn('flex flex-col items-center gap-6 lg:gap-8', className)}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="flex w-full flex-col gap-2 lg:gap-4">
           <FormField
             control={control}
             name="name"
@@ -51,7 +56,7 @@ export const BookingForm = (props: BookingFormProps) => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <PhoneInput {...field} />
+                  <PhoneInput type="tel" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

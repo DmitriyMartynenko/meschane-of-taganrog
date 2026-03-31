@@ -25,7 +25,7 @@ const meta: Meta<typeof InlineForm> = {
       control: 'radio',
       options: ['primary', 'outline', 'ghost', 'destructive'],
     },
-    buttonTextWhite: { control: 'boolean' },
+    buttonLightText: { control: 'boolean' },
   },
 };
 
@@ -53,7 +53,7 @@ export const PhoneForm: Story = {
     inputBorder: true,
     buttonText: 'Отправить',
     buttonVariant: 'outline',
-    buttonTextWhite: false,
+    buttonLightText: false,
   },
 };
 
@@ -66,6 +66,6 @@ export const EmailForm: Story = {
     inputBorder: true,
     buttonText: 'Подписаться',
     buttonVariant: 'primary',
-    buttonTextWhite: true,
+    buttonLightText: true,
   },
 };

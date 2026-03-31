@@ -31,7 +31,7 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
   const onSelect = useEffectEvent(() => {
     if (!api) return;
 
-    setCurrent(api.selectedScrollSnap() + 1);
+    setCurrent(api.selectedScrollSnap());
   });
 
   useEffect(() => {
@@ -40,24 +40,31 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
     }
 
     api.on('select', () => {
-      setCurrent(api.selectedScrollSnap() + 1);
+      setCurrent(api.selectedScrollSnap());
     });
 
     onSelect();
   }, [api]);
 
   return (
-    <Carousel className={cn('w-full px-16', className)} setApi={setApi}>
+    <Carousel
+      className={cn('relative lg:px-8 xl:px-16', className)}
+      setApi={setApi}
+      opts={{
+        watchDrag: (_, event) => event.type !== 'mousedown',
+      }}
+    >
+      <div className="absolute top-1/2 left-1/2 h-[50%] w-[calc(100%-80px)] -translate-1/2 border border-primary" />
       <CarouselContent className="-ml-8 items-center">
         {reviews.map(({ id, author, text, rating }) => (
           <CarouselItem className="pl-8" key={id}>
-            <ReviewItem author={author} text={text} rating={rating} />
+            <ReviewItem className="min-h-75" author={author} text={text} rating={rating} />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselNext />
-      <CarouselPrevious />
-      <ReviewPagination reviews={reviews} current={current} />
+      <CarouselNext className="p-1.5 lg:p-2" />
+      <CarouselPrevious className="p-1.5 lg:p-2" />
+      <ReviewPagination reviews={reviews} current={current} carouselApi={api} />
     </Carousel>
   );
 };

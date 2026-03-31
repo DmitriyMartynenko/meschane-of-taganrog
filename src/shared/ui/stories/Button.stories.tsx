@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
       control: 'select',
       options: ['default', 'sm', 'icon'],
     },
-    textWhite: {
+    lightText: {
       control: 'boolean',
     },
     disabled: {
@@ -27,7 +27,7 @@ const meta: Meta<typeof Button> = {
     children: 'Заказать экскурсию',
     variant: 'primary',
     size: 'default',
-    textWhite: false,
+    lightText: false,
     disabled: false,
   },
 };
@@ -52,12 +52,5 @@ export const Destructive: Story = {
 export const Small: Story = {
   args: {
     size: 'sm',
-  },
-};
-
-export const Icon: Story = {
-  args: {
-    size: 'icon',
-    children: '★',
   },
 };

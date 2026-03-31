@@ -22,7 +22,7 @@ export const CancelBookingAlert = (props: CancelBookingAlertProps) => {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Вы точно уверены?</AlertDialogTitle>
+          <AlertDialogTitle>Прервать запись?</AlertDialogTitle>
           <AlertDialogDescription>
             Закрытие этой формы приведет к потере введенных данных.
           </AlertDialogDescription>

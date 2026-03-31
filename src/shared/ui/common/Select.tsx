@@ -44,7 +44,7 @@ export const SelectTrigger = (props: SelectTriggerProps) => {
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="size-4 opacity-50" />
+        <ChevronDownIcon className="size-5 opacity-50" strokeWidth={2} />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );

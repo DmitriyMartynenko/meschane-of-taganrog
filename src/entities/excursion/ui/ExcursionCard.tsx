@@ -19,7 +19,7 @@ import {
 import { type Excursion, type ExcursionStatsConfig } from '../model/excursion.types';
 
 import { ExcursionDetails } from './ExcursionDetails';
-import { ExcursionStatsItem } from './ExcursionStatsItem';
+import { ExcursionStats } from './ExcursionStats';
 
 type ExcursionCardProps = {
   className?: string;
@@ -65,24 +65,24 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent opacity-0 transition-opacity duration-450 ease-in-out group-hover:opacity-100" />
       </div>
-      <div className="flex flex-1 flex-col justify-between gap-4 p-4">
-        <CardHeader className="flex-1">
-          <CardTitle className="flex items-baseline justify-between gap-2 transition-colors duration-450 ease-in-out group-hover:text-accent-primary">
-            {title}
+      <div className="flex flex-1 flex-col justify-between gap-3 p-4 lg:gap-4">
+        <CardHeader className="flex-1 gap-1.5">
+          <CardTitle className="flex items-start justify-between gap-4 transition-colors duration-450 ease-in-out group-hover:text-accent-primary">
+            <span>{title}</span>
             {rating && (
               <StarRating
-                className="font-montserrat text-sm"
+                className="font-montserrat text-base [&_svg]:size-5"
                 rating={rating}
                 variant="single"
-                size="sm"
               />
             )}
           </CardTitle>
           <CardDescription className="text-foreground-primary">{description}</CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-wrap items-center gap-x-4 gap-y-2 font-semibold">
+        <div className="h-px bg-linear-to-r from-primary/30 via-primary/15 to-transparent" />
+        <CardContent className="flex flex-col gap-1 font-semibold lg:flex-row lg:gap-3">
           {excursionCardStats.map((stats) => (
-            <ExcursionStatsItem
+            <ExcursionStats
               className="text-primary"
               key={stats.label}
               icon={stats.icon}
@@ -94,7 +94,7 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>
-          <Button className="flex-1" variant="primary" textWhite onClick={onStartBooking}>
+          <Button className="flex-1" variant="primary" lightText onClick={onStartBooking}>
             Записаться
           </Button>
         </CardFooter>

@@ -31,6 +31,7 @@ export const PhoneInput = (props: PhoneInputProps) => {
 
   return (
     <InputMask
+      autoComplete="tel"
       component={Input}
       mask="+# (###) ### ## ##"
       replacement={{ '#': /\d/ }}

@@ -9,14 +9,14 @@ import { createBooking } from '../api/create-booking';
 import { useBookingDialogStore } from './booking-dialog.store';
 import { BookingFormSchema } from './booking-form.schemas';
 import { useBookingFormStore } from './booking-form.store';
-import { type BookingForm } from './booking-form.types';
+import { type BookingFormFields } from './booking-form.types';
 
 export const useBookingForm = () => {
   const phone = useBookingFormStore((state) => state.phone);
   const setPhone = useBookingFormStore((state) => state.setPhone);
   const closeBookingDialog = useBookingDialogStore((state) => state.close);
 
-  const form = useForm<BookingForm>({
+  const form = useForm<BookingFormFields>({
     resolver: zodResolver(BookingFormSchema),
     mode: 'onSubmit',
     reValidateMode: 'onChange',
@@ -35,7 +35,7 @@ export const useBookingForm = () => {
     initPhone();
   }, [phone]);
 
-  const onSubmit = async (data: BookingForm) => {
+  const onSubmit = async (data: BookingFormFields) => {
     try {
       const response = await createBooking(data);
 

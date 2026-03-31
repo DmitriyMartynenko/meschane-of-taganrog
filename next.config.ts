@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  allowedDevOrigins: ['192.168.0.*'],
 };
 
 export default nextConfig;

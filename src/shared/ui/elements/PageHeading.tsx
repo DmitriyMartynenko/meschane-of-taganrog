@@ -8,7 +8,7 @@ export const PageHeading = (props: ComponentProps<'h1'>) => {
   return (
     <h1
       className={cn(
-        'text-center font-chibola text-5xl/tight text-shadow-[2px_2px_3px_rgba(0,0,0,0.7),-2px_2px_3px_rgba(0,0,0,0.7),2px_-2px_3px_rgba(0,0,0,0.7),-2px_-2px_3px_rgba(0,0,0,0.7),0px_2px_3px_rgba(0,0,0,0.7),0px_-2px_3px_rgba(0,0,0,0.7),2px_0px_3px_rgba(0,0,0,0.7),-2px_0px_3px_rgba(0,0,0,0.7)]',
+        'text-center font-chibola leading-tight text-shadow-[2px_2px_3px_rgba(0,0,0,0.7),-2px_2px_3px_rgba(0,0,0,0.7),2px_-2px_3px_rgba(0,0,0,0.7),-2px_-2px_3px_rgba(0,0,0,0.7),0px_2px_3px_rgba(0,0,0,0.7),0px_-2px_3px_rgba(0,0,0,0.7),2px_0px_3px_rgba(0,0,0,0.7),-2px_0px_3px_rgba(0,0,0,0.7)]',
         className
       )}
       {...restProps}
@@ -22,7 +22,7 @@ export const PageHeadingHighlight = (props: ComponentProps<'span'>) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <span className={cn('text-[4rem] text-primary', className)} {...restProps}>
+    <span className={cn('text-[3.5rem] text-primary xl:text-[4rem]', className)} {...restProps}>
       {children}
     </span>
   );
@@ -32,7 +32,10 @@ export const PageHeadingCaption = (props: ComponentProps<'span'>) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <span className={cn('block text-foreground-secondary', className)} {...restProps}>
+    <span
+      className={cn('block text-[2.5rem] text-foreground-secondary xl:text-[3rem]', className)}
+      {...restProps}
+    >
       {children}
     </span>
   );
