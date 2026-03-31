@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 
-import { type BookingForm } from './booking-form.types';
+import { type BookingFormFields } from './booking-form.types';
 
 interface BookingFormState {
-  phone: BookingForm['phone'];
-  setPhone: (value: BookingForm['phone']) => void;
+  phone: BookingFormFields['phone'];
+  setPhone: (value: BookingFormFields['phone']) => void;
 }
 
 export const useBookingFormStore = create<BookingFormState>((set) => ({
