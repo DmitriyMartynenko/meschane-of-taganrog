@@ -43,11 +43,11 @@ export const PromoSection = () => {
               animate="visible"
               transition={{ duration: 1, delay: 0.2, ease }}
             >
-              <span className="h-px w-12 bg-primary/60" />
-              <span className="text-[12px] tracking-[0.3em] whitespace-nowrap text-secondary/80 uppercase xl:text-xs">
+              <span className="h-px w-8 bg-primary/60" />
+              <span className="text-xs leading-relaxed tracking-[0.3em] text-secondary/80 uppercase">
                 Таганрог · XIX–XX век
               </span>
-              <span className="h-px w-12 bg-primary/60" />
+              <span className="h-px w-8 bg-primary/60" />
             </MotionDiv>
             <MotionDiv
               variants={fadeUp}
@@ -62,7 +62,7 @@ export const PromoSection = () => {
             </MotionDiv>
           </div>
           <MotionP
-            className="w-full text-center text-base font-normal tracking-widest text-foreground-secondary xl:text-start xl:text-base"
+            className="w-full text-center font-alegreya text-xl tracking-widest text-foreground-secondary italic xl:text-start"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -101,9 +101,8 @@ export const PromoSection = () => {
               >
                 Все экскурсии
                 <MoveRight
-                  size={16}
                   strokeWidth={2}
-                  className="absolute top-1/2 left-full ml-2 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
+                  className="absolute top-1/2 left-full ml-2 size-5 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
                 />
               </NavLink>
             </Button>
