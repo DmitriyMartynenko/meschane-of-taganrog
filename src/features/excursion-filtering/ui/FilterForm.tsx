@@ -9,7 +9,6 @@ import { FILTER_CONTROLS } from '../model/filter-controls.constants';
 import { type FilterForm as FilterFormData } from '../model/filter.types';
 import { useFilterForm } from '../model/use-filter-form';
 
-import { DateSelect } from './DateSelect';
 import { FilterSelect } from './FilterSelect';
 
 export const FilterForm = () => {
