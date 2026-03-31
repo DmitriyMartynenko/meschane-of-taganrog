@@ -34,10 +34,10 @@ export const BookingForm = (props: BookingFormProps) => {
   return (
     <Form {...form}>
       <form
-        className={cn('flex flex-col items-center gap-8', className)}
+        className={cn('flex flex-col items-center gap-6 lg:gap-8', className)}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="flex w-full flex-col gap-4">
+        <div className="flex w-full flex-col gap-2 lg:gap-4">
           <FormField
             control={control}
             name="name"
