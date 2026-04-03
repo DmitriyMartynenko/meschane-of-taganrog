@@ -85,7 +85,7 @@ export const ImageViewer = (props: ImageViewerProps) => {
     <AnimatePresence>
       {open && (
         <MotionDiv
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 pt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -93,7 +93,7 @@ export const ImageViewer = (props: ImageViewerProps) => {
           onClick={handleOverlayClick}
         >
           <Button
-            className="absolute top-4 right-4 z-10 p-0"
+            className="absolute top-0 right-0 z-10 border-0 p-2 lg:top-2 lg:right-2"
             variant="ghost"
             lightText
             onClick={() => onOpenChange(false)}
@@ -102,12 +102,16 @@ export const ImageViewer = (props: ImageViewerProps) => {
             <X className="text-inherit" size={24} strokeWidth={2.0} />
           </Button>
           <div
-            className="flex max-w-4xl flex-col items-center gap-6 px-12 lg:px-24"
+            className="flex max-w-4xl flex-col items-center gap-4 px-6 lg:gap-6 lg:px-24"
             ref={containerRef}
           >
             <Carousel
               className="w-full lg:px-16"
-              opts={{ startIndex: initialIndex, loop: true }}
+              opts={{
+                startIndex: initialIndex,
+                loop: true,
+                watchDrag: (_, event) => event.type !== 'mousedown',
+              }}
               setApi={setApi}
             >
               <CarouselContent>
@@ -117,10 +121,10 @@ export const ImageViewer = (props: ImageViewerProps) => {
                       initial={{ opacity: 0, scale: 0.96 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex max-h-[75vh] items-center justify-center"
+                      className="flex items-center justify-center"
                     >
                       <Image
-                        className="max-h-[75vh] w-auto object-contain select-none"
+                        className="max-h-[75dvh] w-auto object-contain select-none"
                         src={slide.image}
                         alt={slide.alt}
                         priority={i === initialIndex}
@@ -129,8 +133,11 @@ export const ImageViewer = (props: ImageViewerProps) => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-8 border-none p-0" variant="ghost" />
-              <CarouselNext className="-right-8 border-none p-0" variant="ghost" />
+              <CarouselPrevious
+                className="-left-8 hidden border-none p-0 lg:block"
+                variant="ghost"
+              />
+              <CarouselNext className="-right-8 hidden border-none p-0 lg:block" variant="ghost" />
             </Carousel>
             {slides[currentSlide].caption}
             {slides.length > 1 && (
