@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { NavLink } from '@/widgets/header/@x/footer';
 
 import { cn, fadeIn, fadeLeft, fadeUp, staggerContainer, viewport } from '@/shared/lib';
-import { PAGES, SECTION_IDS } from '@/shared/model';
+import { BREAKPOINTS, PAGES, SECTION_IDS } from '@/shared/model';
 import {
   BackgroundImage,
   Button,
@@ -58,7 +58,7 @@ export const Footer = () => {
         <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_40px_rgba(30,20,10,0.3)]" />
       </MotionDiv>
       <div className="relative flex w-full flex-col lg:basis-1/2">
-        <BackgroundImage src={footerBackground} />
+        <BackgroundImage src={footerBackground} imgSizes={`${BREAKPOINTS.LG} 50vw, 100vw`} />
         <MotionDiv
           variants={staggerContainer(0.1, 0.2)}
           initial="hidden"

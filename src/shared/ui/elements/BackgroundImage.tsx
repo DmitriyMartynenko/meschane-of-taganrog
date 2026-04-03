@@ -7,6 +7,7 @@ type BackgroundImageProps = {
   src: string | StaticImageData;
   gradientFrom?: string;
   gradientTo?: string;
+  imgSizes?: string;
 };
 
 export const BackgroundImage = (props: BackgroundImageProps) => {
@@ -15,6 +16,7 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
     src,
     gradientFrom = 'rgba(30,20,10,0.85)',
     gradientTo = 'rgba(30,20,10,0.75)',
+    imgSizes = '100vw',
   } = props;
 
   return (
@@ -25,6 +27,7 @@ export const BackgroundImage = (props: BackgroundImageProps) => {
         className={cn('scale-101 object-cover object-center blur-xs', className)}
         src={src}
         alt=""
+        sizes={imgSizes}
         fill
         priority
         aria-hidden
