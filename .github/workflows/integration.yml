@@ -5,6 +5,7 @@ on:
 
 jobs:
   code-validation:
+    name: Code Validation
     runs-on: ubuntu-latest
 
     steps:
