@@ -120,6 +120,7 @@ export const PromoSection = () => {
             src={Logo}
             priority
             alt="Логотип проекта «Мещане Таганрога»"
+            loading="eager"
           />
         </MotionDiv>
         <MotionButton
