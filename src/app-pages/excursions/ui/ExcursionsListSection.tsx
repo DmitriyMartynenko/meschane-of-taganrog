@@ -14,7 +14,7 @@ import {
 export const ExcursionsListSection = () => {
   return (
     <Section
-      className="scroll-mt-[3vh] bg-background-secondary"
+      className="scroll-mt-[3dvh] bg-background-secondary"
       id={SECTION_IDS.EXCURSIONS_EXCURSIONS_LIST}
       noScrollMargin
     >

@@ -21,7 +21,7 @@ import signature from '../assets/images/signature.png';
 export const AboutMeshchaneSection = () => {
   return (
     <Section
-      className="relative flex scroll-mt-[15vh] gap-0 bg-background-secondary lg:max-h-175 xl:gap-16"
+      className="relative flex scroll-mt-[15dvh] gap-0 bg-background-secondary lg:max-h-175 xl:gap-16"
       id={SECTION_IDS.HOME_ABOUT_MESHCHANE}
     >
       <div className="pointer-events-none relative hidden min-w-0 shrink basis-[40%] overflow-hidden select-none xl:block">
