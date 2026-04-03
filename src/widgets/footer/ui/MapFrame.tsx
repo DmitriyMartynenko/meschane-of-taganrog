@@ -15,14 +15,21 @@ export const MapFrame = (props: MapFrameProps) => {
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const softLoadTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    const errorTimeout = setTimeout(() => {
       if (isLoading) {
         setIsError(true);
         setIsLoading(false);
       }
-    }, 10000);
+    }, 15000);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(softLoadTimeout);
+      clearTimeout(errorTimeout);
+    };
   }, [isLoading]);
 
   return (
@@ -39,11 +46,7 @@ export const MapFrame = (props: MapFrameProps) => {
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 text-center">
           <span className="tracking-widest text-secondary/40">Не удалось загрузить карту</span>
           <Button className="p-0 text-sm normal-case underline" lightText variant="ghost">
-            <Link
-              href="https://yandex.ru/maps/-/CDxqq6LW"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="" target="_blank" rel="noopener noreferrer">
               Открыть на Яндекс.Картах
             </Link>
           </Button>
@@ -56,8 +59,9 @@ export const MapFrame = (props: MapFrameProps) => {
         )}
         src="https://yandex.ru/map-widget/v1/-/CDxqq6LW"
         title="Карта – Таганрогский музей-заповедник"
-        onLoad={() => setIsLoading(false)}
-        loading="lazy"
+        onLoad={() => {
+          setIsLoading(false);
+        }}
       />
     </div>
   );
