@@ -15,7 +15,13 @@ import { ActiveFilters } from './ActiveFilters';
 import { ExcursionsLoading } from './ExcursionsLoading';
 import { NoExcursionsPlaceholder } from './NoExcursionsPlaceholder';
 
-export const ExcursionsList = () => {
+type ExcursionsListProps = {
+  className?: string;
+};
+
+export const ExcursionsList = (props: ExcursionsListProps) => {
+  const { className } = props;
+
   const { filteredExcursions, isPending } = useExcursionFiltering(excursions);
   const filters = useFilterStore((state) => state.filters);
   const openBookingDialog = useBookingDialogStore((state) => state.open);
@@ -23,21 +29,26 @@ export const ExcursionsList = () => {
   const sortedExcursions = sortExcursionsByDate(filteredExcursions, 'asc');
 
   return (
-    <div className={cn('relative mt-6 flex flex-col items-center gap-6 lg:mt-8 lg:gap-8')}>
+    <div
+      className={cn(
+        'relative mt-6 flex w-full flex-col items-center gap-6 lg:mt-8 lg:gap-8',
+        className
+      )}
+    >
       <ActiveFilters filters={filters} />
       <ExcursionsLoading isPending={isPending} />
       {sortedExcursions.length > 0 ? (
         <MotionDiv
-          className="relative flex w-full flex-wrap items-stretch justify-center gap-8"
+          className="relative flex w-full flex-col items-stretch justify-center gap-6 lg:flex-row lg:flex-wrap lg:gap-8"
           variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
         >
           {sortedExcursions.map((excursion) => (
-            <MotionDiv key={excursion.id} variants={fadeUp} className="basis-1/3">
+            <MotionDiv key={excursion.id} variants={fadeUp} className="lg:basis-1/3">
               <ExcursionCard
-                className="h-full lg:min-w-112.5"
+                className="lg:h-full lg:min-w-112.5"
                 key={excursion.id}
                 excursion={excursion}
                 onStartBooking={openBookingDialog}

@@ -33,7 +33,7 @@ export const FilterForm = () => {
               key={name}
               name={name}
               render={({ field }) => (
-                <FormItem className="flex w-68.75 flex-1 flex-col gap-2">
+                <FormItem className="flex flex-1 flex-col gap-2">
                   <FormLabel className="tracking-widest text-secondary normal-case">
                     {label}
                   </FormLabel>

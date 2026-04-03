@@ -59,6 +59,7 @@ export const FilterSection = () => {
           Подберите экскурсию, подходящую именно Вам.
         </MotionP>
         <MotionDiv
+          className="w-full xl:w-5xl"
           variants={fadeUp}
           initial="hidden"
           animate="visible"

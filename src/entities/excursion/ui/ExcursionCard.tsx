@@ -90,11 +90,11 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
             />
           ))}
         </CardContent>
-        <CardFooter className="flex gap-1.5">
-          <Button className="flex-1" variant="outline" onClick={() => setOpenDetails(true)}>
+        <CardFooter className="flex flex-col items-stretch gap-1.5 lg:flex-row">
+          <Button className="lg:basis-1/2" variant="outline" onClick={() => setOpenDetails(true)}>
             Подробнее
           </Button>
-          <Button className="flex-1" variant="primary" lightText onClick={onStartBooking}>
+          <Button className="lg:basis-1/2" variant="primary" lightText onClick={onStartBooking}>
             Записаться
           </Button>
         </CardFooter>
