@@ -62,8 +62,8 @@ export const ReviewCarousel = (props: ReviewCarouselProps) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselNext className="p-1.5 lg:p-2" />
-      <CarouselPrevious className="p-1.5 lg:p-2" />
+      <CarouselNext className="hidden p-1.5 lg:block lg:p-2" />
+      <CarouselPrevious className="hidden p-1.5 lg:block lg:p-2" />
       <ReviewPagination reviews={reviews} current={current} carouselApi={api} />
     </Carousel>
   );

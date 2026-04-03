@@ -83,11 +83,8 @@ export const ReviewsSection = () => {
               </HeadingTitle>
             </Heading>
           </MotionDiv>
-          <MotionDiv variants={fadeUp}>
-            <ReviewCarousel
-              className="max-w-70 lg:max-w-212.5 xl:max-w-5xl"
-              reviews={mockReviews}
-            />
+          <MotionDiv className="w-full xl:w-fit" variants={fadeUp}>
+            <ReviewCarousel className="w-full xl:max-w-5xl" reviews={mockReviews} />
           </MotionDiv>
         </MotionDiv>
       </Container>
