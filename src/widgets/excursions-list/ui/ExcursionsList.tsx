@@ -42,8 +42,7 @@ export const ExcursionsList = (props: ExcursionsListProps) => {
           className="relative flex w-full flex-col items-stretch justify-center gap-6 lg:flex-row lg:flex-wrap lg:gap-8"
           variants={staggerContainer(0.1)}
           initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
+          animate="visible"
         >
           {sortedExcursions.map((excursion) => (
             <MotionDiv key={excursion.id} variants={fadeUp} className="lg:basis-1/3">
