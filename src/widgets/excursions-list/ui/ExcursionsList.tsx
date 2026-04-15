@@ -5,7 +5,7 @@ import { useExcursionFiltering, useFilterStore } from '@/features/excursion-filt
 
 import { ExcursionCard } from '@/entities/excursion';
 
-import { cn, fadeUp, staggerContainer, viewport } from '@/shared/lib';
+import { cn, fadeUp, staggerContainer } from '@/shared/lib';
 import { MotionDiv } from '@/shared/ui';
 
 import { sortExcursionsByDate } from '../lib/sort-excursions-by-date';
