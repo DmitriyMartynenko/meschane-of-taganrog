@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 import { CalendarDays, Clock9, ReceiptRussianRuble } from 'lucide-react';
 
 import { cn, formatDate, formatTime } from '@/shared/lib';
@@ -18,20 +17,18 @@ import {
 
 import { type Excursion, type ExcursionStatsConfig } from '../model/excursion.types';
 
-import { ExcursionDetails } from './ExcursionDetails';
 import { ExcursionStats } from './ExcursionStats';
 
 type ExcursionCardProps = {
   className?: string;
   excursion: Excursion;
+  onOpenDetails: (open: boolean, excursion: Excursion) => void;
   onStartBooking: () => void;
 };
 
 export const ExcursionCard = (props: ExcursionCardProps) => {
-  const { className, excursion, onStartBooking } = props;
+  const { className, excursion, onOpenDetails, onStartBooking } = props;
   const { title, description, image, duration, date, price, rating } = excursion;
-
-  const [openDetails, setOpenDetails] = useState<boolean>(false);
 
   const excursionCardStats: ExcursionStatsConfig[] = [
     {
@@ -91,7 +88,11 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           ))}
         </CardContent>
         <CardFooter className="flex flex-col items-stretch gap-1.5 lg:flex-row">
-          <Button className="lg:basis-1/2" variant="outline" onClick={() => setOpenDetails(true)}>
+          <Button
+            className="lg:basis-1/2"
+            variant="outline"
+            onClick={() => onOpenDetails(true, excursion)}
+          >
             Подробнее
           </Button>
           <Button className="lg:basis-1/2" variant="primary" lightText onClick={onStartBooking}>
@@ -99,12 +100,6 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
           </Button>
         </CardFooter>
       </div>
-      <ExcursionDetails
-        isOpen={openDetails}
-        setIsOpen={setOpenDetails}
-        excursion={excursion}
-        onStartBooking={onStartBooking}
-      />
     </Card>
   );
 };
