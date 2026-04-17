@@ -32,17 +32,14 @@ import { Excursion } from '../model/excursion.types';
 
 type ExcursionDetailsMobileProps = {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  onOpenChange: (open: boolean) => void;
   excursion: Excursion;
   onStartBooking: () => void;
 };
 
-export const ExcursionDetailsMobile = ({
-  excursion,
-  isOpen,
-  setIsOpen,
-  onStartBooking,
-}: ExcursionDetailsMobileProps) => {
+export const ExcursionDetailsMobile = (props: ExcursionDetailsMobileProps) => {
+  const { excursion, isOpen, onOpenChange, onStartBooking } = props;
+
   const {
     title,
     image,
@@ -60,7 +57,7 @@ export const ExcursionDetailsMobile = ({
   } = excursion;
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={isOpen} onOpenChange={onOpenChange}>
       <SheetContent
         side="bottom"
         showCloseButton={false}
@@ -176,7 +173,7 @@ export const ExcursionDetailsMobile = ({
               <Button
                 className="text-muted-primary"
                 variant="ghost"
-                onClick={() => setIsOpen(false)}
+                onClick={() => onOpenChange(false)}
               >
                 Закрыть
               </Button>

@@ -8,13 +8,13 @@ import { ExcursionDetailsMobile } from './ExcursionDetailsMobile';
 
 type ExcursionDetailsProps = {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  onOpenChange: (open: boolean) => void;
   excursion: Excursion;
   onStartBooking: () => void;
 };
 
 export const ExcursionDetails = (props: ExcursionDetailsProps) => {
-  const { isOpen, setIsOpen, excursion, onStartBooking } = props;
+  const { isOpen, onOpenChange, excursion, onStartBooking } = props;
 
   const isLarge = useMediaQuery(BREAKPOINTS.LG);
 
@@ -23,7 +23,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
       <ExcursionDetailsDesktop
         excursion={excursion}
         isOpen={isOpen}
-        setIsOpen={setIsOpen}
+        onOpenChange={onOpenChange}
         onStartBooking={onStartBooking}
       />
     );
@@ -33,7 +33,7 @@ export const ExcursionDetails = (props: ExcursionDetailsProps) => {
     <ExcursionDetailsMobile
       excursion={excursion}
       isOpen={isOpen}
-      setIsOpen={setIsOpen}
+      onOpenChange={onOpenChange}
       onStartBooking={onStartBooking}
     />
   );

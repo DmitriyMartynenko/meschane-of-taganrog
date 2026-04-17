@@ -31,13 +31,13 @@ import { Excursion } from '../model/excursion.types';
 
 type ExcursionDetailsDesktopProps = {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  onOpenChange: (open: boolean) => void;
   excursion: Excursion;
   onStartBooking: () => void;
 };
 
 export const ExcursionDetailsDesktop = (props: ExcursionDetailsDesktopProps) => {
-  const { isOpen, setIsOpen, excursion, onStartBooking } = props;
+  const { isOpen, onOpenChange, excursion, onStartBooking } = props;
   const {
     title,
     image,
@@ -55,7 +55,7 @@ export const ExcursionDetailsDesktop = (props: ExcursionDetailsDesktopProps) => 
   } = excursion;
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="flex-col">
         <Card className="size-full max-h-[90dvh] gap-6 overflow-y-auto border-none p-0 shadow-none">
           <Image className="h-96 w-full object-cover object-center" src={image} alt={title} />
