@@ -49,13 +49,13 @@ export const ExcursionCard = (props: ExcursionCardProps) => {
     <Card
       className={cn(
         'group relative flex w-full flex-col gap-0 overflow-hidden border-border-primary p-0 transition-all duration-450 ease-in-out',
-        'hover:-translate-y-2 hover:shadow-xl',
+        'hover:-translate-y-1 hover:shadow-lg',
         className
       )}
     >
       <div className="relative overflow-hidden">
         <Image
-          className="h-auto w-full transition-transform duration-450 ease-in-out select-none group-hover:scale-105"
+          className="h-auto w-full transition-transform duration-450 ease-in-out select-none group-hover:scale-102"
           src={image}
           alt={title}
           priority
