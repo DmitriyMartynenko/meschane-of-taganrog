@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { ExcursionFilter } from '@/widgets/excursion-filter';
 
 import { ease, fadeIn, fadeUp, viewport } from '@/shared/lib';
@@ -66,7 +68,9 @@ export const FilterSection = () => {
           transition={{ duration: 0.9, delay: 0.6, ease }}
         >
           <MotionDiv variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
-            <ExcursionFilter />
+            <Suspense fallback={null}>
+              <ExcursionFilter />
+            </Suspense>
           </MotionDiv>
         </MotionDiv>
       </Container>

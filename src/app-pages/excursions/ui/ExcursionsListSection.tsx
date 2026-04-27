@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { ExcursionsList } from '@/widgets/excursions-list';
 
 import { fadeUp, viewport } from '@/shared/lib';
@@ -16,7 +18,6 @@ export const ExcursionsListSection = () => {
     <Section
       className="scroll-mt-[3dvh] bg-background-secondary"
       id={SECTION_IDS.EXCURSIONS_EXCURSIONS_LIST}
-      noScrollMargin
     >
       <Container className="flex flex-col items-center justify-center px-6 py-12 lg:px-8">
         <MotionDiv variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
@@ -26,7 +27,9 @@ export const ExcursionsListSection = () => {
             </HeadingTitle>
           </Heading>
         </MotionDiv>
-        <ExcursionsList />
+        <Suspense fallback={null}>
+          <ExcursionsList />
+        </Suspense>
       </Container>
     </Section>
   );
