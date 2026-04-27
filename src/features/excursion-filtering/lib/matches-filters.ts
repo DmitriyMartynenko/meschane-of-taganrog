@@ -1,6 +1,6 @@
 import { Excursion } from '@/entities/excursion';
 
-import { FilterForm, isFilterActive } from '../model/filter.types';
+import { FilterForm, isFilterActive } from '../model/excursion-filtering.types';
 
 export const matchesFilters = (excursion: Excursion, filters: FilterForm): boolean => {
   if (isFilterActive(filters.date)) {

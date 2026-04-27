@@ -7,3 +7,7 @@ export const FILTER_ICONS: Record<FilterSelect['name'], LucideIcon> = {
   theme: Palette,
   duration: Clock9,
 } as const;
+
+export const SEARCH_PARAMS = {
+  EXCURSION_ID: 'excursionId',
+};

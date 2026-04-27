@@ -4,13 +4,13 @@ import { useEffect, useEffectEvent, useState, useTransition } from 'react';
 
 import { Excursion } from '@/entities/excursion';
 
-import { useFilterStore } from '../model/filter.store';
+import { useFilterParams } from '../model/use-filter-params';
 
 import { matchesFilters } from './matches-filters';
 
 export const useExcursionFiltering = (excursions: Excursion[]) => {
+  const { filters } = useFilterParams();
   const [filteredExcursions, setFilteredExcursions] = useState(excursions);
-  const filters = useFilterStore((state) => state.filters);
 
   const [isPending, startTransition] = useTransition();
 
@@ -21,7 +21,7 @@ export const useExcursionFiltering = (excursions: Excursion[]) => {
 
   useEffect(() => {
     startTransition(onFilterExcursion);
-  }, [filters]);
+  }, [filters.date, filters.theme, filters.duration]);
 
   return {
     filteredExcursions,

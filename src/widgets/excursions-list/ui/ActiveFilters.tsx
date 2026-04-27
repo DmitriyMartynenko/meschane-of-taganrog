@@ -1,14 +1,9 @@
-import { FilterFormType } from '@/features/excursion-filtering';
+import { useFilterParams } from '@/features/excursion-filtering/model/use-filter-params';
 
 import { getActiveFilters } from '../lib/get-active-filters';
 
-type ActiveFiltersProps = {
-  filters: FilterFormType;
-};
-
-export const ActiveFilters = (props: ActiveFiltersProps) => {
-  const { filters } = props;
-
+export const ActiveFilters = () => {
+  const { filters } = useFilterParams();
   const activeFilters = getActiveFilters(filters);
 
   if (activeFilters.length === 0) return null;

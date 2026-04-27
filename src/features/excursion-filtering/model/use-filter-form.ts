@@ -4,19 +4,19 @@ import { useForm } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { type FilterForm } from './excursion-filtering.types';
 import { FilterFormSchema } from './filter-form.schemas';
-import { useFilterStore } from './filter.store';
-import { type FilterForm } from './filter.types';
+import { useFilterParams } from './use-filter-params';
 
 export const useFilterForm = () => {
-  const setFilters = useFilterStore((state) => state.setFilters);
+  const { filters, setFilters } = useFilterParams();
 
   const form = useForm<FilterForm>({
     resolver: zodResolver(FilterFormSchema),
     defaultValues: {
-      date: '',
-      theme: '',
-      duration: '',
+      date: filters.date,
+      theme: filters.theme,
+      duration: filters.duration,
     },
   });
 

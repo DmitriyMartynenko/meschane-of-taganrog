@@ -1,18 +1,19 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { BookingDialog, useBookingDialogStore } from '@/features/booking';
-import { useExcursionFiltering, useFilterStore } from '@/features/excursion-filtering';
+import { useExcursionFiltering } from '@/features/excursion-filtering';
 
-import { Excursion, ExcursionCard, ExcursionDetails } from '@/entities/excursion';
+import { ExcursionCard, ExcursionDetails } from '@/entities/excursion';
 
 import { cn, fadeUp, staggerContainer } from '@/shared/lib';
-import { PAGES, SECTION_IDS } from '@/shared/model';
+import { SECTION_IDS } from '@/shared/model';
 import { MotionDiv } from '@/shared/ui';
 
 import { excursions } from '../model/excursions.mock';
+import { useExcursionDetails } from '../model/use-excursion-details';
+import { useExcursionParams } from '../model/use-excursion-params';
 
 import { ActiveFilters } from './ActiveFilters';
 import { ExcursionsLoading } from './ExcursionsLoading';
@@ -20,37 +21,19 @@ import { NoExcursionsPlaceholder } from './NoExcursionsPlaceholder';
 
 type ExcursionsListProps = {
   className?: string;
-  excursionId?: string;
 };
 
 export const ExcursionsList = (props: ExcursionsListProps) => {
   const { className } = props;
 
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const excursionId = searchParams.get('excursionId');
-
-  const [currentExcursion, setCurrentExcursion] = useState(() => {
-    return excursions.find((excursion) => excursion.id === excursionId);
-  });
-  const [openDetails, setOpenDetails] = useState<boolean>(!!excursionId);
-
-  const handleToggleDetails = (open: boolean, excursion?: Excursion) => {
-    if (open) {
-      setCurrentExcursion(excursion);
-      setOpenDetails(open);
-
-      router.push(`${PAGES.EXCURSIONS}?excursionId=${excursion?.id}`, { scroll: false });
-    } else {
-      setOpenDetails(open);
-
-      router.push(`${PAGES.EXCURSIONS}`, { scroll: false });
-    }
-  };
+  const { excursionId } = useExcursionParams();
+  const {
+    isOpen: isDetailsOpen,
+    currentExcursion,
+    handleToggleDetails,
+  } = useExcursionDetails(excursions);
 
   const { filteredExcursions, isPending } = useExcursionFiltering(excursions);
-  const filters = useFilterStore((state) => state.filters);
   const handleOpenBookingDialog = useBookingDialogStore((state) => state.open);
 
   useEffect(() => {
@@ -69,7 +52,7 @@ export const ExcursionsList = (props: ExcursionsListProps) => {
         className
       )}
     >
-      <ActiveFilters filters={filters} />
+      <ActiveFilters />
       <ExcursionsLoading isPending={isPending} />
       {filteredExcursions.length > 0 ? (
         <MotionDiv
@@ -89,19 +72,19 @@ export const ExcursionsList = (props: ExcursionsListProps) => {
               />
             </MotionDiv>
           ))}
-          {currentExcursion && (
-            <ExcursionDetails
-              isOpen={openDetails}
-              onOpenChange={handleToggleDetails}
-              excursion={currentExcursion}
-              onStartBooking={handleOpenBookingDialog}
-            />
-          )}
-          <BookingDialog />
         </MotionDiv>
       ) : (
         <NoExcursionsPlaceholder />
       )}
+      {currentExcursion && (
+        <ExcursionDetails
+          isOpen={isDetailsOpen}
+          onOpenChange={handleToggleDetails}
+          excursion={currentExcursion}
+          onStartBooking={handleOpenBookingDialog}
+        />
+      )}
+      <BookingDialog />
     </div>
   );
 };

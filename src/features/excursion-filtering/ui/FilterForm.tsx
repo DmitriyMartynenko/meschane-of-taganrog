@@ -5,8 +5,8 @@ import { MoveRight } from 'lucide-react';
 import { SECTION_IDS } from '@/shared/model';
 import { Button, Form, FormField, FormItem, FormLabel, FormMessage } from '@/shared/ui';
 
-import { FILTER_CONTROLS } from '../model/filter-controls.constants';
-import { type FilterForm as FilterFormData } from '../model/filter.types';
+import { type FilterForm as FilterFormData } from '../model/excursion-filtering.types';
+import { FILTER_CONTROLS } from '../model/filter-controls';
 import { useFilterForm } from '../model/use-filter-form';
 
 import { FilterSelect } from './FilterSelect';
