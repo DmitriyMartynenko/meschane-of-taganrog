@@ -1,16 +1,47 @@
 'use client';
 
-import { type ComponentProps } from 'react';
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
+import { createContext, useContext, type ComponentProps } from 'react';
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon, X } from 'lucide-react';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 import { cn } from '@/shared/lib';
 
-export const Select = (props: ComponentProps<typeof SelectPrimitive.Root>) => {
-  const { ...restProps } = props;
+type SelectContextValue = {
+  isValueSelected: boolean;
+  onClearValue: () => void;
+};
 
-  return <SelectPrimitive.Root data-slot="select" {...restProps} />;
+const SelectContext = createContext<SelectContextValue | null>(null);
+
+const useSelectContext = () => {
+  const context = useContext(SelectContext);
+  if (!context) throw new Error('useSelectContext must be used within a Select component');
+  return context;
+};
+
+type SelectProps = {
+  onClearValue?: () => void;
+} & ComponentProps<typeof SelectPrimitive.Root>;
+
+export const Select = (props: SelectProps) => {
+  const { value, onValueChange, onClearValue, ...restProps } = props;
+
+  return (
+    <SelectContext.Provider
+      value={{
+        isValueSelected: !!value,
+        onClearValue: onClearValue ?? (() => onValueChange?.('')),
+      }}
+    >
+      <SelectPrimitive.Root
+        data-slot="select"
+        value={value}
+        onValueChange={onValueChange}
+        {...restProps}
+      />
+    </SelectContext.Provider>
+  );
 };
 
 export const SelectGroup = (props: ComponentProps<typeof SelectPrimitive.Group>) => {
@@ -32,20 +63,40 @@ type SelectTriggerProps = {
 export const SelectTrigger = (props: SelectTriggerProps) => {
   const { className, size = 'default', children, ...restProps } = props;
 
+  const { isValueSelected, onClearValue } = useSelectContext();
+
   return (
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "flex w-fit items-center justify-between gap-2 border border-border-primary bg-transparent px-3 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-[color,box-shadow] ease-in-out outline-none focus:border-ring-primary focus:ring-1 focus:ring-ring-primary disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive-primary aria-invalid:ring-destructive-primary/20 data-placeholder:text-muted-primary data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-primary",
+        "group flex w-fit items-center justify-between gap-2 border border-border-primary bg-transparent px-3 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-[color,box-shadow] ease-in-out outline-none focus:border-ring-primary focus:ring-1 focus:ring-ring-primary disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive-primary aria-invalid:ring-destructive-primary/20 data-placeholder:text-muted-primary data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-primary",
         className
       )}
       {...restProps}
     >
       {children}
-      <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="size-5 opacity-50" strokeWidth={2} />
-      </SelectPrimitive.Icon>
+      <div className="flex items-center gap-2">
+        <span
+          className={cn(
+            'pointer-events-none cursor-pointer text-muted-primary opacity-0 transition-[opacity,color] duration-150 ease-in-out hover:text-foreground-secondary',
+            isValueSelected && 'pointer-events-auto opacity-100'
+          )}
+          onPointerDown={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClearValue();
+          }}
+        >
+          <X className="size-4 text-inherit" strokeWidth={2} />
+        </span>
+        <SelectPrimitive.Icon asChild>
+          <ChevronDownIcon
+            className="size-5 opacity-50 transition-[rotate,color] duration-150 ease-in-out group-data-[state=open]:rotate-180 group-data-[state=open]:text-foreground-secondary"
+            strokeWidth={2}
+          />
+        </SelectPrimitive.Icon>
+      </div>
     </SelectPrimitive.Trigger>
   );
 };
