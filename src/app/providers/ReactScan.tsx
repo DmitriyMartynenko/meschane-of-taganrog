@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
-import { scan } from 'react-scan';
+import Script from 'next/script';
 
-export const ReactScan = () => {
-  useEffect(() => {
-    scan({
-      enabled: true,
-    });
-  }, []);
-
-  return <></>;
-};
+export const ReactScan = () => (
+  <Script
+    src="//unpkg.com/react-scan/dist/auto.global.js"
+    crossOrigin="anonymous"
+    strategy="beforeInteractive"
+  />
+);

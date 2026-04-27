@@ -25,7 +25,9 @@ const RootLayout = (props: Readonly<RootLayoutProps>) => {
 
   return (
     <html lang="en">
-      <ReactScan />
+      <head>
+        <ReactScan />
+      </head>
       <body
         suppressHydrationWarning
         className={`${montserrat.variable} ${alegreya.variable} ${chibola.variable} antialiased`}
