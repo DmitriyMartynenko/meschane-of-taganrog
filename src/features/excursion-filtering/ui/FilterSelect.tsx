@@ -5,21 +5,17 @@ import {
   SelectGroup,
   SelectItem,
   SelectLabel,
-  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from '@/shared/ui';
 
-import { isFilterActive, type FilterSelectProps } from '../model/filter.types';
+import { type FilterSelectProps } from '../model/excursion-filtering.types';
 
 export const FilterSelect = (props: FilterSelectProps) => {
   const {
     config: { placeholder, groupLabel, options = [] },
     formField,
   } = props;
-
-  const anyOption = options.find((option) => !isFilterActive(option.value));
-  const regularOptions = options.filter((option) => isFilterActive(option.value));
 
   return (
     <Select onValueChange={formField.onChange} value={formField.value}>
@@ -29,24 +25,13 @@ export const FilterSelect = (props: FilterSelectProps) => {
         </SelectTrigger>
       </FormControl>
       <SelectContent className="rounded-none border-primary/25 bg-[rgba(30,20,10,0.97)] backdrop-blur-md">
-        {anyOption && (
-          <>
-            <SelectItem
-              className="text-base tracking-wide text-muted-primary focus:bg-primary/25 focus:text-accent-primary"
-              value={anyOption.value}
-            >
-              {anyOption.label}
-            </SelectItem>
-            <SelectSeparator className="bg-primary/25" />
-          </>
-        )}
         <SelectGroup>
           {groupLabel && (
             <SelectLabel className="text-[10px] tracking-widest text-secondary/40 uppercase">
               {groupLabel}
             </SelectLabel>
           )}
-          {regularOptions.map((option) => (
+          {options.map((option) => (
             <SelectItem
               className="text-base tracking-wide text-foreground-secondary focus:bg-primary/25 focus:text-accent-primary"
               key={option.value}

@@ -4,51 +4,34 @@ import {
   FormControl,
   Select,
   SelectContent,
-  SelectItem,
-  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from '@/shared/ui';
 
-import { CustomFilterSelectProps, isFilterActive } from '../model/filter.types';
+import { CustomFilterSelectProps, isFilterActive } from '../model/excursion-filtering.types';
 
 export const DateSelect = (props: CustomFilterSelectProps) => {
-  const { formField, config } = props;
+  const { formField } = props;
 
   const formattedDate = isFilterActive(formField.value) ? formatDate(formField.value, false) : '';
   const selectedDate = isFilterActive(formField.value) ? new Date(formField.value) : undefined;
 
-  const anyOption = config?.options?.find((option) => !isFilterActive(option.value));
-
-  const onAnySelect = (value: string) => {
-    if (value === anyOption?.value) formField.onChange(value);
-  };
-
-  const onDateSelect = (date: Date) => {
+  const handleSelectDate = (date: Date) => {
     formField.onChange(date.toISOString());
   };
 
+  const handleClearDate = () => {
+    formField.onChange('');
+  };
+
   return (
-    <Select onValueChange={onAnySelect} value={formField.value}>
+    <Select value={formField.value} onClearValue={handleClearDate}>
       <FormControl>
         <SelectTrigger className="w-full border-0 border-b border-secondary/25 px-0 text-base tracking-wide text-foreground-secondary transition-colors duration-300 ease-in-out hover:border-secondary/50 focus:border-ring-primary focus:ring-0 data-placeholder:text-muted-primary/80">
-          <SelectValue placeholder="Выберите дату">
-            {!isFilterActive(formField.value) ? anyOption?.label : formattedDate}
-          </SelectValue>
+          <SelectValue placeholder="Выберите дату">{formattedDate}</SelectValue>
         </SelectTrigger>
       </FormControl>
       <SelectContent className="rounded-none border-primary/25 bg-[rgba(30,20,10,0.97)] backdrop-blur-md">
-        {anyOption && (
-          <>
-            <SelectItem
-              className="text-base tracking-wide text-muted-primary focus:bg-primary/25 focus:text-accent-primary"
-              value={anyOption.value}
-            >
-              {anyOption.label}
-            </SelectItem>
-            <SelectSeparator className="bg-primary/25" />
-          </>
-        )}
         <Calendar
           className="w-full bg-transparent"
           classNames={{
@@ -62,7 +45,7 @@ export const DateSelect = (props: CustomFilterSelectProps) => {
           mode="single"
           required
           selected={selectedDate}
-          onSelect={onDateSelect}
+          onSelect={handleSelectDate}
           disabled={(date) => date < new Date()}
         />
       </SelectContent>
